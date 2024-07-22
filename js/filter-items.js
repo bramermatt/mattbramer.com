@@ -1,4 +1,3 @@
-// Apply filtering logic when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", function() {
   filterItem('none'); // Initially hide all items
 });
@@ -26,25 +25,32 @@ function filterItem(c) {
           }
       }
   }
+  
+  // Scroll to the top of the element with id 'FilterDiv'
+  var filterDiv = document.getElementById("topFilterDiv");
+  if (filterDiv) {
+      filterDiv.scrollTop = 0; // For elements with overflow
+      window.scrollTo({ top: filterDiv.offsetTop, behavior: 'smooth' }); // For scrolling the window
+  }
 }
 
 // Add active class to the current control button (highlight it)
 var btnContainer = document.querySelector(".filter-items");
 var btns = btnContainer.getElementsByClassName("filter-btn");
 for (var i = 0; i < btns.length; i++) {
-btns[i].addEventListener("click", function() {
-  var current = btnContainer.querySelector(".active-filter");
-  if (current) {
-    current.classList.remove("active-filter");
-  }
-  this.classList.add("active-filter");
-});
+  btns[i].addEventListener("click", function() {
+    var current = btnContainer.querySelector(".active-filter");
+    if (current) {
+      current.classList.remove("active-filter");
+    }
+    this.classList.add("active-filter");
+  });
 }
 
 // Ensure active filter class persists during scroll
 window.addEventListener('scroll', function() {
-var activeButton = btnContainer.querySelector(".active-filter");
-if (activeButton) {
-  activeButton.classList.add("active-filter");
-}
+  var activeButton = btnContainer.querySelector(".active-filter");
+  if (activeButton) {
+    activeButton.classList.add("active-filter");
+  }
 });
