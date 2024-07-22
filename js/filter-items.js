@@ -26,12 +26,7 @@ function filterItem(c) {
       }
   }
   
-  // Scroll to the top of the element with id 'FilterDiv'
-  var filterDiv = document.getElementById("topFilterDiv");
-  if (filterDiv) {
-      filterDiv.scrollTop = 0; // For elements with overflow
-      window.scrollTo({ top: filterDiv.offsetTop, behavior: 'smooth' }); // For scrolling the window
-  }
+  // Removed the scroll-to-top behavior
 }
 
 // Add active class to the current control button (highlight it)
