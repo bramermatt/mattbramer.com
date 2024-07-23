@@ -33,13 +33,13 @@ html {
 
 .profile, .timeline {
     max-width: 550px;
-    padding: 15px;
+
     line-height: 1.6em;
 
     h2 {
         line-height: 1.3em;
         margin-bottom: 10px;
-        margin-top: 40px;
+        margin-top: 0;
     }
 
     h3 {
@@ -60,6 +60,7 @@ html {
     top: 4vh;
     z-index: 10;
 
+    padding: 15px;
 
 }
 
@@ -84,17 +85,39 @@ html {
 
 .timeline {
 
-    margin-top: 4vh;
+    margin-top: 8vh;
+
+    
 
     h1 {
         display: none;
         padding: 15px 0;
         text-transform: uppercase;
         font-size: large;
+
+        padding: 15px;
+    }
+
+    h2, h3, a {
+        padding: 0 15px;
+    }
+
+    h2 a {
+        padding: 0;
     }
 
     p {
         margin-top: 0;
+        padding: 0 15px;
+    }
+
+    img {
+        max-width: 90%;
+        border-radius: 5px;
+        box-shadow: 0px 0px 1px grey;
+        
+        margin: 0 15px;
+
     }
 }
 
@@ -108,6 +131,14 @@ html {
     i {
         font-size: 30px;
     }
+}
+
+.grid-item {
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 40px;
+    padding: 12px;
 }
 
 
@@ -144,21 +175,45 @@ footer {
 }
 
 
+@media screen and (max-width: 1400px) {
+    .grid-item {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 @media screen and (max-width: 1000px) {
     .timeline {
+
         h1 {
             display: block;
             position: sticky;
             top: -1px;
             
             z-index: 10;
+            overflow: hidden;
         }
 
         h2 {
             font-size: large;
         }
+
+        img {
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
     }
+
+    .grid-item {
+        padding: 0;
+    }
+
+    .grid-item:hover {
+        background: none !important;
+        opacity: 100% !important;
+    }
+
+
 }
 
 @media screen and (max-width: 750px) {
@@ -171,6 +226,15 @@ footer {
 
     .full-split {
         flex-direction: column;
+    }
+
+    .social {
+        justify-content: space-around;
+        
+        i {
+            font-size: 40px;
+        }
+        
     }
 
 
@@ -254,6 +318,12 @@ footer {
 
     body {
         background: rgb(0, 0, 0);
+    }
+
+    .grid-item:hover {
+        border-radius: 10px;
+        opacity: 80%;
+        background-color: rgb(43, 43, 43);
     }
 
 
