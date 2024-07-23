@@ -11,8 +11,8 @@ html {
         margin: 0 auto;
         cursor: default;
     
-        /* font-family: system-ui; */
-        font-family: Merriweather;
+        font-family: system-ui;
+        /* font-family: Merriweather; */
         /* font-family: math; */
     
 
@@ -44,17 +44,102 @@ html {
 
     h3 {
         margin-top: 0;
+        font-weight: 300;
     }
 
 
 }
 
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5vh;
+    max-height: 85vh;
+    position: sticky;
+    top: 4vh;
+    z-index: 10;
+
+
+}
+
+.bio {
+    margin-bottom: 40px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.nav a {
+    transition: background 0.3s;
+    max-width: max-content;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+
 .timeline {
+
+    margin-top: 4vh;
+
     h1 {
         display: none;
         padding: 15px 0;
         text-transform: uppercase;
         font-size: large;
+    }
+
+    p {
+        margin-top: 0;
+    }
+}
+
+.social {
+
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    justify-content: start;
+
+    i {
+        font-size: 30px;
+    }
+}
+
+
+.full-split {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    max-width: 1200px;
+    gap: 4vw;
+
+    margin-bottom: 10vh;
+}
+
+a:link, a:visited {
+    color: var(--text);
+    text-decoration: none;
+}
+
+
+
+footer {
+
+    /* max-width: 50%; */
+    margin-bottom: 25px;
+
+    img {
+        max-height: 5vh;
+        opacity: 100% !important;
+        margin: 0 auto;
+        width: 100%;
+        object-fit: contain;
     }
 }
 
@@ -76,6 +161,22 @@ html {
     }
 }
 
+@media screen and (max-width: 750px) {
+
+
+    .profile {
+        top: 15px;
+        position: relative;
+    }
+
+    .full-split {
+        flex-direction: column;
+    }
+
+
+}
+
+
 @media screen and (prefers-color-scheme: light) {
     
 
@@ -83,6 +184,27 @@ html {
         h1 {
             background-color: rgb(255,255,255);
         }
+    }
+
+    .bio a:link, .bio a:visited, .timeline a:link, .timeline a:visited {
+        color: #b74632;
+        opacity: 100%;
+    }
+
+    a:hover {
+        color: rgb(0, 0, 0) !important;
+    }
+
+    .social a:hover {
+        /* opacity: 50%; */
+        color: #b74632 !important;
+    }
+    
+
+    .nav a.active {
+        background: #b74632;
+        color: white !important;
+        opacity: 100%;
     }
 
 
@@ -95,10 +217,43 @@ html {
         h1 {
             background-color: rgba(0, 0, 0, 0.888);
         }
+
+        p {
+            color: rgb(217, 217, 217);
+        }
+
+        a:link, a:visited {
+            opacity: 100%;
+        }
+
+        /* a:hover {
+            opacity: 50%;
+        } */
+    }
+
+    .bio a:link, .bio a:visited, .timeline a:link, .timeline a:visited {
+        color: #b74632;
+        opacity: 100%;
+    }
+
+    a:hover {
+        color: white !important;
+    }
+
+    .social a:hover {
+        /* opacity: 50%; */
+        color: #b74632 !important;
+    }
+    
+
+    .nav a.active {
+        background: #b74632;
+        color: white !important;
+        opacity: 100%;
     }
 
     body {
-        background: rgba(0, 0, 0);
+        background: rgb(0, 0, 0);
     }
 
 
