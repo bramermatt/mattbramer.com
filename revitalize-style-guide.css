@@ -69,6 +69,10 @@ html {
             
             z-index: 10;
         }
+
+        h2 {
+            font-size: large;
+        }
     }
 }
 
@@ -79,6 +83,22 @@ html {
         h1 {
             background-color: rgb(255,255,255);
         }
+    }
+
+
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    
+
+    .timeline {
+        h1 {
+            background-color: rgba(0, 0, 0, 0.888);
+        }
+    }
+
+    body {
+        background: rgba(0, 0, 0);
     }
 
 
