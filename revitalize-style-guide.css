@@ -106,6 +106,8 @@ html {
         padding: 0;
     }
 
+
+
     p {
         margin-top: 0;
         padding: 0 15px;
@@ -119,6 +121,10 @@ html {
         margin: 0 15px;
 
     }
+}
+
+#about a {
+    padding: 0px !important;
 }
 
 .social {
@@ -173,6 +179,37 @@ footer {
         object-fit: contain;
     }
 }
+
+.posts-slider {
+
+    padding: 0 15px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+
+    .post {
+
+        padding: 12px;
+        border-radius: 10px;
+        max-width: 240px;
+    
+        img {
+            max-height: 10vh;
+            object-fit: cover;
+            width: 100%;
+            margin: 0;
+        }
+
+        h3, a, p {
+            padding: 0;
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+
 
 
 @media screen and (max-width: 1400px) {
@@ -323,6 +360,10 @@ footer {
     .grid-item:hover {
         border-radius: 10px;
         opacity: 80%;
+        background-color: rgb(43, 43, 43);
+    }
+
+    .post {
         background-color: rgb(43, 43, 43);
     }
 
