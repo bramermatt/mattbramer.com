@@ -86,6 +86,7 @@ html {
 .timeline {
 
     margin-top: 8vh;
+    padding-right: 15px;;
 
     
 
@@ -182,7 +183,7 @@ footer {
 
 .posts-slider {
 
-    padding: 0 15px;
+    padding: 5px 15px;
     overflow: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -192,10 +193,11 @@ footer {
 
         padding: 12px;
         border-radius: 10px;
-        max-width: 240px;
+
+
     
         img {
-            max-height: 10vh;
+            max-height: 35vh;
             object-fit: cover;
             width: 100%;
             margin: 0;
@@ -205,8 +207,86 @@ footer {
             padding: 0;
             margin-bottom: 0;
         }
+
+        p {
+            opacity: 80%;
+        }
+
+
     }
 
+}
+
+
+.filter-topics {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1vh;
+    max-height: 85vh;
+    position: sticky;
+    top: 4vh;
+    z-index: 10;
+
+    padding: 10px;
+
+    display: none;
+
+    span {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 8px;
+        border-radius: 5px;
+        border: thin solid;
+        max-width: max-content;
+        color: white;
+    }
+}
+
+.item {
+    margin: 0;
+
+    h2 {
+        margin: 0;
+    }
+}
+
+
+.go-home {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    z-index: 50;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+     a, span {
+        margin-bottom: 5px;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 10px;
+        background-color: black;
+        box-shadow: 2px 2px 0px rgb(21, 24, 24);
+        font-size:  large;
+    }
+
+    a:link, a:visited {
+        color: var(--text);
+        text-decoration: none;
+    }
+    
+     a:hover,  span:hover {
+        background-color: rgb(58, 58, 58);
+        color:rgb(255, 255, 255);
+    
+    }
+
+    i {
+        font-size: 22px;
+    }
+    
 }
 
 
@@ -221,6 +301,8 @@ footer {
 
 @media screen and (max-width: 1000px) {
     .timeline {
+
+        padding-right: 0;
 
         h1 {
             display: block;
@@ -250,13 +332,7 @@ footer {
         opacity: 100% !important;
     }
 
-
-}
-
-@media screen and (max-width: 750px) {
-
-
-    .profile {
+    .profile, .filter-topics {
         top: 15px;
         position: relative;
     }
@@ -273,6 +349,14 @@ footer {
         }
         
     }
+
+
+}
+
+@media screen and (max-width: 850px) {
+
+
+
 
 
 }
@@ -308,6 +392,35 @@ footer {
         opacity: 100%;
     }
 
+    .post {
+        background-color: rgba(209, 209, 209, 0.76);
+        box-shadow: 0px 0px 4px grey;
+    }
+
+    .post:hover {
+        background-color: rgb(255, 255, 255);
+
+        img {
+            opacity: 50%;
+        }
+    }
+
+    .go-home span, .go-home a {
+        box-shadow: 0px 0px 2px rgb(0, 117, 190);
+        border: thin solid rgb(0, 117, 190);
+    }
+
+
+    blockquote {
+        color: rgb(131, 131, 131);
+    }
+
+    .go-home a, .go-home span {
+        background-color: rgb(190, 190, 190);
+        box-shadow: 2px 2px 0px black;
+        border: none;
+    }
+
 
 }
 
@@ -317,6 +430,7 @@ footer {
     .timeline {
         h1 {
             background-color: rgba(0, 0, 0, 0.888);
+            color: white;
         }
 
         p {
@@ -364,8 +478,26 @@ footer {
     }
 
     .post {
-        background-color: rgb(43, 43, 43);
+        background-color: rgba(27, 27, 27, 0.76);
+        box-shadow: 0px 0px 4px rgb(58, 58, 58);
     }
+
+    .post:hover {
+        background-color: rgb(39, 39, 39);
+
+        img {
+            opacity: 50%;
+        }
+    }
+
+    .go-home span, .go-home a {
+        box-shadow: 2px 2px 3px rgba(109, 109, 109, 0.699);
+        background-color: #1a1a1a;
+        /* border: thin solid lightskyblue; */
+        color: white !important;
+    }
+
+
 
 
 }
