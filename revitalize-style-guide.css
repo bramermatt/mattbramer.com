@@ -38,17 +38,19 @@ html {
 
     h2 {
         line-height: 1.3em;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         margin-top: 0;
     }
 
     h3 {
-        margin-top: 0;
-        font-weight: 300;
+        margin-bottom: 0;
+        margin-top: 5vh;
+        font-weight: 500;
     }
 
 
 }
+
 
 .profile {
     display: flex;
@@ -110,7 +112,7 @@ html {
 
 
     p {
-        margin-top: 0;
+        margin-top: 15px;
         padding: 0 15px;
     }
 
@@ -146,6 +148,15 @@ html {
     grid-template-columns: 1fr 2fr;
     margin-top: 40px;
     padding: 12px;
+
+
+}
+
+.grid-item-copy {
+
+    h2 {
+        margin-bottom: 10px;
+    }
 }
 
 
@@ -206,6 +217,7 @@ footer {
         h3, a, p {
             padding: 0;
             margin-bottom: 0;
+            margin-top: 10px !important;
         }
 
         p {
@@ -263,7 +275,7 @@ footer {
     align-items: end;
 
      a, span {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         cursor: pointer;
         padding: 8px;
         border-radius: 10px;
@@ -284,7 +296,7 @@ footer {
     }
 
     i {
-        font-size: 22px;
+        font-size: 4vh;
     }
     
 }
@@ -318,7 +330,7 @@ footer {
         }
 
         img {
-            margin-top: 40px;
+            margin-top: 10px;
             margin-bottom: 15px;
         }
     }
@@ -356,7 +368,9 @@ footer {
 @media screen and (max-width: 850px) {
 
 
-
+    .grid-item:hover {
+        box-shadow: none !important;
+    }
 
 
 }
@@ -374,15 +388,22 @@ footer {
     .bio a:link, .bio a:visited, .timeline a:link, .timeline a:visited {
         color: #b74632;
         opacity: 100%;
+        font-weight: 500;
     }
 
     a:hover {
         color: rgb(0, 0, 0) !important;
+        border-bottom: thin solid;
     }
 
     .social a:hover {
         /* opacity: 50%; */
         color: #b74632 !important;
+        border-bottom: none !important;
+    }
+
+    .nav a:hover, .post a:hover   {
+        border-bottom: none;
     }
     
 
@@ -397,8 +418,18 @@ footer {
         box-shadow: 0px 0px 4px grey;
     }
 
-    .post:hover {
+    .post:hover, .grid-item:hover {
         background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 4px grey;
+        img {
+            opacity: 50%;
+            box-shadow: 0px 0px 4px grey;
+        }
+    }
+
+    .grid-item:hover {
+        background-color: rgb(211, 211, 211);
+        border-radius: 10px;
 
         img {
             opacity: 50%;
@@ -449,15 +480,22 @@ footer {
     .bio a:link, .bio a:visited, .timeline a:link, .timeline a:visited {
         color: #b74632;
         opacity: 100%;
+        font-weight: 500;
     }
 
     a:hover {
         color: white !important;
+        border-bottom: thin solid;
     }
 
     .social a:hover {
         /* opacity: 50%; */
         color: #b74632 !important;
+        border-bottom: none;
+    }
+
+    .nav a:hover, .post a:hover   {
+        border-bottom: none;
     }
     
 
@@ -475,6 +513,7 @@ footer {
         border-radius: 10px;
         opacity: 80%;
         background-color: rgb(43, 43, 43);
+        box-shadow: 0px 0px 4px rgb(58, 58, 58);
     }
 
     .post {

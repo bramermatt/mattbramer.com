@@ -35,7 +35,7 @@ html {
     align-items: end;
 
      a, span {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         cursor: pointer;
         padding: 8px;
         border-radius: 10px;
@@ -56,7 +56,7 @@ html {
     }
 
     i {
-        font-size: 22px;
+        font-size: 4vh;
     }
     
 }
