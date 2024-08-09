@@ -37,11 +37,13 @@ html {
      a, span {
         margin-bottom: 10px;
         cursor: pointer;
-        padding: 8px;
+        padding: 4px;
         border-radius: 10px;
         background-color: black;
         box-shadow: 2px 2px 0px rgb(21, 24, 24);
         font-size:  large;
+
+        opacity: 90%;
     }
 
     a:link, a:visited {
@@ -52,7 +54,7 @@ html {
      a:hover,  span:hover {
         background-color: rgb(58, 58, 58);
         color:rgb(255, 255, 255);
-    
+        opacity: 100%;
     }
 
     i {
