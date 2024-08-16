@@ -239,7 +239,7 @@ header {
     img {
         width: 100%;
         object-fit: cover;
-        max-height: 65vh;
+        max-height: 85vh;
     
         /* z-index: 1; */
         /* position: relative; */

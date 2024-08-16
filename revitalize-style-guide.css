@@ -117,11 +117,12 @@ html {
     }
 
     img {
-        max-width: 90%;
+        max-width: 95%;
         border-radius: 5px;
         box-shadow: 0px 0px 1px grey;
+        margin: 0 10px;
+        margin-bottom: 10px;
         
-        margin: 0 15px;
 
     }
 }
@@ -143,7 +144,7 @@ html {
 }
 
 .grid-item {
-    display: grid;
+    /* display: grid; */
     gap: 1vw;
     grid-template-columns: 1fr 2fr;
     margin-top: 40px;
@@ -217,7 +218,7 @@ footer {
         h3, a, p {
             padding: 0;
             margin-bottom: 0;
-            margin-top: 10px !important;
+            margin-top: 0 !important;
         }
 
         p {
