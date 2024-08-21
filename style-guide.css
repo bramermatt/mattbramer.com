@@ -293,9 +293,9 @@ article {
         line-height: 1.6em;
     }
 
-    p, h2 {
+    /* p, h2 {
         padding-inline: 20px;
-    }
+    } */
 
     img {
         max-height: 70vh;
