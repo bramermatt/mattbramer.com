@@ -65,6 +65,30 @@ html {
 }
 
 
+.nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 1vw;
+    overflow: hidden;
+
+    a {
+        text-decoration: none;
+    }
+
+    .nav-title {
+        text-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .nav {
+        display: block;
+    }
+}
+
 
 
 
