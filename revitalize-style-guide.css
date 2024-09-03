@@ -417,13 +417,13 @@ footer {
     }
 
     .post {
-        background-color: rgba(209, 209, 209, 0.76);
-        box-shadow: 0px 0px 4px grey;
+        background-color: rgba(250, 250, 250, 0.76);
+        box-shadow: 0px 0px 2px rgba(24, 24, 24, 0.76);
     }
 
     .post:hover, .grid-item:hover {
         background-color: rgb(255, 255, 255);
-        box-shadow: 0px 0px 4px grey;
+        box-shadow: 0px 0px 2px grey;
         img {
             opacity: 50%;
             box-shadow: 0px 0px 4px grey;
