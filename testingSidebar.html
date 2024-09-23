@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<style>
+    body {
+    /* font-family: Arial, sans-serif; */
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.sidebar {
+    width: 15vw;
+
+    background-color: #f4f4f4;
+    border-right: 1px solid #ccc;
+
+    max-height: 100vh;
+    overflow: auto;
+}
+
+.right {
+    /* border-left: 1px solid #ccc; */
+}
+
+.content {
+    width: 75vw;
+    /* padding: 0 1em; */
+    max-height: 100vh;
+    overflow: auto;
+}
+
+#blog-post {
+    padding: .5em;
+}
+
+h2 {
+    margin: 0;
+    padding: .5em;
+
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #f4f4f4;
+    box-shadow: 0px 0px 2px rgb(83, 83, 83);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+ul li {
+    margin: 1em 0;
+    padding: 0 1em;
+}
+
+.menu-button {
+    display: none; /* Hidden by default */
+
+    position: fixed;
+    right: 3vw;
+    top: 1vh;
+}
+
+.sidebar {
+    transition: all 0.3s ease; /* Smooth transition for displaying */
+}
+
+/* Show sidebar when open */
+.sidebar.open {
+    display: block; /* Show sidebar when it has the open class */
+}
+
+/* Hide sidebars by default on screens narrower than 1200px */
+@media (max-width: 1200px) {
+    .menu-button {
+        display: block; /* Show button */
+    }
+
+    .sidebar {
+        display: none; /* Keep sidebar hidden */
+    }
+
+    .sidebar.open {
+        display: block; /* Show sidebar when it has the open class */
+        width: 100%;
+    }
+}
+
+
+
+</style>
+
+
+
+<body>
+    <button id="menu-button" class="menu-button">Menu</button>
+
+    <div class="container">
+          <div class="sidebar left">
+            <h2>Topics</h2>
+            <ul>
+                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>
+
+                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>                <li><a href="#" class="topic-link" data-topic="all">All Topics</a></li>
+                <li><a href="#" class="topic-link" data-topic="blogs">Blogs</a></li>
+                <li><a href="#" class="topic-link" data-topic="book-reviews">Book Reviews</a></li>
+                <li><a href="#" class="topic-link" data-topic="tutorials">Tutorials</a></li>
+            </ul>
+        </div>
+        <div class="sidebar right">
+            <h2>Title</h2>
+            <ul id="blog-links">
+                <li><a href="#" class="blog-link" data-file="blog1">Blog Post 1</a></li>
+                <li><a href="#" class="blog-link" data-file="review1">Book Review 1</a></li>
+                <li><a href="#" class="blog-link" data-file="tutorial1">Tutorial 1</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <!-- <h2>Blog Content</h2> -->
+            <div id="blog-post">Select a blog post to read the content here.</div>
+        </div>
+    </div>
+
+<script>
+
+            const menuButton = document.getElementById('menu-button');
+            const leftSidebar = document.querySelector('.sidebar.left');
+            const rightSidebar = document.querySelector('.sidebar.right');
+
+            menuButton.addEventListener('click', () => {
+                leftSidebar.classList.toggle('open');
+                rightSidebar.classList.toggle('open');
+            });
+
+
+
+
+        const currentPath = window.location.pathname;
+        const basePath = currentPath.includes("/pages/") ? "../" : "";
+
+        const blogData = {
+            blogs: [
+            { title: "Book Review 1", file: `${basePath}test/blog1.html` },
+            ],
+            "book-reviews": [
+                { title: "Dead Lake by Darcy Coats", file: "posts/2024-9-11-bookreview-deadlake-darcycoates.html" },
+            ],
+            tutorials: [
+                { title: "Tutorial 1", file: `${basePath}test/tutorial1.html` }
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            selectTopic('all');
+            document.querySelectorAll('.topic-link').forEach(item => {
+                item.addEventListener('click', event => {
+                    event.preventDefault();
+                    const topic = item.getAttribute('data-topic');
+                    selectTopic(topic);
+                });
+            });
+        });
+
+        function selectTopic(topic) {
+            const blogLinksContainer = document.getElementById('blog-links');
+            blogLinksContainer.innerHTML = '';
+
+            if (topic === 'all') {
+                Object.values(blogData).flat().forEach(blog => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="#" class="blog-link" data-file="${blog.file}">${blog.title}</a>`;
+                    blogLinksContainer.appendChild(li);
+                });
+            } else {
+                blogData[topic].forEach(blog => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="#" class="blog-link" data-file="${blog.file}">${blog.title}</a>`;
+                    blogLinksContainer.appendChild(li);
+                });
+            }
+
+            addBlogLinkEventListeners();
+        }
+
+        function addBlogLinkEventListeners() {
+            document.querySelectorAll('.blog-link').forEach(blogItem => {
+                blogItem.addEventListener('click', event => {
+                    event.preventDefault();
+                    const file = blogItem.getAttribute('data-file');
+
+                    // Use fetch to load content
+                    fetch(file)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.text();
+                        })
+                        .then(html => {
+                            document.getElementById('blog-post').innerHTML = html;
+                        })
+                        .catch(error => {
+                            console.error('Error fetching the blog content:', error);
+                            document.getElementById('blog-post').innerHTML = 'Failed to load content.';
+                        });
+                });
+            });
+        }
+    </script>
+
+
+</body>
+</html>
