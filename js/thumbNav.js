@@ -11,30 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 <i class="fa-solid fa-house"></i>
                 Home
                 </a>
-                <li>
-                    <a href="${basePath}index.html#about">
-                    <i class="fa-solid fa-user"></i>
-                    About
-                    </a>
                 </li>
-                <li>
-                    <a href="${basePath}index.html#experience">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                    Experience
-                    </a>
-                </li>
-                <li>
-                    <a href="${basePath}index.html#projects">
-                    <i class="fa-solid fa-code"></i>
-                    Projects
-                    </a>
-                </li>
-                <li>
-                    <a href="${basePath}index.html#writing">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    Writing
-                    </a>
-                </li>
+
+
 
                 <li onclick="toTopFunction()" id="toTop" title="Go to top">
                     <a href="#">
@@ -47,7 +26,32 @@ document.addEventListener("DOMContentLoaded", function() {
             </ul>
             </div>`
 
+                // <li>
+                //     <a href="${basePath}index.html#about">
+                //     <i class="fa-solid fa-user"></i>
+                //     About
+                //     </a>
+                // </li>
+                // <li>
+                //     <a href="${basePath}index.html#experience">
+                //     <i class="fa-solid fa-clock-rotate-left"></i>
+                //     Experience
+                //     </a>
+                // </li>
+                // <li>
+                //     <a href="${basePath}index.html#projects">
+                //     <i class="fa-solid fa-code"></i>
+                //     Projects
+                //     </a>
+                // </li>
+                // <li>
+                //     <a href="${basePath}index.html#writing">
+                //     <i class="fa-solid fa-pen-to-square"></i>
+                //     Writing
+                //     </a>
+                // </li>
 
+                
 
                 // Append navbar and footer safely
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);

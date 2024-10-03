@@ -328,7 +328,7 @@ footer {
     bottom: 0;
     right: 0;
 
-    width: 30vw;
+    width: 10vw;
     padding: 1em;
     border-radius: 20px 0 0 0;
 
@@ -431,9 +431,9 @@ header {
 
 @media screen and (max-width: 1000px) {
 
-    .nav {
+    /* .nav {
         display: none;
-    }
+    } */
 
     .thumbnav {
         display: block;
