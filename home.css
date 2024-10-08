@@ -244,7 +244,7 @@ nav {
     #menu-toggle {
       display: block ;
       font-size: 3vh;
-      color: white;
+      /* color: white; */
       cursor: pointer;
       z-index: 1000;
       position: absolute;
@@ -252,6 +252,49 @@ nav {
       right: 20px;
     }
   }
+
+
+
+@media screen and (prefers-color-scheme: light) {
+  
+  nav {
+
+    background-color: white;
+
+    .nav-links.active {
+
+      color: white;
+
+      a:link, a:visited {
+        /* color: black; */
+      }
+    }
+
+
+  }
+
+  #menu-toggle {
+    color: black;
+}
+
+
+  .thumbNav {
+    i {
+        background-color: rgba(255, 255, 255, 0.5);
+        color: black;
+    }
+}
+
+.content-timeline {
+
+    .timeline {
+
+        h1 {
+            background-color: rgb(255, 255, 255);
+        }
+    }
+}
+}
   
 
 @media screen and (prefers-color-scheme: dark) {
