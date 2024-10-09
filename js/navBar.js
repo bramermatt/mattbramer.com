@@ -6,18 +6,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbarHTML = `
 <nav class="navbar">
     <div class="logo">
-        <img src="img/icons/mLogo.png" alt="">
+        <a href="${basePath}index.html"><img src="img/icons/mLogo.png" alt=""></a>
     </div>
         <ul class="nav-links">
           <li><a href="${basePath}index.html">Home</a></li>
           <li><a href="${basePath}index.html#about">About</a></li>
           <li><a href="${basePath}index.html#experience">Experience</a></li>
           <li><a href="${basePath}index.html#projects">Projects</a></li>
-          <!-- <li><a href="#">Writing</a></li>  -->
+
+          <!-- <li><a href="#">Writing</a></li> -->
 
           <!--<li><a href="#"><i class="fa-solid fa-magnifying-glass" id="search-icon"></i></a></li>-->
         </ul>
-    <i class="fa-solid fa-bars" id="menu-toggle"></i>
+    
+        <i class="fa-solid fa-bars" id="menu-toggle"></i>
 
 
 </nav>
@@ -51,23 +53,32 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.insertAdjacentHTML('beforeend', footerHTML);
     document.body.insertAdjacentHTML('beforeend', thumbNav);
   
-    // Now select the menuToggle and navLinks elements after they've been inserted into the DOM
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.querySelector(".nav-links");
-  
+    const links = navLinks.querySelectorAll("a");
+
     menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+        navLinks.classList.toggle("active");
   
-      // Toggle between bars and X icon
-      if (menuToggle.classList.contains("fa-bars")) {
-        menuToggle.classList.remove("fa-bars");
-        menuToggle.classList.add("fa-xmark");
-      } else {
-        menuToggle.classList.remove("fa-xmark");
-        menuToggle.classList.add("fa-bars");
-      }
+        // Toggle between bars and X icon
+        if (menuToggle.classList.contains("fa-bars")) {
+            menuToggle.classList.remove("fa-bars");
+            menuToggle.classList.add("fa-xmark");
+        } else {
+            menuToggle.classList.remove("fa-xmark");
+            menuToggle.classList.add("fa-bars");
+        }
     });
-  });
+
+    // Close the navbar when a link is clicked
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("fa-xmark");
+            menuToggle.classList.add("fa-bars");
+        });
+    });
+});
   
 
 //Get the button:
@@ -89,3 +100,4 @@ function toTopFunction() {
 document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
