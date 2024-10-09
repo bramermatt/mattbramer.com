@@ -22,12 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
           <li><a href="${basePath}index.html#experience">Experience</a></li>
           <li><a href="${basePath}index.html#projects">Projects</a></li>
 
-          <!-- <li><a href="#">Writing</a></li> -->
+          <li><a href="${basePath}index.html#writing">Writing</a></li>
 
-          <!--<li><a href="#"><i class="fa-solid fa-magnifying-glass" id="search-icon"></i></a></li>-->
+          <!-- <li><a href="#"><i class="fa-solid fa-magnifying-glass" id="search-icon"></i></a></li> -->
         </ul>
-    
+
+
+        <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
         <i class="fa-solid fa-bars" id="menu-toggle"></i>
+        
 
 </div>
 </nav>
