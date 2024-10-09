@@ -1,13 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Determine the basePath based on the current path
     const currentPath = window.location.pathname;
-    const basePath = currentPath.includes("/posts/") ? "../" : "";
+
+    // Check for multiple directories where you need to adjust the base path
+    const basePath = (currentPath.includes("/posts/") || 
+                      currentPath.includes("/img/") || 
+                      currentPath.includes("/pages/") || 
+                      currentPath.includes("/articles/")) 
+                     ? "../" : "";
   
     const navbarHTML = `
-<nav class="navbar">
+<nav>
+<div class="navbar">
     <div class="logo">
-        <a href="${basePath}index.html"><img src="img/icons/mLogo.png" alt=""></a>
+        <a href="${basePath}index.html"><img src="${basePath}img/icons/mLogo.png" alt=""></a>
     </div>
+    
         <ul class="nav-links">
           <li><a href="${basePath}index.html">Home</a></li>
           <li><a href="${basePath}index.html#about">About</a></li>
@@ -21,18 +29,28 @@ document.addEventListener("DOMContentLoaded", function () {
     
         <i class="fa-solid fa-bars" id="menu-toggle"></i>
 
-
+</div>
 </nav>
+
     `;
 
     const footerHTML = `
 <footer>
+
+
+
+
+
         <div class="social">
             <a href="https://github.com/bramermatt" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.threads.net/@bramermatt" target="_blank"><i class="fa-brands fa-square-threads"></i></a>
             <a href="https://www.instagram.com/bramermatt/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-            <a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
             <a href="https://www.goodreads.com/user/show/145996417-matthew-bramer" target="_blank"><i class="fa-brands fa-goodreads"></i></a>
+
+            <a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+            <a href="https://linktr.ee/Ministryinthemess" target="_blank"><i class="fa-solid fa-podcast"></i></a>
         </div>
 </footer> 
 
