@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Determine the basePath based on the current path
     const currentPath = window.location.pathname;
-    const basePath = currentPath.includes("/posts/") ? "../" : "";
+
+    // Check for multiple directories where you need to adjust the base path
+    const basePath = (currentPath.includes("/posts/") || 
+                      currentPath.includes("/img/") || 
+                      currentPath.includes("/pages/") || 
+                      currentPath.includes("/articles/")) 
+                     ? "../" : "";
 
     const navbarHTML = `
             <div class="thumbnav">

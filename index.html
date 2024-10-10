@@ -9,353 +9,206 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/icons/mLogo.png">
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XT7HPHGVJJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT7HPHGVJJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-XT7HPHGVJJ');
-</script>
+    gtag('config', 'G-XT7HPHGVJJ');
+    </script>
 
         <!-- menu icon -->
-        <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="revitalize-style-guide.css">
+    <link rel="stylesheet" href="home.css">
 
     <title>Matt Bramer | Home</title>
 </head>
+
 <body>
 
-    <main>
-
-        <!-- <div class="thumbnav">
-            <ul>
-                <li>
-                    <a href="#about">
-                    <i class="fa-solid fa-user"></i>
-                    About
-                    </a>
-                </li>
-                <li>
-                    <a href="#experience">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                    Experience
-                    </a>
-                </li>
-                <li>
-                    <a href="#projects">
-                    <i class="fa-solid fa-code"></i>
-                    Projects
-                    </a>
-                </li>
-                <li>
-                    <a href="#writing">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    Writing
-                    </a>
-                </li>
-
-            </ul>
-        </div> -->
-
-        <div class="full-split">
-
-        <div class="profile">
-            <div class="bio-info">
-                <div class="bio">
-                    <img src="img/matts/matt-profile.jpeg" alt="" id="profile-img">
-                    <h1>Matthew Bramer</h1>
-                    <p>I'm a husband, father, Jesus follower, and I have just recently graduated with a Bachelor's of Science in Computer Science at <a href="https://www.snhu.edu/" target="_blank">SNHU</a>.</p>
-                </div>
-
-                <div class="nav">
-                    <a href="#about">About</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#writing">Writing</a>
-                </div>
+    <div class="profile">
+        <div class="bio-info">
+            <div class="bio">
+                <img src="img/matts/matt-profile.jpeg" alt="" id="profile-img">
+                <h1>Matthew Bramer</h1>
+                <p>I'm a husband, father, Jesus follower, and I have just recently graduated with a Bachelor's of Science in Computer Science at <a href="https://www.snhu.edu/" target="_blank">SNHU</a>.</p>
             </div>
 
-            <div class="social">
-                <a href="https://github.com/bramermatt" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.threads.net/@bramermatt" target="_blank"><i class="fa-brands fa-square-threads"></i></a>
-                <a href="https://www.instagram.com/bramermatt/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.goodreads.com/user/show/145996417-matthew-bramer" target="_blank"><i class="fa-brands fa-goodreads"></i></a>
-            </div>
+
 
         </div>
 
-        <div class="content-timeline">
+    </div>
 
-            <div class="timeline" id="about">
-                <h1>About</h1>
+    <div class="content-timeline">
 
-                <p>Hello! I'm a passionate web developer with a diverse set of skills and interests. Currently, I’m working on various exciting projects that focus on web development.</p>
+        <div class="timeline" id="about">
+            <h1>About</h1>
 
-                <p>I have a Bachelor's of Science in Computer Science at <a href="https://www.snhu.edu/" target="_blank">SNHU</a>, and I've dedicated much of my time to applying my academic knowledge to practical applications. As I transition to new roles at work, I aim to prepare my successor with the knowledge I've acquired, complete outstanding tasks, and document processes thoroughly. My goal is to continuously learn and train for new roles, ensuring I stay ahead in the ever-evolving tech landscape.</p>
+            <p>Hello! I'm a passionate web developer with a diverse set of skills and interests. Currently, I’m working on various exciting projects that focus on web development.</p>
 
-                <p>I’m 27 years old, happily married to my wonderful wife who is 28, and we have a delightful 4-year-old son and a now 11-month-old daughter. Balancing family life with my professional and personal interests is something I take pride in. I'm not always the best father, or husband, but I am constantly trying to improve myself.</p>
+            <p>I have a Bachelor's of Science in Computer Science at <a href="https://www.snhu.edu/" target="_blank">SNHU</a>, and I've dedicated much of my time to applying my academic knowledge to practical applications. My goal is to continuously learn and train for new roles, ensuring I stay ahead in the ever-evolving tech landscape.</p>
 
-                <p>Looking ahead, I aim to deepen my knowledge of JavaScript, design a blog layout that resonates with my vision, and explore new ways to integrate technology into everyday solutions. I am also passionate about using my skills to make a positive impact and help others in the tech community.</p>
-            </div>
+            <p id="bio">
+                I’m <span id="my-age"></span> years old, happily married to my wonderful wife for <span id="wedding-date"></span> years now! We have a delightful <span id="son-age"></span> year-old son and an <span id="daughter-age"></span> month-old daughter. Balancing family life with my professional and personal interests is something I take pride in. I'm not always the best father, or husband, but I am constantly trying to improve myself.
+            </p>
+            
 
-            <div class="timeline" id="experience">
-                <h1>Experience</h1>
+            <p>Looking ahead, I aim to deepen my knowledge of JavaScript, design a blog layout that resonates with my vision, and explore new ways to integrate technology into everyday solutions. I am also passionate about using my skills to make a positive impact and help others in the tech community.</p>
+        </div>
 
+        <div class="timeline" id="experience">
+            <h1>Experience</h1>
+
+            <div class="grid-timeline">
+            <div class="grid-item">
                 <h3>2020 - Present</h3>
                 <h2>Help Desk Technician, Quality Assurance Tester @ <a href="https://mercer-trans.com/" target="_blank" rel="noopener noreferrer">Mercer Transportation</a></h2> 
                 <p>Provide technical support to end-users, resolving hardware, software, and network issues. Perform quality assurance testing on software applications to ensure they meet company standards and user requirements. Collaborate with development teams to identify, document, and track bugs, ensuring timely resolutions. Conduct training sessions for staff on new technologies and best practices for IT operations.</p>
-
-                <h3>2018 - 2020</h3>
-                <h2>Print & Client Services Supervisor @ <a href="https://www.officedepot.com/" target="_blank" rel="noopener noreferrer">Office Depot</a></h2>
-                <p>Managed print and client service operations, overseeing the production and delivery of high-quality print products. Implemented training programs to improve team skills and product knowledge. Analyzed sales data to develop strategies for increasing revenue and improving customer satisfaction.</p>
-                
-                
-                <h3>2018</h3>
-                <h2>Automotive Salesman @ <a href="https://www.carriageford.com/" target="_blank" rel="noopener noreferrer">Carriage Ford</a></h2>
-                <p>Assisted customers in finding and purchasing the right vehicle to meet their needs. Demonstrated in-depth knowledge of automotive products and services to provide exceptional customer service. Negotiated sales terms and conditions, ensuring customer satisfaction and achieving sales targets. Managed customer relationships and followed up on post-sale services to maintain long-term loyalty.</p>
-
-                
-                <h3>2014 - 2018</h3>
-                <h2>Sales, Customer Experience Supervisor @ <a href="https://www.officedepot.com/" target="_blank" rel="noopener noreferrer">Office Depot</a></h2>
-                <p>Supervised sales and customer service teams, driving performance and ensuring excellent customer experiences. Implemented training programs to improve team skills and product knowledge. Analyzed sales data to develop strategies for increasing revenue and improving customer satisfaction.</p>
-                
-
-                <h3>2012 - 2014</h3>
-                <h2>Customer Service @ <a href="https://www.chick-fil-a.com/" target="_blank" rel="noopener noreferrer">Chic-Fil-A</a></h2>
-                <p>Provided exceptional customer service in a fast-paced environment. Assisted customers with orders, ensuring accuracy and efficiency. Resolved customer complaints and inquiries promptly and professionally. Maintained cleanliness and organization in the dining area, contributing to a positive dining experience for guests.</p>
-                
             </div>
 
-            <div class="timeline" id="projects">
-                <h1>Projects</h1>
+
+            <div class="grid-item">
+            <h3>2018 - 2020</h3>
+            <h2>Print & Client Services Supervisor @ <a href="https://www.officedepot.com/" target="_blank" rel="noopener noreferrer">Office Depot</a></h2>
+            <p>Managed print and client service operations, overseeing the production and delivery of high-quality print products. Implemented training programs to improve team skills and product knowledge. Analyzed sales data to develop strategies for increasing revenue and improving customer satisfaction.</p>
+            </div>
+            
+            <div class="grid-item">
+            <h3>2018</h3>
+            <h2>Automotive Salesman @ <a href="https://www.carriageford.com/" target="_blank" rel="noopener noreferrer">Carriage Ford</a></h2>
+            <p>Assisted customers in finding and purchasing the right vehicle to meet their needs. Demonstrated in-depth knowledge of automotive products and services to provide exceptional customer service. Negotiated sales terms and conditions, ensuring customer satisfaction and achieving sales targets. Managed customer relationships and followed up on post-sale services to maintain long-term loyalty.</p>
+            </div>
+
+            <div class="grid-item">
+            <h3>2014 - 2018</h3>
+            <h2>Sales, Customer Experience Supervisor @ <a href="https://www.officedepot.com/" target="_blank" rel="noopener noreferrer">Office Depot</a></h2>
+            <p>Supervised sales and customer service teams, driving performance and ensuring excellent customer experiences. Implemented training programs to improve team skills and product knowledge. Analyzed sales data to develop strategies for increasing revenue and improving customer satisfaction.</p>
+            </div>
+
+            <div class="grid-item">
+            <h3>2012 - 2014</h3>
+            <h2>Customer Service @ <a href="https://www.chick-fil-a.com/" target="_blank" rel="noopener noreferrer">Chic-Fil-A</a></h2>
+            <p>Provided exceptional customer service in a fast-paced environment. Assisted customers with orders, ensuring accuracy and efficiency. Resolved customer complaints and inquiries promptly and professionally. Maintained cleanliness and organization in the dining area, contributing to a positive dining experience for guests.</p>
+        </div>
+    </div>
+            
+        </div>
+
+        <div class="timeline" id="projects">
+            <h1>Projects</h1>
+
+            <div class="grid-two">
 
                 <div class="grid-item">
                     <img src="img/projects/one-community-church-project.png" alt="">
-
+    
                     <div class="grid-item-copy">
                         <h2><a href="http://www.onecommunity.church" target="_blank">One Community Church Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h2>
-                        <p>Welcome to One Community Church! Our mission is to connect people to Christ and each other, fostering a vibrant and welcoming environment where individuals and families can grow in their faith. Located in the heart of our community, we strive to offer dynamic worship experiences, meaningful relationships, and opportunities to make a positive impact both locally and globally!</p>
+                        <p>Our mission is to connect people to Christ and each other, fostering a vibrant and welcoming environment where individuals and families can grow in their faith.</p>
                     </div>
-
+    
                 </div>
-
+    
                 <div class="grid-item">
                     <img src="img/projects/task-man-project.png" alt="">
-
+    
                     <div class="grid-item-copy">
                         <h2><a href="https://bramermatt.github.io/task-man" target="_blank">Task-Man <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h2>
-                        <p>Task-Man is a streamlined to-do list application designed to help you manage your tasks efficiently. With Task-Man, you can easily add new tasks and organize them as either to-do or completed items. Marking tasks as completed moves them to a dedicated section, helping you keep track of your progress. You can click on tasks to view more details in a modal, providing an expanded view for better readability and management. Task-Man also supports persistent storage by saving your tasks to cookies, ensuring they remain until you decide to delete them.</p>
+                        <p>Task-Man is a streamlined to-do list application designed to help you manage your tasks efficiently.</p>
                     </div>
                 </div>
-
+    
                 <div class="grid-item">
                     <img src="img/projects/fashion-man-project.png" alt="">
                     
                     <div class="grid-item-copy">
                         <h2><a href="https://bramermatt.github.io/fashion-man" target="_blank">Fashion-Man <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h2>
-                        <p>Welcome to Fashion-Man! Fashion-Man is your ultimate companion for staying stylish regardless of the weather. Our app provides personalized wardrobe suggestions based on the latest weather forecasts, ensuring you're always dressed appropriately and confidently. Whether it's a sunny day, a rainy afternoon, or a chilly evening, Fashion-Man helps you choose the perfect outfit so you can look and feel your best.</p>
+                        <p>Fashion-Man is your ultimate companion for staying stylish regardless of the weather. Our app provides personalized wardrobe suggestions based on the latest weather forecasts, ensuring you're always dressed appropriately and confidently.</p>
                     </div>
                 </div>
-
+    
                 <div class="grid-item">
                     <img src="img/projects/bible-games-project.png" alt="">
-
+    
                     <div class="grid-item-copy">
                         <h2><a href="https://bramermatt.github.io/bible-games/" target="_blank">Bible-Games <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h2>
-                        <p>It's time to test your knowledge of Bible Trivia! Characters, Books of the Bible, Places, and so much more! Bible Games is your place for fast, fun, and exciting Bible Trivia Games!</p>
+                        <p>It's time to test your knowledge of Bible Trivia! Characters, Books of the Bible, Places, and so much more!</p>
                     </div>
                 </div>
-
+    
                 <div class="grid-item">
                     <img src="img/projects/pomodoro.png" alt="">
-
+    
                     <div class="grid-item-copy">
                         <h2><a href="https://bramermatt.github.io/pomodoro/" target="_blank">Pomodoro Timer <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h2>
-                        <p>This Pomodoro app helps you boost productivity by alternating focused work sessions with short cooldown breaks. Customize your timer durations, and enjoy seamless transitions between work and rest with automatic start features.</p>
+                        <p>This Pomodoro app helps you boost productivity by alternating focused work sessions with short cooldown breaks.</p>
                     </div>
                 </div>
-
+    
                 <div class="grid-item">
                     <img src="img/projects/quest-man.png" alt="">
-
+    
                     <div class="grid-item-copy">
                         <h2><a href="https://bramermatt.github.io/quest-man/" target="_blank">Quest-Man <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h2>
-                        <p>Dive into a dynamic Dungeons & Dragons adventure with our text-based web app. Enjoy a modern interface, randomized prompts, and interactive storytelling where every choice shapes your journey. Simple controls and endless possibilities make for an engaging, immersive experience.</p>
+                        <p>Dive into a dynamic Dungeons & Dragons adventure with our text-based web app.</p>
                     </div>
-                </div>
-
-                
-            </div>
-
-            <div class="timeline" id="writing">
-                <h1>Writing</h1>
-                <p>In my time of creating this website, I started writing blogs and book reviews. I love reading and I've recently been enjoying  writing. Below are some of my favorite blogs, reviews, and my best content!</p>
-
-                <h2>Recents</h2>
-                <div class="posts-slider">
-
-                    <div class="post">
-                        <a href="posts/2024-9-11-bookreview-deadlake-darcycoates.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>Dead Lake by Darcy Coates | Book Review</h3>
-                        <p>September 11, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-9-6-bookreview-thecolouroutofspace-hplovecraft.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>The Colour Out of Space by H.P. Lovecraft | Book Review</h3>
-                        <p>September 6, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-9-3-bookreview-acourofthornsandroses-sarahjmaas.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>A Court of Thorns and Roses by Sarah J. Maas | Book Review</h3>
-                        <p>September 3, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-9-3-bookreview-anenquiryconcerninghumanunderstanding-davidhume.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>An Enquiry Concerning Human Understanding by David Hume | Book Review</h3>
-                        <p>September 3, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-8-28-bookreview-commonsense-thomaspaine.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>Common Sense by Thomas Paine | Book Review</h3>
-                        <p>August 28, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-8-28-bookreview-thelionthewitchandthewardrobe-cslewis.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>The Lion, The Witch, and the Wardrobe by C.S. Lewis | Book Review</h3>
-                        <p>August 28, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-8-27-bookreview-thediaryofannefrank-annefrank.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>The Diary of a Young Girl by Anne Frank | Book Review</h3>
-                        <p>August 27, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-8-26-bookreview-theartofwar-suntzu.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>The Art of War by Sun Tzu | Book Review</h3>
-                        <p>August 26, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-8-21-bookreview-hamilton-ronchernow.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>Alexander Hamilton by Ron Chernow | Book Review</h3>
-                        <p>August 21, 2024</p>
-                        </a>
-                    </div>
-
-
-                    <div class="post">
-                        <a href="posts/2024-8-16-bookreview-johnadams-davidmccullough.html">
-                        <!-- <img src="img/book/johnadams-davidmcullough-cover.jpg" alt=""> -->
-                        <h3>John Adams by David McCullough | Book Review</h3>
-                        <p>August 16, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-8-13-bookreview-thegunslinger-stephenking.html">
-                        <!-- <img src="img/book/thegunslinger-stephenking.jpg" alt=""> -->
-                        <h3>The Gunslinger by Stephen King | Book Review</h3>
-                        <p>August 13, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-8-9-bookreview-washington-ronchernow.html">
-                        <!-- <img src="img/book/washington-ronchernow-cover.jpg" alt=""> -->
-                        <h3>Washington: A Life by Ron Chernow | Book Review</h3>
-                        <p>August 9, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-7-25-bookreview-ready-player-one-ernestcline.html">
-                        <!-- <img src="img/book/ready-player-one-earnestcline-book-cover.jpg" alt=""> -->
-                        <h3>Ready Player One by Ernest Cline | Book Review</h3>
-                        <p>July 25, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-7-25-bookreview-dune-messiah-frankherbert.html">
-                        <!-- <img src="img/book/dune-messiah.jpg" alt=""> -->
-                        <h3>Dune Messiah by Frank Herbert | Book Review</h3>
-                        <p>July 25, 2024</p>
-                        </a>
-                    </div>
-                    
-                    <div class="post">
-                        <a href="posts/2024-7-19-bookreview-bookshops-and-bonedust-travisbaldree.html">
-                        <!-- <img src="img/book/bookshops-and-bonedust-cover.jpeg" alt=""> -->
-                        <h3>Bookshops & Bonedust by Travis Baldree | Book Review</h3>
-                        <p>July 19, 2024</p>
-                        </a>
-                    </div>
-
-                    <div class="post">
-                        <a href="posts/2024-6-4-bookreview-dune-frankherbert.html">
-                        <!-- <img src="img/book/dune-cover.jpg" alt=""> -->
-                        <h3>Dune by Frank Herbert | Book Review</h3>
-                        <p>June 4, 2024</p>
-                        </a>
-                    </div>
-
-
-
-
-
-
-                </div>
-
-                <div class="post" style="margin-top: 2vh; margin-inline: 15px; border-radius: 10px;">
-                    <a href="pages/writings.html">
-                        <h2>More Writings <i class="fa-solid fa-arrow-up-right-from-square"></i></h2>
-                    </a>
                 </div>
 
             </div>
 
+
+
+            
         </div>
 
-        </div>
+
+        <div class="timeline" id="writing">
+
+            <h1>Writing</h1>
 
 
-    </main>
+            <div class="grid-two">
+                <div class="grid-item">
 
-    <footer>
-        <a href="index.html"><img src="img/icons/mLogo.png" alt=""></a>
-    </footer>
-
-
-    <script src="js/activeNav.js"></script>
-    <script src="js/thumbNav.js"></script>
+                    <div class="grid-item-copy">
+                        <h2><a href="posts/2014-11-11-videogamereview-watch-dogs.html">Watch Dogs (2014) Review</a></h2>
+                        <p>November 11, 2014</p>
+                    </div>
     
+                </div>
+    
+                <div class="grid-item">
+                    <div class="grid-item-copy">
+                        <h2><a href="pages/writings.html">More Writings <i class="fa-solid fa-arrow-up-right-from-square"></i></a></h2>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
 </body>
+
+
+<script src="js/navBar.js"></script>
+<script src="js/bioDates.js"></script>
+
 </html>
