@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <li><a href="${basePath}index.html#writing">Writing</a></li>
 
-          <li><a href="${basePath}index.html#in-reviews">In Reviews</a></li>
+          <li><a href="${basePath}pages/book-reviews.html">Book Reviews</a></li>
 
           <!-- <li><a href="#"><i class="fa-solid fa-magnifying-glass" id="search-icon"></i></a></li> -->
         </ul>
@@ -123,4 +123,6 @@ function toTopFunction() {
 document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+
 
