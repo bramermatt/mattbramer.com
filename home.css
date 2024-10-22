@@ -533,7 +533,7 @@ aside {
   z-index: 1;
 
   float: left;
-  /* max-width: 300px; */
+  max-width: 300px;
   padding: .5em;
   /* overflow: scroll; */
   /* max-height: 100vh; */
@@ -541,7 +541,7 @@ aside {
   transition: max-height 0.3s ease, background-color 0.3s ease; 
   /* overflow: hidden;  */
   /* box-shadow: 0 0 5px rgba(0,0,0,0.4); */
-  height: 85vh;
+  /* height: 85vh; */
   max-height: 100%;
   margin: 0 auto;
   
@@ -592,22 +592,35 @@ aside {
   overflow: hidden; /* Hide content when the dropdown is closed */
   transition: max-height 0.5s ease; /* Smooth slide down */
 
+  border-radius: 0 0 10px 10px ;
+
+  /* box-shadow: 0 0 5px rgba(0,0,0,0.4); */
+
       ul {
       list-style: none;
       padding: 0;
       /* margin: 10px 0; */
+
+      display: flex;
+      flex-wrap: wrap;
+      padding: .5em;
+      gap: .5em;
+
+
   }
 
   ul li a {
       color: white;
       text-decoration: none;
-      padding: .5em;
+      padding: .3em;
       display: block;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: #535353;
+      border-radius: .5em;
+      /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
   }
 
   ul li a:hover {
-      background-color: rgba(255, 255, 255, 0.1); /* Hover effect */
+      background-color: rgba(255, 255, 255, 0.4); /* Hover effect */
   }
 }
 
@@ -633,7 +646,7 @@ aside {
 
 /* Style for the active filter link */
 .filter-link.active {
-  background-color: #007bff; /* Change this to your desired active color */
+  background-color: #007bff !important; /* Change this to your desired active color */
   color: white; /* Change text color for better visibility */
 }
 
@@ -680,6 +693,13 @@ aside {
 
 
   .bookshelf {
+
+    justify-content: space-around;
+
+    .book-item {
+      width: 120px;
+      margin: 5px;
+    }
 
       .book-item:hover {
           transform: translateY(0);
@@ -990,7 +1010,7 @@ nav #menu-toggle {
     }
 
     .filter-link.active {
-      background-color: rgb(3, 189, 80); /* Change this to your desired active color */
+      background-color: rgb(0, 131, 55) !important; /* Change this to your desired active color */
       
     }
 
@@ -1151,7 +1171,7 @@ nav #menu-toggle {
 
 
     .filter-link.active {
-      background-color: rgb(3, 189, 80); /* Change this to your desired active color */
+      background-color: rgb(3, 189, 80) !important; /* Change this to your desired active color */
       
     }
 

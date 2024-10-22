@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <li><a href="${basePath}index.html#experience">Experience</a></li>
           <li><a href="${basePath}index.html#projects">Projects</a></li>
 
-          <li><a href="${basePath}index.html#writing">Writing</a></li>
+          <!-- <li><a href="${basePath}index.html#writing">Writing</a></li> -->
 
           <li><a href="${basePath}pages/book-reviews.html">Book Reviews</a></li>
 
