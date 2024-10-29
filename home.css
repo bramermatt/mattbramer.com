@@ -351,6 +351,13 @@ article {
 
   }
 
+  h3 {
+    max-width: 48.5ch;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 1.2;
+  }
+
   p {
     max-width: 60ch;
     margin-left: auto;

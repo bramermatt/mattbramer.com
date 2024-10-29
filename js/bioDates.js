@@ -23,12 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const myAge = calculateAge(myBirthDate);
     const ourWeddingDate = calculateAge(weddingDate);
     const sonAge = calculateAge(sonBirthDate);
-    const daughterAgeMonths = Math.floor((new Date() - daughterBirthDate) / (1000 * 60 * 60 * 24 * 31)); 
+    const daughterAge = calculateAge(daughterBirthDate);
+    // const daughterAgeMonths = Math.floor((new Date() - daughterBirthDate) / (1000 * 60 * 60 * 24 * 31)); 
     // Approximate months
 
     // Update the HTML with the calculated ages
     document.getElementById("my-age").textContent = myAge;
     document.getElementById("wedding-date").textContent = ourWeddingDate;
     document.getElementById("son-age").textContent = sonAge;
-    document.getElementById("daughter-age").textContent = daughterAgeMonths;
+    document.getElementById("daughter-age").textContent = daughterAge;
 });
