@@ -51,7 +51,18 @@ nav {
     justify-content: space-between;
   }
 
+#article-in-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: auto;
+  max-width: 70%;
+  width: 100%;
 
+  font-size: large;
+  font-weight: 900;
+
+  display: none;
+}
 
   .nav-links {
     list-style-type: none;
@@ -92,6 +103,7 @@ nav {
   footer {
     padding: 2em;
     margin-top: 10vh;
+    margin-bottom: 15vh;
 
 
     .foot-links {
@@ -218,6 +230,7 @@ nav {
 
         h1 {
             margin: 0;
+            margin-top: 1vh;
             /* padding: 0 .5em; */
 
         }
@@ -226,6 +239,9 @@ nav {
             margin: 0;
             /* padding: 0 1em; */
             max-width: 50ch;
+            margin-bottom: 0;
+            margin-top: 1vh;
+            line-height: 1.6em;
         }
     }
   }
@@ -238,7 +254,7 @@ nav {
     .timeline {
 
         h1 {
-            margin-top: 5vh;
+            margin-top: 6vh;
             margin-bottom: 6vh;
 /* 
             position: sticky;
@@ -263,7 +279,8 @@ nav {
 
         p {
           margin-bottom: 0;
-          margin-top: 1vh;
+          /* margin-top: 1vh; */
+          line-height: 1.6em;
         }
 
 
@@ -344,7 +361,7 @@ article {
   padding: 1em;
 
   h2 {
-    max-width: 38ch;
+    max-width: 550px;
     margin: 0 auto;
     line-height: 1.2;
 
@@ -352,17 +369,21 @@ article {
   }
 
   h3 {
-    max-width: 48.5ch;
+    max-width: 550px;
     margin: 0 auto;
     margin-top: 10px;
     line-height: 1.2;
   }
 
-  p {
-    max-width: 60ch;
+  p, ul {
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+  }
+
+  li {
+    margin-bottom: 10px;
   }
 
   details {
@@ -372,7 +393,7 @@ article {
       font-size: large;
       font-weight: 600;
 
-      max-width: 60ch;
+      max-width: 550px;
       /* margin: 2em auto; */
 
       padding: 1em;
@@ -399,6 +420,18 @@ article {
 
 
 
+}
+
+blockquote {
+  font-size: small;
+  opacity: 60%;
+  border-left: thick solid;
+  padding-left: 1vw;
+  margin: 10px;
+  font-style: oblique;
+
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 
@@ -428,7 +461,7 @@ article {
 
 
 
-  #art-caption{
+  #art-caption {
     font-size: small;
     opacity: 60%;
     border-left: thick solid;
@@ -660,6 +693,8 @@ aside {
 /* Make sure aside isn't sticky on larger screens */
 @media (max-width: 900px) {
 
+
+
   aside {
       max-width: 100vw !important;
       width: 100%;
@@ -810,6 +845,15 @@ aside {
         color: #f39c12;
       } */
 
+    }
+
+    #article-in-title {
+      display: block;
+    }
+
+    .navbar {
+      justify-content: start;
+      gap: 5vw;
     }
   
     .nav-links.active {

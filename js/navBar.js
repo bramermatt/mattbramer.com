@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
                       currentPath.includes("/pages/") || 
                       currentPath.includes("/articles/")) 
                      ? "../" : "";
+
+    // Retrieve the article title from the <title> tag
+    const articleTitleText = document.title || "Default Title";
   
     const navbarHTML = `
 <nav>
@@ -15,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="logo">
         <a href="${basePath}index.html"><img src="${basePath}img/icons/mLogo.png" alt=""></a>
     </div>
+
+    <div id="article-in-title">${articleTitleText}</div>
     
         <ul class="nav-links">
           <li><a href="${basePath}index.html">Home</a></li>
@@ -48,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <div class="social">
             <a href="https://github.com/bramermatt" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/bramermatt" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.threads.net/@bramermatt" target="_blank"><i class="fa-brands fa-square-threads"></i></a>
             <a href="https://www.instagram.com/bramermatt/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
 
