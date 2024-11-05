@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         <div class="social">
+
             <a href="https://github.com/bramermatt" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://x.com/bramermatt" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.threads.net/@bramermatt" target="_blank"><i class="fa-brands fa-square-threads"></i></a>

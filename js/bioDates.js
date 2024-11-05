@@ -12,21 +12,29 @@ document.addEventListener("DOMContentLoaded", function () {
         return age;
     }
 
-    // Dates of birth
-    const myBirthDate = new Date(1996, 10, 7); // Replace with your birth date
-    const weddingDate = new Date(2018, 7, 7); // Replace with your wedding date
+    // Function to calculate age in months if under 1 year
+    function calculateMonths(birthDate) {
+        const today = new Date();
+        const diffTime = today - birthDate;
+        const diffMonths = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30.44)); // Approximate average month length
+        return diffMonths;
+    }
 
-    const sonBirthDate = new Date(2020, 4, 2); // Replace with your son's birth date
-    const daughterBirthDate = new Date(2023, 10, 19); // Replace with your daughter's birth date
+    // Dates of birth
+    const myBirthDate = new Date(1996, 9, 7); // October 7 1996
+    const weddingDate = new Date(2018, 6, 7); // July 7, 2018
+
+    const sonBirthDate = new Date(2020, 3, 2); // April 2, 2020
+    const daughterBirthDate = new Date(2023, 9, 19); // October 19, 2023
 
     // Calculate ages
     const myAge = calculateAge(myBirthDate);
     const ourWeddingDate = calculateAge(weddingDate);
     const sonAge = calculateAge(sonBirthDate);
-    const daughterAge = calculateAge(daughterBirthDate);
-    // const daughterAgeMonths = Math.floor((new Date() - daughterBirthDate) / (1000 * 60 * 60 * 24 * 31)); 
-    // Approximate months
-
+    
+    // Check if daughter is under 1 year
+    const daughterAge = calculateAge(daughterBirthDate) === 0 ? calculateMonths(daughterBirthDate) + " months" : "1";
+    
     // Update the HTML with the calculated ages
     document.getElementById("my-age").textContent = myAge;
     document.getElementById("wedding-date").textContent = ourWeddingDate;

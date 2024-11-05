@@ -102,7 +102,7 @@ nav {
 
   footer {
     padding: 2em;
-    margin-top: 10vh;
+    margin-top: 15vh;
     margin-bottom: 15vh;
 
 
@@ -153,7 +153,7 @@ nav {
           }
 
           i {
-            font-size: 3vh;
+            font-size: 4vh;
             margin-bottom: 1vh;
           }
         }
@@ -164,20 +164,20 @@ nav {
 
     }
 
-
-
     .social {
         display: flex;
         justify-content: space-around;
-        gap: 2vw;
+        gap: 1vw;
         width: 100%;
         max-width: 40ch;
         margin: 0 auto;
-    
+
+        
         i {
-            font-size: 4vh;
-            color: white;
+          font-size: 3.5vh;
+          margin-bottom: 1vh;
         }
+    
       }
 
   }
