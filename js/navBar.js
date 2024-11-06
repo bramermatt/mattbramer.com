@@ -15,9 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbarHTML = `
 <nav>
 <div class="navbar">
+
+    <i class="fa-solid fa-bars" id="menu-toggle"></i>
+
     <div class="logo">
         <a href="${basePath}index.html"><img src="${basePath}img/icons/mLogo.png" alt=""></a>
     </div>
+
+
 
     <div id="article-in-title">${articleTitleText}</div>
     
@@ -36,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         <!-- <i class="fa-solid fa-magnifying-glass" id="search-icon"></i> -->
-        <i class="fa-solid fa-bars" id="menu-toggle"></i>
+
         
 
 </div>
@@ -47,23 +52,55 @@ document.addEventListener("DOMContentLoaded", function () {
     const footerHTML = `
 <footer>
 
+    <div class="foot-links">
+
+    <div class="foot-group">
+        <h1>Blogs</h1>
+        <ul>
+        <li><a href="">all</a></li>
+        <li><a href="">bike commute</a></li>
+        <li><a href="">school</a></li>
+        </ul>
+    </div>
+
+    <div class="foot-group">
+        <h1>Reviews</h1>
+        <ul>
+        <li><a href="">all</a></li>
+        <li><a href="">in reviews</a></li>
+        </ul>
+    </div>
+
+        <div class="foot-group">
+        <h1>Videos</h1>
+        <ul>
+        <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank">all</a></li>
+        
+        </ul>
+    </div>
 
 
 
 
+
+
+
+    <div class="foot-group">
+    <h1>Follow Me</h1>
         <div class="social">
+            <ul>
+            <li><a href="https://github.com/bramermatt" target="_blank"><i class="fa-brands fa-github"></i> Github</a></li>
+            <li><a href="https://x.com/bramermatt" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.threads.net/@bramermatt" target="_blank"><i class="fa-brands fa-square-threads"></i> Threads</a></li>
+            <li><a href="https://www.instagram.com/bramermatt/" target="_blank"><i class="fa-brands fa-square-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.goodreads.com/user/show/145996417-matthew-bramer" target="_blank"><i class="fa-brands fa-goodreads"></i> GoodReads</a></li>
+            <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+            <li><a href="https://linktr.ee/Ministryinthemess" target="_blank"><i class="fa-solid fa-podcast"></i> Podcast</a></li>
 
-            <a href="https://github.com/bramermatt" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://x.com/bramermatt" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.threads.net/@bramermatt" target="_blank"><i class="fa-brands fa-square-threads"></i></a>
-            <a href="https://www.instagram.com/bramermatt/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-
-            <a href="https://www.goodreads.com/user/show/145996417-matthew-bramer" target="_blank"><i class="fa-brands fa-goodreads"></i></a>
-
-            <a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-
-            <a href="https://linktr.ee/Ministryinthemess" target="_blank"><i class="fa-solid fa-podcast"></i></a>
+            </div>
         </div>
+
+    </div>
 </footer> 
 
     `
