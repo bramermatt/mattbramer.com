@@ -16,16 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
 <nav>
 <div class="navbar">
 
-    <i class="fa-solid fa-bars" id="menu-toggle"></i>
+            <i class="fa-solid fa-bars" id="menu-toggle"></i>
 
     <div class="logo">
         <a href="${basePath}index.html"><img src="${basePath}img/icons/mLogo.png" alt=""></a>
+        /
+        <div id="article-in-title">${articleTitleText}</div>
     </div>
 
-
-
-    <div id="article-in-title">${articleTitleText}</div>
-    
+   
         <ul class="nav-links">
           <li><a href="${basePath}index.html">Home</a></li>
           <li><a href="${basePath}index.html#about">About</a></li>
@@ -40,11 +39,20 @@ document.addEventListener("DOMContentLoaded", function () {
         </ul>
 
 
-        <!-- <i class="fa-solid fa-magnifying-glass" id="search-icon"></i> -->
 
         
 
+
+        <!-- <i class="fa-solid fa-magnifying-glass" id="search-icon"></i> -->
 </div>
+
+<!-- <div class="navbar">
+        <ul>
+        <li><a href="">testing</a></li>
+        </ul>
+</div> -->
+
+
 </nav>
 
     `;
@@ -54,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <div class="foot-links">
 
+    <!-- 
     <div class="foot-group">
         <h1>Blogs</h1>
         <ul>
@@ -78,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         </ul>
     </div>
+    -->
 
 
 
@@ -96,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <li><a href="https://www.goodreads.com/user/show/145996417-matthew-bramer" target="_blank"><i class="fa-brands fa-goodreads"></i> GoodReads</a></li>
             <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
             <li><a href="https://linktr.ee/Ministryinthemess" target="_blank"><i class="fa-solid fa-podcast"></i> Podcast</a></li>
+            </ul>
 
             </div>
         </div>
@@ -105,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     `
 
-    const thumbNav =  `
+     const thumbNav =  `
     <ul class="thumbNav">
         <li onclick="toTopFunction()" id="toTop" title="Go to top">
         <a href="#">
@@ -117,8 +128,8 @@ document.addEventListener("DOMContentLoaded", function () {
     `
   
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
-    document.body.insertAdjacentHTML('beforeend', footerHTML);
-    document.body.insertAdjacentHTML('beforeend', thumbNav);
+    // document.body.insertAdjacentHTML('beforeend', footerHTML);
+    // document.body.insertAdjacentHTML('beforeend', thumbNav);
   
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.querySelector(".nav-links");
@@ -167,6 +178,7 @@ function toTopFunction() {
 document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
 
 
 
