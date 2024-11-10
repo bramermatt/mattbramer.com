@@ -60,10 +60,11 @@ nav {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 35ch;
+  
   width: 100%;
-  font-size: large;
-  /* font-weight: 600; */
+  max-width: 45vw;
+  /* font-size: large; */
+  font-weight: 600;
 
   /* display: none; */
 }
@@ -228,9 +229,15 @@ nav {
 
 
   .profile {
-    max-width: 70ch;
+    max-width: 90ch;
     margin: 0 auto;
     padding: 1em;
+
+    p {
+      margin-bottom: 0;
+      /* margin-top: 1vh; */
+      line-height: 1.6em;
+    }
 
     img {
         max-width: 100%;
@@ -303,8 +310,52 @@ nav {
     }
   }
 
+  .two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+  }
+
+  .topic-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+  }
+
+  .scrollable {
+    overflow: scroll;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+
+    .scroll-item {
+      padding: 1em;
+      border: thin solid;
+      border-radius: 10px;
+
+      white-space: nowrap;
+
+      h1 {
+        margin: 0;
+        font-size: medium;
+      }
+
+      a:link, a:visited {
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  /* @media screen and (max-width: 900px) {
+    .scrollable {
+      flex-direction: column;
+    }
+  } */
+
   .content-timeline {
-    max-width: 70ch;
+    max-width: 75ch;
     margin: 0 auto;
     padding: 1em;
 
@@ -489,7 +540,8 @@ blockquote {
   /* font-style: oblique; */
 
   max-width: 500px;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 10px;
 }
 
 
@@ -750,6 +802,10 @@ aside {
 
 /* Make sure aside isn't sticky on larger screens */
 @media (max-width: 900px) {
+
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
 
 
 
