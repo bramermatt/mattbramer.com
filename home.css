@@ -347,7 +347,7 @@ nav {
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 2vw;
+    gap: 4vw;
     padding: 1em;
     /* max-width: 1800px; */
     margin: 0 auto;
