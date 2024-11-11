@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const articleTitleText = document.title || "Default Title";
   
     const navbarHTML = `
-<nav>
-<div class="navbar">
+<nav id="nav-bar">
+<div class="navbar" >
 
             <i class="fa-solid fa-bars" id="menu-toggle"></i>
 
@@ -27,13 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
    
         <ul class="nav-links">
           <li><a href="${basePath}index.html">Home</a></li>
-          <li><a href="${basePath}index.html#about">About</a></li>
-          <li><a href="${basePath}index.html#experience">Experience</a></li>
+          <!-- <li><a href="${basePath}index.html#about">About</a></li> -->
+
           <li><a href="${basePath}index.html#projects">Projects</a></li>
 
           <!-- <li><a href="${basePath}index.html#writing">Writing</a></li> -->
+          <li><a href="${basePath}pages/blogs.html">Blogs</a></li>
 
           <li><a href="${basePath}pages/book-reviews.html">Book Reviews</a></li>
+          <li><a href="${basePath}pages/movie-reviews.html">Movie Reviews</a></li>
+
+        <!-- <li><a href="${basePath}index.html#experience">Experience</a></li> -->
 
           <!-- <li><a href="#"><i class="fa-solid fa-magnifying-glass" id="search-icon"></i></a></li> -->
         </ul>
@@ -159,26 +163,50 @@ document.addEventListener("DOMContentLoaded", function () {
 });
   
 
-//Get the button:
-mybutton = document.getElementById("toTop");
+// Toggle functionality for mobile menu
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+const links = navLinks.querySelectorAll("a");
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  menuToggle.classList.toggle("fa-xmark", menuToggle.classList.contains("fa-bars"));
+  menuToggle.classList.toggle("fa-bars", !menuToggle.classList.contains("fa-xmark"));
+});
 
-function scrollFunction() {
-if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-    mybutton.style.display = "block";
-} else {
-    mybutton.style.display = "none";
-}
-}
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuToggle.classList.remove("fa-xmark");
+    menuToggle.classList.add("fa-bars");
+  });
+});
 
-// When the user clicks on the button, scroll to the top of the document
-function toTopFunction() {
-document.body.scrollTop = 0; // For Safari
-document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+// Scroll-to-top button
+const toTopButton = document.createElement('div');
+toTopButton.innerHTML = `<a href="#" onclick="toTopFunction()"><i class="fa fa-arrow-up"></i></a>`;
+toTopButton.classList.add("thumbNav");
+document.body.appendChild(toTopButton);
 
+window.onscroll = function () {
+  toTopButton.style.display = (window.scrollY > 40) ? "block" : "none";
+};
 
+// Smooth scroll-to-top function
+window.toTopFunction = function() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
+  // Navbar hide on scroll down, show on scroll up
+  let lastScrollY = window.scrollY;
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+      navbar.classList.add('hidden'); // Hide navbar when scrolling down
+    } else {
+      navbar.classList.remove('hidden'); // Show navbar when scrolling up
+    }
+    lastScrollY = window.scrollY;
+  });
 
