@@ -1297,7 +1297,7 @@ nav #menu-toggle {
 
     .foot-group {
 
-      ul li a:visited, .foot-links a:link {
+      ul li a:visited, .foot-links a:link, .foot-links a:visited {
          color: black !important;
          
          font-weight: bolder;
@@ -1484,7 +1484,7 @@ nav #menu-toggle {
 
       .foot-group {
   
-        ul li a:visited, .foot-links a:link {
+        ul li a:visited, .foot-links a:link, .foot-links a:visited {
            color: rgb(255, 255, 255) !important;
         }
   
