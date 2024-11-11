@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `
   
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
-    // document.body.insertAdjacentHTML('beforeend', footerHTML);
+    document.body.insertAdjacentHTML('beforeend', footerHTML);
     // document.body.insertAdjacentHTML('beforeend', thumbNav);
   
     const menuToggle = document.getElementById("menu-toggle");

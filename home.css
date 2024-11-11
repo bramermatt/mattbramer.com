@@ -124,9 +124,9 @@ nav {
   footer {
     padding: 1em;
 
-    max-width: 1000px;
+    max-width: max-content;
     margin: 0 auto;
-    margin-top: 15vh;
+    margin-top: 5vh;
     margin-bottom: 2vh;
 
 
@@ -136,10 +136,11 @@ nav {
       margin: 0 auto;
 
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      /* justify-content: space-between; */
       /* gap: 2vw 2vh; */
-      flex-wrap: wrap;
-      margin-bottom: 8vh;
+      /* flex-wrap: wrap; */
+      /* margin-bottom: 8vh; */
 
 
       .foot-group {
@@ -188,22 +189,22 @@ nav {
 
         .social {
           display: flex;
-          justify-content: space-around;
+          /* justify-content: space-around; */
           gap: 1vw;
           width: 100%;
-          max-width: 40ch;
+          /* max-width: 30ch; */
           margin: 0 auto;
   
           ul {
             display: flex;
-            justify-content: inherit;
+            /* justify-content: inherit; */
             flex-wrap: wrap;
             gap: 1vw;
 
             li a {
               display: flex;
               flex-direction: column;
-              gap: .5vw;
+              /* gap: .5vw; */
               align-items: center;
             }
           }
@@ -338,6 +339,47 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1em;
+  }
+
+  .scrollable-headlines {
+    overflow: scroll;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 2vw;
+    padding: 1em;
+    /* max-width: 1800px; */
+    margin: 0 auto;
+
+    border-bottom: thin solid;
+
+
+
+    .headline {
+      white-space: nowrap;
+
+      a:link, a:visited {
+        text-decoration: none;
+
+      }
+      
+    }
+
+
+
+  }
+
+  .headline-icon {
+    background-color: white;
+    border-right: thin solid;
+    padding-right: 1em;
+    position: absolute;
+    /* padding: 1em; */
+  }
+
+  .scrollable-headlines::-webkit-scrollbar {
+    display: none;
   }
 
   .scrollable {
@@ -485,12 +527,13 @@ nav {
 article {
 
   padding: 1em;
+  max-width: 1000px;
+  margin: 0 auto;
 
   h2 {
     max-width: 550px;
     margin: 0 auto;
     line-height: 1.2;
-
 
   }
 
@@ -552,14 +595,14 @@ blockquote {
   font-size: small;
   opacity: 80%;
   border-left: thick solid;
-  padding: 0em 2em;
+  padding: 0em 1em;
   padding-left: 2vw;
   margin: 10px;
   /* font-style: oblique; */
 
-  max-width: 500px;
+  max-width: 550px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 
@@ -675,8 +718,9 @@ blockquote {
 
   .book-item {
     transition: transform 0.3s ease;
-    width: 180px; 
-    height: fit-content;
+    max-width: 180px; 
+    width: max-content;
+    height: max-content;
     margin: 10px;
     text-align: center;
     
@@ -696,14 +740,17 @@ blockquote {
   }
 
   h1 {
-    padding: .2em .5em;
+    padding: .5em 0 .2em .5em;
     line-height: 1;
     margin: 0;
     text-align: left;
+    white-space: inherit;
+    font-size: large;
+    /* overflow: auto; */
   }
 
   p {
-    padding: .2em 1em 1em;
+    padding: .2em .5em 1em;
     margin: 0;
     text-align: left;
   }
@@ -748,33 +795,33 @@ aside {
       list-style-type: none;
   }
 
-  /* Additional styling for the button and header */
-      .aside-header {
+/* Additional styling for the button and header */
+  .aside-header {
+      display: flex;
+      justify-content: space-between;
+      
+      align-items: center;
+      padding: .5em;
+      background-color: #111;
+      color: white;
+      gap: 2vw;
+
+      border-radius: 10px 10px 0 0;
+
+      
+
+      .aside-topic {
           display: flex;
-          justify-content: space-between;
-          
-          align-items: center;
-          padding: .5em;
-          background-color: #111;
-          color: white;
+          align-content: center;
           gap: 2vw;
-
-          border-radius: 10px 10px 0 0;
-
-          
-
-          .aside-topic {
-              display: flex;
-              align-content: center;
-              gap: 2vw;
-          }
-
-          #selected-filter, #filterBreadCrumb {
-              display: none;
-          }
-
-
       }
+
+      #selected-filter, #filterBreadCrumb {
+          display: none;
+      }
+
+
+    }
 }
 
 #bookshelf-full {
@@ -846,6 +893,32 @@ aside {
   color: white; /* Change text color for better visibility */
 }
 
+
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.35%; 
+
+  box-shadow: 4px 4px 0px rgb(88, 88, 88);
+  border: thin solid;
+}
+
+iframe, video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+
+  /* border-radius: 10px; */
+
+}
+
 /* Make sure aside isn't sticky on larger screens */
 @media (max-width: 900px) {
 
@@ -909,6 +982,22 @@ aside {
 
 
   }
+
+}
+
+@media screen and (max-width: 250px) {
+  
+  .bookshelf {
+
+    flex-direction: column;
+
+    .book-item {
+      width: 90%;
+    }
+
+
+  }
+
 
 }
 
@@ -1095,12 +1184,26 @@ aside {
 
 @media screen and (prefers-color-scheme: light) {
   
-  nav {
+  nav, .scrollable-headlines {
     background-color: white;
 
     border-bottom: thin solid #eee;
 
   }
+
+  .scrollable-headlines > .headline > a:link, a:visited {
+    font-weight: 600;
+    opacity: 70%;
+    color: rgb(0, 112, 47);
+
+  }
+
+  .scrollable-headlines > .headline > a:hover {
+    opacity: 100%;
+    text-decoration: underline;
+  }
+  
+
 
   .title {
     border-bottom: thin solid #eee;
@@ -1279,11 +1382,32 @@ nav #menu-toggle {
 @media screen and (prefers-color-scheme: dark) {
     
 
-    nav {
+    nav, .scrollable-headlines {
         background-color: rgba(20, 20, 20, 0.99);
 
-        border-bottom: thin solid rgb(109, 109, 109);
+        border-bottom: thin solid rgb(58, 58, 58);
     }
+
+    .scrollable-headlines {
+
+      .headline {
+
+        a:link, a:visited {
+          font-weight: 600;
+          opacity: 70%;
+          color: rgb(1, 235, 98);
+      
+        }
+
+      } 
+
+    }
+  
+    .scrollable-headlines > .headline > a:hover {
+      opacity: 100%;
+      text-decoration: underline;
+    }
+    
 
     .title {
       border-bottom: thin solid rgb(109, 109, 109);
@@ -1295,7 +1419,7 @@ nav #menu-toggle {
         text-decoration: none;
         color: rgb(255, 255, 255);
   
-        background-color: rgb(0, 112, 47);
+        background-color: rgb(0, 160, 67);
       }
   }
 
