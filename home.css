@@ -344,10 +344,12 @@ nav {
   .scrollable-headlines {
     overflow: scroll;
 
+  
+
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 4vw;
+    gap: 2vw;
     padding: 1em;
     /* max-width: 1800px; */
     margin: 0 auto;
@@ -415,7 +417,7 @@ nav {
   } */
 
   .content-timeline {
-    max-width: 75ch;
+    max-width: 650px;
     margin: 0 auto;
     padding: 1em;
 
@@ -478,14 +480,31 @@ nav {
         img {
             /* padding: .5em; */
             max-width: 100%;
+            margin-bottom: 1em;
+            border: thin solid;
 
-            margin-top: 5vh;
+            /* margin-top: 5vh; */
 
-            display: none;
+            /* display: none; */
         }
 
         h2 {
           font-size: large;
+        }
+
+        ul {
+          padding: 0;
+          list-style-type: none;
+
+          display: flex;
+          gap: 1vw;
+
+          li {
+            padding: .5em;
+            border: thin solid;
+            border-radius: 10px;
+          }
+
         }
 
 
@@ -1297,7 +1316,7 @@ nav #menu-toggle {
 
     .foot-group {
 
-      ul li a:visited, .foot-links a:link, .foot-links a:visited {
+      ul li a:visited, .foot-links ul li a:link, .foot-links ul li a:visited {
          color: black !important;
          
          font-weight: bolder;
@@ -1484,7 +1503,7 @@ nav #menu-toggle {
 
       .foot-group {
   
-        ul li a:visited, .foot-links a:link, .foot-links a:visited {
+        ul li a:visited, .foot-links ul li a:link, .foot-links ul li a:visited {
            color: rgb(255, 255, 255) !important;
         }
   
