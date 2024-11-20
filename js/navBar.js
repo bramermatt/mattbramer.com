@@ -30,14 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
           <!-- <li><a href="${basePath}index.html#about">About</a></li> -->
 
           <li><a href="${basePath}index.html#projects">Projects</a></li>
+          <li><a href="${basePath}index.html#experience">Experience</a></li>
 
-          <!-- <li><a href="${basePath}index.html#writing">Writing</a></li> -->
-          <li><a href="${basePath}pages/blogs.html">Blogs</a></li>
+          <!-- <li><a href="${basePath}pages/writings.html">Writing</a></li> -->
+          
+          <!-- <li><a href="${basePath}pages/blogs.html">Blogs</a></li>
 
           <li><a href="${basePath}pages/book-reviews.html">Book Reviews</a></li>
           <li><a href="${basePath}pages/movie-reviews.html">Movie Reviews</a></li>
 
-        <!-- <li><a href="${basePath}index.html#experience">Experience</a></li> -->
+           -->
 
           <!-- <li><a href="#"><i class="fa-solid fa-magnifying-glass" id="search-icon"></i></a></li> -->
         </ul>
@@ -65,39 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
 <footer>
 
     <div class="foot-links">
-
-    <!-- 
-    <div class="foot-group">
-        <h1>Blogs</h1>
-        <ul>
-        <li><a href="">all</a></li>
-        <li><a href="">bike commute</a></li>
-        <li><a href="">school</a></li>
-        </ul>
-    </div>
-
-    <div class="foot-group">
-        <h1>Reviews</h1>
-        <ul>
-        <li><a href="">all</a></li>
-        <li><a href="">in reviews</a></li>
-        </ul>
-    </div>
-
-        <div class="foot-group">
-        <h1>Videos</h1>
-        <ul>
-        <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank">all</a></li>
-        
-        </ul>
-    </div>
-    -->
-
-
-
-
-
-
 
     <div class="foot-group">
     <h1>Follow Me</h1>

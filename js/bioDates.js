@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const daughterAge = calculateAge(daughterBirthDate) === 0 ? calculateMonths(daughterBirthDate) + " months" : "1";
     
     // Update the HTML with the calculated ages
-    document.getElementById("my-age").textContent = myAge;
-    document.getElementById("wedding-date").textContent = ourWeddingDate;
-    document.getElementById("son-age").textContent = sonAge;
-    document.getElementById("daughter-age").textContent = daughterAge;
+    document.getElementById("matt-age").textContent = myAge;
+    document.getElementById("matt-wedding-date").textContent = ourWeddingDate;
+    document.getElementById("matt-son-age").textContent = sonAge;
+    document.getElementById("matt-daughter-age").textContent = daughterAge;
 });

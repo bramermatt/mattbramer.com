@@ -50,7 +50,7 @@ nav {
   }
 
   .navbar {
-    max-width: 1600px;
+    max-width: 1200px;
     margin: 0 auto;
 
     display: flex;
@@ -177,6 +177,10 @@ nav {
 
             a:hover {
               opacity: 100%;
+            }
+
+            a:link, a:visited {
+              color: black;
             }
   
           }
@@ -758,7 +762,7 @@ blockquote {
       /* box-shadow: 0 0px 3px rgba(0, 0, 0, 0.5); */
   }
 
-  h1 {
+  h1, h2 {
     padding: .5em 0 .2em .5em;
     line-height: 1;
     margin: 0;
@@ -767,6 +771,8 @@ blockquote {
     font-size: large;
     /* overflow: auto; */
   }
+
+
 
   p {
     padding: .2em .5em 1em;
