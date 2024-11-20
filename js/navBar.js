@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <li><a href="${basePath}index.html#projects">Projects</a></li>
           <li><a href="${basePath}index.html#experience">Experience</a></li>
 
+          <li><a href="${basePath}index.html#writting-log">Articles</a></li>
+
           <!-- <li><a href="${basePath}pages/writings.html">Writing</a></li> -->
           
           <!-- <li><a href="${basePath}pages/blogs.html">Blogs</a></li>
