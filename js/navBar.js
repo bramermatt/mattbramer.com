@@ -16,12 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
 <nav id="nav-bar">
 <div class="navbar" >
 
-            <i class="fa-solid fa-bars" id="menu-toggle"></i>
+      <!-- <i class="fa-solid fa-bars" id="menu-toggle"></i> -->
 
     <div class="logo">
         <a href="${basePath}index.html"><img src="${basePath}img/icons/mLogo.png" alt=""></a>
+        
+        <!-- 
         /
         <div id="article-in-title">${articleTitleText}</div>
+        -->
+
     </div>
 
    

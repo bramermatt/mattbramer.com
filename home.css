@@ -26,7 +26,7 @@ nav {
     max-width: 100%;
     margin: 0 auto;
 
-    position: sticky;
+    /* position: sticky; */
     top: -1px;
     z-index: 10;
 
@@ -40,7 +40,7 @@ nav {
 
         img {
             max-width: 100%;
-            max-height: 4vh;
+            max-height: 3vh;
 
             display: flex;
             align-items: center;
@@ -50,7 +50,7 @@ nav {
   }
 
   .navbar {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
 
     display: flex;
@@ -191,35 +191,7 @@ nav {
           }
         }
 
-        .social {
-          display: flex;
-          /* justify-content: space-around; */
-          gap: 1vw;
-          width: 100%;
-          /* max-width: 30ch; */
-          margin: 0 auto;
-  
-          ul {
-            display: flex;
-            /* justify-content: inherit; */
-            flex-wrap: wrap;
-            gap: 1vw;
 
-            li a {
-              display: flex;
-              flex-direction: column;
-              /* gap: .5vw; */
-              align-items: center;
-            }
-          }
-  
-          
-          i {
-            font-size: 3vh;
-            /* margin-bottom: 1vh; */
-          }
-      
-        }
   
   
   
@@ -244,92 +216,42 @@ nav {
     }
   }
 
-
-  .profile {
-    max-width: 1000px;
+  .social {
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 1vw;
+    width: 100%;
+    /* max-width: 30ch; */
     margin: 0 auto;
-    padding: 1em;
 
-    p {
-      margin-bottom: 0;
-      /* margin-top: 1vh; */
-      line-height: 1.6em;
-    }
+    ul {
+      display: flex;
+      /* justify-content: inherit; */
+      flex-wrap: wrap;
+      gap: 1vw;
+      padding: 0;
 
-    img {
-        max-width: 100%;
-        max-height: 60vh;
-        border-radius: 10px;
-        margin-top: 1vh;
-    }
+      list-style-type: none;
 
-    .bio-info {
-
-      .social {
+      li a {
         display: flex;
-        justify-content: space-around;
-        gap: 2vw;
-        width: 100%;
-        max-width: 30ch;
-        margin: 0;
-        margin-top: 1vh;
-    
-        i {
-            font-size: 4vh;
-            color: white;
-        }
+        
+        flex-direction: column;
+        /* gap: .5vw; */
+        align-items: center;
+        text-decoration: none;
+        font-size: small;
       }
     }
 
-    /* .timeline h1 {
-        margin:0;
-    } */
-
-    .bio {
-
-        h1 {
-            margin: 0;
-            margin-top: 1vh;
-            /* padding: 0 .5em; */
-
-        }
-
-         p {
-            margin: 0;
-            /* padding: 0 1em; */
-            max-width: 50ch;
-            margin-bottom: 0;
-            margin-top: 1vh;
-            line-height: 1.6em;
-        }
-
-        ul {
-          list-style-type: none;
-          display: flex;
-          flex-wrap: wrap;
-          /* justify-content: center; */
-          gap: 1vw;
-          padding: 0;
-
-          li {
-            gap: 1vw;
-            display: flex;
-            justify-content: center;
-
-            a {
-              /* display: flex; */
-              flex-direction: column;
-              padding: .2em;
-
-              a:link,a:visited {
-                color: inherit;
-              }
-
-            }
-          }
-        }
+    
+    i {
+      font-size: 3vh;
+      /* margin-bottom: 1vh; */
     }
+
   }
+  
 
   .two-columns {
     display: grid;
@@ -340,7 +262,7 @@ nav {
   }
 
   .topic-section {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 1em;
   }
@@ -421,7 +343,7 @@ nav {
   } */
 
   .content-timeline {
-    max-width: 650px;
+    max-width: 550px;
     margin: 0 auto;
     padding: 1em;
 
@@ -471,7 +393,7 @@ nav {
     .grid-two {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2vw;
+      gap: 1vw;
     }
 
     .grid-item {
@@ -483,7 +405,9 @@ nav {
 
         img {
             /* padding: .5em; */
-            max-width: 100%;
+            width: 100%;
+            max-height: 10vh;
+            object-fit: cover;
             margin-bottom: 1em;
             border: thin solid;
 
@@ -514,8 +438,115 @@ nav {
 
       }
 
+      .profile {
+        max-width: 900px;
+        margin: 0 auto;
+
+        margin-bottom: 10vh;
+        /* padding: 1em; */
+    
+        h1, h2, h3 {
+          margin: 0;
+        }
+    
+        h2 {
+          opacity: 80%;
+          font-size: medium;
+        }
+    
+        p {
+          margin-bottom: 0;
+          /* margin-top: 1vh; */
+          line-height: 1.6em;
+        }
+    
+        img {
+            max-width: 100%;
+            max-width: 50vw;
+            max-height: 30vh;
+            border-radius: 50%;
+            margin-top: 1vh;
+        }
+    
+        .bio-info {
+    
+          .social {
+            display: flex;
+            justify-content: space-around;
+            gap: 2vw;
+            width: 100%;
+            max-width: 30ch;
+            margin: 0;
+            margin-top: 1vh;
+        
+            i {
+                font-size: 4vh;
+                color: white;
+            }
+          }
+        }
+
+        .social {
+          
+        }
+    
+        /* .timeline h1 {
+            margin:0;
+        } */
+    
+        .bio {
+    
+            h1 {
+                margin: 0;
+                margin-top: 1vh;
+                /* padding: 0 .5em; */
+    
+            }
+    
+             p {
+                margin: 0;
+                /* padding: 0 1em; */
+                max-width: 50ch;
+                margin-bottom: 0;
+                margin-top: 1vh;
+                line-height: 1.6em;
+            }
+    
+            ul {
+              list-style-type: none;
+              display: flex;
+              flex-wrap: wrap;
+              /* justify-content: center; */
+              gap: 1vw;
+              padding: 0;
+    
+              li {
+                gap: 1vw;
+                display: flex;
+                justify-content: center;
+    
+                a {
+                  /* display: flex; */
+                  flex-direction: column;
+                  padding: .2em;
+    
+                  a:link,a:visited {
+                    color: inherit;
+                  }
+    
+                }
+              }
+            }
+        }
+
+
+
+      }
+
 
   }
+
+  
 
   .thumbNav {
     position: fixed;
@@ -951,6 +982,12 @@ iframe, video {
     grid-template-columns: 1fr;
   }
 
+  .social {
+    ul {
+      gap: 2vw;
+    }
+  }
+
 
 
   aside {
@@ -1093,6 +1130,7 @@ iframe, video {
 @media screen and (max-width: 920px) {
 
   .navbar {
+    justify-content: space-around;
 
     .logo {
       gap: 3vw;
@@ -1101,7 +1139,10 @@ iframe, video {
   }
 
     .nav-links {
-      position: fixed;
+
+      gap: 1vw;
+
+      /* position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -1112,8 +1153,7 @@ iframe, video {
       justify-content: center;
       align-items: center;
       transform: scale(0);
-      /* transition: transform 0.2s ease; */
-      z-index: 100;
+      z-index: 100; */
 
       li {
         margin: 1vh 0;
@@ -1121,9 +1161,10 @@ iframe, video {
 
       a {
         color: white;
-        font-size: 20px;
+        /* font-size: 20px; */
         text-decoration: none;
         transition: color 0.3s ease;
+        font-size: medium;
       }
 
       /* a:hover {
@@ -1134,11 +1175,6 @@ iframe, video {
 
     #article-in-title {
       display: block;
-    }
-
-    .navbar {
-      justify-content: start;
-      gap: 5vw;
     }
   
     .nav-links.active {
@@ -1212,7 +1248,7 @@ iframe, video {
   nav, .scrollable-headlines {
     background-color: white;
 
-    border-bottom: thin solid #eee;
+    /* border-bottom: thin solid #eee; */
 
   }
 
@@ -1322,6 +1358,10 @@ nav #menu-toggle {
 
     .foot-group {
 
+      a:link, a:visited {
+        color: black;
+      }
+
       ul li a:visited, .foot-links ul li a:link, .foot-links ul li a:visited {
          color: black !important;
          
@@ -1410,7 +1450,7 @@ nav #menu-toggle {
     nav, .scrollable-headlines {
         background-color: rgba(20, 20, 20, 0.99);
 
-        border-bottom: thin solid rgb(58, 58, 58);
+        /* border-bottom: thin solid rgb(58, 58, 58); */
     }
 
     .scrollable-headlines {
@@ -1508,6 +1548,10 @@ nav #menu-toggle {
       border-top: thin solid #3b3b3b;
 
       .foot-group {
+
+        a:link, a:visited {
+          color: white;
+        }
   
         ul li a:visited, .foot-links ul li a:link, .foot-links ul li a:visited {
            color: rgb(255, 255, 255) !important;
