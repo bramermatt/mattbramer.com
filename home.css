@@ -984,8 +984,16 @@ iframe, video {
   }
 
   .social {
+
+    justify-content: space-around;
+    flex-wrap: wrap;
+
     ul {
-      gap: 3vw;
+      gap: 4vw;
+    }
+
+    i {
+      font-size: 5vh;
     }
   }
 
