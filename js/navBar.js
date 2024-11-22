@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
    
         <ul class="nav-links">
-          <li><a href="${basePath}index.html">Home</a></li>
-          <!-- <li><a href="${basePath}index.html#about">About</a></li> -->
+          <!--<li><a href="${basePath}index.html">Home</a></li>
+           <li><a href="${basePath}index.html#about">About</a></li> -->
 
           <li><a href="${basePath}index.html#projects">Projects</a></li>
           <li><a href="${basePath}index.html#experience">Experience</a></li>
