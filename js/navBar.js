@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   `;
 
   // Insert the navbar, progress bar, footer, and scroll-to-top button
-  document.body.insertAdjacentHTML('afterbegin', navbarHTML + progressBarHTML);
+  document.body.insertAdjacentHTML('afterbegin', navbarHTML + progressBarHTML + articleThumbHTML);
   document.body.insertAdjacentHTML('beforeend', scrollButtonHTML);
 
   // Scroll-to-top functionality
@@ -100,3 +100,56 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize progress bar on page load (this will ensure it updates immediately on load)
   updateProgressBar();  // Call to set the initial value
 });
+
+
+// Add the thumbnail template to the body
+const articleThumbHTML = `
+  <div class="articleTitleThumb">
+    <img src="" alt="Article Image" id="thumbImage">
+    <div>
+      <h1 id="titleThumb"></h1>
+      <p id="dateThumb"></p>
+
+    </div>
+      <!-- <div id="moreLikeThis">
+      <a href="#">More Like This</a>
+      </div> -->
+  </div>
+`;
+
+
+document.body.insertAdjacentHTML('beforeend', articleThumbHTML);
+const articleThumb = document.querySelector('.articleTitleThumb');
+
+// Get elements in the article
+const titleElement = document.querySelector('#article-title');
+const dateElement = document.querySelector('#date');
+const imageElement = document.querySelector('#art img');
+
+// Populate thumbnail with data from the article
+const titleThumb = document.querySelector('#titleThumb');
+const dateThumb = document.querySelector('#dateThumb');
+const thumbImage = document.querySelector('#thumbImage');
+
+if (titleElement) titleThumb.textContent = titleElement.textContent.trim();
+if (dateElement) dateThumb.textContent = dateElement.textContent.trim();
+if (imageElement) thumbImage.src = imageElement.src;
+
+// Use IntersectionObserver to track visibility of the title
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            // Show thumbnail when title is out of view
+            articleThumb.style.display = 'flex';
+        } else {
+            // Hide thumbnail when title is in view
+            articleThumb.style.display = 'none';
+        }
+    });
+}, {
+    root: null, // Use the viewport as the container
+    threshold: 0.1 // Trigger when 10% of the title is visible
+});
+
+// Observe the title element
+if (titleElement) observer.observe(titleElement);
