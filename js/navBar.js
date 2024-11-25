@@ -105,15 +105,23 @@ document.addEventListener("DOMContentLoaded", function () {
 // Add the thumbnail template to the body
 const articleThumbHTML = `
   <div class="articleTitleThumb">
-    <img src="" alt="Article Image" id="thumbImage">
-    <div>
+
+      <img src="" alt="Article Image" id="thumbImage">
+
+    <div class="titleThumb">
       <h1 id="titleThumb"></h1>
       <p id="dateThumb"></p>
+      <!-- <br> -->
+
+      <a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
 
     </div>
+
       <!-- <div id="moreLikeThis">
       <a href="#">More Like This</a>
       </div> -->
+
+
   </div>
 `;
 
