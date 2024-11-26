@@ -850,8 +850,8 @@ blockquote {
   #article-title {
     font-weight: 700;
     font-size: x-large;
-    line-height: 1;
-    padding-bottom: .5em;
+    line-height: 1.3em;
+    /* padding-bottom: .5em; */
   }
 
   .release {

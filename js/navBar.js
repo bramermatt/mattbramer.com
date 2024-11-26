@@ -111,7 +111,7 @@ const articleThumbHTML = `
     <div class="titleThumb">
       <h1 id="titleThumb"></h1>
       <p id="dateThumb"></p>
-      <!-- <br> -->
+      <br>
 
       <a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
 
