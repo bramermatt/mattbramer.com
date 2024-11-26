@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const articleThumbHTML = `
   <div class="articleTitleThumb">
 
-      <img src="" alt="Article Image" id="thumbImage">
+    <img src="" alt="Article Image" id="thumbImage">
 
     <div class="titleThumb">
       <h1 id="titleThumb"></h1>
