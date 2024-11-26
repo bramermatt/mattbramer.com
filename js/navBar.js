@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       progressBar.style.width = `${scrollPercentage}%`;
 
       // Update color dynamically based on progress
-      progressBar.style.background = scrollPercentage < 33 ? "red" : scrollPercentage < 66 ? "yellow" : "green";
+      progressBar.style.background = scrollPercentage < 33 ? "green" : scrollPercentage < 66 ? "dark yellow" : "green";
   }
 
   // Initialize progress bar on page load (this will ensure it updates immediately on load)
@@ -156,7 +156,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, {
     root: null, // Use the viewport as the container
-    threshold: 0.1 // Trigger when 10% of the title is visible
+    threshold: 0.2 // Trigger when 10% of the title is visible
 });
 
 // Observe the title element

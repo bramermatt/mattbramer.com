@@ -16,7 +16,7 @@ body {
 
 
     font-family: system-ui;
-    font-family: Merriweather;
+    /* font-family: Merriweather; */
     /* font-family: math; */
 }
 
@@ -419,13 +419,14 @@ blockquote, figcaption {
     padding-left: 10px;
     border-left: thick solid;
     max-width: 550px;
-    font-size: smaller;
+    /* font-size: smaller; */
     margin-top: 15px !important;
     margin-bottom: 15px !important;
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    line-height: 1.6;
+    line-height: 1.2;
+    
 }
 
 

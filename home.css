@@ -22,13 +22,15 @@ html {
 
 nav {
 
-    padding: 2em;
+    padding: 1em 2em;
     max-width: 100%;
     margin: 0 auto;
 
-    /* position: sticky; */
-    top: -1px;
-    z-index: 10;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    box-shadow: 0px 0px 2px grey;
 
    
 
@@ -344,7 +346,7 @@ nav {
 
   .articleTitleThumb {
     position: fixed;
-    top: 10px;
+    top: 5px;
     left: 0;
     right: 0;
     /* background-color: rgb(255,255,255, .99); */
@@ -360,7 +362,8 @@ nav {
     display: none;
     z-index: 1000;
     overflow: hidden;
-    max-width: 700px;
+    max-width: 1000px;
+    transition: 2ms ease-in-out;
 
 
 
@@ -387,6 +390,7 @@ nav {
     h1 {
       font-size: 16px;
       margin: 0;
+      
   }
 
   p {
@@ -436,7 +440,7 @@ nav {
 
 
     width: 100%;
-    height: 10px;
+    height: 5px;
     /* background-color: #f3f3f3; */
 
     overflow: hidden;
@@ -450,7 +454,8 @@ nav {
 .progress-bar {
     height: 100%;
     width: 0;
-    background: linear-gradient(to right, red, yellow, green);
+    background:  green;
+    opacity: 50%;
     /* border-radius: 15px; */
     transition: width 0.3s ease;
 }
@@ -464,6 +469,18 @@ nav {
     padding: 1em;
 
     margin-bottom: 10vh;
+
+    .item {
+      margin-bottom: 2vh;
+
+      h2 {
+        font-size: large;
+
+        border-left: thick solid;
+        padding-left: 1.5vw;
+      }
+
+    }
 
     .timeline {
 
@@ -702,7 +719,7 @@ article {
   padding: 1em;
   max-width: 1000px;
   margin: 0 auto;
-  margin-bottom: 8vh;
+  /* margin-bottom: 8vh; */
 
   h2 {
     max-width: 550px;
@@ -731,12 +748,15 @@ article {
 
   details {
 
+    max-width: 550px;
+
     summary {
       cursor: pointer;
       font-size: large;
       font-weight: 600;
 
-      max-width: 550px;
+      max-width: 600px;
+      margin: 0 auto;
       /* margin: 2em auto; */
 
       padding: 1em;
@@ -758,7 +778,8 @@ article {
   details[open] {
     border-radius: 10px;
 
-    padding-bottom: 2vh;
+    /* padding-bottom: 2vh; */
+    margin-bottom: 2vh;
   }
 
 
@@ -766,11 +787,11 @@ article {
 }
 
 blockquote {
-  font-size: small;
+  font-size: medium;
   opacity: 80%;
   border-left: thick solid;
   padding: 0em 1em;
-  padding-left: 2vw;
+  padding-left: 1vw;
   margin: 10px;
   /* font-style: oblique; */
 
@@ -1529,7 +1550,7 @@ nav #menu-toggle {
     }
 
     details {
-      max-width: 60ch;
+      /* max-width: 60ch; */
       margin: 0 auto;
 
       summary {
@@ -1726,7 +1747,7 @@ nav #menu-toggle {
       }
 
       details {
-        max-width: 60ch;
+        /* max-width: 60ch; */
         margin: 0 auto;
 
         summary {
