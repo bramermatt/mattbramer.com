@@ -22,7 +22,7 @@ html {
 
 nav {
 
-    padding: 1em 2em;
+    padding: 1em;
     max-width: 100%;
     margin: 0 auto;
 
@@ -52,7 +52,8 @@ nav {
   }
 
   .navbar {
-    max-width: 800px;
+    /* max-width: 800px; */
+    max-width: 2000px;
     margin: 0 auto;
 
     display: flex;
@@ -128,8 +129,8 @@ nav {
 
     max-width: max-content;
     margin: 0 auto;
-    margin-top: 5vh;
-    margin-bottom: 2vh;
+    margin-top: 3vh;
+    margin-bottom: 12vh;
 
 
     .foot-links {
@@ -362,9 +363,8 @@ nav {
     display: none;
     z-index: 1000;
     overflow: hidden;
-    max-width: 1000px;
+    max-width: 650px;
     transition: 2ms ease-in-out;
-
 
 
     /* gap: 1vw; */
@@ -380,10 +380,16 @@ nav {
       margin-right: 10px;
 
       /* display: none; */
+
       
   }
 
   .titleThumb {
+    /* width: max-content;
+    max-width: fit-content;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; */
 
     /* padding: 8px; */
 
@@ -405,6 +411,9 @@ nav {
 
 
 }
+
+
+
 
 @media screen and (max-width: 800px) {
   .articleTitleThumb {
@@ -470,14 +479,22 @@ nav {
 
     margin-bottom: 10vh;
 
+    h1 {
+      padding: 1em 0;
+    }
+
     .item {
       margin-bottom: 2vh;
 
-      h2 {
+
+
+      h4 {
         font-size: large;
 
         border-left: thick solid;
+        padding: 0;
         padding-left: 1.5vw;
+        
       }
 
     }
@@ -689,6 +706,7 @@ nav {
     bottom: 5vh;
     right: 2vw;
     z-index: 5;
+    margin: 0;
 
     ul, li {
         padding: 0;
@@ -698,17 +716,127 @@ nav {
 
     a:link, a:visited {
         color: white;
-    }
+        background: lightgrey;
 
-    i:hover {
-      opacity: 100%;
+        opacity: 80%;
+        padding: .5em;
+        border-radius: 10%;
+
+        display: flex;
+        align-items: center;
+        text-decoration: none;
     }
 
     i {
-        font-size: 4vh;
-        /* padding: .5em; */
-        opacity: 50%;
+      font-size: 3vh;
+      /* padding: 1em; */
+      /* padding: .5em; */
+      opacity: 50%;
+  }
+
+    a:hover, i:hover {
+      opacity: 100%;
     }
+
+
+  }
+
+
+  .thumbContents {
+    position: fixed;
+    left: 2vw;
+    bottom: 5vh;
+    z-index: 5;
+    margin: 0;
+    max-width: 35ch;
+    overflow-y: scroll;
+    max-height: 82vh;
+
+
+
+
+
+    .toc-toggle {
+      /* background: #007bff; */
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+    
+    ul, li {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+  }
+
+    a:link, a:visited {
+        color: white;
+        background: lightgrey;
+
+        opacity: 80%;
+        padding: .5em;
+        border-radius: 10%;
+
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    i {
+      font-size: 3vh;
+      opacity: 50%;
+  }
+
+    a:hover, i:hover {
+      opacity: 100%;
+    }
+
+    .dropup .toc-list {
+      display: none;
+      position: absolute;
+      bottom: 40px;
+      right: 0;
+      background: white;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      list-style: none;
+      padding: 10px;
+      border-radius: 5px;
+      max-height: 200px;
+      overflow-y: auto;
+
+      background-color: white;
+      padding: .2em .5em;
+  }
+
+  .toc-list {
+    background-color: white;
+    border: thin solid;
+    padding: .5em;
+    margin-bottom: 5px;
+
+    border-radius: 10px;
+
+    
+  }
+
+  .toc-list li {
+    /* margin: 5px 0; */
+  }
+
+  .toc-list li a {
+      text-decoration: none;
+      color: rgb(1, 92, 39);
+      background: none;
+  }
+
+  .toc-list li a.active {
+      font-weight: bold;
+      color: rgb(2, 155, 66);
+  }
+
   }
 
 
@@ -725,6 +853,8 @@ article {
     max-width: 550px;
     margin: 0 auto;
     line-height: 1.2;
+    padding: 1em 0 0;
+    /* padding-top: 2vh; */
 
   }
 
@@ -1103,6 +1233,7 @@ aside {
 
   box-shadow: 4px 4px 0px rgb(88, 88, 88);
   border: thin solid;
+  margin-top: 2vh;
 }
 
 iframe, video {
@@ -1397,7 +1528,7 @@ iframe, video {
 
 @media screen and (prefers-color-scheme: light) {
   
-  nav, .scrollable-headlines, .progress-container, .articleTitleThumb {
+   nav, .scrollable-headlines, .progress-container, .articleTitleThumb {
     background-color: white;
 
     /* border-bottom: thin solid #eee; */
@@ -1450,7 +1581,7 @@ nav #menu-toggle {
 }
 
 
-  .thumbNav {
+  .thumbNav, .thumbContents {
     i {
         /* background-color: rgba(255, 255, 255, 0.5); */
         color: black;
@@ -1648,10 +1779,16 @@ nav #menu-toggle {
       box-shadow: 0 2px 1px #303030b2;
     }
 
-    .thumbNav {
+    .thumbNav, .thumbContents {
+
+      a:link, a:visited {
+        background-color: #535353;
+      }
+      
         i {
-            background-color: rgba(20, 20, 20, .5);
+          color: rgb(175, 175, 175);
         }
+
     }
 
     .profile, .articleTitleThumb {
@@ -1796,6 +1933,25 @@ nav #menu-toggle {
       
     }
 
+    .thumbContents {
+
+      .toc-list {
+        background-color: #0e0e0e;
+        border: none;
+        border: thin solid rgb(34, 34, 34);
+      }
+
+      .toc-list li a {
+        color: rgb(0, 168, 70);
+        font-weight: 500;
+    }
+  
+    .toc-list li a.active {
+        color: rgb(0, 211, 88);
+    }
+
+    }
+
 }
 
 
@@ -1804,3 +1960,22 @@ nav #menu-toggle {
 
 
 
+@media screen and (max-width: 1200px) and (prefers-color-scheme: light) {
+
+  nav {
+    background: white;
+    box-shadow: 0px 0px 2px grey;
+  }
+
+  
+}
+
+@media screen and (max-width: 1200px) and (prefers-color-scheme: dark) {
+
+  nav {
+    background: rgb(0, 0, 0);
+    box-shadow: 0px 0px 2px grey;
+  }
+
+  
+}
