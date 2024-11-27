@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h1>Follow Me</h1>
                 <div class="social">
                     <ul>
-                        <li><a href="https://github.com/bramermatt" target="_blank"><i class="fa-brands fa-github"></i> Github</a></li>
-                        <li><a href="https://x.com/bramermatt" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
-                        <li><a href="https://www.threads.net/@bramermatt" target="_blank"><i class="fa-brands fa-square-threads"></i> Threads</a></li>
-                        <li><a href="https://www.instagram.com/bramermatt/" target="_blank"><i class="fa-brands fa-square-instagram"></i> Instagram</a></li>
-                        <li><a href="https://www.goodreads.com/user/show/145996417-matthew-bramer" target="_blank"><i class="fa-brands fa-goodreads"></i> GoodReads</a></li>
-                        <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
-                        <li><a href="https://linktr.ee/Ministryinthemess" target="_blank"><i class="fa-solid fa-podcast"></i> Podcast</a></li>
+                        <li><a href="https://github.com/bramermatt" target="_blank"><i class="fa-brands fa-github"></i> </a></li>
+                        <li><a href="https://x.com/bramermatt" target="_blank"><i class="fa-brands fa-x-twitter"></i> </a></li>
+                        <li><a href="https://www.threads.net/@bramermatt" target="_blank"><i class="fa-brands fa-square-threads"></i> </a></li>
+                        <!-- <li><a href="https://www.instagram.com/bramermatt/" target="_blank"><i class="fa-brands fa-square-instagram"></i> </a></li> -->
+                        <li><a href="https://www.goodreads.com/user/show/145996417-matthew-bramer" target="_blank"><i class="fa-brands fa-goodreads"></i> </a></li>
+                        <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-brands fa-youtube"></i> </a></li>
+                        <li><a href="https://linktr.ee/Ministryinthemess" target="_blank"><i class="fa-solid fa-podcast"></i> </a></li>
                     </ul>
                 </div>
             </div>
@@ -67,12 +67,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const articleThumbHTML = `
     <div class="articleTitleThumb">
-        <img src="" alt="Article Image" id="thumbImage">
+
+        <img src="" alt="Image" id="thumbImage">
+
         <div class="titleThumb">
             <h1 id="titleThumb"></h1>
             <p id="dateThumb"></p>
-            <br>
-            <a href="../index.html"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+        </div>
+
+        <div class="titleButtons">
+        <a href="../index.html">
+            <button id="homeButton"><i class="fa-solid fa-house"></i></button>
+        </a>
+        
+        <!-- <button id=""><i class="fa-solid fa-circle-info"></i></button> -->
+
+        <button id="hideButton"><i class="fa-solid fa-eye-slash"></i></button>
         </div>
     </div>
     `;
@@ -171,5 +181,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.target.tagName === 'A') {
             tocList.style.display = 'none'; // Hide the TOC after clicking a link
         }
+    });
+
+    // Add event listener for hide button
+    document.getElementById('hideButton').addEventListener('click', function() {
+        const articleContainer = document.querySelector('.articleTitleThumb');
+        articleContainer.style.display = articleContainer.style.display === 'none' ? 'block' : 'none';
     });
 });
