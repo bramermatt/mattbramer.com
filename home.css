@@ -1778,7 +1778,7 @@ nav #menu-toggle {
 @media screen and (prefers-color-scheme: dark) {
     
 
-    nav, .scrollable-headlines {
+    .scrollable-headlines {
         background-color: rgba(20, 20, 20, 0.99);
 
         /* border-bottom: thin solid rgb(58, 58, 58); */
@@ -1819,7 +1819,7 @@ nav #menu-toggle {
       }
   }
 
-    body, .nav-links.active, .progress-container, .articleTitleThumb {
+    nav, body, .nav-links.active, .progress-container, .articleTitleThumb {
         background-color: rgba(20, 20, 20);
     }
 
