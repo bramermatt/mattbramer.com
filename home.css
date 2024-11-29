@@ -26,11 +26,11 @@ nav {
     max-width: 100%;
     margin: 0 auto;
 
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 1;
 
-    box-shadow: 0px 0px 2px grey;
+    /* box-shadow: 0px 0px 2px grey; */
 
    
 
@@ -1819,7 +1819,7 @@ nav #menu-toggle {
       }
   }
 
-    nav, body, .nav-links.active, .progress-container, .articleTitleThumb {
+     body, .nav-links.active, .progress-container, .articleTitleThumb {
         background-color: rgba(20, 20, 20);
     }
 
@@ -2020,9 +2020,10 @@ nav #menu-toggle {
 
 @media screen and (max-width: 1200px) and (prefers-color-scheme: dark) {
 
-  nav {
+  /* nav {
     background: rgb(0, 0, 0);
-    box-shadow: 0px 0px 2px grey;
+    box-shadow: 0px 0px 2px grey; */
+    
   }
 
   
