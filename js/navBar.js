@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Insert HTML into DOM
     document.body.insertAdjacentHTML('afterbegin', navbarHTML + progressBarHTML + articleThumbHTML);
-    document.body.insertAdjacentHTML('beforeend', scrollButtonHTML + tableOfHTML + footerHTML);
+    // document.body.insertAdjacentHTML('beforeend', scrollButtonHTML + tableOfHTML + footerHTML);
 
     // TOC functionality
     const tocContainer = document.getElementById('tableOfContents');
