@@ -1599,6 +1599,10 @@ iframe, video {
           /* flex-direction: column; */
         }
 
+        .grid-item-copy {
+          padding: .5em;
+        }
+
       }
     }
 
