@@ -52,6 +52,14 @@ nav {
 
   }
 
+  @media screen and (min-width: 1600px) {
+
+    nav {
+      position: sticky;
+    }
+
+  }
+
   .navbar {
     /* max-width: 800px; */
     max-width: 2000px;
@@ -1638,7 +1646,7 @@ iframe, video {
 
 @media screen and (prefers-color-scheme: light) {
   
-   nav, .scrollable-headlines, .progress-container, .articleTitleThumb {
+    .scrollable-headlines, .progress-container, .articleTitleThumb {
     background-color: white;
 
     /* border-bottom: thin solid #eee; */
