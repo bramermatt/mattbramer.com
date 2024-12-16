@@ -2086,6 +2086,7 @@ nav #menu-toggle {
 }
 .tooltip {
   visibility: hidden;
+  display: none;
   max-width: 550px;
   width: max-content;
   background-color: #000000;
@@ -2116,6 +2117,7 @@ nav #menu-toggle {
     border-width: 5px;
     border-style: solid;
     border-color: #000000 transparent transparent transparent;
+
     opacity: 100% !important;
   }
   
@@ -2123,6 +2125,7 @@ nav #menu-toggle {
     visibility: visible;
     opacity: 100% !important;
     pointer-events: all;
-  
+    display: block;
+    box-shadow: 0px 0px 1px white;
   }
 }
