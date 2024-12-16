@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const basePath = (currentPath.includes("/posts/") ||
         currentPath.includes("/img/") ||
         currentPath.includes("/pages/") ||
+        currentPath.includes("/writing/") ||
         currentPath.includes("/articles/"))
         ? "../" : "";
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Stand of Alden's Hollow</title>
+
+
+    <meta name="color-scheme" content="light dark"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icons/mLogo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT7HPHGVJJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XT7HPHGVJJ');
+    </script>
+
+        <!-- menu icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../home.css">
+
+</head>
+<body>
+
+    <div class="epic">
+
+        <div class="epic-title">
+
+            <div class="epic-cover">
+                <img src="../img/writing/The Last Stand of Alden’s Hollow - cover dec 2024.png" alt="">
+            </div>
+
+            <div>
+                <h1>The Last Stand of Alden's Hollow</h1>
+                <p>Set in the world of Eldrisia, Captain Gohark leads his company on a dangerous mission to reclaim Alden’s Hollow from a renegade force of Giants. As they face brutal terrain, relentless battles, and rising tensions within the group, Gohark must balance survival with the cost of leadership.</p>
+
+                <div>
+                    <h2>Current Writing Status</h2>
+                    <div class="writing-progress-container">
+                        <span id="currentWordCount" class="word-count">0</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span id="goalWordCount" class="word-count">0</span>
+                    </div>
+                
+                    <p id="progressText">0% Complete</p>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+// Predefined word count and goal
+const currentWordCount = 4998;  // Example word count
+const wordGoal = 30000;
+
+function updateProgress() {
+    const percentage = Math.min((currentWordCount / wordGoal) * 100, 100).toFixed(2);
+
+    const progressFill = document.getElementById("progressFill");
+    const progressText = document.getElementById("progressText");
+    const currentWordText = document.getElementById("currentWordCount");
+    const goalWordText = document.getElementById("goalWordCount");
+
+    progressFill.style.width = `${percentage}%`;
+    progressText.textContent = `${percentage}% Complete`;
+
+    currentWordText.textContent = currentWordCount;
+    goalWordText.textContent = wordGoal;
+}
+
+// Automatically update on page load
+window.onload = updateProgress;
+
+
+    </script>
+
+    
+
+    
+    <script src="../js/navBar.js"></script>
+    
+</body>
+</html>
