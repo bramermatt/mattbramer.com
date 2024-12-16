@@ -188,4 +188,23 @@ document.addEventListener("DOMContentLoaded", function () {
         const articleContainer = document.querySelector('.articleTitleThumb');
         articleContainer.style.display = articleContainer.style.display === 'none' ? 'block' : 'none';
     });
+
+
+
+
 });
+
+const script = document.createElement('script');
+script.src = "https://www.biblegateway.com/public/link-to-us/tooltips/bglinks.js";
+script.type = "text/javascript";
+document.head.appendChild(script);
+
+script.onload = function() {
+    if (typeof BGLinks !== "undefined") {
+        BGLinks.version = "NASB";
+        BGLinks.linkVerses();
+    }
+};
+
+
+
