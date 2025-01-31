@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <nav id="navbar">
         <div class="navbar">
             <div class="nav-item" onclick="window.location.href='${basePath}index.html'">
-                <i class="fas fa-home"></i> <strong>Home</strong>
+                <i class="fas fa-home"></i> Home
             </div>
             <span class="separator">|</span>
             <div class="nav-item" onclick="window.location.href='${basePath}pages/articles.html'">
