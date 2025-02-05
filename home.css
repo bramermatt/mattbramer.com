@@ -56,6 +56,8 @@ nav {
 
 }
 
+
+
   /* @media screen and (min-width: 1600px) {
 
     nav {
@@ -2274,3 +2276,9 @@ nav #menu-toggle {
   }
 }
 
+@media screen and (max-width: 550px) {
+  nav {
+      width: 95%
+  }
+  
+}
