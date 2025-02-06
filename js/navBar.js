@@ -12,11 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="navbar">
             <div class="nav-left">
             <div class="nav-item" onclick="window.location.href='${basePath}index.html'">
-                <i class="fas fa-home"></i> Home
+                <i class="fas fa-home"></i> 
+                <!-- Home -->
             </div>
             <span class="separator">|</span>
-            <div class="nav-item" onclick="window.location.href='${basePath}pages/articles.html'">
-                <i class="fas fa-file-alt"></i> Articles
+            <div class="nav-item" onclick="window.location.href='${basePath}index.html#articles'">
+                <i class="fas fa-file-alt"></i> 
+                Articles
             </div>
             </div>
 
@@ -50,10 +52,17 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <div class="nav-item">
+                <a href="https://x.com/bramermatt" target="_blank" class="social-icon" title="x(twitter)">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+
+            <!-- <div class="nav-item">
                 <a href="https://www.threads.net/@bramermatt" target="_blank" class="social-icon" title="threads">
                     <i class="fab fa-threads"></i>
                 </a>
-            </div>
+            </div> -->
+
             <div class="nav-item">
                 <a href="https://www.youtube.com/@MattBramer" target="_blank" class="social-icon" title="youtube">
                     <i class="fab fa-youtube"></i>
