@@ -90,7 +90,7 @@ a:hover {
 
 nav {
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     margin: 1% auto;
 
     /* position: sticky;
@@ -122,6 +122,10 @@ nav {
         padding: 5px 10px;
         border-radius: 5px;
         transition: background 0.2s;
+
+        i {
+            font-size: 3vh;
+        }
     }
     .nav-item:hover {
         opacity: 50%;

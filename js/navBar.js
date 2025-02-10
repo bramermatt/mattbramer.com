@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <span class="separator">|</span>
             <div class="nav-item" onclick="window.location.href='${basePath}index.html#articles'">
                 <i class="fas fa-file-alt"></i> 
-                Articles
+                <!-- Articles -->
             </div>
             </div>
 
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             
-            <div class="nav-item social-links">
+           <!-- <div class="nav-item social-links">
                 <a href="https://github.com/bramermatt" target="_blank" class="social-icon" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
             </div>
 
-            <!-- <div class="nav-item">
+             <div class="nav-item">
                 <a href="https://www.threads.net/@bramermatt" target="_blank" class="social-icon" title="threads">
                     <i class="fab fa-threads"></i>
                 </a>
