@@ -2228,12 +2228,7 @@ nav #menu-toggle {
   }
 }
 
-@media screen and (max-width: 550px) {
-  nav {
-      width: 95%
-  }
-  
-}
+
 
 
 nav {
@@ -2288,4 +2283,11 @@ nav {
       display: none;
   }
 
+}
+
+@media screen and (max-width: 550px) {
+  nav {
+      width: 95%
+  }
+  
 }
