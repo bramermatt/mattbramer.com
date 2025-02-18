@@ -961,7 +961,7 @@ article {
   /* margin-bottom: 8vh; */
 
   h2 {
-    max-width: 550px;
+    max-width: 500px;
     margin: 0 auto;
     line-height: 1.2;
     padding: 1em 0 0;
@@ -970,14 +970,14 @@ article {
   }
 
   h3, h4 {
-    max-width: 550px;
+    max-width: 500px;
     margin: 0 auto;
     margin-top: 10px;
     line-height: 1.2;
   }
 
   p, ul {
-    max-width: 550px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
@@ -1082,7 +1082,7 @@ blockquote {
   img {
     max-width: 100%;
     border-radius: 10px;
-    max-height: 60vh;
+    max-height: 50vh;
   }
 
 
