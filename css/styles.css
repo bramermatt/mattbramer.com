@@ -175,11 +175,146 @@ nav {
 }
 
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    /* text-align: center; */
+    margin: 2%;
+
+    input, button {
+        font-size: large;
+        border: none;
+        /* cursor: pointer; */
+        padding: .5em;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        opacity: 80%;
+    }
+    
+}
+
+.close {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 6vh;
+    cursor: pointer;
+    color: white;
+}
+
+.highlight {
+    background-color: yellow; /* Highlight color */
+    transition: background-color 0.3s ease; /* Smooth transition for the highlight */
+}
+
+#searchResults {
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.search-result {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-result:hover {
+    background-color: #ddd;
+}
+
+/* Style for the scroll-to-top button */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #0056b3;
+}
+
+.scroll-to-top-btn:focus {
+    outline: none;
+}
+
+
+@media screen and (prefers-color-scheme: light) {
+    nav {
+        position: sticky;
+        top: 10px;
+        z-index: 1;
+        background-color: white;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    nav {
+        position: sticky;
+        top: 10px;
+        z-index: 1;
+        background-color: black;
+        border-radius: 10px;
+    }
+
+    .highlight {
+        background-color: rgb(129, 129, 0); /* Highlight color */
+      }
+    
+      .modal-content {
+        background: rgb(61, 61, 61);
+      }
+
+      #searchResults {
+        background-color: rgb(83, 83, 83);
+      }
+
+      .search-result:hover {
+        background-color: #000000;
+    }
+}
+
+
 
 
 @media screen and (max-width: 550px) {
     nav {
-        width: 95%
+        width: 95%;
+        bottom: 1vh;
+        position: fixed;
+        top: 90vh;
+        right: .5vw;
+        left: .5vw;
 
     }
 
