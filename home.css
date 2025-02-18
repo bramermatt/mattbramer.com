@@ -2451,7 +2451,7 @@ main {
       width: 95%;
       bottom: 1vh;
       position: sticky;
-      top: 90vh;
+      /* top: 90vh; */
       right: .5vw;
       left: .5vw;
 
