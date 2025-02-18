@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 Home
             </div>
             <span class="separator">|</span>
+                <div class="nav-item" onclick="window.location.href='${basePath}index.html#projects'">
+                <!-- <i class="fas fa-file-alt"></i>  -->
+                Projects
+            </div>
             <div class="nav-item" onclick="window.location.href='${basePath}index.html#articles'">
                 <!-- <i class="fas fa-file-alt"></i>  -->
                 Articles

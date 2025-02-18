@@ -5,18 +5,7 @@ html, body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#background-gradient {
-    pointer-events: none;
-    background-image: url(../img/background/hyper-blur.jpg);
-    background-size: 200%;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
+
 
 main {
     padding: 0;
@@ -176,33 +165,16 @@ nav {
     max-width: 80%;
 }
 
+.right {
+    text-align: right;
+}
+
 .theme-toggle {
     margin-left: auto;
     cursor: pointer;
 }
 
-/* .dark-mode {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-}
 
-.dark-mode .navbar {
-    background-color: #000000;
-}
-
-.dark-mode .nav-item {
-    color: rgb(255,255,255);
-}
-
-.dark-mode .theme-toggle i {
-    color: rgb(255,255,255);
-}
-
-
-.light-mode {
-    background: rgb(0, 0, 0);
-    color: rgb(255,255,255);
-} */
 
 
 @media screen and (max-width: 550px) {
@@ -211,15 +183,5 @@ nav {
 
     }
 
-    #background-gradient {
-        background-size: cover;
-    }
 }
 
-@media screen and (prefers-color-scheme: dark) {
-    
-    body, a:link, a:visited {
-        color: black;
-    }
-    
-}

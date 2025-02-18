@@ -1991,7 +1991,7 @@ nav #menu-toggle {
       }
   }
 
-     body, .nav-links.active, .progress-container, .articleTitleThumb {
+     .nav-links.active, .progress-container, .articleTitleThumb {
         background-color: rgba(20, 20, 20);
     }
 
