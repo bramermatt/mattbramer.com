@@ -5,18 +5,25 @@ html, body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* body {
+#background-gradient {
     pointer-events: none;
     background-image: url(../img/background/hyper-blur.jpg);
     background-size: 200%;
-    background-position: center center;
-    background-repeat: repeat;
-    width: 110vw;
-    height: 110%;
-    position: absolute;
-    top: -50px;
-    left: -50px;
-} */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+main {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    /* min-height: 100vh; */
+}
 
 
 
@@ -86,6 +93,14 @@ section {
         font-size: medium;
     }
 
+    h4 {
+        margin: 0;
+        line-height: 1.2;
+        font-size: medium;
+        opacity: 100%;
+    }
+
+
     i {
         font-size: 2vh;
     }
@@ -105,6 +120,8 @@ nav {
     width: 100%;
     max-width: 550px;
     margin: 1% auto;
+    z-index: 10;
+    position: relative;
 
     /* position: sticky;
     top: 10px;
@@ -155,6 +172,10 @@ nav {
 
 }
 
+.item {
+    max-width: 80%;
+}
+
 .theme-toggle {
     margin-left: auto;
     cursor: pointer;
@@ -187,6 +208,18 @@ nav {
 @media screen and (max-width: 550px) {
     nav {
         width: 95%
+
+    }
+
+    #background-gradient {
+        background-size: cover;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    
+    body, a:link, a:visited {
+        color: black;
     }
     
 }

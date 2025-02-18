@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="navbar">
             <div class="nav-left">
             <div class="nav-item" onclick="window.location.href='${basePath}index.html'">
-                <i class="fas fa-home"></i> 
-                <!-- Home -->
+                <!-- <i class="fas fa-home"></i> -->
+                Home
             </div>
             <span class="separator">|</span>
             <div class="nav-item" onclick="window.location.href='${basePath}index.html#articles'">
-                <i class="fas fa-file-alt"></i> 
-                <!-- Articles -->
+                <!-- <i class="fas fa-file-alt"></i>  -->
+                Articles
             </div>
             </div>
 

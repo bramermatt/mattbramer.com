@@ -2291,3 +2291,33 @@ nav {
   }
   
 }
+
+
+
+/* #background-gradient {
+  pointer-events: none;
+  background-image: url(../img/background/hyper-blur.jpg);
+  background-size: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+main {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  /* min-height: 100vh; 
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    
+  body, a:link, a:visited {
+      color: black;
+  }
+  
+} */
