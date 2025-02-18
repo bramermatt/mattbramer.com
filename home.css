@@ -2450,10 +2450,11 @@ main {
   nav {
       width: 95%;
       bottom: 1vh;
-      position: fixed;
+      position: sticky;
       top: 90vh;
       right: .5vw;
       left: .5vw;
+
   }
 
 }
