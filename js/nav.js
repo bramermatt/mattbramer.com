@@ -61,26 +61,29 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
     document.body.insertAdjacentHTML('beforeend', thumbNavHTML);
 
-    // Mobile menu toggle
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
+// Mobile menu toggle
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+const closeMenu = document.getElementById("close-menu");
 
-    if (hamburger && mobileMenu && closeMenu) {
-        hamburger.addEventListener("click", () => {
-            mobileMenu.classList.add("active"); // Open menu
-        });
+if (hamburger && mobileMenu && closeMenu) {
+    hamburger.addEventListener("click", () => {
+        mobileMenu.classList.add("active"); // Open menu
+        document.body.classList.add("menu-open"); // Change background
+    });
 
-        closeMenu.addEventListener("click", () => {
-            mobileMenu.classList.remove("active"); // Close menu
-        });
+    closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("active"); // Close menu
+        document.body.classList.remove("menu-open"); // Reset background
+    });
 
-        document.addEventListener("click", (e) => {
-            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                mobileMenu.classList.remove("active"); // Close when clicking outside
-            }
-        });
-    }
+    document.addEventListener("click", (e) => {
+        if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            mobileMenu.classList.remove("active"); // Close when clicking outside
+            document.body.classList.remove("menu-open"); // Reset background
+        }
+    });
+}
 
     // Scroll to top button logic
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
