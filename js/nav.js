@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const navbarHTML = `
     <nav id="navbar">
-            <!-- Profile Section -->
+        <!-- Profile Section -->
         <div class="nav-profile">
             <div class="profile-content">
-            <a href="${basePath}index.html">
-                <img src="${basePath}img/matts/matt-profile.jpg" alt="Matt Bramer"></a>
-                <h1>Matthew Bramer</h1>
+                <a href="${basePath}index.html">
+                    <img class="profile-img" src="${basePath}img/matts/matt-profile.jpg" alt="Matt Bramer"></a>
+                    <h1>Matthew Bramer</h1>
             </div>
         </div>
 
@@ -57,33 +57,40 @@ document.addEventListener("DOMContentLoaded", function () {
         <button id="scrollToTopBtn"><i class="fa-regular fa-circle-up"></i></button>
     </div>`;
 
+    const imgModalHTML = `
+        <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>`;
+
     // Insert the elements separately
     document.body.insertAdjacentHTML('afterbegin', navbarHTML);
-    document.body.insertAdjacentHTML('beforeend', thumbNavHTML);
+    document.body.insertAdjacentHTML('beforeend', thumbNavHTML + imgModalHTML); // Fixed insertion of imgModalHTML
 
-// Mobile menu toggle
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobile-menu");
-const closeMenu = document.getElementById("close-menu");
+    // Mobile menu toggle
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenu = document.getElementById("close-menu");
 
-if (hamburger && mobileMenu && closeMenu) {
-    hamburger.addEventListener("click", () => {
-        mobileMenu.classList.add("active"); // Open menu
-        document.body.classList.add("menu-open"); // Change background
-    });
+    if (hamburger && mobileMenu && closeMenu) {
+        hamburger.addEventListener("click", () => {
+            mobileMenu.classList.add("active"); // Open menu
+            document.body.classList.add("menu-open"); // Change background
+        });
 
-    closeMenu.addEventListener("click", () => {
-        mobileMenu.classList.remove("active"); // Close menu
-        document.body.classList.remove("menu-open"); // Reset background
-    });
-
-    document.addEventListener("click", (e) => {
-        if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-            mobileMenu.classList.remove("active"); // Close when clicking outside
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("active"); // Close menu
             document.body.classList.remove("menu-open"); // Reset background
-        }
-    });
-}
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                mobileMenu.classList.remove("active"); // Close when clicking outside
+                document.body.classList.remove("menu-open"); // Reset background
+            }
+        });
+    }
 
     // Scroll to top button logic
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -132,4 +139,31 @@ if (hamburger && mobileMenu && closeMenu) {
     if (pageTitleElement) {
         pageTitleElement.textContent = newTitle;
     }
+
+    // Image Modal Logic
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("img01");
+    const captionText = document.getElementById("caption");
+
+    // Get all images on the page, excluding the profile image
+    const images = document.querySelectorAll('img:not(.profile-img)');
+    images.forEach(function (image) {
+        image.addEventListener('click', function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.textContent = this.alt || ''; // Display alt text as caption
+
+            // Disable scrolling when modal is open
+            document.body.style.overflow = 'hidden'; // Disable scrolling
+        });
+    });
+
+    // Close modal when user clicks on the close button (X)
+    const close = document.getElementsByClassName("close")[0];
+    close.addEventListener('click', function () {
+        modal.style.display = "none";
+
+        // Enable scrolling when modal is closed
+        document.body.style.overflow = ''; // Re-enable scrolling
+    });
 });
