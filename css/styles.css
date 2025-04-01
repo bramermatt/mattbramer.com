@@ -186,6 +186,8 @@ article#post {
     ul#tags {
         display: flex;
         flex-wrap: wrap;
+        /* justify-content: space-between; */
+        align-items: center;
         gap: 1vw;
         list-style-type: none;
         padding: 0;
@@ -198,6 +200,7 @@ article#post {
             color: white;
             opacity: 80%;
             text-decoration: none;
+            display: block;
         }
 
         li a:hover {
