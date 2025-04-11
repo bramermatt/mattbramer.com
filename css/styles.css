@@ -31,11 +31,16 @@ article {
     margin-bottom: 5vh;
 
     h1 {
-        font-size: large;
-        opacity: 60%;
+        /* font-size: large; */
+        /* opacity: 60%; */
         text-transform: uppercase;
         margin: 0;
         margin-bottom: 2vh;
+
+        font-size: xx-large;
+        line-height: 1;
+
+
     }
 
     h2 {
@@ -124,6 +129,9 @@ article#post {
 
     h1 {
         margin-top: 2vh;
+        border-left: thick solid;
+        /* padding-left: 2vw; */
+        padding: 1vh 2vw;
         /* margin-bottom: 4vh; */
     }
 
@@ -131,10 +139,14 @@ article#post {
         max-width: 550px;
     }
 
+    li {
+        margin-bottom: 2vh;
+    }
+
     blockquote {
         text-transform: lowercase;
         margin: .5vh 0;
-        padding: .3em;
+        padding: 0 1em;
         opacity: 60%;
         border-left: thick solid;
         font-size: small;
