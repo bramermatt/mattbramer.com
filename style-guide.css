@@ -42,6 +42,35 @@ article {
         color: var(--text);
         font-weight: bold;
     }
+
+    details {
+        margin: 2vh 0;
+        padding: 1em;
+        border-radius: 10px;
+        background: #1a2906;
+        color: white;
+        opacity: 80%;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+        summary {
+            font-weight: bold;
+            font-size: large;
+            
+        }
+
+
+
+        p {
+            margin-top: 0;
+            opacity: 100%;
+            font-size: medium;
+        }
+    }
+
+    details[open] summary {
+        margin-bottom: 2vh;
+    }
     
 }
 

@@ -135,9 +135,15 @@ article#post {
         /* margin-bottom: 4vh; */
     }
 
+    h2 {
+        margin-top: 4vh;
+    }
+
     p, li {
         max-width: 550px;
     }
+
+
 
     li {
         margin-bottom: 2vh;
@@ -203,7 +209,7 @@ article#post {
         gap: 1vw;
         list-style-type: none;
         padding: 0;
-        margin: 0;
+        /* margin: 0; */
 
         li a {
             background: #1a2906;
@@ -222,6 +228,36 @@ article#post {
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
+    }
+
+
+    details {
+        margin: 2vh 0;
+        padding: 1em;
+        border-radius: 10px;
+        background: #1a2906;
+        color: white;
+        opacity: 80%;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+        summary {
+            font-weight: bold;
+            font-size: large;
+            
+        }
+
+
+
+        p {
+            margin-top: 0;
+            opacity: 100%;
+            font-size: medium;
+        }
+    }
+
+    details[open] summary {
+        margin-bottom: 2vh;
     }
 
 
