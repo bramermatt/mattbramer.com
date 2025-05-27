@@ -129,6 +129,23 @@ article#articles.projects h2 {
     max-width: 1000px;
 } */
 
+    .glow-link  {
+        animation: glow-pulse 1.2s infinite alternate;
+        color: #7c6a03;
+        text-shadow: 0 0 8px #64570c, 0 0 16px #5e5108;
+        
+    }
+    @keyframes glow-pulse {
+        from {
+            text-shadow: 0 0 8px #ffd700, 0 0 16px #ffd700;
+            color: #ffd700;
+        }
+        to {
+            text-shadow: 0 0 24px #fff700, 0 0 48px #ffd700;
+            color: #fff700;
+        }
+    }
+
 article#post {
     display: grid;
     grid-template-columns: 1.5fr 4fr;
