@@ -52,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </nav>`;
 
+
+
+
     const thumbNavHTML = `
     <div id="thumbNav" style="display: none;">
         <button id="scrollToTopBtn"><i class="fa-regular fa-circle-up"></i></button>
