@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const head = document.head;
+    if (!document.querySelector("#tailwind-cdn")) {
+        const tailwind = document.createElement("script");
+        tailwind.src = "https://cdn.tailwindcss.com";
+        tailwind.id = "tailwind-cdn";
+        head.appendChild(tailwind);
+    }
+    if (!document.querySelector("#fontawesome-cdn")) {
+        const fa = document.createElement("link");
+        fa.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css";
+        fa.rel = "stylesheet";
+        fa.id = "fontawesome-cdn";
+        head.appendChild(fa);
+    }
+
     const currentPath = window.location.pathname;
     const basePath = (currentPath.includes("/posts/") ||
         currentPath.includes("/img/") ||
@@ -7,58 +22,86 @@ document.addEventListener("DOMContentLoaded", function () {
         currentPath.includes("/articles/"))
         ? "../" : "";
 
-    const navbarHTML = `
-    <nav id="navbar">
-        <!-- Profile Section -->
-        <div class="nav-profile">
-            <div class="profile-content">
-                <a href="${basePath}index.html">
-                    <img class="profile-img" src="${basePath}img/matts/matt-profile.jpg" alt="Matt Bramer"></a>
-                    <h1>Matthew Bramer</h1>
-            </div>
-        </div>
+    const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        <!-- Desktop Navigation Links -->
-        <ul class="page-links desktop-menu">
-            <li><a href="${basePath}index.html"><i class="fa-solid fa-house"></i> <h2>home</h2></a></li>
-            <li><a href="${basePath}pages/aboutMe.html"><i class="fa-solid fa-circle-user"></i> <h2>about</h2></a></li>
-            <li><a href="${basePath}pages/thoughts.html"><i class="fa-solid fa-comment"></i> <h2>thoughts</h2></a></li>
-            <li><a href="${basePath}pages/projects.html"><i class="fa-solid fa-code"></i> <h2>projects</h2></a></li>
-            <li><a href="${basePath}pages/work.html"><i class="fa-solid fa-folder-open"></i> <h2>work</h2></a></li>
-            <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-solid fa-video"></i> <h2>video</h2></a></li>
-            <li><a href="mailto:m.bramer1096@gmail.com"><i class="fa-solid fa-envelope"></i> <h2>contact</h2></a></li>
-        </ul>
+    const navItems = [
+        {
+            href: `${basePath}index.html`,
+            icon: "fa-solid fa-house",
+            label: "Home",
+            match: /^\/?(index\.html)?$/
+        },
+        {
+            href: `${basePath}pages/aboutMe.html`,
+            icon: "fa-solid fa-circle-user",
+            label: "About",
+            match: /aboutMe\.html$/
+        },
+        {
+            href: `${basePath}pages/thoughts.html`,
+            icon: "fa-solid fa-comment",
+            label: "Thoughts",
+            match: /thoughts\.html$/
+        },
+        {
+            href: `${basePath}pages/projects.html`,
+            icon: "fa-solid fa-code",
+            label: "Projects",
+            match: /projects\.html$/
+        },
+        {
+            href: `${basePath}pages/work.html`,
+            icon: "fa-solid fa-folder-open",
+            label: "Work",
+            match: /work\.html$/
+        }
+    ];
 
-        <!-- Mobile Menu (Hidden on Desktop) -->
-        <button class="hamburger" id="hamburger">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+    const current = window.location.pathname.split('/').pop() || "index.html";
 
-        <div class="mobile-menu" id="mobile-menu">
-            <button class="close-menu" id="close-menu">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+    const bgColor = isDark ? "#18181b" : "#fff";
+    const borderColor = isDark ? "#333" : "#ccc";
+    const shadowColor = isDark ? "rgba(0,0,0,0.6)" : "rgba(0,0,0,0.1)";
+    const activeColor = isDark ? "#fff" : "#222";
+    const inactiveColor = isDark ? "#bbb" : "#666";
 
-            <!-- Mobile Navigation Links (Same as Desktop) -->
-            <ul class="page-links">
-                <li><a href="${basePath}index.html"><i class="fa-solid fa-house"></i> <h2>home</h2></a></li>
-                <li><a href="${basePath}pages/aboutMe.html"><i class="fa-solid fa-circle-user"></i> <h2>about</h2></a></li>
-                <li><a href="${basePath}pages/thoughts.html"><i class="fa-solid fa-comment"></i> <h2>thoughts</h2></a></li>
-                <li><a href="${basePath}pages/projects.html"><i class="fa-solid fa-code"></i> <h2>projects</h2></a></li>
-                <li><a href="${basePath}pages/work.html"><i class="fa-solid fa-folder-open"></i> <h2>work</h2></a></li>
-                <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank"><i class="fa-solid fa-video"></i> <h2>video</h2></a></li>
-                <li><a href="mailto:m.bramer1096@gmail.com"><i class="fa-solid fa-envelope"></i> <h2>contact</h2></a></li>
-            </ul>
-        </div>
-    </nav>`;
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes greenPulse {
+            0% {
+                box-shadow: 0 0 0 0 #22c55e;
+                text-shadow: 0 0 0 0 #16a34a;
+            }
+            70% {
+                box-shadow: 0 0 12px 8px #22c55e;
+            }
+            100% {
+                box-shadow: 0 0 0 0 #22c55e;
+            }
+        }
+        #thumbNav a.active {
+            color: #22c55e !important; /* Tailwind green-500 */
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        #thumbNav a.active i {
+            animation: greenPulse 1.2s infinite;
+            border-radius: 8px;
+        }
+    `;
+    document.head.appendChild(style);
 
-
-
-
-    const thumbNavHTML = `
-    <div id="thumbNav" style="display: none;">
-        <button id="scrollToTopBtn"><i class="fa-regular fa-circle-up"></i></button>
-    </div>`;
+        const thumbNavHTML = `
+        <nav id="thumbNav" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:90%;background:${bgColor};border:1px solid ${borderColor};box-shadow:0 2px 8px ${shadowColor};border-radius:16px;display:flex;justify-content:space-around;align-items:center;padding:12px 8px;font-size:14px;z-index:50;max-width:500px;">
+            ${navItems.map(item => {
+                const isActive = item.match.test(current);
+                return `
+                <a href="${item.href}" class="tab-btn flex flex-col items-center justify-center gap-1 ${isActive ? 'active' : ''}" style="color:${isActive ? activeColor : inactiveColor};text-decoration:none;justify-content: center; display: flex; flex-direction: column;flex-wrap: wrap; align-items: center; gap: 4px;">
+                    <i class="${item.icon}" style="font-size:18px;${isActive ? 'animation: yellowPulse 1.2s infinite;' : ''}"></i>
+                    ${item.label}
+                </a>`;
+            }).join('')}
+        </nav>`;
 
     const imgModalHTML = `
         <div id="myModal" class="modal">
@@ -67,83 +110,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="caption"></div>
     </div>`;
 
+    
+
     // Insert the elements separately
-    document.body.insertAdjacentHTML('afterbegin', navbarHTML);
-    document.body.insertAdjacentHTML('beforeend', thumbNavHTML + imgModalHTML); // Fixed insertion of imgModalHTML
+    // document.body.insertAdjacentHTML('afterbegin', navbarHTML);
+    document.body.insertAdjacentHTML('afterbegin', thumbNavHTML + imgModalHTML); // Fixed insertion of imgModalHTML
 
-    // Mobile menu toggle
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
-
-    if (hamburger && mobileMenu && closeMenu) {
-        hamburger.addEventListener("click", () => {
-            mobileMenu.classList.add("active"); // Open menu
-            document.body.classList.add("menu-open"); // Change background
-        });
-
-        closeMenu.addEventListener("click", () => {
-            mobileMenu.classList.remove("active"); // Close menu
-            document.body.classList.remove("menu-open"); // Reset background
-        });
-
-        document.addEventListener("click", (e) => {
-            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                mobileMenu.classList.remove("active"); // Close when clicking outside
-                document.body.classList.remove("menu-open"); // Reset background
-            }
-        });
-    }
-
-    // Scroll to top button logic
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const thumbNav = document.getElementById("thumbNav");
-
-    // Hide #thumbNav initially
-    thumbNav.style.display = "none";
-
-    // Show #thumbNav when scrolled down
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
-            thumbNav.style.display = "flex";
-        } else {
-            thumbNav.style.display = "none";
-        }
-    });
-
-    scrollToTopBtn.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
-
-    // Page title logic
-    const pageTitleElement = document.querySelector(".page-content h1"); // Select the h1 inside .page-content
-    const headTitleElement = document.querySelector("head title"); // Select the <title> tag in the <head>
-
-    // Default title
-    let newTitle = "Matthew Bramer";
-
-    if (currentPath.includes("/pages/")) {
-        newTitle = pageTitleElement ? pageTitleElement.textContent : newTitle;
-    } else if (currentPath.includes("/reviews/")) {
-        const bookTitle = decodeURIComponent(currentPath.split("/").pop().replace(/-/g, " ")).replace(".html", "");
-        newTitle = bookTitle;
-    } else if (currentPath.includes("/articles/")) {
-        const articleTitle = decodeURIComponent(currentPath.split("/").pop().replace(/-/g, " ")).replace(".html", "");
-        newTitle = articleTitle;
-    }
-
-    if (headTitleElement) {
-        headTitleElement.textContent = newTitle;
-    }
-
-    if (pageTitleElement) {
-        pageTitleElement.textContent = newTitle;
-    }
-
-    // Image Modal Logic
+        // Image Modal Logic
     const modal = document.getElementById("myModal");
     const modalImg = document.getElementById("img01");
     const captionText = document.getElementById("caption");
@@ -165,8 +138,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const close = document.getElementsByClassName("close")[0];
     close.addEventListener('click', function () {
         modal.style.display = "none";
-
-        // Enable scrolling when modal is closed
         document.body.style.overflow = ''; // Re-enable scrolling
     });
+
+    // Close modal when pressing ESC key
+    document.addEventListener('keydown', function (e) {
+        if (modal.style.display === "block" && (e.key === "Escape" || e.key === "Esc")) {
+            modal.style.display = "none";
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = '';
+        }
+    });
+
+
 });

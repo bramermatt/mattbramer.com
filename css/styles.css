@@ -16,6 +16,17 @@ br {
     min-height: 100vh;
 } */
 
+body {
+  /* background: linear-gradient(to bottom right, #3b3a30, #5e4b43); */
+    /* background: linear-gradient(135deg, #1a2906e8, #5d262dda); */
+    /* box-sizing: border-box; */
+    /* border: 2em solid #1a2906; */
+    /* color: #fff; */
+
+    /* padding: 2em; */
+}
+
+
 
 
 main {
@@ -91,7 +102,7 @@ article#articles {
 
         h2 {
             position: sticky;
-            top: 11vh;
+            top: 3vh;
             z-index: 1;
             margin-top: 0;
             padding-right: 2vw;
@@ -214,7 +225,7 @@ article#post {
         height: max-content;
 
         position: sticky;
-        top: 10vh;
+        top: 2vh;
         z-index: 1;
 
         img {
@@ -289,6 +300,14 @@ article#post {
         margin-bottom: 2vh;
     }
 
+    .score {
+        margin: 2vh 0;
+        padding: 1em 0;
+
+        i {
+            font-size: 2.5vh;
+        }
+    }
 
 }
 
@@ -466,22 +485,21 @@ section {
 
 .profile {
     padding: 1em;
-    /* max-height: 100vh; */
-    /* max-width: 1200px; */
-    max-width: max-content;
-    margin: 2% auto;
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
     
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* flex-wrap: wrap; */
     gap: 1vw;
 
     background: linear-gradient(135deg, #1a2906e8, #5d262dda);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     color: white;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border: thick solid;
 
     img {
@@ -557,7 +575,7 @@ section {
 
 @media screen and (max-width: 615px) {
     .profile {
-        margin: 5%;
+        /* margin: 5%; */
         /* height: 85vh; */
         /* max-height: 95vh; */
         text-align: center;
@@ -575,6 +593,8 @@ body.menu-open {
     background-color: black;
     transition: background-color 0.3s ease;
 }
+
+
 
 
 nav#navbar {
@@ -960,6 +980,11 @@ a:hover {
 
 
 @media screen and (prefers-color-scheme: dark) {
+
+    body {
+        background: black;
+        color: white;
+    }
 
 
     .highlight {
