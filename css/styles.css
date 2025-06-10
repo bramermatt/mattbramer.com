@@ -495,11 +495,11 @@ section {
     align-items: center;
     gap: 1vw;
 
-    background: linear-gradient(135deg, #1a2906e8, #5d262dda);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    color: white;
+    /* background: linear-gradient(135deg, #1a2906e8, #5d262dda); */
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); */
+    /* color: white; */
     /* border-radius: 10px; */
-    border: thick solid;
+    /* border: thick solid; */
 
     img {
         max-width: 100%;
