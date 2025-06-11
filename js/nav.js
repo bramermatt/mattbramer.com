@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const head = document.head;
-    if (!document.querySelector("#tailwind-cdn")) {
-        const tailwind = document.createElement("script");
-        tailwind.src = "https://cdn.tailwindcss.com";
-        tailwind.id = "tailwind-cdn";
-        head.appendChild(tailwind);
-    }
+    // if (!document.querySelector("#tailwind-cdn")) {
+    //     const tailwind = document.createElement("script");
+    //     tailwind.src = "https://cdn.tailwindcss.com";
+    //     tailwind.id = "tailwind-cdn";
+    //     head.appendChild(tailwind);
+    // }
     if (!document.querySelector("#fontawesome-cdn")) {
         const fa = document.createElement("link");
         fa.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css";
@@ -156,6 +156,103 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.style.overflow = '';
         }
     });
+
+
+if (currentPath.includes("/posts/")) {
+    const imageDiv = document.getElementById("image");
+
+    // If there's no #toc already inside #image, create it
+    if (imageDiv && !document.getElementById("toc")) {
+        const tocDetails = document.createElement("details");
+        tocDetails.id = "toc";
+        tocDetails.style.marginTop = "2em";
+
+        const summary = document.createElement("summary");
+        summary.innerHTML = "<strong>Table of Contents</strong>";
+
+        const ul = document.createElement("ul");
+        ul.id = "toc-list";
+
+        tocDetails.appendChild(summary);
+        tocDetails.appendChild(ul);
+
+        imageDiv.appendChild(tocDetails);
+    }
+
+    const tocList = document.getElementById("toc-list");
+    if (tocList) {
+        const headings = [...document.querySelectorAll("h2, h3")];
+
+        // Always insert "Introduction" as the first item
+        const introId = "post";
+        let introAnchor = document.getElementById(introId);
+        if (!introAnchor) {
+            introAnchor = document.createElement("div");
+            introAnchor.id = introId;
+            document.body.insertBefore(introAnchor, document.body.firstChild);
+        }
+
+        const introLi = document.createElement("li");
+        introLi.innerHTML = `<a href="#${introId}" class="toc-link">Introduction</a>`;
+        tocList.appendChild(introLi);
+
+        // Generate TOC from h2/h3
+        headings.forEach((heading, idx) => {
+            if (!heading.id) {
+                heading.id = heading.textContent
+                    .toLowerCase()
+                    .replace(/[^\w]+/g, "-")
+                    .replace(/^-+|-+$/g, "") + "-" + idx;
+            }
+
+            const li = document.createElement("li");
+            li.style.marginLeft = heading.tagName === "H3" ? "1em" : "0";
+            li.innerHTML = `<a href="#${heading.id}" class="toc-link">${heading.textContent}</a>`;
+            tocList.appendChild(li);
+        });
+
+        // Style and scroll spy
+        const tocStyle = document.createElement("style");
+        tocStyle.textContent = `
+            #toc ul li.active > a {
+                background: #ffe082;
+                border-radius: 4px;
+                font-weight: bold;
+                color: #222;
+            }
+            #toc ul li a:hover {
+                text-decoration: none;
+            }
+        `;
+        document.head.appendChild(tocStyle);
+
+        const tocLinks = document.querySelectorAll(".toc-link");
+        const sections = [
+            { id: introId, el: introAnchor },
+            ...headings.map(h => ({ id: h.id, el: h }))
+        ];
+
+        function onScroll() {
+            let activeIdx = 0;
+            for (let i = 0; i < sections.length; i++) {
+                const s = sections[i];
+                if (s.el) {
+                    const rect = s.el.getBoundingClientRect();
+                    if (rect.top <= 80) activeIdx = i;
+                }
+            }
+            tocLinks.forEach((link, idx) => {
+                link.parentElement.classList.toggle("active", idx === activeIdx);
+            });
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+    }
+}
+
+
+
 
 
 });
