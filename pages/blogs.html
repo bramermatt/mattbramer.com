@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="color-scheme" content="light dark"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icons/mLogo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT7HPHGVJJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XT7HPHGVJJ');
+    </script>
+
+        <!-- menu icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../home.css">
+
+    <title>Blogs</title>
+</head>
+
+<body>
+
+
+
+    <main id="bookshelf-full">
+
+        <aside>
+
+            <div class="aside-header">
+                <div class="aside-topic">
+                    <span>Blog Filters</span>
+                    <span id="filterBreadCrumb"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span id="selected-filter">All</span>
+                </div>
+                <div>
+                    <button id="toggle-nav"><i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+            </div>
+            
+            <div id="aside-filter-links" class="filter-links-content">
+                 <!-- Year Filter -->
+                <ul>
+                    <li><a href="" class="filter-link active" data-filter="year" data-value="all">All <span class="filter-count">(2)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2024">2024 <span class="filter-count">(1)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2023">2023 <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2022">2022 <span class="filter-count">(1)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2021">2021 <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2020">2020 <span class="filter-count">(0)</span></a></li>
+                </ul>
+
+
+
+                <!-- Genre Filter -->
+                 <ul>
+
+                    <li><a href="" class="filter-link" data-filter="category" data-value="politics">Politics <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="faith">Faith <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="family">Family <span class="filter-count">(0)</span></a></li>
+                 </ul>
+
+            </div>
+            <div>
+
+
+        </aside>
+
+        <div class="bookshelf">
+
+            <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                
+                <a href="../posts/2024-11-11-essay-notesonmysermon.html" class="link">
+                    <!-- <img src="../img/matts/matt+family+stl+arch.JPG" alt="the-situation-room-cover" class="book-cover"> -->
+                    <h1>Notes on My Sermon</h1>
+                    <p>November 11, 2024</p>
+
+                </a>
+            </div>
+
+            <div class="book-item" data-year="2024" data-category="family" data-genre="non-fiction">
+                
+                <a href="../posts/2024-2-20-familyblog-happy-matt-feb-2024.html" class="link">
+                    <img src="../img/matts/matt+family+stl+arch.JPG" alt="the-situation-room-cover" class="book-cover">
+                    <h1>Happy Matt</h1>
+                    <p>February 2, 2024</p>
+
+                </a>
+            </div>
+
+            
+
+
+
+                <div id="no-results-message" style="display: none;">
+                    <h2>no results found</h2>
+                </div>
+
+        </div>
+
+        
+
+    </main>
+
+</body>
+
+<script src="..js/filterItems.js"></script>
+<script src="../js/navBar.js"></script>
+</html>

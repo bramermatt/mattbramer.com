@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="color-scheme" content="light dark"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icons/mLogo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT7HPHGVJJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XT7HPHGVJJ');
+    </script>
+
+        <!-- menu icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../home.css">
+
+    <title>Book Reviews</title>
+</head>
+
+<body>
+
+
+
+    <main id="bookshelf-full">
+
+        <aside>
+
+            <div class="aside-header">
+                <div class="aside-topic">
+                    <span>Book Review Filters</span>
+                    <span id="filterBreadCrumb"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span id="selected-filter">All</span>
+                </div>
+                <div>
+                    <button id="toggle-nav"><i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+            </div>
+            
+            <div id="aside-filter-links" class="filter-links-content">
+                 <!-- Year Filter -->
+                <ul>
+                    <li><a href="" class="filter-link active" data-filter="year" data-value="all">All <span class="filter-count">(2)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2024">2024 <span class="filter-count">(1)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2023">2023 <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2022">2022 <span class="filter-count">(1)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2021">2021 <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2020">2020 <span class="filter-count">(0)</span></a></li>
+                </ul>
+
+                <!-- In Review Filter -->
+                <ul>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="cosmere">Cosmere <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="dune">Dune <span class="filter-count">(0)</span></a></li>
+                    <!-- <li><a href="" class="filter-link" data-filter="in-review" data-value="kingkiller">The Kingkiller Chronicle <span class="filter-count">(0)</span></a></li> -->
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="harry-potter">Harry Potter <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="lotr">Lord of the Rings <span class="filter-count">(1)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="malazan">Malazan <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="star-wars">Star Wars <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="stephen-king">Stephen King <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="philip-chase">Philip Chase <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="elderlings">Realm of the Elderlings <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="wot">Wheel of Time <span class="filter-count">(0)</span></a></li>
+                </ul>
+
+                <!-- Genre Filter -->
+                 <ul>
+                    <li><a href="" class="filter-link" data-filter="genre" data-value="fiction">Fiction <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="genre" data-value="non-fiction">Non-Fiction <span class="filter-count">(0)</span></a></li>
+                 </ul>
+
+                 <ul>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="fantasy">Fantasy <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="politics">Politics <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="philosophy">Philosophy <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="faith">Faith <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="horror">Horror <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="sci-fi">Sci-Fi <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="manga">Manga <span class="filter-count">(0)</span></a></li>
+                    <!-- <li><a href="" class="filter-link" data-filter="category" data-value="Biography">Biography <span class="filter-count">(0)</span></a></li> -->
+                 </ul>
+
+            </div>
+            <div>
+
+
+        </aside>
+
+        <div class="bookshelf">
+
+            <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                <a href="../posts/2024-11-11-bookreview-thefederalistpapers-hamiltonmadisonjay.html" class="link">
+                    <img src="../img/book/federalist-papers-hamilton-madison-jay-bookcover.jpg" alt="the-situation-room-cover" class="book-cover">
+                </a>
+            </div>
+
+            <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                <a href="../posts/2024-10-29-bookreview-thepersonofchrist-stephenjwellem.html" class="link">
+                    <img src="../img/book/thepersonofchrist-stephenjwellem-bookcover.jpg" alt="the-situation-room-cover" class="book-cover">
+                </a>
+            </div>
+
+            <div class="book-item" data-year="2024" data-category="philosophy" data-genre="fiction">
+                <a href="../posts/2024-10-29-bookreview-hamlet-williamshakespeare.html" class="link">
+                    <img src="../img/book/hamlet-williamshakespeare.jpg" alt="the-situation-room-cover" class="book-cover">
+                </a>
+            </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-10-11-bookreview-thesituationroom-georgestephanopoulos.html" class="link">
+                        <img src="../img/book/thesituationroom-georgestephanopoulos.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction"  data-category="horror">
+                    <a href="../posts/2024-9-11-bookreview-deadlake-darcycoates.html" class="link">
+                        <img src="../img/book/deadlake-darcycoates.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction" data-category="horror">
+                    <a href="../posts/2024-9-6-bookreview-thecolouroutofspace-hplovecraft.html" class="link">
+                        <img src="../img/book/thecolouroutofspace-hplovecraft.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024"  data-genre="non-fiction" data-category="philosophy">
+                    <a href="../posts/2024-9-3-bookreview-anenquiryconcerninghumanunderstanding-davidhume.html" class="link">
+                        <img src="../img/book/anenquiryconcerninghumanunderstanding-davidhume.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction" data-category="fantasy">
+                    <a href="../posts/2024-9-3-bookreview-acourofthornsandroses-sarahjmaas.html" class="link">
+                        <img src="../img/book/acourtofthornsandroses-sarahjmaas.jpeg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction" data-category="fantasy">
+                    <a href="../posts/2024-8-28-bookreview-thelionthewitchandthewardrobe-cslewis.html" class="link">
+                        <img src="../img/book/thelionthewitchandthewardrobe-cslewis.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="non-fiction" data-category="philosophy">
+                    <a href="../posts/2024-8-28-bookreview-commonsense-thomaspaine.html" class="link">
+                        <img src="../img/book/commonsense-thomaspaine.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024"  data-genre="non-fiction">
+                    <a href="../posts/2024-8-27-bookreview-thediaryofannefrank-annefrank.html" class="link">
+                        <img src="../img/book/diaryofayounggirl-annefrank.jpeg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024"  data-genre="non-fiction" data-category="philosophy">
+                    <a href="../posts/2024-8-26-bookreview-theartofwar-suntzu.html" class="link">
+                        <img src="../img/book/theartofwar-sun-tzu.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-8-21-bookreview-hamilton-ronchernow.html" class="link">
+                        <img src="../img/book/hamilton-ronchernow.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-8-16-bookreview-johnadams-davidmccullough.html" class="link">
+                        <img src="../img/book/johnadams-davidmcullough-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-in-review="stephen-king" data-genre="fiction" data-category="fantasy">
+                    <a href="../posts/2024-8-13-bookreview-thegunslinger-stephenking.html" class="link">
+                        <img src="../img/book/thegunslinger-stephenking.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-8-9-bookreview-washington-ronchernow.html" class="link">
+                        <img src="../img/book/washington-ronchernow-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="sci-fi" data-genre="fiction">
+                    <a href="../posts/2024-7-25-bookreview-ready-player-one-ernestcline.html" class="link">
+                        <img src="../img/book/ready-player-one-earnestcline-book-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="sci-fi" data-in-review="dune" data-genre="fiction">
+                    <a href="../posts/2024-7-25-bookreview-dune-messiah-frankherbert.html" class="link">
+                        <img src="../img/book/dune-messiah.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction" data-category="fantasy">
+                    <a href="../posts/2024-7-19-bookreview-bookshops-and-bonedust-travisbaldree.html" class="link">
+                        <img src="../img/book/bookshops-and-bonedust-cover.jpeg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="sci-fi" data-in-review="dune" data-genre="fiction">
+                    <a href="../posts/2024-6-4-bookreview-dune-frankherbert.html" class="link">
+                        <img src="../img/book/dune-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-20-bookreview-theapostlescreed-albertmohler.html" class="link">
+                        <img src="../img/book/theapostlescreed-bookcover-albertmohler.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-17-bookreview-evangelisticliving-rogercarswell.html" class="link">
+                        <img src="../img/book/evangelisticliving-bookcover-rogercarswell.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-16-bookreview-faithalone-rcsproul.html" class="link">
+                        <img src="../img/book/faithalone-bookcover-rcsproul.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                                
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-15-bookreview-evangelism-jmackstiles.html" class="link">
+                        <img src="../img/book/evangelism-bookcover-jmackstiles.webp" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-7-bookreview-the-forgotten-trinity-jameswhite.html" class="link">
+                        <img src="../img/book/the-forgotten-trinity-bookcover-jameswhite.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-3-bookdiscussion-corporate-worship-mattmerker.html" class="link">
+                        <img src="../img/book/corporate-worship-bookcover-mattmerker.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-4-30-bookdiscussion-expositional-preaching-davidhem.html" class="link">
+                        <img src="../img/book/expositional-preaching-davidhelm.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-4-26-bookdiscussion-sound-doctrine-bobbyjamieson.html" class="link">
+                        <img src="../img/book/sound-doctrine-boobyjamieson.webp" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-4-25-bookreview-1776-davidmccullough.html" class="link">
+                        <img src="../img/book/1776-bookcover-davidmccullough.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-4-10-bookreview-1491-new-revelations-of-the-americas-before-columbus-charlescmann.html" class="link">
+                        <img src="../img/book/1491-new-revelations-in-america-before-columbus-book-cover.webp" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-4-4-bookreview-founding-brothers-josephjellis.html" class="link">
+                        <img src="../img/book/founding-brothers-by-joseph-j-ellis.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-3-29-bookreview-american-sphinx-josephjellis.html" class="link">
+                        <img src="../img/book/american-sphinx-thomas-jefferson-book-cover.webp" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="lotr" data-genre="fiction">
+                    <a href="../posts/2024-3-20-bookreview-the-silmarillion-jrrtolkien.html" class="link">
+                        <img src="../img/book/the-silmarillion-book-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-genre="fiction">
+                    <a href="../posts/2024-3-18-bookreview-the-fall-ryancahill.html" class="link">
+                        <img src="../img/book/the-fall-cover-ryan-cahill.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="lotr" data-genre="fiction">
+                    <a href="../posts/2024-3-5-bookreview-the-lord-of-the-rings-jrrtolkien.html" class="link">
+                        <img src="../img/book/lotr-onevolume.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="elderlings" data-genre="fiction">
+                    <a href="../posts/2024-2-6-bookreview-assassins-apprentice-robinhobb.html" class="link">
+                        <img src="../img/book/assassins-apprentice.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="star-wars" data-genre="fiction">
+                    <a href="../posts/2024-1-30-bookreview-star-wars-light-of-the-jedi-charlessoule.html" class="link">
+                        <img src="../img/book/sw-hr-light-of-the-jedi.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2024-1-24-bookreview-mistborn-the-lost-metal-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-the-lost-metal.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="malazan" data-genre="fiction">
+                    <a href="../posts/2024-1-8-bookreview-malazan-gardens-of-the-moon-stevenerikson.html" class="link">
+                        <img src="../img/book/malazan-gardens-of-the-moon.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2024-1-2-bookreview-mistborn-secret-history-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-secret-history.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-12-26-bookreview-mistborn-the-bands-of-mourning-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-the-bands-of-mourning.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-12-18-bookreview-mistborn-shadows-of-self-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-shadows-of-self.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-12-11-bookreview-mistborn-the-allow-of-law-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-the-allow-of-law.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-12-4-bookreview-mistborn-the-hero-of-ages-brandonsanderson.html" class="link">
+                        <img src="../img/book/hero-of-ages.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-11-23-bookreview-mistborn-the-well-of-ascension-breandonsanderson.html" class="link">
+                        <img src="../img/book/well-of-ascension.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-11-10-bookreview-rhythm-of-war-brandonsanderson.html" class="link">
+                        <img src="../img/book/rhythm.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-11-9-bookreview-dawnshard-brandonsanderson.html" class="link">
+                        <img src="../img/book/dawnshard.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 2022 -->
+                <div class="book-item" data-year="2022" data-category="lotr" data-genre="fantasy" >
+                    <a href="../posts/2022-2-6-bookreview-the-hobbit-jrrtolkien.html" class="link">
+                        <img src="../img/book/thehobbit-book-cover.png" alt="book-cover" class="book-cover">
+                    </a>
+                </div>
+
+
+
+                <div id="no-results-message" style="display: none;">
+                    <h2>no results found</h2>
+                </div>
+
+        </div>
+
+        
+
+    </main>
+    
+
+
+
+<!-- <div class="topnav">
+  <div id="myLinks">
+
+    <a href="../pages/book-reviews.html">Book Reviews</a>
+    <a href="../pages/movie-reviews.html">Movie Reviews</a>
+
+    <a href="../pages/cosmere-in-review.html">Cosmere in Review</a>
+    <a href="../pages/dune-in-review.html">Dune in Review</a>
+    <a href="../pages/Kingkiller-chronicle-in-review.html">The Kingkiller Chronicle in Review</a>
+    <a href="../pages/harry-potter-in-review.html">Harry Potter in Review</a>
+    <a href="../pages/lotr-in-review.html">Lord of the Rings in Review</a>
+    <a href="../pages/malazan-in-review.html">Malazan in Review</a>
+    <a href="../pages/starwars-in-review.html">Star Wars in Review</a>
+    <a href="../pages/stephen-king-in-review.html">Stephen King in Review</a>
+    <a href="../pages/philip-chase-in-review.html">Phillip Chase in Review</a>
+    <a href="../pages/realm-of-the-elderlings-in-review.html">Realm of the Elderlings in Review</a>
+    <a href="../pages/wheel-of-time-in-review.html">Wheel of Time in Review</a>
+  </div>
+</div> -->
+
+
+    <!-- <div class="body-content">
+
+
+        <div class="category" id="2024">
+            <h1>2024 Book Reviews</h1>
+        </div>
+
+        <div class="grid-eight-columns">
+
+            <div class="grid-item">
+                <a href="../docs/fellowship-of-the-ring-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/lotr/lotr-onevolume.jpg" alt="the-hobbit-cover">
+                        <div class="topic">
+                        <div class="tag">
+                        <p>Book Reviews</p>
+                        <p>Lord of the Rings</p>
+                        </div>
+                        </div>
+                        <div class="title">
+                        <h2>The Lord of the Rings</h2>
+                        <p>by J.R.R. Tolkien</p>
+                        </div>
+                        </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-hobbit-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/lotr/thehobbit-book-cover.png" alt="brandon">
+
+                        <div class="title">
+                            <h2>The Hobbit Book Review</h2>
+                            <p>February 27, 2024</p>
+                        </div>
+                        <a href="../pages/lotr-in-review.html">
+                            <div class="read-more">
+                               LOTR in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-name-of-the-wind-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/kingkiller-chronicle/the-name-of-the-wind-book-cover.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>The Name of the Wind Book Review</h2>
+                            <p>February 6, 2024</p>
+                        </div>
+                        <a href="../pages/Kingkiller-chronicle-in-review.html">
+                            <div class="read-more">
+                               The Kingkiller Chronicle in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/assassins-apprentice-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/robin-hobb/assassins-apprentice.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Assassin's Apprentice Book Review</h2>
+                            <p>February 6, 2024</p>
+                        </div>
+                        <a href="../pages/realm-of-the-elderlings-in-review.html">
+                            <div class="read-more">
+                               Realm of the Elderlings in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/star-wars-hr-light-of-the-jedi-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/star wars/sw-hr-light-of-the-jedi.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Star Wars: Light of the Jedi Book Review</h2>
+                            <p>January 30, 2024</p>
+                        </div>
+                        <a href="../pages/starwars-in-review.html">
+                            <div class="read-more">
+                               Star Wars in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/malazan-gardens-of-the-moon-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/malazan/malazan-gardens-of-the-moon.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Malazan: Gardens of the Moon Book Review</h2>
+                            <p>January 8, 2024</p>
+                        </div>
+                        <a href="../pages/malazan-in-review.html">
+                            <div class="read-more">
+                               Malazan in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/mistborn-the-lost-metal-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/brandon-sanderson/mistborn-the-lost-metal.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Mistborn: The Lost Metal Book Review</h2>
+                            <p>January 4, 2024</p>
+                        </div>
+                        <a href="../pages/cosmere-in-review.html">
+                            <div class="read-more">
+                               Cosmere in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/mistborn-the-bands-of-mourning-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/brandon-sanderson/mistborn-secret-history.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Mistborn: Secret History Book Review</h2>
+                            <p>January 2, 2024</p>
+                        </div>
+                        <a href="../pages/cosmere-in-review.html">
+                            <div class="read-more">
+                               Cosmere in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+
+
+
+        </div>
+
+        <div class="category" id="2023">
+            <h1>2023 Book Reviews</h1>
+        </div>
+
+        <div class="grid-eight-columns">
+
+            <div class="grid-item">
+                <a href="../docs/mistborn-the-bands-of-mourning-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/brandon-sanderson/mistborn-the-bands-of-mourning.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Mistborn: The Bands of Mourning Book Review</h2>
+                            <p>December 18, 2023</p>
+                        </div>
+                        <a href="../pages/cosmere-in-review.html">
+                            <div class="read-more">
+                               Cosmere in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/mistborn-shadows-of-self-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/brandon-sanderson/mistborn-shadows-of-self.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Mistborn: Shadows of Self Book Review</h2>
+                            <p>December 18, 2023</p>
+                        </div>
+                        <a href="../pages/cosmere-in-review.html">
+                            <div class="read-more">
+                               Cosmere in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/mistborn-the-allow-of-law-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/brandon-sanderson/mistborn-the-allow-of-law.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Mistborn: The Allow of Law Book Review</h2>
+                            <p>December 11, 2023</p>
+                        </div>
+                        <a href="../pages/cosmere-in-review.html">
+                            <div class="read-more">
+                               Cosmere in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/mistborn-the-hero-of-ages-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/brandon-sanderson/hero-of-ages.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Mistborn: The Hero of Ages Book Review</h2>
+                            <p>December 4, 2023</p>
+                        </div>
+                        <a href="../pages/cosmere-in-review.html">
+                            <div class="read-more">
+                               Cosmere in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/mistborn-the-well-of-ascension-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/brandon-sanderson/well-of-ascension.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Mistborn: Well of Ascension Book Review</h2>
+                            <p>November 28, 2023</p>
+                        </div>
+                        <a href="../pages/cosmere-in-review.html">
+                            <div class="read-more">
+                               Cosmere in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/rhythm-of-war-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/brandon-sanderson/rhythm.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Rhythm of War Book Review</h2>
+                            <p>November 10, 2023</p>
+                        </div>
+                        <a href="../pages/cosmere-in-review.html">
+                            <div class="read-more">
+                               Cosmere in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/dawnshard-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/brandon-sanderson/dawnshard.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Dawnshard Book Review</h2>
+                            <p>November 9, 2023</p>
+                        </div>
+                        <a href="../pages/cosmere-in-review.html">
+                            <div class="read-more">
+                               Cosmere in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+
+
+            <div class="grid-item">
+                <a href="../docs/the-way-of-edan-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/philip-chase/the-way-of-edan.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>The Way of Edan Book Review</h2>
+                            <p>October 17, 2023</p>
+                        </div>
+                        <a href="../pages/philip-chase-in-review.html">
+                            <div class="read-more">
+                               Philip Chase in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+
+
+            <div class="grid-item">
+                <a href="../docs/doctor-sleep-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/stephen-king/doctorsleep.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Doctor Sleep Book Review</h2>
+                            <p>October 13, 2023</p>
+                        </div>
+                        <a href="../pages/stephen-king-in-review.html">
+                            <div class="read-more">
+                               Stephen King in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+                <div class="grid-item">
+                    <a href="../docs/harry-potter-and-the-prisoner-of-azkaban.html" class="link">
+                        <div class="individual">
+                            <img src="../img/docs/books/harry-potter/hp-3-prisonerofaskaban.jpg" alt="brandon">
+                            <div class="topic">
+                                <div class="tag">
+                                    <p>Book Reviews</p>
+                                    <p>Blog</p>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <h2>Harry Potter and the Prisoner of Azkaban Book Review</h2>
+                                <p>October 5, 2023</p>
+                            </div>
+                            <a href="../pages/harry-potter-in-review.html">
+                                <div class="read-more">
+                                   Harry Potter in Review
+                            </div></a>
+                        </div>
+                    </a>
+                    </div>
+
+            <div class="grid-item">
+                <a href="../docs/it-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/stephen-king/it-stephenking.jpeg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>IT Book Review</h2>
+                            <p>October 5, 2023</p>
+                        </div>
+                        <a href="../pages/stephen-king-in-review.html">
+                            <div class="read-more">
+                               Stephen King in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/carrie-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/stephen-king/carrie.jpeg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>Carrie Book Review</h2>
+                            <p>September 25, 2023</p>
+                        </div>
+                        <a href="../pages/stephen-king-in-review.html">
+                            <div class="read-more">
+                               Stephen King in Review
+                        </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-shining-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/stephen-king/theshining.jpg" alt="brandon">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Blog</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                            <h2>The Shining Book Review</h2>
+                            <p>September 25, 2023</p>
+                        </div>
+                        <a href="../pages/stephen-king-in-review.html">
+                            <div class="read-more">
+                               Stephen King in Review
+                        </div></a>
+                    </div>
+
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-lightning-theif-book-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/percy-jackson/percy-jackson-lightning-thief.jpeg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>Percy Jackson: The Lightning Thief Book Review</h2>
+                    <p>by Rick Riordan</p>
+                    </div>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/tress-of-the-emerald-sea-book-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/brandon-sanderson/tress.webp" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>Tress of the Emerald Sea Book Review</h2>
+                    <p>by Brandon Sanderson</p>
+                    </div>
+                    <a href="../pages/cosmere-in-review.html">
+                        <div class="read-more">
+                           Cosmere in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/a-memory-of-light-book-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/a-memory-of-light.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>A Memory of Light Book Review</h2>
+                    <p>by Robert Jordan</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+                <div class="grid-item">
+                    <a href="../docs/new-spring-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/wheel-of-time/new-spring.jpg" alt="tlou">
+                        <div class="topic">
+                        <div class="tag">
+                        <p>Book Reviews</p>
+                        <p>Wheel of Time</p>
+                        </div>
+                        </div>
+                        <div class="title">
+                        <h2>New Spring Book Review</h2>
+                        <p>by Robert Jordan</p>
+                        </div>
+                        <a href="../pages/wheel-of-time-in-review.html">
+                            <div class="read-more">
+                                Wheel of Time in Review
+                        </div></a>
+                        </div>
+                    </a>
+                    </div>
+
+            <div class="grid-item">
+                <a href="../docs/towers-of-midnight-book-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/towers-of-midnight.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>Towers of Midnight Book Review</h2>
+                    <p>by Robert Jordan</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-gathering-storm-book-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/the-gathering-storm.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>The Gathering Storm Book Review</h2>
+                    <p>by Robert Jordan</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/knife-of-dreams-book-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/knife-of-dreams.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>Knife of Dreams Book Review</h2>
+                    <p>by Robert Jordan</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/crossroads-of-twilight-book-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/crossroads-of-twilight.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>Crossroads of Twilight Book Review</h2>
+                    <p>by Robert Jordan</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/winters-heart-book-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/winters-heart.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>Winter's Heart Book Review</h2>
+                    <p>by Robert Jordan</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+
+
+
+            <div class="grid-item">
+                <a href="../docs/the-path-of-daggers-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/the-path-of-daggers.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>The Path of Daggers Review</h2>
+                    <p>June 19, 2023</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/a-crown-of-swords-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/a-crown-of-swords.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>A Crown of Swords Review</h2>
+                    <p>June 16, 2023</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/lord-of-chaos.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/lord-of-chaos.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>Lord of Chaos Review</h2>
+                    <p>May 2, 2023</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-fires-of-heaven-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/wheel-of-time/the-fires-of-heaven.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Wheel of Time</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>The Fires of Heaven</h2>
+                    <p>April 8, 2023</p>
+                    </div>
+                    <a href="../pages/wheel-of-time-in-review.html">
+                        <div class="read-more">
+                            Wheel of Time in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/a-game-of-thrones-review.html" class="link">
+                    <div class="individual">
+                    <img src="../img/docs/books/a-song-of-ice-and-fire/gameofthrones.jpg" alt="game of thrones">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>A Song of Ice and Fire</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>A Game of Thrones Review</h2>
+                    <p>April 7, 2023</p>
+                    </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/mistborn-the-final-empire-book-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/brandon-sanderson/mistborn-finalempire.jpg" alt="tlou">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Mistborn</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>Mistborn: The Final Empire Review</h2>
+                    <p>March 14, 2023</p>
+                    </div>
+                    <a href="../pages/cosmere-in-review.html">
+                        <div class="read-more">
+                            Cosmere in Review
+                    </div></a>
+                    </div>
+                </a>
+                </div>
+
+            <div class="grid-item">
+                <a href="../docs/adventures-of-sherlock-holmes-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/sherlock/sherlockhomes.jpg" alt="tlou">
+                        <div class="topic">
+                        <div class="tag">
+                        <p>Book Reviews</p>
+                        </div>
+                        </div>
+                        <div class="title">
+                        <h2>The Adventures of Sherlock Holmes Review</h2>
+                        <p>March 13, 2023</p>
+                        </div>
+                        </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/fellowship-of-the-ring-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/lotr/fellowshipofthering.jpg" alt="the-hobbit-cover">
+                        <div class="topic">
+                        <div class="tag">
+                        <p>Book Reviews</p>
+                        <p>Lord of the Rings</p>
+                        </div>
+                        </div>
+                        <div class="title">
+                        <h2>The Fellowship of the Ring Book Review</h2>
+                        <p>by J.R.R. Tolkien</p>
+                        </div>
+                        <a href="../pages/lotr-in-review.html">
+                            <div class="read-more">
+                                LOTR in Review
+                        </div></a>
+                        </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-shadow-rising-review.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/wheel-of-time/theshadowrising-wot.jpg" alt="tdr-cover">
+                        <div class="topic">
+                        <div class="tag">
+                            <p>Book Reviews</p>
+                            <p>Wheel of Time</p>
+                            </div>
+                            </div>
+                            <div class="title">
+                            <h2>The Shadow Rising Review</h2>
+                            <p>by Robert Jordan</p>
+                        </div>
+                        <a href="../pages/wheel-of-time-in-review.html">
+                            <div class="read-more">
+                                Wheel of Time in Review
+                        </div></a>
+                        </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/star-wars-brotherhood.html" class="link">
+                    <div class="individual">
+                        <img src="../img/docs/books/star wars/starwars brotherhood.webp" alt="tlou">
+                        <div class="topic">
+                        <div class="tag">
+                        <p>Book Reviews</p>
+                        <p>Star Wars</p>
+                        </div>
+                        </div>
+                        <div class="title">
+                        <h2>Star Wars: Brotherhood Book Review</h2>
+                        <p>by Mike Chen</p>
+                        </div>
+                        <a href="../../../html/reviews/franchise/starwars-in-review.html">
+                            <div class="read-more">
+                                Star Wars in Review
+                        </div></a>
+                        </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-martian-review.html" class="link">
+                    <div class="individual">
+                        <img src="../../../img/reviews/books/the martian.jpg" alt="martian-review">
+                        <div class="topic">
+                        <div class="tag">
+                        <p>Book Reviews</p>
+                        </div>
+                        </div>
+                        <div class="title">
+                        <h2>The Martian Book Review</h2>
+                        <p>by Andy Weir</p>
+                        </div>
+        
+                        </div>
+                </a> 
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-terminal-list-review.html" class="link">
+                    <div class="individual">
+                        <img src="../../../img/reviews/books/theterminallist.jpg" alt="hunger games cover">
+                        <div class="topic">
+                        <div class="tag">
+                            <p>Book Reviews</p>
+                        </div>
+                        </div>
+                        <div class="title">
+                            <h2>The Terminal List Review</h2>
+                            <p>By Jack Carr</p>
+                        </div>
+                        </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/hunger-games-book-review.html" class="link">
+                    <div class="individual">
+                        <img src="../../../img/reviews/books/hungergames-cover.webp" alt="hunger games cover">
+                        <div class="topic">
+                        <div class="tag">
+                            <p>Book Reviews</p>
+                        </div>
+                        </div>
+                        <div class="title">
+                            <h2>The Hunger Games Review</h2>
+                            <p>By Suzanne Collins</p>
+                        </div>
+                        </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/the-dragon-reborn-review.html" class="link">
+                    <div class="individual">
+                        <img src="../../../img/reviews/books/thedragonreborn-rj.jpg" alt="tdr-cover">
+                        <div class="topic">
+                        <div class="tag">
+                            <p>Book Reviews</p>
+                            <p>Wheel of Time</p>
+                            </div>
+                            </div>
+                            <div class="title">
+                            <h2>The Dragon Reborn Review</h2>
+                            <p>by Robert Jordan</p>
+                        </div>
+                        <a href="../../../html/reviews/franchise/wheel-of-time-in-review.html">
+                            <div class="read-more">
+                                Wheel of Time in Review
+                        </div></a>
+                        </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/attack-on-titan1-review.html" class="link">
+                    <div class="individual">
+                        <img src="../../../img/reviews/books/attack-on-titan-1.jpeg" alt="attack-on-titan-1">
+                        <div class="topic">
+                        <div class="tag">
+                            <p>Book Reviews</p>
+                            </div>
+                            </div>
+                            <div class="title">
+                            <h2>Attack on Titan 1</h2>
+                            <p>by Hajime Isayama</p>
+                        </div>
+                        </div>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a href="../docs/thegreathunt-review.html" class="link">
+                    <div class="individual">
+                        <img src="../../../img/reviews/books/thegreathunt-rj.jpg" alt="greathuntcover">
+                        <div class="topic">
+                            <div class="tag">
+                            <p>Book Reviews</p>
+                            <p>The Wheel of Time</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                        <h2>The Great Hunt Review</h2>
+                        <p>by Robert Jordan</p>
+                        </div>
+                        <a href="../../../html/reviews/franchise/wheel-of-time-in-review.html">
+                            <div class="read-more">
+                                Wheel of Time in Review
+                        </div></a>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+            <div class="category" id="2022">
+                <h1>2022 Book Reviews</h1>
+            </div>
+
+            <div class="grid-seven-columns">
+
+            <div class="grid-item">
+                <a href="../docs/oathbringer-review.html" class="link">
+                    <div class="individual">
+                        <img src="../../../img/reviews/books/oathbringer.jpg" alt="oathbringer">
+                        <div class="topic">
+                            <div class="tag">
+                                <p>Book Reviews</p>
+                                <p>Brandon Sanderson</p>
+                            </div>
+                        </div>
+                        <div class="title">
+                    <h2>Oathbringer Review</h2>
+                    <p>by Brandon Sanderson</p>
+                    </div>
+                    <a href="../cosmere-in-review.html">
+                        <div class="read-more">
+                            Cosmere in Review
+                    </div></a>
+                    </div>
+            </a>
+        </div>
+
+
+
+
+    <div class="grid-item">
+        <a href="../docs/edgedancer-review.html" class="link">
+            <div class="individual">
+                <img src="../../../img/reviews/books/edgedancer-review.jpg" alt="edgedancer">
+                <div class="topic">
+                    <div class="tag">
+                        <p>Book Reviews</p>
+                        <p>Brandon Sanderson</p>
+                    </div>
+                </div>
+                <div class="title">
+                    <h2>Edgedancer Review</h2>
+            <p>by Brandon Sanderson</p>
+            </div>
+            <a href="../cosmere-in-review.html">
+                <div class="read-more">
+                    Cosmere in Review
+            </div></a>
+            </div>
+    </a>
+</div>
+
+    <div class="grid-item">
+        <a href="../docs/warbreaker-review.html" class="link">
+            <div class="individual">
+                <img src="../../../img/reviews/books/warbreaker.jpg" alt="wor-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                <p>Brandon Sanderson</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>Warbreaker</h2>
+                <p>by Brandon Sanderson</p>
+                </div>
+                <a href="../../../html/cosmere-in-review.html">
+                    <div class="read-more">
+                        Cosmere in Review
+                </div></a>
+                </div>
+        </a>
+    </div>
+
+    <div class="grid-item">
+        <a href="../docs/words-of-radiance.html" class="link">
+            <div class="individual">
+                <img src="../../../img/reviews/books/words-of-radiance.jpg" alt="wor-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                <p>Brandon Sanderson</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>Words of Radiance</h2>
+                <p>by Brandon Sanderson</p>
+                </div>
+                <a href="../../../html/cosmere-in-review.html">
+                    <div class="read-more">
+                        Cosmere in Review
+                </div></a>
+                </div>
+        </a>
+    </div>
+
+    <div class="grid-item">
+        <a href="../docs/hp-chamber.html" class="link">
+            <div class="individual">
+                <img src="../../../img/reviews/books/hp2-cover.jpg" alt="starwars-aftermath-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                <p>Harry Potter</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>Harry Potter and Chamber of Secrets Review</h2>
+                <p>by J.K. Rowling</p>
+                </div>
+                <a href="../../../html/reviews/books/harry-potter-reviews.html">
+                    <div class="read-more">
+                        Harry Potter Reviews
+                </div></a>
+                </div>
+        </a>
+    </div>
+
+    <div class="grid-item">
+        <a href="../docs/twilight-review.html" class="link">
+            <div class="individual">
+                <img src="../../../img/reviews/books/twilight-cover.jpeg" alt="twilight-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                <p>Twilight</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>Twilight</h2>
+                <p>by Stephanie Meyer</p>
+                </div>
+                </div>
+        </a>
+    </div>
+
+    <div class="grid-item">
+        <a href="../docs/elantris-review.html" class="link">
+            <div class="individual">
+                <img src="../../../img/reviews/books/elantris-cover.jpg" alt="elantris-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                <p>Brandon Sanderson</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>Elantris</h2>
+                <p>by Brandon Sanderson</p>
+                </div>
+                <a href="../../../html/cosmere-in-review.html">
+                    <div class="read-more">
+                        Cosmere in Review
+                </div></a>
+                </div>
+        </a>
+    </div>
+
+        </div>
+
+        <div class="grid-seven-columns">
+
+
+    <div class="grid-item">
+        <a href="../docs/wok-review.html" class="link">
+            <div class="individual">
+                <img src="../../../img/reviews/books/wok-cover.jpg" alt="wok-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                <p>Brandon Sanderson</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>The Way of Kings</h2>
+                <p>by Brandon Sanderson</p>
+                </div>
+                <a href="../../../html/cosmere-in-review.html">
+                    <div class="read-more">
+                        Cosmere in Review
+                </div></a>
+                </div>
+        </a>
+    </div>
+
+    <div class="grid-item">
+        <a href="../docs/eye-revew.html" class="link">
+            <div class="individual">
+                <img src="../img/docs/books/wheel-of-time/eye-review.jpg" alt="eye-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                <p>Wheel of Time</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>The Eye of World</h2>
+                <p>by Robert Jordan</p>
+                </div>
+                <a href="../pages/wheel-of-time-in-review.html">
+                    <div class="read-more">
+                        Wheel of Time in Review
+                </div></a>
+                </div>
+        </a>
+    </div>
+
+    <div class="grid-item">
+        <a href="../docs/dune-review.html" class="link">
+            <div class="individual">
+                <img src="../img/docs/books/dune/dune-cover.jpg" alt="dune-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                <p>Dune</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>Dune</h2>
+                <p>by Frank Herbert</p>
+                </div>
+                <a href="../pages/dune-in-review.html">
+                    <div class="read-more">
+                        Dune in Review
+                </div></a>
+                </div>
+        </a>
+    </div>
+
+    <div class="grid-item">
+        <a href="../docs/1984-review.html" class="link">
+            <div class="individual">
+                <img src="../img/docs/books/1984/1984-cover.jpeg" alt="1984-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>1984</h2>
+                <p>by George Orwell</p>
+                </div>
+                </div>
+        </a>
+    </div>
+
+    <div class="grid-item">
+        <a href="../docs/hp-1-review.html" class="link">
+            <div class="individual">
+                <img src="../img/docs/books/harry-potter/hp-1-cover.jpg" alt="hp-1-cover">
+                <div class="topic">
+                <div class="tag">
+                <p>Book Reviews</p>
+                <p>Harry Potter</p>
+                </div>
+                </div>
+                <div class="title">
+                <h2>Harry Potter and The Sorcerer's Stone</h2>
+                <p>by J.K. Rowling</p>
+                </div>
+                <a href="../pages/harry-potter-in-review.html">
+                    <div class="read-more">
+                        Harry Potter Reviews
+                </div></a>
+                </div>
+        </a>
+    </div>
+
+
+            <div class="grid-item">
+            <a href="../docs/sw-aftermath-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/star wars/sw-aftermath-cover.jpeg" alt="starwars-aftermath-cover">
+                    <div class="topic">
+                    <div class="tag">
+                    <p>Book Reviews</p>
+                    <p>Star Wars</p>
+                    </div>
+                    </div>
+                    <div class="title">
+                    <h2>Star Wars Aftermath</h2>
+                    <p>by Chuck Wendig</p>
+                    </div>
+                    <a href="../pages/starwars-in-review.html">
+                        <div class="read-more">
+                            Star Wars in Review
+                    </div></a>
+                    </div>
+            </a>
+        </div>
+
+        <div class="grid-item">
+            <a href="../docs/the-hobbit-review.html" class="link">
+                <div class="individual">
+                    <img src="../img/docs/books/lotr/thehobbit-book-cover.png" alt="the-hobbit-cover">
+                    <div class="topic">
+                        <div class="tag">
+                        <p>Book Reviews</p>
+                        <p>Star Wars</p>
+                        </div>
+                        </div>
+                    <div class="title">
+
+                    <h2>The Hobbit</h2>
+                    <p>by J.R.R. Tolkien</p>
+                    </div>
+                    <a href="../pages/lotr-in-review.html">
+                        <div class="read-more">
+                            LOTR in Review
+                    </div></a>
+                    </div>
+            </a>
+        </div>
+
+
+
+</div>
+
+</div> -->
+
+
+</body>
+
+<script src="..js/filterItems.js"></script>
+<script src="../js/navBar.js"></script>
+</html>

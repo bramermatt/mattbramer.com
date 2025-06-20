@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="color-scheme" content="light dark"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="../img/icons/mLogo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XT7HPHGVJJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XT7HPHGVJJ');
+    </script>
+
+        <!-- menu icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../home.css">
+
+    <title>Writings</title>
+</head>
+
+<body>
+
+
+
+    <main id="bookshelf-full">
+
+        <aside>
+
+            <div class="aside-header">
+                <div class="aside-topic">
+                    <span>Topic Filters</span>
+                    <span id="filterBreadCrumb"><i class="fa-solid fa-chevron-right"></i></span>
+                    <span id="selected-filter">All</span>
+                </div>
+                <div>
+                    <button id="toggle-nav"><i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+            </div>
+            
+            <div id="aside-filter-links" class="filter-links-content">
+                 <!-- Year Filter -->
+                <ul>
+                    <li><a href="" class="filter-link active" data-filter="year" data-value="all">All <span class="filter-count">(2)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2024">2024 <span class="filter-count">(1)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2023">2023 <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2022">2022 <span class="filter-count">(1)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2021">2021 <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="year" data-value="2020">2020 <span class="filter-count">(0)</span></a></li>
+                </ul>
+
+                <!-- Type Filter -->
+                 <ul>
+                    <li><a href="" class="filter-link" data-filter="blog" data-value="blog">Blog <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="" data-value="">Book <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="" data-value="">Movie <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="" data-value="">TV Show <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="" data-value="item">Excess <span class="filter-count">(0)</span></a></li>
+                 </ul>
+
+                <!-- In Review Filter
+                <ul>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="cosmere">Cosmere <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="dune">Dune <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="harry-potter">Harry Potter <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="lotr">Lord of the Rings <span class="filter-count">(1)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="malazan">Malazan <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="star-wars">Star Wars <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="stephen-king">Stephen King <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="philip-chase">Philip Chase <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="elderlings">Realm of the Elderlings <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="in-review" data-value="wot">Wheel of Time <span class="filter-count">(0)</span></a></li>
+                </ul>  -->
+
+                <!-- Genre Filter 
+                 <ul>
+                    <li><a href="" class="filter-link" data-filter="genre" data-value="fiction">Fiction <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="genre" data-value="non-fiction">Non-Fiction <span class="filter-count">(0)</span></a></li>
+                 </ul>
+
+                 <ul>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="fantasy">Fantasy <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="politics">Politics <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="philosophy">Philosophy <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="faith">Faith <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="horror">Horror <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="sci-fi">Sci-Fi <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="manga">Manga <span class="filter-count">(0)</span></a></li>
+                    <li><a href="" class="filter-link" data-filter="category" data-value="Biography">Biography <span class="filter-count">(0)</span></a></li> 
+                 </ul> -->
+
+            </div>
+            <div>
+
+
+        </aside>
+
+        <div class="bookshelf">
+
+            <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                <a href="../posts/2024-11-11-bookreview-thefederalistpapers-hamiltonmadisonjay.html" class="link">
+                    <img src="../img/book/federalist-papers-hamilton-madison-jay-bookcover.jpg" alt="the-situation-room-cover" class="book-cover">
+                </a>
+            </div>
+
+            <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                <a href="../posts/2024-10-29-bookreview-thepersonofchrist-stephenjwellem.html" class="link">
+                    <img src="../img/book/thepersonofchrist-stephenjwellem-bookcover.jpg" alt="the-situation-room-cover" class="book-cover">
+                </a>
+            </div>
+
+            <div class="book-item" data-year="2024" data-category="philosophy" data-genre="fiction">
+                <a href="../posts/2024-10-29-bookreview-hamlet-williamshakespeare.html" class="link">
+                    <img src="../img/book/hamlet-williamshakespeare.jpg" alt="the-situation-room-cover" class="book-cover">
+                </a>
+            </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-10-11-bookreview-thesituationroom-georgestephanopoulos.html" class="link">
+                        <img src="../img/book/thesituationroom-georgestephanopoulos.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction"  data-category="horror">
+                    <a href="../posts/2024-9-11-bookreview-deadlake-darcycoates.html" class="link">
+                        <img src="../img/book/deadlake-darcycoates.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction" data-category="horror">
+                    <a href="../posts/2024-9-6-bookreview-thecolouroutofspace-hplovecraft.html" class="link">
+                        <img src="../img/book/thecolouroutofspace-hplovecraft.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024"  data-genre="non-fiction" data-category="philosophy">
+                    <a href="../posts/2024-9-3-bookreview-anenquiryconcerninghumanunderstanding-davidhume.html" class="link">
+                        <img src="../img/book/anenquiryconcerninghumanunderstanding-davidhume.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction" data-category="fantasy">
+                    <a href="../posts/2024-9-3-bookreview-acourofthornsandroses-sarahjmaas.html" class="link">
+                        <img src="../img/book/acourtofthornsandroses-sarahjmaas.jpeg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction" data-category="fantasy">
+                    <a href="../posts/2024-8-28-bookreview-thelionthewitchandthewardrobe-cslewis.html" class="link">
+                        <img src="../img/book/thelionthewitchandthewardrobe-cslewis.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="non-fiction" data-category="philosophy">
+                    <a href="../posts/2024-8-28-bookreview-commonsense-thomaspaine.html" class="link">
+                        <img src="../img/book/commonsense-thomaspaine.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024"  data-genre="non-fiction">
+                    <a href="../posts/2024-8-27-bookreview-thediaryofannefrank-annefrank.html" class="link">
+                        <img src="../img/book/diaryofayounggirl-annefrank.jpeg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024"  data-genre="non-fiction" data-category="philosophy">
+                    <a href="../posts/2024-8-26-bookreview-theartofwar-suntzu.html" class="link">
+                        <img src="../img/book/theartofwar-sun-tzu.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-8-21-bookreview-hamilton-ronchernow.html" class="link">
+                        <img src="../img/book/hamilton-ronchernow.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-8-16-bookreview-johnadams-davidmccullough.html" class="link">
+                        <img src="../img/book/johnadams-davidmcullough-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-in-review="stephen-king" data-genre="fiction" data-category="fantasy">
+                    <a href="../posts/2024-8-13-bookreview-thegunslinger-stephenking.html" class="link">
+                        <img src="../img/book/thegunslinger-stephenking.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-8-9-bookreview-washington-ronchernow.html" class="link">
+                        <img src="../img/book/washington-ronchernow-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="sci-fi" data-genre="fiction">
+                    <a href="../posts/2024-7-25-bookreview-ready-player-one-ernestcline.html" class="link">
+                        <img src="../img/book/ready-player-one-earnestcline-book-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="sci-fi" data-in-review="dune" data-genre="fiction">
+                    <a href="../posts/2024-7-25-bookreview-dune-messiah-frankherbert.html" class="link">
+                        <img src="../img/book/dune-messiah.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-genre="fiction" data-category="fantasy">
+                    <a href="../posts/2024-7-19-bookreview-bookshops-and-bonedust-travisbaldree.html" class="link">
+                        <img src="../img/book/bookshops-and-bonedust-cover.jpeg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="sci-fi" data-in-review="dune" data-genre="fiction">
+                    <a href="../posts/2024-6-4-bookreview-dune-frankherbert.html" class="link">
+                        <img src="../img/book/dune-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-20-bookreview-theapostlescreed-albertmohler.html" class="link">
+                        <img src="../img/book/theapostlescreed-bookcover-albertmohler.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-17-bookreview-evangelisticliving-rogercarswell.html" class="link">
+                        <img src="../img/book/evangelisticliving-bookcover-rogercarswell.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-16-bookreview-faithalone-rcsproul.html" class="link">
+                        <img src="../img/book/faithalone-bookcover-rcsproul.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                                
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-15-bookreview-evangelism-jmackstiles.html" class="link">
+                        <img src="../img/book/evangelism-bookcover-jmackstiles.webp" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-7-bookreview-the-forgotten-trinity-jameswhite.html" class="link">
+                        <img src="../img/book/the-forgotten-trinity-bookcover-jameswhite.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-5-3-bookdiscussion-corporate-worship-mattmerker.html" class="link">
+                        <img src="../img/book/corporate-worship-bookcover-mattmerker.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-4-30-bookdiscussion-expositional-preaching-davidhem.html" class="link">
+                        <img src="../img/book/expositional-preaching-davidhelm.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="faith" data-genre="non-fiction">
+                    <a href="../posts/2024-4-26-bookdiscussion-sound-doctrine-bobbyjamieson.html" class="link">
+                        <img src="../img/book/sound-doctrine-boobyjamieson.webp" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-4-25-bookreview-1776-davidmccullough.html" class="link">
+                        <img src="../img/book/1776-bookcover-davidmccullough.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-4-10-bookreview-1491-new-revelations-of-the-americas-before-columbus-charlescmann.html" class="link">
+                        <img src="../img/book/1491-new-revelations-in-america-before-columbus-book-cover.webp" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-4-4-bookreview-founding-brothers-josephjellis.html" class="link">
+                        <img src="../img/book/founding-brothers-by-joseph-j-ellis.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="politics" data-genre="non-fiction">
+                    <a href="../posts/2024-3-29-bookreview-american-sphinx-josephjellis.html" class="link">
+                        <img src="../img/book/american-sphinx-thomas-jefferson-book-cover.webp" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="lotr" data-genre="fiction">
+                    <a href="../posts/2024-3-20-bookreview-the-silmarillion-jrrtolkien.html" class="link">
+                        <img src="../img/book/the-silmarillion-book-cover.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-genre="fiction">
+                    <a href="../posts/2024-3-18-bookreview-the-fall-ryancahill.html" class="link">
+                        <img src="../img/book/the-fall-cover-ryan-cahill.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="lotr" data-genre="fiction">
+                    <a href="../posts/2024-3-5-bookreview-the-lord-of-the-rings-jrrtolkien.html" class="link">
+                        <img src="../img/book/lotr-onevolume.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="elderlings" data-genre="fiction">
+                    <a href="../posts/2024-2-6-bookreview-assassins-apprentice-robinhobb.html" class="link">
+                        <img src="../img/book/assassins-apprentice.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="star-wars" data-genre="fiction">
+                    <a href="../posts/2024-1-30-bookreview-star-wars-light-of-the-jedi-charlessoule.html" class="link">
+                        <img src="../img/book/sw-hr-light-of-the-jedi.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2024-1-24-bookreview-mistborn-the-lost-metal-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-the-lost-metal.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="malazan" data-genre="fiction">
+                    <a href="../posts/2024-1-8-bookreview-malazan-gardens-of-the-moon-stevenerikson.html" class="link">
+                        <img src="../img/book/malazan-gardens-of-the-moon.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2024" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2024-1-2-bookreview-mistborn-secret-history-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-secret-history.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-12-26-bookreview-mistborn-the-bands-of-mourning-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-the-bands-of-mourning.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-12-18-bookreview-mistborn-shadows-of-self-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-shadows-of-self.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-12-11-bookreview-mistborn-the-allow-of-law-brandonsanderson.html" class="link">
+                        <img src="../img/book/mistborn-the-allow-of-law.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-12-4-bookreview-mistborn-the-hero-of-ages-brandonsanderson.html" class="link">
+                        <img src="../img/book/hero-of-ages.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-11-23-bookreview-mistborn-the-well-of-ascension-breandonsanderson.html" class="link">
+                        <img src="../img/book/well-of-ascension.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-11-10-bookreview-rhythm-of-war-brandonsanderson.html" class="link">
+                        <img src="../img/book/rhythm.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+                <div class="book-item" data-year="2023" data-category="fantasy" data-in-review="cosmere" data-genre="fiction">
+                    <a href="../posts/2023-11-9-bookreview-dawnshard-brandonsanderson.html" class="link">
+                        <img src="../img/book/dawnshard.jpg" alt="the-situation-room-cover" class="book-cover">
+                    </a>
+                </div>
+
+
+
+
+                <div class="book-item" data-year="2023" data-category="blog" data-genre="blog" data-filter="blog" >
+                    <a href="../posts/2023-10-19-familyblog-hazel-gail-bramer-is-here.html" class="link">
+                        <img src="../img/family/hazel.jpeg" alt="">
+                        <h2>Hazel Gail Bramer is Here</h2>
+                        <p>October 19, 2023</p>
+                        
+                        <!-- <img src="../img/book/thehobbit-book-cover.png" alt="book-cover" class="book-cover"> -->
+                    </a>
+                </div>
+
+
+
+
+
+
+
+
+            <!-- 2022 -->
+                <div class="book-item" data-year="2022" data-category="lotr" data-genre="fantasy" >
+                    <a href="../posts/2022-2-6-bookreview-the-hobbit-jrrtolkien.html" class="link">
+                        <img src="../img/book/thehobbit-book-cover.png" alt="book-cover" class="book-cover">
+                    </a>
+                </div>
+
+
+                <!-- 
+                new writing 
+
+                     
+                    <div class="book-item" data-year="2019" data-category="" data-genre="" >
+                        <a href="../posts/2022-2-6-bookreview-the-hobbit-jrrtolkien.html" class="link">
+                             <img src="../img/book/thehobbit-book-cover.png" alt="book-cover" class="book-cover">
+                        </a>
+                    
+           
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-10-13-bookreview-the-way-of-edan-phillipchase.html">
+                            <h2>The Way of Edan by Phillip Chase</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-10-9-bookreview-doctor-sleep-stephenking.html">
+                            <h2>Doctor Sleep by Stephen King</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-10-5-bookreview-harry-potter-and-the-prisoner-of-azkaban-jkrowling.html">
+                            <h2>Harry Potter and the Prisoner of Azkaban by J.K. Rowling</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-9-25-bookreview-it-stephenking.html">
+                            <h2>IT by Stephen King</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-9-19-bookreview-the-shining-stephenking.html">
+                            <h2>The Shining by Stephen King</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-9-12-bookreview-the-lightning-theif-rickriordan.html">
+                            <h2>Percy Jackson: The Lightning Thief by Rick Riordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-9-7-bookreview-tress-of-the-emerald-sea-brandonsanderson.html">
+                            <h2>Tress of the Emerald Sea by Brandon Sanderson</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-8-28-bookreview-a-memory-of-light-robertjordan.html">
+                            <h2>A Memory of Light by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-8-28-bookreview-new-spring-robertjordan.html">
+                            <h2>New Spring by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books">
+                        
+                        <a href="../posts/2023-8-23-books-reading-after-wot.html">
+                            <h2>My Plans After Finishing The Wheel of Time</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-8-18-bookreview-towers-of-midnight-robertjordan.html">
+                            <h2>Towers of Midnight by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movie reviews">
+                        
+                        <a href="../posts/2023-8-14-moviereview-nope.html">
+                            <h2>Nope</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-8-9-bookreview-the-gathering-storm-robertjordan.html">
+                            <h2>The Gathering Storm by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-7-31-bookreview-knife-of-dreams-robertjordan.html">
+                            <h2>Knife of Dreams by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-7-22-bookreview-crossroads-of-twilight-robertjordan.html">
+                            <h2>Crossroads of Twilight by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-7-13-bookreview-winters-heart-robertjordan.html">
+                            <h2>Winter's Heart by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-7-6-bookreview-the-path-of-daggers-robertjordan.html">
+                            <h2>The Path of Daggers by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-6-4-bookreview-lord-of-chaos-robertjordan.html">
+                            <h2>Lord of Chaos by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog games">
+                        
+                        <a href="../posts/2023-5-31-opinionblog-i-dont-play-video-games-anymore.html">
+                            <h2>I Don't Play Video Games Anymore</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-5-1-bookreview-a-crown-of-swords-robertjordan.html">
+                            <h2>A Crown of Swords by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-4-8-bookreview-the-fires-of-heaven-robertjordan.html">
+                            <h2>The Fires of Heaven by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-4-7-bookreview-a-game-of-thrones-georgerrmartin.html">
+                            <h2>A Game of Thrones by George R.R. Martin</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv family blog">
+                        
+                        <a href="../posts/2023-3-28-familyblog-my-son-has-epilepsy.html">
+                            <h2>My Son Has Epilepsy</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-3-14-bookreview-mistborn-the-final-empire-brandonsanderson.html">
+                            <h2>Mistborn: The Final Empire by Brandon Sanderson</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-3-13-bookreview-adventures-of-sherlock-holmes-sirarthurconandoyle.html">
+                            <h2>Adventures of Sherlock Holmes by Sir Arthur Conan Doyle</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-show reviews">
+                        
+                        <a href="../posts/2023-3-13-tvshowreview-tlou-ep9.html">
+                            <h2>The Last of Us: Ep 9</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-3-9-bookreview-fellowship-of-the-ring-jrrtolkien.html">
+                            <h2>The Fellowship of the Ring by J.R.R. Tolkien</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-show reviews">
+                        
+                        <a href="../posts/2023-3-6-tvshowreview-tlou-ep8.html">
+                            <h2>The Last of Us: Ep 8</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-3-1-bookreview-the-shadow-rising-robertjordan.html">
+                            <h2>The Shadow Rising by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-show reviews">
+                        
+                        <a href="../posts/2023-2-27-tvshowreview-tlou-ep7.html">
+                            <h2>The Last of Us: Ep 7</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv faith blog">
+                        
+                        <a href="../posts/2023-2-27-faithblog-am-I-a-preacher-now.html">
+                            <h2>Am I a Preacher Now?</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2023-2-27-opinionblog-tv-fatigue.html">
+                            <h2>I'm Having TV Fatigue</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-show reviews">
+                        
+                        <a href="../posts/2023-2-20-tvshowreview-tlou-ep6.html">
+                            <h2>The Last of Us: Ep 6</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-2-13-bookreview-star-wars-brotherhood-mikechen.html">
+                            <h2>Star Wars: Brotherhood by Mike Chen</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-2-13-moviereview-2001-a-space-odyssey.html">
+                            <h2>2001: A Space Odyssey</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-show reviews">
+                        
+                        <a href="../posts/2023-2-13-tvshowreview-tlou-ep5.html">
+                            <h2>The Last of Us: Ep 5</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-show reviews">
+                        
+                        <a href="../posts/2023-2-6-tvshowreview-tlou-ep4.html">
+                            <h2>The Last of Us: Ep 4</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-2-4-bookreview-the-martian-andyweir.html">
+                            <h2>The Martian by Andy Weir</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2023-2-2-moviereview-wakanda-forever.html">
+                            <h2>Wakanda Forever</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-show reviews">
+                        
+                        <a href="../posts/2023-1-30-tvshowreview-tlou-ep3.html">
+                            <h2>The Last of Us: Ep 3</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-1-30-bookreview-the-terminal-list-jackcarr.html">
+                            <h2>The Terminal List by Jack Carr</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-show reviews">
+                        
+                        <a href="../posts/2023-1-23-tvshowreview-tlou-ep2.html">
+                            <h2>The Last of Us: Ep 2</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-1-18-bookreview-hunger-games-suzanecollins.html">
+                            <h2>Hunger Games by Suzanne Collins</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-show reviews">
+                        
+                        <a href="../posts/2023-1-17-tvshowreview-tlou-ep1.html">
+                            <h2>The Last of Us: Ep 1</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2023-1-17-opinionblog-star-wars-ranked.html">
+                            <h2>Star Wars Movies Ranked</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2023-1-17-opinionblog-star-wars-order.html">
+                            <h2>My Star Wars Movie Watch Order</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-1-16-bookreview-the-dragon-reborn-robertjordan.html">
+                            <h2>The Dragon Reborn by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2023-1-13-bookreview-attack-on-titan-vol-1.html">
+                            <h2>Attack on Titan Vol. 1</h2>
+                        </a>
+                    </div>
+        
+                    <h1>2022</h1>
+        
+                    <div class="item filterDiv opinion blogs">
+                        
+                        <a href="../posts/2022-12-23-opinionblog-wear-a-watch.html">
+                            <h2>Wearing a Watch</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2022-12-22-moviereview-jurassic-park.html">
+                            <h2>Jurassic Park</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv school blog">
+                        
+                        <a href="../posts/2022-12-13-schoolblog-school-update-2022.html">
+                            <h2>School Update: 2022</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-12-13-opinionblog-favorite-new-tv-show-of-2022.html">
+                            <h2>My Favorite TV Show of 2022</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2022-12-13-moviereview-return-of-the-king.html">
+                            <h2>Lord of the Rings: Return of the King</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-12-12-opinionblog-least-favorite-books-of-2022.html">
+                            <h2>My Least Favorite Books of 2022</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-12-12-opinionblog-favorite-rewatch-tv-show-of-2022.html">
+                            <h2>My Favorite ReWatch TV Shows of 2022</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-12-12-opinionblog-favorite-movies-of-2022.html">
+                            <h2>My Least Favorite Movies of 2022</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2022-12-12-moviereview-spirited.html">
+                            <h2>Spirited</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books blog">
+                        
+                        <a href="../posts/2022-12-12-books-books-to-read-in-2023.html">
+                            <h2>Books I Want to Read in 2023</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books blog">
+                        
+                        <a href="../posts/2022-12-12-books-books-read-in-2022.html">
+                            <h2>Books I Read in 2022</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2022-12-9-moviereview-the-two-towers.html">
+                            <h2>Lord of the Rings: The Two Towers</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2022-12-9-moviereview-fellowship-of-the-ring.html">
+                            <h2>Lord of the Rings: Fellowship of the Ring</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books blog">
+                        
+                        <a href="../posts/2022-12-12-books-books-to-read-in-2023.html">
+                            <h2>Books I Want to Read in 2023</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-12-8-books-favorite-books-of-2022.html">
+                            <h2>My Favorite Books of 2022</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-12-5-opinionblog-matttalks.html">
+                            <h2>My Show, MATTtalks</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-12-5-opinionblog-asmr.html">
+                            <h2>ASMR</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2022-12-5-moviereview-lego-starwars-holiday-special.html">
+                            <h2>Lego Star Wars: Holiday Special</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-12-1-opinionblog-my-hair.html">
+                            <h2>My Hair</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-11-29-bookreview-oathbringer-brandonsanderson.html">
+                            <h2>Oathbringer by Brandon Sanderson</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-11-28-books-series-to-read.html">
+                            <h2>Book Series I Want to Read</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv faith blog">
+                        
+                        <a href="../posts/2022-11-15-faithblog-have-faith.html">
+                            <h2>Have Faith</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-11-10-opinionblog-not-a-programmer.html">
+                            <h2>I'm Not a Programmer, Yet!</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-11-8-bookreview-edgedancer-brandonsanderson.html">
+                            <h2>Edgedancer by Brandon Sanderson</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv interests blog">
+                        
+                        <a href="../posts/2022-11-3-interestsblog-november-2022.html">
+                            <h2>My Interests: November 2022</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-10-27-bookreview-warbreaker-brandonsanderson.html">
+                            <h2>Warbreaker by Brandon Sanderson</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books blog">
+                        
+                        <a href="../posts/2022-10-27-books-cosmere-in-review.html">
+                            <h2>I'm Starting a Cosmere in Review</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-10-18-opinionblog-go-dark.html">
+                            <h2>Dark Mode</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-10-18-bikecommuteblog-bike-commute-part-ten.html">
+                            <h2>Bike Commute: Part Ten</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-10-12-bookreview-words-of-radiance-brandonsanderson.html">
+                            <h2>Words of Radiance by Brandon Sanderson</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-9-23-opinionblog-too-much-too-watch.html">
+                            <h2>There it Too Much to Watch</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books blog">
+                        
+                        <a href="../posts/2022-9-19-books-what-am-i-reading-next.html">
+                            <h2>What Am I Reading Next?</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv website-update">
+                        
+                        <a href="../posts/2022-9-13-websiteupdate-mattbramer(dot)com-fifth-update.html">
+                            <h2>Website Update: Fifth Update</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-9-5-opinionblog-no-ads-on-my-website.html">
+                            <h2>There Are No Ads on My Website</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books blog">
+                        
+                        <a href="../posts/2022-8-29-books-conundrum-what-to-read-next.html">
+                            <h2>Conundrum: What to Read Next</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-8-22-bookreview-harrypotterandthechamberofsecrets-jkrowling.html">
+                            <h2>Harry Potter and the Chamber of Secrets by J.K. Rowling</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-8-1-bikecommuteblog-bike-commute-part-nine.html">
+                            <h2>Bike Commute: Part Nine</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-shows reviews">
+                        
+                        <a href="../posts/2022-7-28-tvshowreview-tedlasso-season-one.html">
+                            <h2>Ted Lasso: Season One</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-7-28-bikecommuteblog-bike-commute-part-eight.html">
+                            <h2>Bike Commute: Part Eight</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-7-27-bikecommuteblog-bike-commute-part-seven.html">
+                            <h2>Bike Commute: Part Seven</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-7-25-bikecommuteblog-bike-commute-part-six.html">
+                            <h2>Bike Commute: Part Six</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv family blog">
+                        
+                        <a href="../posts/2022-7-23-familyblog-samuel.html">
+                            <h2>My Son, Samuel</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv website-update">
+                        
+                        <a href="../posts/2022-7-18-websiteupdate-mattbramer(dot)com-fourth-update.html">
+                            <h2>Website Update: Fourth Update</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-7-18-bikecommuteblog-bike-commute-part-five.html">
+                            <h2>Bike Commute: Part Five</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-7-15-bikecommuteblog-bike-commute-part-four.html">
+                            <h2>Bike Commute: Part Four</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv school blog">
+                        
+                        <a href="../posts/2022-7-14-schoolblog-still-in-school.html">
+                            <h2>Yes, I'm Still in School</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-7-13-bikecommuteblog-bike-commute-part-three.html">
+                            <h2>Bike Commute: Part Three</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-7-11-bookreview-twilight-stepheniemeyer.html">
+                            <h2>Twilight by Stephenie Meyer</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv website-update">
+                        
+                        <a href="../posts/2022-7-4-websiteupdate-mattbramer(dot)com-third-update.html">
+                            <h2>Website Update: Third Update</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv opinion blog">
+                        
+                        <a href="../posts/2022-7-4-opinionblog-who-cares-really.html">
+                            <h2>Who Cares, Really?</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv interests blog">
+                        
+                        <a href="../posts/2022-7-4-interestsblog-july-22-interests.html">
+                            <h2>My Interests: July 2022</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-7-3-bikecommuteblog-bike-commute-part-two.html">
+                            <h2>Bike Commute: Part Two</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2022-6-27-moviereview-top-gun-maverick.html">
+                            <h2>Top Gun: Maverick</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv bike-commute blog">
+                        
+                        <a href="../posts/2022-6-25-bikecommuteblog-bike-commute-part-one.html">
+                            <h2>Bike Commute: Part One</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv website-update">
+                        
+                        <a href="../posts/2022-6-22-websiteupdate-mattbramer(dot)com-second-update.html">
+                            <h2>Website Update: Second Update</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tv-shows reviews">
+                        
+                        <a href="../posts/2022-6-22-tvshowreview-obi-wan-season-one.html">
+                            <h2>Obi Wan: Season One</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv website-update">
+                        
+                        <a href="../posts/2022-6-16-websiteupdate-mattbramer(dot)com-first-update.html">
+                            <h2>Website Update: First Update</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-5-24-bookreview-elantris-brandonsanderson.html">
+                            <h2>Elantris by Brandon Sanderson</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-5-16-bookreview-the-way-of-kings-brandonsanderson.html">
+                            <h2>The Way of Kings by Brandon Sanderson</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-4-8-bookreview-the-eye-of-the-world-robertjordan.html">
+                            <h2>The Eye of the World by Robert Jordan</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-3-8-bookreview-dune-frankherbert.html">
+                            <h2>Dune by Frank Herbert</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-2-15-bookreview-1984-georgeorwell.html">
+                            <h2>1984 by George Orwell</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-2-10-bookreview-harrypotterandthesorcerorsstone-jkrowling.html">
+                            <h2>Harry Potter and the Sorcerer's Stone</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-2-6-bookreview-the-hobbit-jrrtolkien.html">
+                            <h2>The Hobbit by J.R.R. Tolkien</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-2-2-bookreview-starwars-aftermath-chuckwendig.html">
+                            <h2>Star Wars: Aftermath by Chuck Wendig</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv books reviews">
+                        
+                        <a href="../posts/2022-1-26-bookreview-carrie-stephenking.html">
+                            <h2>Carrie by Stephen King</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv food reviews">
+                        
+                        <a href="../posts/2022-1-13-foodreview-tony-cheese-pizza.html">
+                            <h2>Tony's Cheese Pizza</h2>
+                        </a>
+                    </div>
+        
+                    <h1>2021</h1>
+        
+                    <div class="item filterDiv faith blog">
+                        
+                        <a href="../posts/2021-10-31-faithblog-forgiveness-cancel-culture.html">
+                            <h2>Forgiveness in a Cancel Culture</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv faith blog">
+                        
+                        <a href="../posts/2021-10-4-faithblog-bible-reading.html">
+                            <h2>I Read the Whole Bible</h2>
+                        </a>
+                    </div>
+        
+                    <h1>2019</h1>
+        
+                    <div class="item filterDiv games reviews">
+                        
+                        <a href="../posts/2019-3-28-videogamereview-spider-manPS4.html">
+                            <h2>Spider-Man PS4</h2>
+                        </a>
+                    </div>
+        
+                    <h2>2018</h2>
+        
+                    <div class="item filterDiv tech reviews">
+                        
+                        <a href="../posts/2018-9-29-techreview-hp-3830-printer.html">
+                            <h2>HP 3830 Printer</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv games reviews">
+                        
+                        <a href="../posts/2018-9-24-videogamereview-uncharted-1.html">
+                            <h2>Uncharted: Drake's Fortune</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2018-5-26-moviereview-solo.html">
+                            <h2>SOLO: A Star Wars Story</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2018-1-13-moviereview-greatest-showman.html">
+                            <h2>The Greatest Showman</h2>
+                        </a>
+                    </div>
+        
+        
+                    <h1>2016</h1>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2016-12-16-moviereview-rogue-one.html">
+                            <h2>Rogue One: A Star Wars Story</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2016-6-12-moviereview-star-wars-ep3.html">
+                            <h2>Star Wars Episode 3: Revenge of the Sith</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2016-6-5-moviereview-star-wars-ep2.html">
+                            <h2>Star Wars Episode 2: Attack of the Clones</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2016-5-29-moviereview-star-wars-ep1.html">
+                            <h2>Star Wars Episode 1: The Phantom Menace</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv tech reviews">
+                        
+                        <a href="../posts/2016-5-9-techreview-google-cardboard.html">
+                            <h2>Google Cardboard (2016)</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv movies reviews">
+                        
+                        <a href="../posts/2016-5-4-moviereview-fight-club.html">
+                            <h2>Fight Club</h2>
+                        </a>
+                    </div>
+        
+                    <div class="item filterDiv food reviews">
+                        
+                        <a href="../posts/2016-1-13-foodreview-arbys-french-dip.html">
+                            <h2>Arby's French Dip and Swiss</h2>
+                        </a>
+                    </div>
+        
+        
+        
+                    <h1>2014</h1>
+        
+                    <div class="item filterDiv reviews games">
+                        
+                        <a href="../posts/2014-11-11-videogamereview-watch-dogs.html">
+                            <h2>Watch Dogs (2014)</h2>
+                        </a>
+                    </div>
+        
+                </div>
+
+-->
+
+                <div id="no-results-message" style="display: none;">
+                    <h2>no results found</h2>
+                </div>
+
+        </div>
+
+        
+
+    </main>
+
+
+</body>
+
+<script src="..js/filterItems.js"></script>
+<script src="../js/navBar.js"></script>
+</html>
+         
