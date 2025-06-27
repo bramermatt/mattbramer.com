@@ -2,7 +2,10 @@
 const navHTML = `
     <nav class="nav-container">
         <div class="navbar">
-            <a href="#" class="logo">YourLogo</a>
+        <div class="nav-content">
+            <a href="#" class="logo"><img src="../mLogo.png"></a>
+        </div>
+        <div class="nav-links">
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="#" class="nav-link">Home</a>
@@ -26,6 +29,7 @@ const navHTML = `
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
+        
             <div class="hamburger" aria-label="Open menu" tabindex="0">
                 <i class="fas fa-bars"></i>
             </div>
@@ -36,47 +40,52 @@ const navHTML = `
 // Footer HTML template
 const footerHTML = `
     <footer class="footer-container">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <div class="footer">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About Us</h3>
-                    <p>We are a dynamic company focused on creating innovative solutions for modern web development. Our team is passionate about delivering high-quality experiences.</p>
+                    <h3>About Matt</h3>
+                    <p>Book reviewer, critical thinker, pastor, husband, father, worship leader, and aspiring software engineer—Matt brings faith, family, and code together with every post.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Articles</a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Before the Throne Series</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-user"></i> About</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Articles</a></li>
+                        <li><a href="#"><i class="fas fa-star"></i> Reviews</a></li>
+                        <li><a href="#"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
                     </ul>
                 </div>
+
+                <div class="footer-section">
+                    <h3>Series</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-book"></i> Before the Throne</a></li>
+                        <li><a href="#"><i class="fas fa-microphone"></i> MATTtalks</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Social Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-threads"></i> Threads</a></li>
+                        <li><a href="#"><i class="fab fa-goodreads"></i> GoodReads</a></li>
+                        <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="fas fa-newspaper"></i> Substack</a></li>
+                    </ul>
+                </div>
+
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">UI/UX Design</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">Consulting</a></li>
+                        <li><a href="#"><i class="fas fa-code"></i> Web Development</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" title="Threads"><i class="fa-brands fa-threads"></i></a>
-                    </div>
-                    <p style="margin-top: 1rem;">Stay connected with me on social media for updates and news.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Matt Bramer. All rights reserved.</p>
             </div>
         </div>
     </footer>
