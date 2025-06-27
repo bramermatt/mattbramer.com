@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - Dynamic Navigation with Markdown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Main Content Styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .article {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Markdown Content Styles */
+        .markdown-content h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .markdown-content h2 {
+            color: #34495e;
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .markdown-content h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .markdown-content p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .markdown-content ul, .markdown-content ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .markdown-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .markdown-content blockquote {
+            border-left: 4px solid #3498db;
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            font-style: italic;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .markdown-content code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+        }
+
+        .markdown-content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .markdown-content pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 1rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .markdown-content a {
+            color: #3498db;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .markdown-content a:hover {
+            border-bottom-color: #3498db;
+            color: #2980b9;
+        }
+
+        /* Footer Styles */
+        .footer-container {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+        }
+
+        /* Blog List Styles */
+        .blog-list {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .blog-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card h3 a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blog-card h3 a:hover {
+            color: #3498db;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(102, 126, 234, 0.95);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                backdrop-filter: blur(10px);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 1rem 0;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .article {
+                padding: 2rem;
+            }
+
+            .markdown-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content where navigation will be injected before -->
+    <main class="container">
+        <!-- Single Article View -->
+        <article class="article">
+            <div class="article-meta">
+                <span class="meta-item">📅 March 15, 2025</span>
+                <span class="meta-item">🏷️ Web Development</span>
+                <span class="meta-item">⏱️ 5 min read</span>
+                <span class="meta-item">✍️ John Doe</span>
+            </div>
+            
+            <!-- This is where your Markdown content gets rendered -->
+            <div class="markdown-content" id="article-content">
+                <!-- Markdown content will be inserted here -->
+            </div>
+        </article>
+
+        <!-- Blog List (for homepage/index) -->
+        <div class="blog-list" id="blog-list" style="display: none;">
+            <div class="blog-card">
+                <h3><a href="#article1">Getting Started with Dynamic Navigation</a></h3>
+                <div class="blog-excerpt">
+                    Learn how to implement dynamic navigation that can be easily maintained across your entire website using modern JavaScript techniques.
+                </div>
+                <div class="article-meta">
+                    <span class="meta-item">📅 March 15, 2025</span>
+                    <span class="meta-item">🏷️ JavaScript</span>
+                </div>
+                <a href="#article1" class="read-more">Read More →</a>
+            </div>
+
+            <div class="blog-card">
+                <h3><a href="#article2">Markdown vs HTML for Blog Content</a></h3>
+                <div class="blog-excerpt">
+                    Discover why Markdown is the superior choice for content creation and how to integrate it with your existing website infrastructure.
+                </div>
+                <div class="article-meta">
+                    <span class="meta-item">📅 March 12, 2025</span>
+                    <span class="meta-item">🏷️ Content Strategy</span>
+                </div>
+                <a href="#article2" class="read-more">Read More →</a>
+            </div>
+
+            <div class="blog-card">
+                <h3><a href="#article3">Building Responsive Navigation Components</a></h3>
+                <div class="blog-excerpt">
+                    A comprehensive guide to creating mobile-first navigation that works perfectly across all devices and screen sizes.
+                </div>
+                <div class="article-meta">
+                    <span class="meta-item">📅 March 10, 2025</span>
+                    <span class="meta-item">🏷️ CSS</span>
+                </div>
+                <a href="#article3" class="read-more">Read More →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer insertion target -->
+    <div id="footer-target"></div>
+
+    <script>
+        // Navigation HTML
+        const navHTML = `
+            <nav class="nav-container">
+                <div class="navbar">
+                    <a href="#" class="logo">MyBlog</a>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="showBlogList()">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Archive</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        `;
+
+        // Footer HTML
+        const footerHTML = `
+            <footer class="footer-container">
+                <div class="footer">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <h3>About This Blog</h3>
+                            <p>A modern blog showcasing the power of Markdown content with dynamic JavaScript components. Writing made simple, navigation made dynamic.</p>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Categories</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Web Development</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                                <li><a href="#">CSS & Design</a></li>
+                                <li><a href="#">Content Strategy</a></li>
+                                <li><a href="#">Performance</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Recent Posts</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Dynamic Navigation Guide</a></li>
+                                <li><a href="#">Markdown Best Practices</a></li>
+                                <li><a href="#">Responsive Design Tips</a></li>
+                                <li><a href="#">SEO for Developers</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Connect</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link">📘</a>
+                                <a href="#" class="social-link">🐦</a>
+                                <a href="#" class="social-link">📷</a>
+                                <a href="#" class="social-link">💼</a>
+                            </div>
+                            <p style="margin-top: 1rem;">Follow for updates on web development and content creation.</p>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 MyBlog. Built with Markdown + Dynamic JS. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        `;
+
+        // Sample Markdown content (in a real setup, this would come from .md files)
+        const sampleMarkdown = `# Dynamic Navigation with Markdown Content
+
+This is a **complete example** of how to combine Markdown content with dynamic JavaScript navigation components.
+
+## Why This Approach Works
+
+Using Markdown for your blog content offers several advantages:
+
+- **Easy to write**: Focus on content, not HTML tags
+- **Portable**: Works with any static site generator
+- **Version control friendly**: Clean diffs in Git
+- **Future-proof**: Convert to any format later
+
+### Key Features
+
+1. **Dynamic Navigation**: Injected via JavaScript using \`beforebegin\`
+2. **Markdown Content**: Clean, semantic, and maintainable
+3. **Responsive Design**: Works on all devices
+4. **SEO Friendly**: Proper semantic HTML structure
+
+## Code Example
+
+Here's how you might load Markdown content dynamically:
+
+\`\`\`javascript
+// Load and render Markdown
+async function loadMarkdown(file) {
+    const response = await fetch(file);
+    const text = await response.text();
+    const html = markdownToHTML(text);
+    document.getElementById('content').innerHTML = html;
+}
+\`\`\`
+
+## Benefits for Large Sites
+
+> "With 150+ articles, Markdown becomes essential for maintainability. You can focus on writing great content while the system handles the presentation."
+
+### Workflow Benefits
+
+- Write in any text editor
+- Version control with Git
+- Bulk operations possible
+- Easy backup and migration
+- Static site generation ready
+
+## Next Steps
+
+To implement this system:
+
+1. **Convert existing HTML** to Markdown
+2. **Set up build process** (optional)
+3. **Implement dynamic loading** (if needed)
+4. **Test thoroughly** across devices
+
+The combination of Markdown content and dynamic JavaScript components gives you the best of both worlds: easy content management and flexible presentation.
+
+---
+
+*This article demonstrates how modern web development can be both powerful and maintainable.*`;
+
+        // Simple Markdown to HTML converter (basic implementation)
+        function markdownToHTML(markdown) {
+            return markdown
+                // Headers
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                // Bold
+                .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+                // Italic
+                .replace(/\*(.*)\*/gim, '<em>$1</em>')
+                // Code blocks
+                .replace(/```(\w+)?\n([\s\S]*?)```/gim, '<pre><code>$2</code></pre>')
+                // Inline code
+                .replace(/`([^`]+)`/gim, '<code>$1</code>')
+                // Blockquotes
+                .replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>')
+                // Lists
+                .replace(/^\d+\. (.*$)/gim, '<li>$1</li>')
+                .replace(/^- (.*$)/gim, '<li>$1</li>')
+                // Links
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2">$1</a>')
+                // Line breaks
+                .replace(/\n\n/gim, '</p><p>')
+                .replace(/\n/gim, '<br>')
+                // Wrap in paragraphs
+                .replace(/^(.+)$/gim, '<p>$1</p>')
+                // Clean up
+                .replace(/<p><h([1-6])>/gim, '<h$1>')
+                .replace(/<\/h([1-6])><\/p>/gim, '</h$1>')
+                .replace(/<p><li>/gim, '<li>')
+                .replace(/<\/li><\/p>/gim, '</li>')
+                .replace(/<p><blockquote>/gim, '<blockquote>')
+                .replace(/<\/blockquote><\/p>/gim, '</blockquote>')
+                .replace(/<p><pre>/gim, '<pre>')
+                .replace(/<\/pre><\/p>/gim, '</pre>');
+        }
+
+        // Navigation functions
+        function injectNavigation() {
+            const main = document.querySelector('main');
+            if (main) {
+                main.insertAdjacentHTML('beforebegin', navHTML);
+                
+                // Add mobile menu functionality
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.nav-menu');
+                
+                if (hamburger && navMenu) {
+                    hamburger.addEventListener('click', () => {
+                        hamburger.classList.toggle('active');
+                        navMenu.classList.toggle('active');
+                    });
+
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.addEventListener('click', () => {
+                            hamburger.classList.remove('active');
+                            navMenu.classList.remove('active');
+                        });
+                    });
+                }
+            }
+        }
+
+        function injectFooter() {
+            const target = document.querySelector('#footer-target');
+            if (target) {
+                target.insertAdjacentHTML('beforebegin', footerHTML);
+            }
+        }
+
+        // Content management functions
+        function showArticle() {
+            document.querySelector('.article').style.display = 'block';
+            document.querySelector('.blog-list').style.display = 'none';
+            
+            // Load and render Markdown content
+            const content = document.getElementById('article-content');
+            content.innerHTML = markdownToHTML(sampleMarkdown);
+        }
+
+        function showBlogList() {
+            document.querySelector('.article').style.display = 'none';
+            document.querySelector('.blog-list').style.display = 'grid';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            injectNavigation();
+            injectFooter();
+            showArticle(); // Show article by default
+        });
+
+        // Global functions
+        window.showArticle = showArticle;
+        window.showBlogList = showBlogList;
+    </script>
+</body>
+</html>
