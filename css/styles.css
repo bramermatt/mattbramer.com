@@ -157,83 +157,7 @@ article#articles.projects h2 {
         }
     }
 
-#toc {
-    margin: 2em auto;
-    max-width: 400px;
-    background: #f8f8f8 !important;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
-    padding: 1.5em 1em;
-    font-size: 1rem;
-    font-family: inherit;
 
-    position: sticky;
-    top: 2vh;
-    z-index: 10;
-}
-
-#toc details {
-    border-radius: 8px;
-    background: #e6e6e6;
-    /* box-shadow: 0 1px 2px rgba(0,0,0,0.02); */
-    padding: .5em 1em;
-    margin-bottom: 1em;
-    transition: background 0.2s;
-}
-
-#toc details[open] {
-    background: #d4e7c5;
-}
-
-#toc summary {
-    font-weight: bold;
-    font-size: 1.1em;
-    cursor: pointer;
-    outline: none;
-    user-select: none;
-    padding: .2em 0;
-    color: #2e3b0b;
-    transition: color 0.2s;
-}
-
-#toc details[open] summary {
-    color: #5d262d;
-}
-
-#toc ul {
-    list-style: none;
-    padding-left: 1em;
-    margin: .5em 0 0 0;
-}
-
-#toc li {
-    margin: .3em 0;
-    padding-left: .5em;
-    border-left: 2px solid #bfcf8c;
-    transition: border-color 0.2s;
-}
-
-#toc li a {
-    color: #3b5e0f;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-    padding: .1em 0;
-    display: inline-block;
-}
-
-#toc li a:hover {
-    color: #5d262d;
-    text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-    #toc {
-        max-width: 98vw;
-        font-size: .98rem;
-        padding: 1em .5em;
-    }
-}
 
 article#post {
     display: grid;
@@ -301,9 +225,9 @@ article#post {
 
         border-radius: 10px;
         /* padding: .5em; */
-        height: max-content;
+        /* height: max-content; */
 
-        position: sticky;
+        /* position: sticky; */
         top: 2vh;
         z-index: 1;
 
@@ -537,6 +461,15 @@ section {
     gap: 1vw;
     /* width: 100%; */
 
+    .item  {
+        padding: .5em;
+    }
+    .item:hover, .item a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        text-decoration: none !important;
+    }
 
 
     h2 {
@@ -549,10 +482,11 @@ section {
     }
 
     h3 {
+        /* padding: .5em; */
         margin: 0;
         opacity: 60%;
         font-size: small;
-        /* white-space: nowrap; */
+        white-space: nowrap;
         /* max-width: 80%; */
     }
 
@@ -663,6 +597,14 @@ section {
 }*/
 
 @media screen and (max-width: 615px) {
+
+    section {
+        h3 {
+            padding: 0;
+        }
+        
+    }
+
     .profile {
         /* margin: 5%; */
         /* height: 85vh; */
@@ -1207,3 +1149,109 @@ a:hover {
         background-color: #313131;
         opacity: 20%;
       }
+
+
+#toc {
+    margin: 1em auto;
+    max-width: 400px;
+    background: #f8f8f8 !important;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2) !important;
+    padding: 0;
+    font-size: 1rem;
+    font-family: inherit;
+    position: sticky;
+    top: 2vh;
+    z-index: 10;
+}
+
+#toc details {
+    border-radius: 8px;
+    background: #e6e6e6;
+    transition: background 0.2s;
+    box-shadow: none !important;
+}
+
+#toc details[open] {
+    background: #d4e7c5;
+}
+
+#toc summary {
+    font-weight: bold;
+    font-size: .5em;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    padding: .2em 0;
+    color: #2e3b0b;
+    transition: color 0.2s;
+}
+
+#toc details[open] summary {
+    color: #5d262d;
+}
+
+#toc ul {
+    list-style: none;
+    padding-left: 1em;
+    margin: .5em 0 0 0;
+}
+
+#toc li {
+    margin: .3em 0;
+    padding-left: .5em;
+    border-left: 2px solid #bfcf8c;
+    transition: border-color 0.2s;
+}
+
+#toc li a {
+    color: #3b5e0f;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: inline-block;
+}
+
+#toc li a:hover {
+    color: #5d262d;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    #toc {
+        max-width: 98vw;
+        font-size: .98rem;
+        padding: 1em .5em;
+    }
+}
+
+/* Dark mode for TOC */
+@media (prefers-color-scheme: dark) {
+    #toc {
+        background: #23281c !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+        color: #e6e6e6;
+    }
+    #toc details {
+        background: #23281c;
+    }
+    #toc details[open] {
+        background: #2e3b0b;
+    }
+    #toc summary {
+        color: #d4e7c5;
+    }
+    #toc details[open] summary {
+        color: #ffd700;
+    }
+    #toc li {
+        border-left: 2px solid #5d262d;
+    }
+    #toc li a {
+        color: #ffd700;
+    }
+    #toc li a:hover {
+        color: #ff9900;
+        text-decoration: underline;
+    }
+}

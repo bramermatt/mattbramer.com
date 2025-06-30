@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.head.appendChild(style);
 
         const thumbNavHTML = `
-        <nav id="thumbNav" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:90%;background:${bgColor};border:1px solid ${borderColor};box-shadow:0 2px 8px ${shadowColor};border-radius:16px;display:flex;justify-content:space-around;align-items:center;padding:12px 8px;font-size:14px;z-index:50;max-width:500px;">
+        <nav id="thumbNav" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:90%;background:${bgColor};box-shadow:0 2px 8px ${shadowColor};border-radius:16px;display:flex;justify-content:space-around;align-items:center;padding:12px 8px;font-size:14px;z-index:50;max-width:500px;">
             ${navItems.map(item => {
                 const isActive = item.match.test(current);
                 return `
