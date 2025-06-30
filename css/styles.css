@@ -75,7 +75,7 @@ article {
 .article-timeline {
 
     display: grid; 
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 0fr 3fr;
     /* max-width: 800px; */
     margin: 0 auto;
     gap: 3vw;
@@ -89,10 +89,10 @@ article {
 article#articles {
     max-width: 800px;
 
-    img {
+    /* img {
         max-height: 80vh;
         width: 100%;
-    }
+    } */
 
     h1 {
         border-bottom: thin solid;
@@ -116,7 +116,7 @@ article#articles {
 
         h4 {
             margin-top: 0;
-
+            margin-bottom: 0;
 
         }
 
@@ -453,23 +453,33 @@ article:last-child {
     }
 }
 
-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-    gap: 1vw;
-    /* width: 100%; */
+.item {
+    padding: .5em;
+}
 
-    .item  {
-        padding: .5em;
-    }
     .item:hover, .item a:hover {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         text-decoration: none !important;
     }
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 2vw;
+    /* width: 100%; */
+
+    .post-image {
+        img {
+            max-height: 40vh;
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+
 
 
     h2 {
@@ -486,7 +496,7 @@ section {
         margin: 0;
         opacity: 60%;
         font-size: small;
-        white-space: nowrap;
+        /* white-space: nowrap; */
         /* max-width: 80%; */
     }
 
@@ -599,6 +609,11 @@ section {
 @media screen and (max-width: 615px) {
 
     section {
+
+        .item {
+            padding: 0;
+        }
+
         h3 {
             padding: 0;
         }
