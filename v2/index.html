@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matt Bramer - Pastor, Developer, Content Creator</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --secondary-gradient: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            --gold: #ffd700;
+            --gold-gradient: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-primary: #0a0a0a;
+            --text-secondary: #4a5568;
+            --text-light: rgba(255, 255, 255, 0.9);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,82 +27,198 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
             overflow-x: hidden;
+            background: #000;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--primary-gradient);
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="25" cy="25" r="0.3" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="0.4" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background: var(--primary-gradient); }
+            25% { background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 70%, #f5576c 100%); }
+            50% { background: linear-gradient(135deg, #667eea 0%, #764ba2 20%, #f093fb 60%, #4facfe 100%); }
+            75% { background: linear-gradient(135deg, #667eea 0%, #764ba2 40%, #f093fb 80%, #00f2fe 100%); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: floatUp 15s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
 
-        /* Header */
+        /* Glassmorphism Header */
         header {
-            /* background: rgba(255, 255, 255, 0.95); */
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
-            
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background: transparent;
-
-            
+            padding: 1.5rem 2rem;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #4A5568;
+            font-size: 2rem;
+            font-weight: 900;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gold-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .logo:hover::after {
+            width: 100%;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 3rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #4A5568;
+            color: var(--text-light);
             font-weight: 500;
-            transition: color 0.3s ease;
-            /* color: white; */
-            /* text-shadow: 0px 0px 10px rgba(0, 0, 0); */
+            font-size: 1.1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
 
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
 
         .nav-links a:hover {
-            color: #667eea;
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
         }
 
         .menu-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
+            padding: 10px;
         }
 
         .menu-toggle span {
-            width: 25px;
+            width: 30px;
             height: 3px;
-            background: #4A5568;
-            margin: 3px 0;
-            transition: 0.3s;
+            background: var(--text-light);
+            margin: 4px 0;
+            transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-radius: 2px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-8px, -8px);
         }
 
         /* Hero Section */
@@ -97,290 +228,564 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            color: var(--text-light);
             position: relative;
-            padding-top: 80px;
+            padding-top: 100px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
         }
 
         .hero-content {
-            max-width: 800px;
-            animation: fadeInUp 1s ease-out;
+            max-width: 1000px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            animation: slideInDown 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s both;
+            position: relative;
+        }
+
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 200px;
+            height: 4px;
+            background: var(--gold-gradient);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            animation: slideInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s both;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 3rem;
             opacity: 0.9;
+            font-weight: 400;
+            animation: slideInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s both;
         }
 
         .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            animation: slideInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.8s both;
         }
 
         .stat {
-            text-align: center;
-            animation: fadeInUp 1s ease-out;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .stat:hover::before {
+            left: 100%;
+        }
+
+        .stat:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.1);
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
+            font-size: 3rem;
+            font-weight: 900;
             display: block;
-            color: #FFD700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             opacity: 0.8;
+            font-weight: 500;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
             flex-wrap: wrap;
+            animation: slideInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s both;
         }
 
         .btn {
-            padding: 12px 30px;
+            padding: 1rem 2.5rem;
             border: none;
             border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.1rem;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             text-decoration: none;
             display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn-primary {
-            background: #FFD700;
-            color: #333;
+            background: var(--gold-gradient);
+            color: #000;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
         }
 
         .btn-primary:hover {
-            background: #FFC107;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.5);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            border: 2px solid white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: white;
-            color: #333;
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
         }
 
-        /* Content Sections */
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::before {
+            content: '↓';
+            font-size: 2rem;
+            color: var(--gold);
+            opacity: 0.8;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Sections */
         .section {
-            padding: 5rem 0;
-            background: white;
+            padding: 8rem 0;
+            position: relative;
+            backdrop-filter: blur(20px);
         }
 
         .section:nth-child(even) {
-            background: #f8f9fa;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .section:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2D3748;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
         }
 
-        /* Ministry Section */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            width: 100px;
+            height: 4px;
+            background: var(--gold-gradient);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Ministry Cards */
         .ministry-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
         }
 
         .ministry-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 25px;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: var(--text-light);
+        }
+
+        .ministry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .ministry-card:hover::before {
+            opacity: 1;
         }
 
         .ministry-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: translateY(-20px) scale(1.05);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 30px 60px rgba(255, 215, 0, 0.2);
         }
 
         .ministry-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            background: var(--gold-gradient);
+            padding: 1rem;
+            border-radius: 20px;
+            transition: transform 0.5s ease;
+        }
+
+        .ministry-card:hover .ministry-icon {
+            transform: rotateY(360deg) scale(1.1);
         }
 
         .ministry-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2D3748;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
         }
 
         .ministry-card p {
-            color: #718096;
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
 
         /* Content Hub */
         .content-hub {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .content-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            border-radius: 25px;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: rotate 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .content-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .content-card:hover {
-            transform: scale(1.05);
+            transform: translateY(-15px) scale(1.05);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.2);
         }
 
         .content-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
         .content-number {
-            font-size: 2.5rem;
-            font-weight: bold;
+            font-size: 3.5rem;
+            font-weight: 900;
             display: block;
-            margin-bottom: 0.5rem;
-            color: #FFD700;
+            margin-bottom: 1rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Services Section */
+        /* Services */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+            margin-top: 4rem;
         }
 
         .service-card {
-            background: white;
-            padding: 3rem 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4rem 3rem;
+            border-radius: 30px;
             text-align: center;
-            border-top: 5px solid #667eea;
-            transition: transform 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+            color: var(--text-light);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gold-gradient);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-20px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 40px 80px rgba(255, 215, 0, 0.15);
         }
 
         .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #2D3748;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
+            color: var(--text-light);
         }
 
         .service-list {
             list-style: none;
-            margin: 1.5rem 0;
+            margin: 2rem 0;
+            text-align: left;
         }
 
         .service-list li {
-            padding: 0.5rem 0;
-            color: #718096;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            padding-left: 2rem;
+            transition: all 0.3s ease;
         }
 
         .service-list li:before {
-            content: "✓";
-            color: #48BB78;
-            font-weight: bold;
-            margin-right: 0.5rem;
+            content: "✨";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .service-list li:hover {
+            opacity: 1;
+            transform: translateX(10px);
+            color: var(--gold);
         }
 
         /* Footer */
         footer {
-            background: #2D3748;
-            color: white;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            color: var(--text-light);
             text-align: center;
-            padding: 3rem 0;
+            padding: 5rem 0 2rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-section h4 {
-            margin-bottom: 1rem;
-            color: #FFD700;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .footer-section a {
-            color: #A0AEC0;
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             display: block;
-            margin: 0.5rem 0;
-            transition: color 0.3s ease;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .footer-section a:hover {
-            color: #FFD700;
+            color: var(--gold);
+            transform: translateX(10px);
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
         .social-links a {
-            width: 50px;
-            height: 50px;
-            background: #4A5568;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            font-size: 1.5rem;
         }
 
         .social-links a:hover {
-            background: #667eea;
+            background: var(--gold-gradient);
+            color: #000;
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
         }
 
         /* Animations */
-        @keyframes fadeInUp {
+        @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-60px);
             }
             to {
                 opacity: 1;
@@ -390,8 +795,8 @@
 
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         .fade-in.visible {
@@ -399,7 +804,41 @@
             transform: translateY(0);
         }
 
-        /* Mobile Responsive */
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-stats {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .ministry-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -407,10 +846,12 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: white;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(20px);
                 flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                padding: 2rem;
+                border-radius: 0 0 20px 20px;
+                border: 1px solid rgba(255, 215, 0, 0.3);
             }
 
             .nav-links.active {
@@ -422,15 +863,20 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: clamp(2.5rem, 8vw, 4rem);
             }
 
             .hero-stats {
-                gap: 1.5rem;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat {
+                padding: 1.5rem;
             }
 
             .stat-number {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .cta-buttons {
@@ -439,53 +885,179 @@
             }
 
             .btn {
-                width: 200px;
+                width: 250px;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .section {
+                padding: 5rem 0;
             }
 
-            .ministry-grid,
-            .content-hub,
+            .ministry-card,
+            .service-card {
+                padding: 2rem;
+            }
+
+            .content-hub {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
+            .hero {
+                padding-top: 120px;
             }
 
             .hero-stats {
-                flex-direction: column;
-                gap: 1rem;
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                padding: 1rem;
             }
 
             .ministry-card,
             .service-card {
                 padding: 1.5rem;
             }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-links a {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* Particle System */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 20s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-gradient);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(255, 215, 0, 0.1);
+            border-left: 4px solid var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Cursor Trail Effect */
+        .cursor-trail {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            animation: cursorPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes cursorPulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.5); opacity: 0.4; }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Cursor Trail -->
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <header id="header">
         <nav class="container">
             <a href="#" class="logo">Matt Bramer</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#ministry">Ministry</a></li>
                 <li><a href="#content">Content</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -496,53 +1068,55 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
+                <div class="hero-badge">✨ Pastor • Developer • Content Creator</div>
                 <h1>Matt Bramer</h1>
-                <p class="hero-subtitle">Pastor • Developer • Content Creator • Husband • Father</p>
+                <p class="hero-subtitle">Serving God's Kingdom Through Ministry, Technology & Content Creation</p>
                 
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number">230+</span>
-                        <span class="stat-label">Articles</span>
+                        <span class="stat-number" data-count="230">0</span>
+                        <span class="stat-label">Articles Written</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">600+</span>
+                        <span class="stat-number" data-count="600">0</span>
                         <span class="stat-label">YouTube Videos</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">20+</span>
+                        <span class="stat-number" data-count="20">0</span>
                         <span class="stat-label">Web Projects</span>
                     </div>
                 </div>
 
                 <div class="cta-buttons">
-                    <a href="#ministry" class="btn btn-primary">Explore Ministry</a>
-                    <a href="#services" class="btn btn-secondary">Web Development</a>
+                    <a href="#ministry" class="btn btn-primary">🙏 Explore Ministry</a>
+                    <a href="#services" class="btn btn-secondary">💻 Web Development</a>
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator"></div>
     </section>
 
     <section id="ministry" class="section">
         <div class="container">
             <h2 class="section-title fade-in">Ministry & Teaching</h2>
             <div class="ministry-grid">
-                <div class="ministry-card fade-in">
+                <div class="ministry-card fade-in-left">
                     <div class="ministry-icon">📖</div>
                     <h3>Christian Doctrine</h3>
-                    <p>Deep theological teachings and Biblical doctrine to strengthen your faith foundation.</p>
-                    <a href="#" class="btn btn-primary">Read Teachings</a>
+                    <p>Comprehensive theological teachings rooted in Scripture, designed to deepen your understanding of Biblical truth and strengthen your faith foundation.</p>
+                    <a href="#" class="btn btn-primary">📚 Read Teachings</a>
                 </div>
                 <div class="ministry-card fade-in">
                     <div class="ministry-icon">👥</div>
                     <h3>Adult Bible Study</h3>
-                    <p>Weekly Bible studies designed to grow in wisdom and fellowship with fellow believers.</p>
-                    <a href="#" class="btn btn-primary">Join Study</a>
+                    <p>Interactive weekly studies that dive deep into God's Word, fostering spiritual growth and meaningful fellowship among believers.</p>
+                    <a href="#" class="btn btn-primary">🤝 Join Study</a>
                 </div>
-                <div class="ministry-card fade-in">
+                <div class="ministry-card fade-in-right">
                     <div class="ministry-icon">⛪</div>
-                    <h3>Pastoral Care</h3>
-                    <p>Shepherding hearts through life's challenges with Biblical wisdom and compassion.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <h3>Pastoral Ministry</h3>
+                    <p>Shepherding hearts through life's challenges with Biblical wisdom, compassionate care, and the transforming power of the Gospel.</p>
+                    <a href="#" class="btn btn-primary">💒 Learn More</a>
                 </div>
             </div>
         </div>
@@ -550,30 +1124,30 @@
 
     <section id="content" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Content Hub</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #718096; margin-bottom: 3rem;">
-                Dive into a wealth of content across multiple platforms
+            <h2 class="section-title fade-in">Content Universe</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: rgba(255,255,255,0.8); margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Explore a vast collection of content designed to educate, inspire, and equip you for ministry and life
             </p>
             <div class="content-hub">
-                <div class="content-card fade-in">
+                <div class="content-card fade-in" onclick="animateCard(this)">
                     <h3>📝 Blog Articles</h3>
                     <span class="content-number">230+</span>
-                    <p>In-depth articles on theology, web development, book reviews, and life reflections</p>
+                    <p>Deep theological insights, web development tutorials, book reviews, and personal reflections on faith and life</p>
                 </div>
-                <div class="content-card fade-in">
+                <div class="content-card fade-in" onclick="animateCard(this)">
                     <h3>🎥 YouTube Videos</h3>
                     <span class="content-number">600+</span>
-                    <p>Video content covering tutorials, sermons, and educational content</p>
+                    <p>Educational content covering sermons, tech tutorials, ministry insights, and biblical teachings</p>
                 </div>
-                <div class="content-card fade-in">
+                <div class="content-card fade-in" onclick="animateCard(this)">
                     <h3>💻 Web Projects</h3>
                     <span class="content-number">20+</span>
-                    <p>Showcase of web development work and technical projects</p>
+                    <p>Showcase of innovative web solutions for churches, ministries, and businesses</p>
                 </div>
-                <div class="content-card fade-in">
+                <div class="content-card fade-in" onclick="animateCard(this)">
                     <h3>📚 Book Reviews</h3>
                     <span class="content-number">Latest</span>
-                    <p>Thoughtful reviews of Christian books, theology, and literature</p>
+                    <p>Thoughtful analysis of Christian literature, theology books, and resources for spiritual growth</p>
                 </div>
             </div>
         </div>
@@ -581,34 +1155,38 @@
 
     <section id="services" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Web Development Services</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #718096; margin-bottom: 3rem;">
-                Professional web development focused on churches and small businesses
+            <h2 class="section-title fade-in">Web Development Excellence</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: rgba(255,255,255,0.8); margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                Transforming digital presence for churches and businesses with cutting-edge web solutions that glorify God and serve people
             </p>
             <div class="services-grid">
-                <div class="service-card fade-in">
+                <div class="service-card fade-in-left">
                     <h3>⛪ Church Websites</h3>
                     <ul class="service-list">
-                        <li>Custom church website design</li>
-                        <li>Sermon streaming integration</li>
-                        <li>Event management systems</li>
-                        <li>Online giving platforms</li>
-                        <li>Member portals</li>
-                        <li>Mobile-responsive design</li>
+                        <li>Custom responsive church website design</li>
+                        <li>Live sermon streaming & podcast integration</li>
+                        <li>Advanced event management systems</li>
+                        <li>Secure online giving & donation platforms</li>
+                        <li>Member portals & community features</li>
+                        <li>SEO optimization for local outreach</li>
+                        <li>Mobile-first design approach</li>
+                        <li>Content management training</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Get Quote</a>
+                    <a href="#contact" class="btn btn-primary">🚀 Transform Your Ministry</a>
                 </div>
-                <div class="service-card fade-in">
-                    <h3>🏢 Small Business</h3>
+                <div class="service-card fade-in-right">
+                    <h3>🏢 Small Business Solutions</h3>
                     <ul class="service-list">
-                        <li>Professional business websites</li>
-                        <li>E-commerce solutions</li>
-                        <li>SEO optimization</li>
-                        <li>Content management systems</li>
-                        <li>Analytics and reporting</li>
-                        <li>Ongoing maintenance</li>
+                        <li>Professional business website development</li>
+                        <li>E-commerce platforms & online stores</li>
+                        <li>Advanced SEO & digital marketing</li>
+                        <li>Custom web applications</li>
+                        <li>Analytics, reporting & insights</li>
+                        <li>Ongoing maintenance & security</li>
+                        <li>Performance optimization</li>
+                        <li>24/7 technical support</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#contact" class="btn btn-primary">💼 Grow Your Business</a>
                 </div>
             </div>
         </div>
@@ -616,16 +1194,41 @@
 
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">About Matt</h2>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 1.2rem; color: #4A5568; margin-bottom: 2rem;">
-                    I'm a passionate pastor, loving husband and father, and dedicated web developer. My heart is to serve God's kingdom through ministry, create meaningful content that edifies the body of Christ, and help churches and businesses establish their online presence.
-                </p>
-                <p style="font-size: 1.1rem; color: #718096; margin-bottom: 2rem;">
-                    Whether I'm teaching adult Bible study, writing about Christian doctrine, developing websites, or creating content, my goal is to glorify God and serve others with excellence.
-                </p>
+            <h2 class="section-title fade-in">The Heart Behind the Mission</h2>
+            <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+                <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 4rem; margin-bottom: 3rem;">
+                    <p style="font-size: 1.4rem; color: rgba(255,255,255,0.9); margin-bottom: 2rem; line-height: 1.8;">
+                        I'm a passionate follower of Jesus Christ, devoted husband, loving father, and servant-leader called to ministry. My heart beats for God's Kingdom, whether I'm shepherding souls through pastoral care, crafting digital experiences through web development, or creating content that edifies and inspires.
+                    </p>
+                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; line-height: 1.7;">
+                        From the pulpit to the keyboard, from family devotions to client consultations, every aspect of my life is an opportunity to serve God and love others with excellence, integrity, and innovation.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">👨‍👩‍👧‍👦</div>
+                            <h4 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 0.5rem;">Family Man</h4>
+                            <p style="opacity: 0.8;">Devoted husband & father</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">🙏</div>
+                            <h4 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 0.5rem;">Pastor</h4>
+                            <p style="opacity: 0.8;">Shepherding God's people</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">💻</div>
+                            <h4 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 0.5rem;">Developer</h4>
+                            <p style="opacity: 0.8;">Building digital solutions</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">✍️</div>
+                            <h4 style="color: var(--gold); font-size: 1.2rem; margin-bottom: 0.5rem;">Creator</h4>
+                            <p style="opacity: 0.8;">Inspiring through content</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Connect With Me</a>
+                    <a href="#contact" class="btn btn-primary">🤝 Let's Connect</a>
+                    <a href="#ministry" class="btn btn-secondary">🌟 Explore My Work</a>
                 </div>
             </div>
         </div>
@@ -634,66 +1237,224 @@
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Ministry</h4>
-                    <a href="#">Christian Doctrine</a>
-                    <a href="#">Bible Study</a>
-                    <a href="#">Pastoral Care</a>
+                <div class="footer-section fade-in">
+                    <h4>Ministry Resources</h4>
+                    <a href="#">📖 Christian Doctrine Teachings</a>
+                    <a href="#">👥 Adult Bible Study Materials</a>
+                    <a href="#">⛪ Pastoral Care Resources</a>
+                    <a href="#">🙏 Prayer Requests</a>
                 </div>
-                <div class="footer-section">
-                    <h4>Content</h4>
-                    <a href="#">Blog Articles</a>
-                    <a href="#">YouTube Channel</a>
-                    <a href="#">Book Reviews</a>
+                <div class="footer-section fade-in">
+                    <h4>Content Library</h4>
+                    <a href="#">📝 Latest Blog Articles</a>
+                    <a href="#">🎥 YouTube Channel</a>
+                    <a href="#">📚 Book Reviews</a>
+                    <a href="#">💡 Ministry Insights</a>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <a href="#">Church Websites</a>
-                    <a href="#">Small Business</a>
-                    <a href="#">Web Development</a>
+                <div class="footer-section fade-in">
+                    <h4>Web Services</h4>
+                    <a href="#">⛪ Church Website Development</a>
+                    <a href="#">🏢 Small Business Solutions</a>
+                    <a href="#">🚀 Custom Web Applications</a>
+                    <a href="#">📈 Digital Marketing</a>
                 </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <a href="mailto:contact@mattbramer.com">Email</a>
-                    <a href="#">Schedule Consultation</a>
-                    <a href="#">Newsletter</a>
+                <div class="footer-section fade-in">
+                    <h4>Get Connected</h4>
+                    <a href="mailto:hello@mattbramer.com">📧 hello@mattbramer.com</a>
+                    <a href="#">📅 Schedule Consultation</a>
+                    <a href="#">📰 Join Newsletter</a>
+                    <a href="#">💬 Contact Form</a>
                 </div>
             </div>
             
             <div class="social-links">
-                <a href="#" title="YouTube">🎥</a>
-                <a href="#" title="Twitter">🐦</a>
-                <a href="#" title="LinkedIn">💼</a>
-                <a href="#" title="GitHub">💻</a>
+                <a href="#" title="YouTube" onclick="socialClick(this)">🎥</a>
+                <a href="#" title="Twitter" onclick="socialClick(this)">🐦</a>
+                <a href="#" title="LinkedIn" onclick="socialClick(this)">💼</a>
+                <a href="#" title="GitHub" onclick="socialClick(this)">💻</a>
+                <a href="#" title="Instagram" onclick="socialClick(this)">📸</a>
             </div>
             
-            <p style="margin-top: 2rem; color: #A0AEC0;">
-                © 2025 Matt Bramer. Serving God's Kingdom through Ministry & Technology.
+            <p style="margin-top: 3rem; color: rgba(255,255,255,0.6); font-size: 1.1rem;">
+                © 2025 Matt Bramer • Serving God's Kingdom Through Ministry & Technology
+            </p>
+            <p style="margin-top: 1rem; color: rgba(255,215,0,0.8); font-style: italic;">
+                "Whatever you do, work heartily, as for the Lord and not for men" - Colossians 3:23
             </p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
+        // Advanced JavaScript functionality
+        let particles = [];
+        let floatingElements = [];
+        let mouseX = 0, mouseY = 0;
+
+        // Loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+                initializeAnimations();
+            }, 2000);
+        });
+
+        // Initialize all animations and effects
+        function initializeAnimations() {
+            createParticles();
+            createFloatingElements();
+            initCursorTrail();
+            startCounterAnimations();
+            initScrollAnimations();
         }
 
-        // Scroll animations
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
+        // Create particle system
+        function createParticles() {
+            const particleContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.width = particle.style.height = (Math.random() * 4 + 2) + 'px';
+                    particle.style.animationDelay = Math.random() * 20 + 's';
+                    particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                    particleContainer.appendChild(particle);
+                    
+                    // Remove particle after animation
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.parentNode.removeChild(particle);
+                        }
+                    }, 25000);
+                }, i * 400);
+            }
+        }
+
+        // Create floating elements
+        function createFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const element = document.createElement('div');
+                    element.className = 'floating-element';
+                    element.style.left = Math.random() * 100 + '%';
+                    element.style.animationDelay = Math.random() * 15 + 's';
+                    element.style.opacity = Math.random() * 0.3 + 0.1;
+                    container.appendChild(element);
+                    
+                    setTimeout(() => {
+                        if (element.parentNode) {
+                            element.parentNode.removeChild(element);
+                        }
+                    }, 20000);
+                }, i * 750);
+            }
+        }
+
+        // Cursor trail effect
+        function initCursorTrail() {
+            const trail = document.getElementById('cursorTrail');
+            let trails = [];
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
                 
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
+                // Create trail effect
+                const trailElement = trail.cloneNode();
+                trailElement.style.left = mouseX - 10 + 'px';
+                trailElement.style.top = mouseY - 10 + 'px';
+                document.body.appendChild(trailElement);
+                
+                trails.push(trailElement);
+                
+                if (trails.length > 5) {
+                    const oldTrail = trails.shift();
+                    if (oldTrail.parentNode) {
+                        oldTrail.parentNode.removeChild(oldTrail);
+                    }
                 }
+                
+                setTimeout(() => {
+                    if (trailElement.parentNode) {
+                        trailElement.style.opacity = '0';
+                        setTimeout(() => {
+                            if (trailElement.parentNode) {
+                                trailElement.parentNode.removeChild(trailElement);
+                            }
+                        }, 500);
+                    }
+                }, 100);
             });
         }
 
-        // Smooth scrolling for navigation links
+        // Counter animations
+        function startCounterAnimations() {
+            const counters = document.querySelectorAll('.stat-number[data-count]');
+            
+            const animateCounter = (counter) => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current) + (target >= 100 ? '+' : '');
+                }, 16);
+            };
+            
+            // Animate when visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const animateElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(el => observer.observe(el));
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menuToggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -705,35 +1466,73 @@
                     });
                 }
                 
-                // Close mobile menu if open
-                const navLinks = document.querySelector('.nav-links');
+                // Close mobile menu
+                const navLinks = document.getElementById('navLinks');
+                const menuToggle = document.getElementById('menuToggle');
                 navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
             });
         });
 
-        // Header background on scroll
-        // window.addEventListener('scroll', () => {
-        //     const header = document.querySelector('header');
-        //     if (window.scrollY > 100) {
-        //         header.style.background = 'rgba(255, 255, 255, 0.98)';
-        //     } else {
-        //         header.style.background = 'rgba(255, 255, 255, 0.95)';
-        //     }
+        // Content card animation
+        function animateCard(card) {
+            card.style.transform = 'translateY(-15px) scale(1.08) rotateY(5deg)';
+            setTimeout(() => {
+                card.style.transform = 'translateY(-15px) scale(1.05)';
+            }, 200);
+        }
+
+        // Social media click effect
+        function socialClick(element) {
+            element.style.transform = 'translateY(-15px) scale(1.3) rotate(360deg)';
+            setTimeout(() => {
+                element.style.transform = 'translateY(-10px) scale(1.1)';
+            }, 300);
+        }
+
+        // Regenerate particles periodically
+        setInterval(() => {
+            if (document.getElementById('particles').children.length < 30) {
+                createParticles();
+            }
+        }, 30000);
+
+        // Regenerate floating elements
+        setInterval(() => {
+            if (document.getElementById('floatingElements').children.length < 15) {
+                createFloatingElements();
+            }
+        }, 45000);
+
+        // Add interaction sound effects (visual feedback)
+        document.querySelectorAll('.btn, .content-card, .ministry-card, .service-card').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.filter = 'brightness(1.1)';
+            });
             
-        //     animateOnScroll();
-        // });
-
-        // Initial animation check
-        animateOnScroll();
-
-        // Add click interactions to content cards
-        document.querySelectorAll('.content-card').forEach(card => {
-            card.addEventListener('click', function() {
-                // Add subtle animation feedback
-                this.style.transform = 'scale(1.02)';
+            element.addEventListener('mouseleave', function() {
+                this.style.filter = 'brightness(1)';
+            });
+            
+            element.addEventListener('click', function() {
+                this.style.transform += ' scale(0.95)';
                 setTimeout(() => {
-                    this.style.transform = 'scale(1.05)';
-                }, 100);
+                    this.style.transform = this.style.transform.replace(' scale(0.95)', '');
+                }, 150);
+            });
+        });
+
+        // Advanced parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            document.querySelector('.animated-bg').style.transform = `translateY(${rate}px)`;
+            
+            // Parallax for floating elements
+            document.querySelectorAll('.floating-element').forEach((element, index) => {
+                const speed = 0.2 + (index % 3) * 0.1;
+                element.style.transform += ` translateY(${scrolled * speed}px)`;
             });
         });
     </script>
