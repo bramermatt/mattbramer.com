@@ -457,7 +457,7 @@ article:last-child {
     padding: .5em;
 }
 
-    .item:hover, .item a:hover {
+    .item:hover, .item a:hover, article.post-card:hover {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -475,7 +475,7 @@ section {
     .post-image {
         img {
             max-height: 40vh;
-            width: 100%;
+            max-width: 100%;
             border-radius: 5px;
         }
     }
@@ -1270,3 +1270,23 @@ a:hover {
         text-decoration: underline;
     }
 }
+
+article {
+.post-card {
+    padding: .5em !important;
+    margin: 0 !important;
+
+
+    .post-date {
+        margin-top: 1vh;
+    }
+
+
+    .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2vw;
+    }
+}
+}
+
