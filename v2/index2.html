@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Bramer - Pastor, Developer, Content Creator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4A5568;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4A5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #4A5568;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            color: #FFD700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #FFD700;
+            color: #333;
+        }
+
+        .btn-primary:hover {
+            background: #FFC107;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2D3748;
+        }
+
+        /* Ministry Section */
+        .ministry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .ministry-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .ministry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .ministry-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .ministry-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2D3748;
+        }
+
+        .ministry-card p {
+            color: #718096;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Content Hub */
+        .content-hub {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .content-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .content-card:hover {
+            transform: scale(1.05);
+        }
+
+        .content-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #2D3748;
+        }
+
+        .service-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .service-list li {
+            padding: 0.5rem 0;
+            color: #718096;
+        }
+
+        .service-list li:before {
+            content: "✓";
+            color: #48BB78;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2D3748;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #FFD700;
+        }
+
+        .footer-section a {
+            color: #A0AEC0;
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: #4A5568;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #667eea;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .ministry-grid,
+            .content-hub,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .ministry-card,
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Matt Bramer</a>
+            <ul class="nav-links">
+                <li><a href="#ministry">Ministry</a></li>
+                <li><a href="#content">Content</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Matt Bramer</h1>
+                <p class="hero-subtitle">Pastor • Developer • Content Creator • Husband • Father</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">230+</span>
+                        <span class="stat-label">Articles</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">600+</span>
+                        <span class="stat-label">YouTube Videos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Web Projects</span>
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#ministry" class="btn btn-primary">Explore Ministry</a>
+                    <a href="#services" class="btn btn-secondary">Web Development</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ministry" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Ministry & Teaching</h2>
+            <div class="ministry-grid">
+                <div class="ministry-card fade-in">
+                    <div class="ministry-icon">📖</div>
+                    <h3>Christian Doctrine</h3>
+                    <p>Deep theological teachings and Biblical doctrine to strengthen your faith foundation.</p>
+                    <a href="#" class="btn btn-primary">Read Teachings</a>
+                </div>
+                <div class="ministry-card fade-in">
+                    <div class="ministry-icon">👥</div>
+                    <h3>Adult Bible Study</h3>
+                    <p>Weekly Bible studies designed to grow in wisdom and fellowship with fellow believers.</p>
+                    <a href="#" class="btn btn-primary">Join Study</a>
+                </div>
+                <div class="ministry-card fade-in">
+                    <div class="ministry-icon">⛪</div>
+                    <h3>Pastoral Care</h3>
+                    <p>Shepherding hearts through life's challenges with Biblical wisdom and compassion.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Content Hub</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #718096; margin-bottom: 3rem;">
+                Dive into a wealth of content across multiple platforms
+            </p>
+            <div class="content-hub">
+                <div class="content-card fade-in">
+                    <h3>📝 Blog Articles</h3>
+                    <span class="content-number">230+</span>
+                    <p>In-depth articles on theology, web development, book reviews, and life reflections</p>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>🎥 YouTube Videos</h3>
+                    <span class="content-number">600+</span>
+                    <p>Video content covering tutorials, sermons, and educational content</p>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>💻 Web Projects</h3>
+                    <span class="content-number">20+</span>
+                    <p>Showcase of web development work and technical projects</p>
+                </div>
+                <div class="content-card fade-in">
+                    <h3>📚 Book Reviews</h3>
+                    <span class="content-number">Latest</span>
+                    <p>Thoughtful reviews of Christian books, theology, and literature</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Web Development Services</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #718096; margin-bottom: 3rem;">
+                Professional web development focused on churches and small businesses
+            </p>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <h3>⛪ Church Websites</h3>
+                    <ul class="service-list">
+                        <li>Custom church website design</li>
+                        <li>Sermon streaming integration</li>
+                        <li>Event management systems</li>
+                        <li>Online giving platforms</li>
+                        <li>Member portals</li>
+                        <li>Mobile-responsive design</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Quote</a>
+                </div>
+                <div class="service-card fade-in">
+                    <h3>🏢 Small Business</h3>
+                    <ul class="service-list">
+                        <li>Professional business websites</li>
+                        <li>E-commerce solutions</li>
+                        <li>SEO optimization</li>
+                        <li>Content management systems</li>
+                        <li>Analytics and reporting</li>
+                        <li>Ongoing maintenance</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">About Matt</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.2rem; color: #4A5568; margin-bottom: 2rem;">
+                    I'm a passionate pastor, loving husband and father, and dedicated web developer. My heart is to serve God's kingdom through ministry, create meaningful content that edifies the body of Christ, and help churches and businesses establish their online presence.
+                </p>
+                <p style="font-size: 1.1rem; color: #718096; margin-bottom: 2rem;">
+                    Whether I'm teaching adult Bible study, writing about Christian doctrine, developing websites, or creating content, my goal is to glorify God and serve others with excellence.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Connect With Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Ministry</h4>
+                    <a href="#">Christian Doctrine</a>
+                    <a href="#">Bible Study</a>
+                    <a href="#">Pastoral Care</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Content</h4>
+                    <a href="#">Blog Articles</a>
+                    <a href="#">YouTube Channel</a>
+                    <a href="#">Book Reviews</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="#">Church Websites</a>
+                    <a href="#">Small Business</a>
+                    <a href="#">Web Development</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="mailto:contact@mattbramer.com">Email</a>
+                    <a href="#">Schedule Consultation</a>
+                    <a href="#">Newsletter</a>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" title="YouTube">🎥</a>
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="LinkedIn">💼</a>
+                <a href="#" title="GitHub">💻</a>
+            </div>
+            
+            <p style="margin-top: 2rem; color: #A0AEC0;">
+                © 2025 Matt Bramer. Serving God's Kingdom through Ministry & Technology.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Scroll animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Close mobile menu if open
+                const navLinks = document.querySelector('.nav-links');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+            
+            animateOnScroll();
+        });
+
+        // Initial animation check
+        animateOnScroll();
+
+        // Add click interactions to content cards
+        document.querySelectorAll('.content-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Add subtle animation feedback
+                this.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.05)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
