@@ -1,0 +1,88 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+     /* font-family: system-ui; */
+    line-height: 1.6em;
+}
+
+nav { 
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    padding: 1em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: -1px;
+    background-color: rgb(0, 0, 0, .02);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+
+    h1 {
+        margin: 0;
+        font-size: large;
+        /* Invert color if background is not transparent or default */
+        mix-blend-mode: difference;
+        /* color: white; */
+    }
+}
+
+    a:link, a:visited {
+        color: black;
+        background-color: rgb(255, 190, 70);
+        border-radius: 5px;
+        padding: 0.2em;
+        text-decoration: none;
+        font-weight: bold;
+
+        display: inline-block;
+    }
+
+    a:hover {
+        /* border-bottom: none; */
+        border: thin solid;
+        color: var(--text);
+        background-color: transparent;
+        /* opacity: 40%; */
+    }
+
+article {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 5em;
+    padding: 1em;
+    font-family: 'Libertinus Math', serif;
+    font-size: large;
+
+
+
+    img {
+        max-height: 60vh;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+        margin-top: 1.5em;
+    }
+
+    h3 {
+        margin-top: 5em;
+    }
+
+    p, blockquote {
+        margin-bottom: 1.5em;
+        max-width: 550px;
+    }
+
+    blockquote {
+        padding-left: 1em;
+        border-left: 4px solid #ccc;
+        margin-left: 0;
+        margin-top: 1em;
+    }
+}
