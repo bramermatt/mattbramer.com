@@ -253,10 +253,23 @@ main {
             }
         }
 
-        p, .score {
+        h2 {
+          /* margin: auto; */
+          max-width: 500px;
+        }
+
+        p, .score{
             padding: 1rem;
             max-width: 500px;
             line-height: 1.5em;;
+        }
+
+        blockquote {
+          padding: 1em;
+          border-left: thick solid;
+          margin-left: 1em;
+          font-size: small;
+          max-width: 500px;
         }
 
         ul {

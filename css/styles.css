@@ -198,9 +198,10 @@ article#post {
         padding: 0 1em;
         opacity: 60%;
         border-left: thick solid;
-        font-size: small;
+        font-size: medium;
 
         margin-bottom: 3vh;
+        max-width: 400px;
     }
 
     img {
