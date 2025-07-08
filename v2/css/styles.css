@@ -11,11 +11,6 @@ body {
     background: rgb(14, 14, 14);
 }
 
-@media screen and (prefers-color-scheme: light) {
-    body {
-        background-color: rgb(247, 247, 247);
-    }
-}
 
 
 /* LOGO */
@@ -325,6 +320,10 @@ color: white;
 
 .mobile-nav.open {
   display: flex;
+  
+    body {
+       background: #141414;
+    }
 }
 
 
@@ -408,4 +407,26 @@ color: white;
     margin: 0 auto !important;
     border-radius: 10px 10px 0 0 !important;
   }
+}
+
+
+@media screen and (prefers-color-scheme: light) {
+
+  .navbar {
+    background-color: rgb(247, 247, 247);
+  }
+
+  .menu-toggle {
+    color: black;
+  }
+
+  .primary-nav .navbar-links a, .second-nav .navbar-links a {
+    color: black;
+  }
+
+    body {
+        background-color: rgb(247, 247, 247);
+        background: rgb(247, 247, 247);
+    }
+
 }
