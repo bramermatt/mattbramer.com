@@ -530,6 +530,15 @@ section {
     align-items: center;
     gap: 1vw;
 
+    .profile-content {
+        p {
+
+                max-width: 500px;
+                margin: 0 auto;
+                margin-bottom: 2vh;
+        }
+    }
+
     /* background: linear-gradient(135deg, #1a2906e8, #5d262dda); */
     /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); */
     /* color: white; */
@@ -727,6 +736,8 @@ nav#navbar {
 
                 text-transform: capitalize;
             }
+
+
 
             img {
                 max-height: 5vh;
