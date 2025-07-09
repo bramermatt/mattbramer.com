@@ -193,7 +193,7 @@ article#post {
     }
 
     blockquote {
-        text-transform: lowercase;
+        /* text-transform: lowercase; */
         margin: .5vh 0;
         padding: 0 1em;
         opacity: 60%;

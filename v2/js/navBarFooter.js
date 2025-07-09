@@ -25,8 +25,8 @@ const navbarHTML = `
     <!-- <li><a href="/about.html">About</a></li> -->
     <li><a href="/projects.html">Articles</a></li>
     <li><a href="/projects.html">Portfolio</a></li>
-    <li><a href="/newsletter.html">Newsletter</a></li>
-    <li><a href="/support.html">Support Me</a></li>
+    <li><a href="/newsletter.html">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+    <li><a href="/support.html">Support Me <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
   </ul>
 
    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
@@ -37,7 +37,7 @@ const navbarHTML = `
 <nav class="navbar second-nav">
   <ul class="navbar-links topics-nav">
     <li><a href="/before-the-throne.html">Before the Throne</a></li>
-    <li><a href="/altared.html">Altared</a></li>
+    <li><a href="/altared.html">Altared Reality</a></li>
     <li><a href="/reading-well.html">Reading Well</a></li>
     <li><a href="/purpose-built.html">Purpose Built</a></li>
     <li><a href="/blog.html">Blog</a></li>
@@ -67,7 +67,7 @@ const navbarHTML = `
 <ul class="mobile-links">
 <h2>Content Series</h2>
     <li><a href="/before-the-throne.html">Before the Throne</a></li>
-    <li><a href="/altared.html">Altared</a></li>
+    <li><a href="/altared.html">Altared Reality</a></li>
     <li><a href="/reading-well.html">Reading Well</a></li>
     <li><a href="/purpose-built.html">Purpose Built</a></li>
 </ul>
@@ -145,7 +145,7 @@ const footerHTML = `
         <ul class="footer-links">
         <h2>Content</h2>
             <li><a href="/before-the-throne.html">Before the Throne</a></li>
-            <li><a href="/altared.html">Altared</a></li>
+            <li><a href="/altared.html">Altared Reality</a></li>
             <li><a href="/reading-well.html">Reading Well</a></li>
             <li><a href="/purpose-built.html">Purpose Built</a></li>
         </ul>
@@ -160,23 +160,23 @@ const footerHTML = `
 
         <ul class="footer-links">
         <h2>Support</h2>
-            <li><a href="https://ko-fi.com/mattbramer" target="_blank" rel="noopener">Ko-fi</a></li>
-            <li><a href="https://www.patreon.com/MatthewBramer" target="_blank" rel="noopener"><i class="fa-brands fa-patreon"></i> Patreon</a></li>
-            <li><a href="/newsletter.html">Newsletter</a></li>
+            <li><a href="https://ko-fi.com/mattbramer" target="_blank" rel="noopener">Ko-fi <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://www.patreon.com/MatthewBramer" target="_blank" rel="noopener"><i class="fa-brands fa-patreon"></i> Patreon <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="/newsletter.html">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
         </ul>
 
         <ul class="footer-links">
         <h2>Services</h2>
-            <li><a href="/newsletter.html">Web Development</a></li>
+            <li><a href="/newsletter.html">Web Development <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
         </ul>
 
         <ul class="footer-links">
         <h2>Follow</h2>
-            <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">youtube</a></li>
-            <li><a href="https://twitter.com/mattbramer" target="_blank" rel="noopener">X (Twitter)</a></li>
-            <li><a href="https://www.instagram.com/mattbramer" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://www.facebook.com/mattbramer" target="_blank" rel="noopener">Facebook</a></li>
-            <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">youtube <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://twitter.com/mattbramer" target="_blank" rel="noopener">X (Twitter) <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://www.instagram.com/mattbramer" target="_blank" rel="noopener">Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://www.facebook.com/mattbramer" target="_blank" rel="noopener">Facebook <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
         </ul>
 
         </div>
