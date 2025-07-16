@@ -101,6 +101,7 @@ background: rgba(0, 0, 0);
 
 footer {
     padding: 2em;
+    padding-bottom: 10vh;
         background-color: rgba(7, 7, 7, 0.9);
         color: white;
         letter-spacing: 0.05em;
@@ -328,6 +329,118 @@ main {
 }
 
 
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* height: 60px; */
+  background-color: rgba(7, 7, 7);
+  padding: .5em;
+  /* border-top: 1px solid #ccc; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 -2px 5px rgba(56, 56, 56, 0.527);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  /* color: #444; */
+  color: white;
+  font-size: small;
+  /* padding: 6px 0; */
+  padding: .5em;
+  transition: background-color 0.2s ease;
+
+  i {
+    font-size: 3vh;
+  }
+
+}
+
+.nav-item a:hover {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.nav-icon {
+  display: block;
+  /* font-size: 20px; */
+  margin-bottom: 2px;
+}
+
+/* Optional: hide on desktop */
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.modal-content {
+    border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.45);
+  padding: 2rem;
+  max-width: 90%;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  color: #ffffff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.support-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.support-links li {
+  margin: 0.5rem 0;
+}
+
+.support-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.support-links i {
+  margin-right: 0.5rem;
+}
+
+
 
 
 
@@ -470,7 +583,7 @@ color: white;
 
 @media screen and (prefers-color-scheme: light) {
 
-  .navbar {
+  .navbar, .bottom-nav {
     background-color: rgb(247, 247, 247);
   }
 
@@ -478,7 +591,7 @@ color: white;
     color: black;
   }
 
-  .primary-nav .navbar-links a, .second-nav .navbar-links a {
+  .primary-nav .navbar-links a, .second-nav .navbar-links a, .nav-item {
     color: black;
   }
 

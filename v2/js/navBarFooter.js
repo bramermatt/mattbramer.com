@@ -202,9 +202,57 @@ const footerHTML = `
     </footer>
 `;
 
+const thumbNavHTML = `
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="/" class="nav-item">
+    <i class="fas fa-home nav-icon"></i>
+    <span class="nav-label">Home</span>
+  </a>
+  <a href="/read" class="nav-item">
+    <i class="fas fa-book-open nav-icon"></i>
+    <span class="nav-label">Read</span>
+  </a>
+  <a href="/projects" class="nav-item">
+    <i class="fas fa-flask nav-icon"></i>
+    <span class="nav-label">Projects</span>
+  </a>
+  <a href="/watch" class="nav-item">
+    <i class="fas fa-play-circle nav-icon"></i>
+    <span class="nav-label">Watch</span>
+  </a>
+<a href="#" id="openSupportModal" class="nav-item" aria-label="Support">
+  <i class="fas fa-handshake nav-icon"></i>
+  <span class="nav-label">Support</span>
+</a>
+
+
+</nav>
+
+
+`
+
+const supportModalHTML = `
+<div id="supportModal" class="modal-overlay" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button id="closeSupportModal" class="modal-close" aria-label="Close">&times;</button>
+    <h2 id="modalTitle">Support My Work</h2>
+    <p>You can partner with me by supporting through any of these platforms:</p>
+    <ul class="support-links">
+      <li><a href="https://ko-fi.com/bramermatt" target="_blank" rel="noopener"><i class="fas fa-mug-hot"></i> Ko-fi</a></li>
+      <li><a href="https://www.patreon.com/MatthewBramer" target="_blank" rel="noopener"><i class="fab fa-patreon"></i> Patreon</a></li>
+      <li><a href="https://matthewbramer.substack.com" target="_blank" rel="noopener"><i class="fas fa-envelope-open-text"></i> Substack</a></li>
+    </ul>
+  </div>
+</div>
+`
+
 
 document.body.insertAdjacentHTML('afterbegin', navbarHTML);
+document.body.insertAdjacentHTML('beforeend', thumbNavHTML);
+document.body.insertAdjacentHTML('beforeend', supportModalHTML);
 document.body.insertAdjacentHTML('beforeend', footerHTML);
+
 
     const toggleBtn = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
@@ -258,6 +306,30 @@ closeMenuBtn.addEventListener('click', () => {
 
     lastScrollY = currentScrollY;
   });
+
+const supportModal = document.getElementById('supportModal');
+const openSupportModal = document.getElementById('openSupportModal');
+const closeSupportModal = document.getElementById('closeSupportModal');
+
+openSupportModal.addEventListener('click', (e) => {
+  e.preventDefault(); // Prevents `#` from jumping page
+  supportModal.style.display = 'flex';
+  supportModal.setAttribute('aria-hidden', 'false');
+});
+
+closeSupportModal.addEventListener('click', () => {
+  supportModal.style.display = 'none';
+  supportModal.setAttribute('aria-hidden', 'true');
+});
+
+supportModal.addEventListener('click', (e) => {
+  if (e.target === supportModal) {
+    supportModal.style.display = 'none';
+    supportModal.setAttribute('aria-hidden', 'true');
+  }
+});
+
+
 
 
 
