@@ -21,12 +21,17 @@ const navbarHTML = `
 <nav class="navbar primary-nav">
   <a href="${basePath}/index.html"><img src="${basePath}/mLogo.png" alt="Matt Bramer Logo" class="nav-logo"></a>
   <ul class="navbar-links">
-    <li><a href="/">Home</a></li>
-    <!-- <li><a href="/about.html">About</a></li> -->
-    <li><a href="/projects.html">Articles</a></li>
-    <li><a href="/projects.html">Portfolio</a></li>
-    <li><a href="/newsletter.html">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-    <li><a href="/support.html">Support Me <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+    <li><a href="${basePath}/index.html">Home</a></li>
+    <!-- <li><a href="#">About</a></li> -->
+    <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
+    <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
+    <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+    <li>
+      <a href="#" class="openSupportModal" aria-label="Support Me">
+        Support Me <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </li>
+
   </ul>
 
    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
@@ -56,11 +61,11 @@ const navbarHTML = `
 
   <ul class="mobile-links">
     <h2>Links</h2>
-    <li><a href="/">Home</a></li>
-    <li><a href="/projects.html">Articles</a></li>
-    <li><a href="/projects.html">Portfolio</a></li>
-    <li><a href="/newsletter.html">Newsletter</a></li>
-    <li><a href="/support.html">Support Me</a></li>
+    <li><a href="${basePath}/index.html">Home</a></li>
+    <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
+    <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
+    <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter</a></li>
+    <!-- <li><a href="/support.html">Support Me</a></li> -->
 </ul>
 
     <!-- Content Series -->
@@ -77,31 +82,31 @@ const navbarHTML = `
     <h2>Media</h2>
     <li><a href="/blog.html">Blog</a></li>
     <li><a href="/blog.html">Book Reviews</a></li>
-    <li><a href="https://matthewbramer.substack.com" target="_blank" rel="noopener">Substack <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+    <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Substack <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
     <li><a href="/videos.html" target="_blank" rel="noopener">Videos <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
     </ul>
 
     <!-- Support -->
 <ul class="mobile-links">
     <h2>Support</h2>
-    <li><a href="https://ko-fi.com/mattbramer" target="_blank" rel="noopener">Ko-fi</a></li>
+    <li><a href="https://ko-fi.com/bramermatt" target="_blank" rel="noopener">Ko-fi</a></li>
     <li><a href="https://www.patreon.com/MatthewBramer" target="_blank" rel="noopener"><i class="fa-brands fa-patreon"></i> Patreon</a></li>
     </ul>
 
     <!-- Services -->
 <ul class="mobile-links">
 <h2>Services</h2>
-    <li><a href="/newsletter.html">Web Development</a></li>
+    <li><a href="#">Web Development</a></li>
 </ul>
 
     <!-- Social -->
 <ul class="mobile-links">
 <h2>Follow</h2>
     <li><a href="https://www.youtube.com/@mattbramer" target="_blank" rel="noopener">YouTube</a></li>
-    <li><a href="https://twitter.com/mattbramer" target="_blank" rel="noopener">X (Twitter)</a></li>
-    <li><a href="https://www.instagram.com/mattbramer" target="_blank" rel="noopener">Instagram</a></li>
-    <li><a href="https://www.facebook.com/mattbramer" target="_blank" rel="noopener">Facebook</a></li>
-    <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://twitter.com/bramermatt" target="_blank" rel="noopener">X (Twitter)</a></li>
+    <li><a href="https://www.instagram.com/bramermatt" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.facebook.com/bramermatt/" target="_blank" rel="noopener">Facebook</a></li>
+    <!-- <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">LinkedIn</a></li> -->
   </ul>
 
   </div>
@@ -136,10 +141,10 @@ const footerHTML = `
 
         <ul class="footer-links">
         <h2>Links</h2>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/projects.html">Articles</a></li>
-            <li><a href="/projects.html">Portfolio</a></li>
+            <li><a href="${basePath}/index.html">Home</a></li>
+            <li><a href="${basePath}pages/aboutMe.html">About</a></li>
+            <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
+            <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
         </ul>
 
         <ul class="footer-links">
@@ -154,7 +159,7 @@ const footerHTML = `
         <h2>Media</h2>
             <li><a href="/blog.html">Blog</a></li>
             <li><a href="/blog.html">Book Reviews</a></li>
-            <li><a href="/videos.html" target="_blank">Substack <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Substack <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
             <li><a href="/videos.html" target="_blank">Videos <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
         </ul>
 
@@ -162,21 +167,21 @@ const footerHTML = `
         <h2>Support</h2>
             <li><a href="https://ko-fi.com/mattbramer" target="_blank" rel="noopener">Ko-fi <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
             <li><a href="https://www.patreon.com/MatthewBramer" target="_blank" rel="noopener"><i class="fa-brands fa-patreon"></i> Patreon <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-            <li><a href="/newsletter.html">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
         </ul>
 
         <ul class="footer-links">
         <h2>Services</h2>
-            <li><a href="/newsletter.html">Web Development <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="#">Web Development <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
         </ul>
 
         <ul class="footer-links">
         <h2>Follow</h2>
-            <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">youtube <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-            <li><a href="https://twitter.com/mattbramer" target="_blank" rel="noopener">X (Twitter) <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-            <li><a href="https://www.instagram.com/mattbramer" target="_blank" rel="noopener">Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-            <li><a href="https://www.facebook.com/mattbramer" target="_blank" rel="noopener">Facebook <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://www.youtube.com/@mattbramer" target="_blank" rel="noopener">youtube <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://twitter.com/bramermatt" target="_blank" rel="noopener">X (Twitter) <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://www.instagram.com/bramermatt" target="_blank" rel="noopener">Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="https://www.facebook.com/bramermatt/" target="_blank" rel="noopener">Facebook <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <!-- <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li> -->
         </ul>
 
         </div>
@@ -184,18 +189,18 @@ const footerHTML = `
         <div class="footer-bottom">
 
         <article class="footer-content">
-        <h2>About Me</h2>
-        <p>Hi, I’m Matt Bramer — a Christian content creator, software developer, and lifelong learner. My journey into software engineering started with curiosity and a desire to build tools that serve others. While I’m passionate about writing and sharing ideas, I’m also committed to developing websites and apps for churches and individuals, helping them reach their goals through technology. Whether it’s through code or words, I love creating resources that make a difference.</p>
+          <h2>About Me</h2>
+          <p>Hi, I’m Matt Bramer — a Christian content creator, software developer, and lifelong learner. My journey into software engineering started with curiosity and a desire to build tools that serve others. While I’m passionate about writing and sharing ideas, I’m also committed to developing websites and apps for churches and individuals, helping them reach their goals through technology. Whether it’s through code or words, I love creating resources that make a difference.</p>
         </article>
 
         <article class="footer-content">
-        <h2>Services I Provide</h2>
-        <p>I offer website and app development for churches, ministries, and individuals, focusing on solutions that are both practical and meaningful. If you need a custom site, a new feature, or just want to bring your vision to life online, I’d love to help. Let’s build something together that serves your community and furthers your mission.</p>
+          <h2>Services I Provide</h2>
+          <p>I offer website and app development for churches, ministries, and individuals, focusing on solutions that are both practical and meaningful. If you need a custom site, a new feature, or just want to bring your vision to life online, I’d love to help. Let’s build something together that serves your community and furthers your mission.</p>
         </article>
 
         <article class="footer-content">
-        <img src="${basePath}/img/matts/matt-profile.jpg" alt="Matt Bramer" class="footer-profile-img">
-        <blockquote>Matt Bramer</blockquote>
+          <img src="${basePath}/img/matts/matt-profile.jpg" alt="Matt Bramer" class="footer-profile-img">
+          <blockquote>Matt Bramer</blockquote>
         </article>
         </div>
 
@@ -205,26 +210,27 @@ const footerHTML = `
 const thumbNavHTML = `
 <!-- Bottom Navigation -->
 <nav class="bottom-nav">
-  <a href="/" class="nav-item">
+  <a href="${basePath}/index.html" class="nav-item">
     <i class="fas fa-home nav-icon"></i>
     <span class="nav-label">Home</span>
   </a>
-  <a href="/read" class="nav-item">
+  <a href="${basePath}pages/thoughts.html" class="nav-item">
     <i class="fas fa-book-open nav-icon"></i>
     <span class="nav-label">Read</span>
   </a>
-  <a href="/projects" class="nav-item">
-    <i class="fas fa-flask nav-icon"></i>
-    <span class="nav-label">Projects</span>
+  <a href="${basePath}pages/projects.html" class="nav-item">
+    <i class="fa-solid fa-code"></i>
+    <span class="nav-label">Portfolio</span>
   </a>
-  <a href="/watch" class="nav-item">
+  <a href="https://www.youtube.com/@mattbramer" target="_blank" class="nav-item">
     <i class="fas fa-play-circle nav-icon"></i>
     <span class="nav-label">Watch</span>
   </a>
-<a href="#" id="openSupportModal" class="nav-item" aria-label="Support">
+<a href="#" class="openSupportModal nav-item" aria-label="Support">
   <i class="fas fa-handshake nav-icon"></i>
   <span class="nav-label">Support</span>
 </a>
+
 
 
 </nav>
@@ -239,9 +245,9 @@ const supportModalHTML = `
     <h2 id="modalTitle">Support My Work</h2>
     <p>You can partner with me by supporting through any of these platforms:</p>
     <ul class="support-links">
-      <li><a href="https://ko-fi.com/bramermatt" target="_blank" rel="noopener"><i class="fas fa-mug-hot"></i> Ko-fi</a></li>
-      <li><a href="https://www.patreon.com/MatthewBramer" target="_blank" rel="noopener"><i class="fab fa-patreon"></i> Patreon</a></li>
-      <li><a href="https://matthewbramer.substack.com" target="_blank" rel="noopener"><i class="fas fa-envelope-open-text"></i> Substack</a></li>
+      <li><a href="https://ko-fi.com/bramermatt" target="_blank" rel="noopener"><i class="fas fa-mug-hot"></i>Ko-fi</a></li>
+      <li><a href="https://www.patreon.com/MatthewBramer" target="_blank" rel="noopener"><i class="fab fa-patreon"></i>Patreon</a></li>
+      <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank" rel="noopener"><i class="fas fa-envelope-open-text"></i>Substack</a></li>
     </ul>
   </div>
 </div>
@@ -307,30 +313,39 @@ closeMenuBtn.addEventListener('click', () => {
     lastScrollY = currentScrollY;
   });
 
-const supportModal = document.getElementById('supportModal');
-const openSupportModal = document.getElementById('openSupportModal');
-const closeSupportModal = document.getElementById('closeSupportModal');
 
-openSupportModal.addEventListener('click', (e) => {
-  e.preventDefault(); // Prevents `#` from jumping page
-  supportModal.style.display = 'flex';
-  supportModal.setAttribute('aria-hidden', 'false');
+
+
+const supportModal = document.getElementById('supportModal');
+const closeSupportModal = document.getElementById('closeSupportModal');
+const modalTriggers = document.querySelectorAll('.openSupportModal');
+
+modalTriggers.forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    supportModal.style.display = 'flex';
+    supportModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+  });
 });
 
-closeSupportModal.addEventListener('click', () => {
+function closeSupportModalFunction() {
   supportModal.style.display = 'none';
   supportModal.setAttribute('aria-hidden', 'true');
-});
+  document.body.classList.remove('no-scroll');
+}
+
+closeSupportModal.addEventListener('click', closeSupportModalFunction);
 
 supportModal.addEventListener('click', (e) => {
   if (e.target === supportModal) {
-    supportModal.style.display = 'none';
-    supportModal.setAttribute('aria-hidden', 'true');
+    closeSupportModalFunction();
   }
 });
 
 
 
 
-
 });
+
+  
