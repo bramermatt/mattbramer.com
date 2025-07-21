@@ -22,7 +22,18 @@
 </head>
 <body>
 
+<div class="filterContainer">
+<div id="filterBtns">
+  <button class="filter-btn active" onclick="filterSelection('all', event)">All</button>
+  <button class="filter-btn" onclick="filterSelection('books', event)">Book</button>
+  <!-- <button class="filter-btn" onclick="filterSelection('reviews')">Reviews</button> -->
+  <button class="filter-btn" onclick="filterSelection('faith', event)">Faith</button>
+  <button class="filter-btn" onclick="filterSelection('blog', event)">Blog</button>
 
+  <button class="filter-btn" onclick="filterSelection('games', event)">Video Games</button>
+  <button class="filter-btn" onclick="filterSelection('food', event)">Food</button>
+</div>
+</div>
 
 
     <article id="articles">
@@ -32,24 +43,25 @@
             <!-- <h1>Thoughts</h1> -->
             
             <div class="article-timeline">
+                
+<div class="year-block">
+        <div id="article-year">
+            <h2>2025</h2>
+        </div>
 
-            <div id="article-year">
-                <h2>2025</h2>
-            </div>
-
-            <div>
             
-            <div class="month-posts">
+            
+    <div class="month-posts">
 
-        <section id="thought" id="thought">
+       <section id="thought">
             <div class="item filterDiv books reviews">
+                
                 <a href="../posts/2025-07-17-bookreview-strangenewworld-carlrtrueman.html">
                 <img src="../img/book/book-strangenewworld-carlrtrueman.jpg" alt="">
                     <h4>Strange New World by Carl R. Trueman</h4>
             </a>
             <h3>Book Review</h3>
             <h3>July 17</h3>
-            
             </div>
             
         </section>
@@ -90,7 +102,7 @@
         </section>
 
         <section id="thought" id="thought">
-            <div class="item filterDiv books reviews">
+            <div class="item filterDiv faith">
                 <a href="../posts/before-the-throne/foundations-introduction.html">
                     <img src="../img/before-the-throne/matt-preaching-FROG.JPG" alt="">
                     <h4>Before the Throne | Foundations | Introduction</h4>
@@ -126,23 +138,20 @@
 
                 <br>
 
-            <section id="thought" id="thought">
-                <!-- <div class="post-image">
-                    <img src="../img/book/book-childrenofdune-frankherbert.jpg" alt="">
-                </div> -->
+        <section id="thought">
             <div class="item filterDiv books reviews">
+              
                 <a href="../posts/2025-06-30-bookreview-childrenofdune-frankherbert.html">
-                    <h4>Children of Dune by Frank Herbert</h4>
+                  <img src="../img/book/book-childrenofdune-frankherbert.jpg" alt="">
+                        <h4>Children of Dune by Frank Herbert</h4>
             </a>
-            <h3>Book Review, Dune</h3>
+            <h3>Book Review</h3>
             <h3>June 30</h3>
-        </div>
-
-            <div>
-                
             </div>
+            
         </section>
 
+  
         <section id="thought" id="thought">
             <div class="item filterDiv books reviews">
                 <a href="../posts/2025-06-13-bookreview-ahsoka-ekjohnston.html">
@@ -644,13 +653,15 @@
             </section>
 
         </div>
+</div>
 
+<div class="year-block">
         <div id="article-year">
         
             <h2>2024</h2>
         </div>
 
-        <div>
+        <div class="month-posts">
 
         <section id="thought">
             <div class="post-image">
@@ -981,14 +992,16 @@
             </div>
 
         </div>
+</div>
 
+<div class="year-block">
         <div id="article-year">
             <h2>2023</h2>
         </div>
         
             
         
-        <div>
+        <div class="month-posts">
         
             <div class="item filterDiv books reviews">
                 <a href="../posts/2023-12-26-bookreview-mistborn-the-bands-of-mourning-brandonsanderson.html">
@@ -1425,12 +1438,15 @@
 
         </div>
 
+    </div>
+
+    <div class="year-block">
         <div id="article-year">
             <h2>2022</h2>
         </div>
         
             
-        <div>
+        <div class="month-posts">
             <div class="item filterDiv opinion blogs">
                 
                 <a href="../posts/2022-12-23-opinionblog-wear-a-watch.html">
@@ -1860,18 +1876,17 @@
 
             <br>
 
-            <section id="thought">
-                    <div class="item filterDiv books reviews">
+        <section id="thought">
+            <div class="item filterDiv books reviews">
                 <a href="../posts/2022-4-8-bookreview-the-eye-of-the-world-robertjordan.html">
+                <img src="../img/book/eye-review.jpg" alt="">
                     <h4>The Eye of the World by Robert Jordan <i class="fa-solid fa-star glow-link"></i></h4>
-                    </a>
+            </a>
                     <h3>Book Review, The Wheel of Time</h3>
-                </div>
-    
-                    <div>
-                        <h3>April 8</h3>
-                    </div>
-                </section>
+                    <h3>April 8</h3>
+            </div>
+            
+        </section>
 
             <br>
         
@@ -1920,21 +1935,28 @@
                     <h4>Carrie by Stephen King</h4>
                 </a>
             </div>
-        
+
+        <section id="thought">
             <div class="item filterDiv food reviews">
-                
                 <a href="../posts/2022-1-13-foodreview-tony-cheese-pizza.html">
+                <img src="../img/food/tony-cheese-review.jpeg" alt="">
                     <h4>Tony's Cheese Pizza</h4>
-                </a>
+            </a>
+            <h3>Food Review</h3>
+            <h3>Jan 13</h3>
             </div>
-
+            
+        </section>
+        
         </div>
+</div>
 
+<div class="year-block">
         <div id="article-year">
             <h2>2021</h2>
         </div>
         
-            <div>
+            <div class="month-posts">
         
             <div class="item filterDiv faith blog">
                 
@@ -1951,12 +1973,14 @@
             </div>
 
         </div>
+</div>
 
+<div class="year-block">
         <div id="article-year">
             <h2>2019</h2>
         </div>
 
-        <div>
+        <div class="month-posts">
         
             <div class="item filterDiv games reviews">
                 
@@ -1967,12 +1991,15 @@
 
         </div>
 
+</div>
+
+<div class="year-block">
         <div id="article-year">
             <h2>2018</h2>
         </div>
         
             
-        <div>
+        <div cl;ass="month-posts">
             <div class="item filterDiv tech reviews">
                 
                 <a href="../posts/2018-9-29-techreview-hp-3830-printer.html">
@@ -2006,12 +2033,14 @@
             </div>
         
         </div>
+</div>
 
+<div class="year-block">
         <div id="article-year">
             <h2>2016</h2>
         </div>
         
-            <div>
+            <div class="month-posts">
         
             <div class="item filterDiv movies reviews">
                 
@@ -2060,36 +2089,47 @@
             </div>
 
             <br>
-        
-            <div class="item filterDiv food reviews">
-                
-                <a href="../posts/2016-1-13-foodreview-arbys-french-dip.html">
-                    <h4>Arby's French Dip and Swiss</h4>
-                </a>
-            </div>
 
-        </div>
+        <section id="thought">
+            <div class="item filterDiv food reviews">
+                <a href="../posts/2016-1-13-foodreview-arbys-french-dip.html">
+                <img src="../img/food/arbys-french-dip.jpeg" alt="">
+                    <h4>Arby's French Dip and Swiss</h4>
+            </a>
+            <h3>Food Review</h3>
+            <h3>Jan 13</h3>
+            </div>
+            
+        </section>
         
+        </div>
+  </div>
+  
+  <div class="year-block">
         <div id="article-year">
             <h2>2014</h2>
         </div>
-        
-        
-        <div>
+
+
+        <div class="month-posts">
+
+        <section id="thought">
             <div class="item filterDiv reviews games">
-                
                 <a href="../posts/2014-11-11-videogamereview-watch-dogs.html">
+                <img src="../img/posts/watch-dogs-video-game-cover.jpg" alt="">
                     <h4>Watch Dogs (2014)</h4>
-                </a>
+            </a>
+            <h3>Video Game Review</h3>
+            <h3>Nov 11</h3>
             </div>
-
+            
+        </section>
         </div>
-
         
         </article>
     </article>
         
-        
+   </div>     
         
                 </div>
         

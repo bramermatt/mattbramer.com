@@ -570,10 +570,11 @@ article#post {
     /* max-width: 800px; */
     margin: 0 auto;
     gap: 2vw;
-    padding: 1em;
+    /* padding: 1em; */
 
     #article-year {
-      margin-top: 5vh;
+      /* margin-top: 5vh; */
+      margin-bottom: 2vh;
     }
 
 
@@ -582,7 +583,7 @@ article#post {
 }
 
 article#articles {
-    max-width: 800px;
+    max-width: 1400px;
     margin: 0 auto;
     margin-bottom: 10vh;
 
@@ -599,7 +600,7 @@ article#articles {
 
         h2 {
             position: sticky;
-            top: 9vh;
+            top: 10vh;
             z-index: 1;
             margin-top: 0;
             padding-right: 2vw;
@@ -635,7 +636,7 @@ article#articles {
 
         }
 
-            .month-posts {
+    .month-posts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2vw;
@@ -646,7 +647,7 @@ article#articles {
 @media screen and (min-width: 600px) {
     .month-posts {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2vw;
 }
 }
@@ -668,6 +669,8 @@ article#articles.projects h2 {
 
 
     article#articles {
+
+      padding: 1em;
 
 
         h2 {
@@ -861,7 +864,7 @@ section#thought {
     section {
 
         .item {
-            padding: 0;
+            /* padding: 0; */
         }
 
         h3 {
@@ -1212,9 +1215,9 @@ color: white;
 
 }
 
-/* .second-nav {
+.second-nav {
   display: none;
-} */
+}
 
 body.no-scroll {
   overflow: hidden;
@@ -1267,5 +1270,167 @@ iframe, video {
     box-shadow: 0px 0px 4px 0px rgba(71, 71, 71, 0.4);
 
     /* margin-top: 2vh; */
+}
+
+.filterContainer {
+  padding: .8rem;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  /* border-radius: 10px; */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  /* background-color: white; */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  overflow-x: auto;
+  
+}
+
+#filterBtns {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  gap: 1vw;
+}
+
+.filter-btn {
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  /* background-color: #fff; */
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  /* font-size: 0.95rem; */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* ==== Year Headings ==== */
+.article-year h2 {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #e5e5e5;
+  color: #444;
+}
+
+/* ==== Article Card ==== */
+
+
+
+
+.filter-btn i {
+  margin-right: 0.4rem;
+}
+
+.article-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Container for each year block */
+.year-block {
+  margin-bottom: 3rem;
+}
+
+/* Year heading */
+.article-year h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #333;
+  padding-left: 0.75rem;
+  color: #111;
+
+
+}
+
+/* Grid layout for month posts */
+.month-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+
+/* Article card */
+.item {
+  /* background-color: #f9f9f9; */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* display: flex; */
+  /* flex-direction: row; */
+}
+
+.item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* Link and image */
+.item a {
+  /* text-decoration: none; */
+  /* color: inherit; */
+  /* display: block; */
+}
+
+.item img {
+  max-width: 100%;
+  /* height: auto; */
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+/* Titles and metadata */
+.item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  /* color: #222; */
+}
+
+.item h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  /* color: #666; */
+  margin: 0.25rem 0;
+}
+
+/* Optional: hidden class from JS filtering */
+.filterDiv {
+  display: none;
+}
+
+.filterDiv.show {
+  display: block;
+}
+
+.filter-btn.active {
+  background-color: #007BFF; /* Bootstrap blue */
+  color: #fff;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .filterContainer {
+    background-color: rgba(0, 0, 0);
+    color: white;
+  }
+
+  body {
+     background-color: rgba(0, 0, 0);
+  }
 }
 
