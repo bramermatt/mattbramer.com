@@ -602,7 +602,8 @@ article#articles {
             position: sticky;
             top: 10vh;
             z-index: 1;
-            margin-top: 0;
+            /* margin-top: 0; */
+            margin-top: 2vh;;
             padding-right: 2vw;
             font-size: large;
             /* text-align: end; */
@@ -1102,6 +1103,7 @@ color: white;
 
 .mobile-nav.open {
   display: flex;
+  padding-bottom: 15vh;
   
     body {
        background: #141414;
@@ -1273,7 +1275,7 @@ iframe, video {
 }
 
 .filterContainer {
-  padding: .8rem;
+  padding: 1em;
   /* background-color: rgba(0, 0, 0, 0.1); */
   /* border-radius: 10px; */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -1289,7 +1291,7 @@ iframe, video {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
   gap: 1vw;
 }
 
@@ -1421,6 +1423,18 @@ iframe, video {
 .filter-btn.active {
   background-color: #007BFF; /* Bootstrap blue */
   color: #fff;
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .filterContainer {
+    background-color: rgba(255, 255, 255);
+    color: black;
+  }
+
+  /* body {
+     background-color: rgba(255, 255, 255);
+  } */
+  
 }
 
 @media screen and (prefers-color-scheme: dark) {
