@@ -438,3 +438,20 @@ supportModal.addEventListener('click', (e) => {
             document.body.style.overflow = '';
         }
     });
+
+
+    function openFilterModal() {
+  document.getElementById("filterModal").style.display = "block";
+}
+
+function closeFilterModal() {
+  document.getElementById("filterModal").style.display = "none";
+}
+
+// Optional: close modal when clicking outside the content
+window.onclick = function(event) {
+  const modal = document.getElementById("filterModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

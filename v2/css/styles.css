@@ -705,28 +705,70 @@ article#articles {
 
   }
 }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+
+  article#articles {
+
+    .projects-grid {
+
+      section {
+    border: thin solid #2b2b2b;
+    border-radius: 5px;
+    padding: 1em;
+    margin-top: 1vh;
+
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(27, 27, 27, 0.363);
+    /* padding: 1rem; */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    a:link, a:visited {
+        color: #ffe082;
+        font-weight: bold;
+    }
+
+        a:hover {
+        background: #ffe082;
+        border-radius: 4px;
+        font-weight: bold;
+        color: #222;
+    }
+}
+
+    }
+  }
+
+}
+  
 
 
 
 @media screen and (min-width: 600px) {
+
+  article#articles {
     .month-posts {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2vw;
 }
-
+  }
 
 }
 
 @media screen and (max-width: 600px) {
+  article#articles {
+    
     .projects-grid {
     /* display: grid; */
     grid-template-columns: repeat(2, 1fr);
     gap: 2vw;
     }
 }
-
 }
+
+
 
 article#articles.projects h2 {
         h2 {
@@ -760,7 +802,7 @@ article:last-child {
 
 .item {
     padding: .5em;
-
+  border: thin solid #2b2b2b;
 }
 
     .item:hover, article.post-card:hover {
@@ -939,6 +981,8 @@ section#thought {
 
         .item {
             /* padding: 0; */
+
+            
         }
 
         h3 {
@@ -1094,12 +1138,12 @@ section#thought {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0);
 }
 
 .modal-content {
@@ -1401,23 +1445,45 @@ iframe, video {
   /* border-radius: 10px; */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   /* background-color: white; */
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  /* padding-top: 5dvh; */
+  /* position: sticky; */
+  /* top: 0dvh; */
+  /* z-index: 10; */
   overflow-x: auto;
   
 }
 
+.open-filter-btn {
+  margin: 1px auto;
+
+  position: sticky;
+  top: 2vh;
+  left: 2vw;
+  z-index: 5;
+
+  padding: 10px 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  /* margin-bottom: 20px; */
+}
+
 #filterBtns {
+  padding: 4em;
   display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
+  flex-wrap: wrap;
+  gap: 2vw;
+  /* overflow-x: auto; */
+  /* white-space: nowrap; */
   /* padding-bottom: 10px; */
-  gap: 1vw;
+  /* gap: 1vw; */
+  color: var(--text);
 }
 
 .filter-btn {
-  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  flex: 0 0 auto; 
 }
 
 .filter-btn {
@@ -1539,6 +1605,7 @@ iframe, video {
 
 .filterDiv.show {
   display: block;
+  
 }
 
 .filter-btn.active {

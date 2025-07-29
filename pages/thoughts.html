@@ -22,18 +22,25 @@
 </head>
 <body>
 
-<div class="filterContainer">
-<div id="filterBtns">
-  <button class="filter-btn active" onclick="filterSelection('all', event)">All</button>
-  <button class="filter-btn" onclick="filterSelection('books', event)">Book</button>
-  <!-- <button class="filter-btn" onclick="filterSelection('reviews')">Reviews</button> -->
-  <button class="filter-btn" onclick="filterSelection('faith', event)">Faith</button>
-  <button class="filter-btn" onclick="filterSelection('blog', event)">Blog</button>
+<!-- Trigger Button -->
+<button onclick="openFilterModal()" class="open-filter-btn">Filter Posts</button>
 
-  <button class="filter-btn" onclick="filterSelection('games', event)">Video Games</button>
-  <button class="filter-btn" onclick="filterSelection('food', event)">Food</button>
+<!-- Modal Container -->
+<div id="filterModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeFilterModal()">&times;</span>
+    <div id="filterBtns" class="filterContainer">
+        <button class="filter-btn active" onclick="filterSelection('all', event); closeFilterModal()">All</button>
+        <button class="filter-btn" onclick="filterSelection('books', event); closeFilterModal()">Book</button>
+        <button class="filter-btn" onclick="filterSelection('faith', event); closeFilterModal()">Faith</button>
+        <button class="filter-btn" onclick="filterSelection('blog', event); closeFilterModal()">Blog</button>
+        <button class="filter-btn" onclick="filterSelection('games', event); closeFilterModal()">Video Games</button>
+        <button class="filter-btn" onclick="filterSelection('food', event); closeFilterModal()">Food</button>
+
+    </div>
+  </div>
 </div>
-</div>
+
 
 
     <article id="articles">
