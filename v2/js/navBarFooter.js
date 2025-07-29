@@ -96,7 +96,7 @@ const navbarHTML = `
     <!-- Services -->
 <ul class="mobile-links">
 <h2>Services</h2>
-    <li><a href="#">Web Development</a></li>
+    <li><a href="${basePath}bmws.html" target="_blank">Web Development</a></li>
 </ul>
 
     <!-- Social -->
@@ -172,7 +172,7 @@ const footerHTML = `
 
         <ul class="footer-links">
         <h2>Services</h2>
-            <li><a href="#">Web Development <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+            <li><a href="${basePath}bmws.html" target="_blank">Web Development <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
         </ul>
 
         <ul class="footer-links">
@@ -253,11 +253,20 @@ const supportModalHTML = `
 </div>
 `
 
+   const imgModalHTML = `
+        <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>`;
+
+
 
 document.body.insertAdjacentHTML('afterbegin', navbarHTML);
 document.body.insertAdjacentHTML('beforeend', thumbNavHTML);
 document.body.insertAdjacentHTML('beforeend', supportModalHTML);
 document.body.insertAdjacentHTML('beforeend', footerHTML);
+document.body.insertAdjacentHTML('beforeend', imgModalHTML);
 
 
     const toggleBtn = document.getElementById('menuToggle');
@@ -347,6 +356,8 @@ supportModal.addEventListener('click', (e) => {
 
 
 
+
+
 });
 
 
@@ -387,3 +398,43 @@ supportModal.addEventListener('click', (e) => {
   });
 
 
+        // Image Modal Logic
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("img01");
+    const captionText = document.getElementById("caption");
+
+    // Get all images on the page, excluding the profile image
+    const images = document.querySelectorAll('img:not(.profile-img)');
+    images.forEach(function (image) {
+        image.addEventListener('click', function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.textContent = this.alt || ''; // Display alt text as caption
+
+            // Disable scrolling when modal is open
+            document.body.style.overflow = 'hidden'; // Disable scrolling
+        });
+    });
+
+    // Close modal when user clicks on the close button (X)
+    const close = document.getElementsByClassName("close")[0];
+    close.addEventListener('click', function () {
+        modal.style.display = "none";
+        document.body.style.overflow = ''; // Re-enable scrolling
+    });
+
+    // Close modal when pressing ESC key
+    document.addEventListener('keydown', function (e) {
+        if (modal.style.display === "block" && (e.key === "Escape" || e.key === "Esc")) {
+            modal.style.display = "none";
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = '';
+        }
+    });
