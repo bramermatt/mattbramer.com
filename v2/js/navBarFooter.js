@@ -363,34 +363,44 @@ supportModal.addEventListener('click', (e) => {
 
 
  function filterSelection(category, event) {
-    const items = document.getElementsByClassName("filterDiv");
+  const items = document.getElementsByClassName("filterDiv");
 
-    for (let i = 0; i < items.length; i++) {
-      items[i].classList.remove("show");
+  for (let i = 0; i < items.length; i++) {
+    items[i].classList.remove("show");
 
-      if (category === "all" || items[i].classList.contains(category)) {
-        items[i].classList.add("show");
-      }
+    if (category === "all" || items[i].classList.contains(category)) {
+      items[i].classList.add("show");
     }
-
-    // Show/hide year blocks based on visible articles
-    const yearBlocks = document.getElementsByClassName("year-block");
-    for (let i = 0; i < yearBlocks.length; i++) {
-      const block = yearBlocks[i];
-      const visibleArticles = block.querySelectorAll(".filterDiv.show");
-      block.style.display = visibleArticles.length === 0 ? "none" : "block";
-    }
-
-    // Update active button
-    const btns = document.getElementsByClassName("filter-btn");
-    for (let i = 0; i < btns.length; i++) {
-      btns[i].classList.remove("active");
-    }
-    if (event) event.currentTarget.classList.add("active");
-
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  // ✅ NEW: Show/hide each .thought section
+  const thoughtSections = document.getElementsByClassName("thought");
+  for (let i = 0; i < thoughtSections.length; i++) {
+    const section = thoughtSections[i];
+    const visibleItems = section.querySelectorAll(".filterDiv.show");
+    section.style.display = visibleItems.length === 0 ? "none" : "block";
+  }
+
+  // Show/hide year blocks based on visible articles
+  const yearBlocks = document.getElementsByClassName("year-block");
+  for (let i = 0; i < yearBlocks.length; i++) {
+    const block = yearBlocks[i];
+    const visibleArticles = block.querySelectorAll(".filterDiv.show");
+    block.style.display = visibleArticles.length === 0 ? "none" : "block";
+  }
+
+  // Update active button
+  const btns = document.getElementsByClassName("filter-btn");
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].classList.remove("active");
+  }
+  if (event) event.currentTarget.classList.add("active");
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
 
   // Run 'all' filter on page load
   document.addEventListener("DOMContentLoaded", () => {
