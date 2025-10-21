@@ -39,7 +39,7 @@ const navbarHTML = `
   </button>
 </nav>
 
-<nav class="navbar second-nav">
+<!--  <nav class="navbar second-nav">
   <ul class="navbar-links topics-nav">
     <li><a href="/before-the-throne.html">Before the Throne</a></li>
     <li><a href="/altared.html">Altared Reality</a></li>
@@ -48,7 +48,7 @@ const navbarHTML = `
     <li><a href="/blog.html">Blog</a></li>
     <li><a href="/videos.html" target="_blank">Videos <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
   </ul>
-</nav>
+</nav> -->
 
 
 
@@ -69,13 +69,13 @@ const navbarHTML = `
 </ul>
 
     <!-- Content Series -->
-<ul class="mobile-links">
+<!-- <ul class="mobile-links">
 <h2>Content Series</h2>
     <li><a href="/before-the-throne.html">Before the Throne</a></li>
     <li><a href="/altared.html">Altared Reality</a></li>
     <li><a href="/reading-well.html">Reading Well</a></li>
     <li><a href="/purpose-built.html">Purpose Built</a></li>
-</ul>
+</ul> -->
 
     <!-- Media -->
 <ul class="mobile-links">
@@ -94,10 +94,10 @@ const navbarHTML = `
     </ul>
 
     <!-- Services -->
-<ul class="mobile-links">
+<!-- <ul class="mobile-links">
 <h2>Services</h2>
     <li><a href="${basePath}bmws.html" target="_blank">Web Development</a></li>
-</ul>
+</ul> -->
 
     <!-- Social -->
 <ul class="mobile-links">
@@ -118,10 +118,10 @@ const navbarHTML = `
       Hi, I’m Matt Bramer — a Christian content creator, software developer, and lifelong learner. My journey into software engineering started with curiosity and a desire to build tools that serve others. While I’m passionate about writing and sharing ideas, I’m also committed to developing websites and apps for churches and individuals, helping them reach their goals through technology. Whether it’s through code or words, I love creating resources that make a difference.
     </p>
 
-    <h2 style="color: white; font-size: 1rem; margin-top: 1.5rem; text-transform: uppercase;">Services I Provide</h2>
+    <!-- <h2 style="color: white; font-size: 1rem; margin-top: 1.5rem; text-transform: uppercase;">Services I Provide</h2>
     <p style="color: #ccc; font-size: 0.9rem; line-height: 1.5;">
       I offer website and app development for churches, ministries, and individuals, focusing on solutions that are both practical and meaningful. If you need a custom site, a new feature, or just want to bring your vision to life online, I’d love to help. Let’s build something together that serves your community and furthers your mission.
-    </p>
+    </p> -->
 
     <div style="margin-top: 1rem;">
       <img src="${basePath}/img/matts/matt-profile.jpg" alt="Matt Bramer" style="max-width: 80px; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,.3);" />
@@ -147,13 +147,13 @@ const footerHTML = `
             <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
         </ul>
 
-        <ul class="footer-links">
+        <!-- <ul class="footer-links">
         <h2>Content</h2>
             <li><a href="/before-the-throne.html">Before the Throne</a></li>
             <li><a href="/altared.html">Altared Reality</a></li>
             <li><a href="/reading-well.html">Reading Well</a></li>
             <li><a href="/purpose-built.html">Purpose Built</a></li>
-        </ul>
+        </ul> -->
 
         <ul class="footer-links">
         <h2>Media</h2>
@@ -170,10 +170,10 @@ const footerHTML = `
             <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
         </ul>
 
-        <ul class="footer-links">
+        <!-- <ul class="footer-links">
         <h2>Services</h2>
             <li><a href="${basePath}bmws.html" target="_blank">Web Development <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-        </ul>
+        </ul> -->
 
         <ul class="footer-links">
         <h2>Follow</h2>
@@ -193,10 +193,10 @@ const footerHTML = `
           <p>Hi, I’m Matt Bramer — a Christian content creator, software developer, and lifelong learner. My journey into software engineering started with curiosity and a desire to build tools that serve others. While I’m passionate about writing and sharing ideas, I’m also committed to developing websites and apps for churches and individuals, helping them reach their goals through technology. Whether it’s through code or words, I love creating resources that make a difference.</p>
         </article>
 
-        <article class="footer-content">
+        <!-- <article class="footer-content">
           <h2>Services I Provide</h2>
           <p>I offer website and app development for churches, ministries, and individuals, focusing on solutions that are both practical and meaningful. If you need a custom site, a new feature, or just want to bring your vision to life online, I’d love to help. Let’s build something together that serves your community and furthers your mission.</p>
-        </article>
+        </article> -->
 
         <article class="footer-content">
           <img src="${basePath}/img/matts/matt-profile.jpg" alt="Matt Bramer" class="footer-profile-img">

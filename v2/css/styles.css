@@ -213,7 +213,7 @@ footer {
 }
 
     .footer {
-        max-width: 1200px;
+        max-width: 1000px;
         margin: 0 auto;
         margin-bottom: 2vh;
         border-radius: 10px;
@@ -1010,13 +1010,13 @@ section#thought, section.thought {
 
 
 .bottom-nav {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   right: 0;
   /* height: 60px; */
   background-color: rgba(7, 7, 7);
-  padding: .5em;
+  padding: 1em;
   /* border-top: 1px solid #ccc; */
   display: flex;
   justify-content: space-around;
@@ -1458,8 +1458,10 @@ iframe, video {
   margin: 10px auto;
 
   position: sticky;
-  top: 8vh;
-  left: 2vw;
+  /* top: 8vh; */
+  top:80%;
+  left: 70%;
+  /* left: 2vw; */
   z-index: 5;
 
   padding: 10px 20px;
@@ -1468,7 +1470,7 @@ iframe, video {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 2.5vh;
+  font-size: 2vh;
   /* margin-bottom: 20px; */
 }
 
