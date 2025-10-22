@@ -1010,7 +1010,7 @@ section#thought, section.thought {
 
 
 .bottom-nav {
-  position: sticky;
+  /* position: sticky; */
   bottom: 0;
   left: 0;
   right: 0;
@@ -1459,8 +1459,8 @@ iframe, video {
 
   position: sticky;
   /* top: 8vh; */
-  top:80%;
-  left: 70%;
+  top: 85vh;
+  left: 65vw;
   /* left: 2vw; */
   z-index: 5;
 
@@ -1475,7 +1475,7 @@ iframe, video {
 }
 
 #filterBtns {
-  padding: 4em;
+  padding: 1.5em;
   display: flex;
   flex-wrap: wrap;
   gap: 2vw;
