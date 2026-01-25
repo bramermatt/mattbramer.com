@@ -1,0 +1,172 @@
+/* Base & Body */
+body {
+    padding: 1em;
+    font-family: 'Georgia', 'Times New Roman', serif; /* academic feel */
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    /* background: #fefcf8;  */
+    /* color: #1e1e1e; */
+}
+
+/* Main section */
+section {
+    max-width: 700px;
+    margin: 0 auto;
+    /* background: #fffefc; */
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+section:hover {
+    /* transform: translateY(-4px);  */
+}
+
+/* Headings */
+h2 {
+    font-family: 'Merriweather', serif; /* classic, readable */
+    font-size: 2rem;
+    /* color: #2a2a2a; */
+    margin-bottom: 1em;
+    position: relative;
+
+    /* position: sticky; */
+    top: 2vh;
+    /* background: rgba(66, 66, 66, 0.474); /* */
+}
+
+h3, h4 {
+    margin: 0;
+    font-weight: 600;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #ff4c00;
+    margin-top: 0.3em;
+    border-radius: 2px; /* subtle academic underline */
+}
+
+/* Paragraphs */
+p {
+    max-width: 520px;
+    font-size: 1.05rem;
+    /* color: #333; */
+    margin-bottom: 2em;
+    margin-top: 0;
+}
+
+/* Links */
+a {
+    color: #ff4c00;
+    font-weight: 500;
+    text-decoration: none;
+    /* border-bottom: 1px dotted #ff4c00; */
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+a:hover {
+    color: #e03e00;
+    /* border-bottom: 1px solid #e03e00; */
+}
+
+/* Lists */
+ul {
+    margin: 1em 0 1.5em 1.5em;
+}
+
+li {
+    /* margin-bottom: 0.6em; */
+    /* line-height: 1.4; */
+}
+
+/* Navigation Bar */
+nav {
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1.5em;
+    margin-top: 2em;
+    position: sticky;
+    bottom: 2vh;
+    background: rgba(77, 23, 0, 0.8); /* subtle highlight */
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+nav ul {
+    display: flex;
+    /* gap: 1.5em; */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+nav li {
+}
+
+nav a {
+    color: white;
+    /* filter: invert(1); */
+    transition: transform 0.2s ease;
+}
+
+nav a:hover {
+    transform: scale(1.1);
+}
+
+/* Blockquote for fun emphasis */
+blockquote {
+    border-left: 4px solid #ff4c00;
+    padding-left: 1em;
+    color: #555;
+    font-style: italic;
+    margin: 1.5em 0;
+    background: rgba(255, 76, 0, 0.05);
+    border-radius: 4px;
+}
+
+/* Buttons (if you add any) */
+button, .btn {
+    background: #ff4c00;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5em 1.2em;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover, .btn:hover {
+    background: #e03e00;
+    transform: translateY(-2px);
+}
+
+/* Fun subtle animations */
+p, li {
+    /* transition: transform 0.15s ease, color 0.15s ease; */
+}
+
+p:hover, li:hover {
+    /* transform: translateX(3px); */
+    /* color: #222; */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+
+    section {
+        border: thin solid;
+    }
+}

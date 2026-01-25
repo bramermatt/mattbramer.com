@@ -1,0 +1,129 @@
+[
+  {
+    "type": "Web",
+    "projects": [
+      {
+        "title": "One Community Church Website",
+        "url": "http://www.onecommunity.church",
+        "tech": "HTML, CSS, JS",
+        "featured": true,
+        "blurb": "A polished, responsive website built to connect a local church with its community. Showcases sermons, events, and resources with a clean interface."
+      },
+      {
+        "title": "My Portfolio Website",
+        "url": "http://www.mattbramer.com",
+        "tech": "HTML, CSS, JS",
+        "blurb": "My personal online hub, showcasing work, projects, and teaching resources. Combines professional design with interactive elements for a modern portfolio experience."
+      }
+    ]
+  },
+  {
+    "type": "Apps",
+    "projects": [
+      {
+        "title": "Everett Seizure Free Tracker",
+        "url": "https://bramermatt.github.io/seizure-free-tracker/",
+        "tech": "HTML, CSS, JS",
+        "blurb": "A practical app for tracking seizure-free days, empowering users to monitor progress and patterns over time."
+      },
+      {
+        "title": "Bible Reading Plans",
+        "url": "https://bramermatt.github.io/bibleReadingPlans/",
+        "tech": "HTML, CSS, JS",
+        "blurb": "Helps readers stay consistent with daily Scripture reading by generating easy-to-follow plans."
+      },
+      {
+        "title": "Aleph Bible Dictionary",
+        "url": "https://bramermatt.github.io/AlephBibleDictionary/",
+        "tech": "HTML, CSS, JS",
+        "featured": true,
+        "blurb": "A digital reference tool for exploring Hebrew words and their biblical meanings. Makes studying Scripture faster and more interactive."
+      },
+      {
+        "title": "Quench and Gulp",
+        "url": "https://bramermatt.github.io/Quench-and-Gulp/",
+        "tech": "HTML, CSS, JS",
+        "blurb": "A fun hydration tracker app that encourages users to drink water regularly. Simple design, intuitive interface."
+      },
+      {
+        "title": "QR Code Studio",
+        "url": "https://bramermatt.github.io/qr-code/",
+        "tech": "HTML, CSS, JS",
+        "featured": true,
+        "blurb": "Create and manage custom QR codes easily for any purpose. Clean UI and practical functionality."
+      },
+      {
+        "title": "Reeeader Book Tracking App",
+        "url": "https://bramermatt.github.io/reeeader/pages/home.html",
+        "tech": "HTML, CSS, JS",
+        "blurb": "Track books, reading progress, and personal notes with this user-friendly book logging app."
+      },
+      {
+        "title": "Task-Man To-Do",
+        "url": "https://bramermatt.github.io/task-man",
+        "tech": "HTML, CSS, JS",
+        "blurb": "A classic to-do app with a modern twist. Keep tasks organized and stay productive."
+      },
+      {
+        "title": "Fashion-Man Weather",
+        "url": "https://bramermatt.github.io/fashion-man",
+        "tech": "HTML, CSS, JS",
+        "featured": true,
+        "blurb": "Combines weather updates with style suggestions. Helps users plan their outfits with real-time data."
+      },
+      {
+        "title": "Timer Studio",
+        "url": "https://bramermatt.github.io/timer-studio/",
+        "tech": "HTML, CSS, JS",
+        "featured": true,
+        "blurb": "Multi-purpose timer for workouts, focus sessions, or cooking. Sleek, interactive interface with real-time updates."
+      },
+      {
+        "title": "Movie Database Search",
+        "url": "https://bramermatt.github.io/movie-db/",
+        "tech": "HTML, CSS, JS",
+        "blurb": "Search and explore movies using an interactive database. Practice in API integration and dynamic search functionality."
+      },
+      {
+        "title": "GameDay | Sports Dashboard",
+        "url": "https://bramermatt.github.io/gameDay/",
+        "tech": "HTML, CSS, JS",
+        "blurb": "A real-time sports dashboard showing team stats, scores, and updates. Engaging and interactive data presentation."
+      }
+    ]
+  },
+  {
+    "type": "Games",
+    "projects": [
+      {
+        "title": "Tic-Tac-Toe",
+        "url": "https://bramermatt.github.io/tic-tac-toe/",
+        "tech": "HTML, CSS, JS",
+        "blurb": "A classic game brought to the web with a modern design twist. Fun, responsive, and perfect for quick gameplay."
+      },
+      {
+        "title": "Bible-Games Trivia",
+        "url": "https://bramermatt.github.io/bible-games/",
+        "tech": "HTML, CSS, JS",
+        "blurb": "Challenge your knowledge of Scripture with this interactive trivia game. Entertaining and educational at the same time."
+      }
+    ]
+  },
+  {
+    "type": "Practice Projects",
+    "projects": [
+      {
+        "title": "Command Line Mortgage Calculator",
+        "url": "https://github.com/bramermatt/javaPracticeProjects/blob/main/mortgageCalculator.java",
+        "tech": "Java",
+        "blurb": "A simple Java program that calculates mortgage payments. Great exercise in logic, arithmetic, and console-based applications."
+      },
+      {
+        "title": "100 Days of Java Practice",
+        "url": "https://github.com/bramermatt/javaPracticeProjects/tree/main/100daysOfJava",
+        "tech": "Java",
+        "blurb": "A curated collection of Java exercises for skill-building and mastery over the course of 100 days."
+      }
+    ]
+  }
+]
