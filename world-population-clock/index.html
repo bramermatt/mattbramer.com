@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Population Clock</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero card clickable" data-target="what-is-this">
+        <p class="eyebrow">Live estimate</p>
+        <h1 id="population" aria-live="polite">8,100,000,000</h1>
+        <p id="population-change">Updating every second…</p>
+        <p class="hint">Tap this card to jump to explainer ↓</p>
+      </header>
+
+      <section class="grid stats-grid" aria-label="Quick stats">
+        <article class="card clickable" id="births-card" data-target="births-details" tabindex="0">
+          <h2>Births today</h2>
+          <p class="big-number" id="births-today">0</p>
+          <p class="sub">+4.3 births/sec est.</p>
+        </article>
+
+        <article class="card clickable" id="deaths-card" data-target="deaths-details" tabindex="0">
+          <h2>Deaths today</h2>
+          <p class="big-number" id="deaths-today">0</p>
+          <p class="sub">+2.0 deaths/sec est.</p>
+        </article>
+
+        <article class="card clickable" id="net-card" data-target="net-details" tabindex="0">
+          <h2>Net growth today</h2>
+          <p class="big-number" id="net-growth">0</p>
+          <p class="sub">~+2.3 people/sec</p>
+        </article>
+      </section>
+
+      <section class="card controls" aria-label="Interactive controls">
+        <h2>Play with the numbers</h2>
+        <div class="control-row">
+          <label for="projection-year">Projection year</label>
+          <input type="range" id="projection-year" min="2026" max="2100" value="2026" />
+          <output id="projection-output">2026</output>
+        </div>
+        <p id="projection-result">Projected population in 2026: —</p>
+      </section>
+
+      <section class="grid info-grid">
+        <article class="card" id="births-details">
+          <h3>Birth dynamics</h3>
+          <p>
+            Rough global estimate: around 370k births/day. This app uses a smooth rate model so you can watch
+            growth happen live.
+          </p>
+        </article>
+
+        <article class="card" id="deaths-details">
+          <h3>Mortality dynamics</h3>
+          <p>
+            Estimated global deaths are around 170k/day. Rates vary by season, region, age structure, and events.
+          </p>
+        </article>
+
+        <article class="card" id="net-details">
+          <h3>Net growth</h3>
+          <p>
+            Net growth = births − deaths. Right now it is still positive, but long-term projections suggest
+            eventual stabilization.
+          </p>
+        </article>
+
+        <article class="card" id="what-is-this">
+          <h3>What is this?</h3>
+          <p>
+            This page is a fun, full-screen visualizer. Numbers are approximate and meant for exploration,
+            not official census reporting.
+          </p>
+          <button id="random-fact-btn" type="button">Give me a random fact</button>
+          <p id="random-fact">Click for a fun population-related fact.</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
