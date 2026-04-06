@@ -130,12 +130,25 @@ async function parseArticle(path, fileName) {
 }
 
 function renderProjects(categories, container) {
+    const categoryDescriptions = {
+        Web: "Published websites designed around clear navigation, readable structure, and practical presentation.",
+        Apps: "Interactive tools meant to help with tracking, study, daily use, or small internet workflows.",
+        Games: "Smaller builds focused on interaction, play, and front-end experimentation.",
+        "Practice Projects": "Exercises and repositories that show how skills were built and sharpened over time."
+    };
+
     container.innerHTML = "";
 
     categories.forEach(category => {
-        const catDiv = document.createElement("div");
-        catDiv.id = "project-type";
-        catDiv.innerHTML = `<h2>${category.type}</h2>`;
+        const catDiv = document.createElement("section");
+        catDiv.className = "project-category";
+        catDiv.innerHTML = `
+            <div class="project-category-heading">
+                <p class="eyebrow">Category</p>
+                <h2>${category.type}</h2>
+                <p>${categoryDescriptions[category.type] || "A group of projects from this part of the site."}</p>
+            </div>
+        `;
         container.appendChild(catDiv);
 
         const grid = document.createElement("div");
@@ -143,16 +156,19 @@ function renderProjects(categories, container) {
 
         category.projects.forEach(project => {
             const section = document.createElement("section");
+            section.className = "project-card";
             section.innerHTML = `
+                <div class="project-card-top">
+                    <p class="project-tech">${project.tech}</p>
+                    ${project.featured ? '<span class="project-badge">Featured</span>' : ""}
+                </div>
                 <div>
-                    <h3>
-                        <a href="${project.url}" target="_blank" rel="noopener">${project.title}</a>
-                        ${project.featured ? '<i class="fa-solid fa-star glow-link"></i>' : ""}
-                    </h3>
+                    <h3><a href="${project.url}" target="_blank" rel="noopener">${project.title}</a></h3>
                     <h4>${project.tech}</h4>
                     <div class="project-blurb">
                         <p>${project.blurb}</p>
                     </div>
+                    <a class="text-link" href="${project.url}" target="_blank" rel="noopener">Open project</a>
                 </div>
             `;
             grid.appendChild(section);
@@ -208,7 +224,10 @@ function renderFeatured(article) {
             <span>${article.category}</span>
         </div>
         <p class="featured-excerpt">${article.excerpt}</p>
-        <a class="button primary" href="${article.url}">Open article</a>
+        <div class="featured-actions">
+            <a class="button primary" href="${article.url}">Open article</a>
+            <a class="text-link" href="#content-list">Browse the full archive</a>
+        </div>
     `;
 }
 

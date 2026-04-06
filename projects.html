@@ -3,30 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light dark"/>
-
-    <link rel="shortcut icon" type="image/x-icon" href="../img/matts/matt-profile.jpg">
+    <meta name="description" content="Explore Matt Bramer's apps, websites, tools, and practical web experiments in one project shelf.">
+    <link rel="shortcut icon" href="mLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <title>Projects</title>
+    <title>Projects | Matt Bramer</title>
 </head>
-<body>
+<body class="home-page projects-page">
+    <header class="site-top">
+        <a class="brand" href="index.html" aria-label="Matt Bramer home">
+            <span class="brand-mark">MB</span>
+            <span class="brand-text">Matt Bramer</span>
+        </a>
 
-<h2>Projects</h2>
-<section id="content-list" data-path="/content/projects/">
-  <!-- JS will populate this -->
-</section>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="thoughts.html" data-nav="writing"><span class="nav-label">Writing</span></a></li>
+                <li><a href="projects.html" aria-current="page" data-nav="projects"><span class="nav-label">Projects</span></a></li>
+                <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank" rel="noopener" data-nav="youtube"><span class="nav-label">YouTube</span></a></li>
+                <li><a href="index.html#support" data-nav="support"><span class="nav-label">Support</span></a></li>
+            </ul>
+        </nav>
+    </header>
 
-<nav>
-  <ul>
-    <li><a href="index.html" data-nav="home"><span class="nav-label">Home</span></a></li>
-    <li><a href="thoughts.html" data-nav="writing"><span class="nav-label">Thoughts On</span></a></li>
-    <li><a href="projects.html" data-nav="projects"><span class="nav-label">Projects</span></a></li>
-    <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank" data-nav="youtube"><span class="nav-label">Youtube</span></a></li>
-  </ul>
-</nav>
+    <main class="home-shell">
+        <section class="panel project-hero">
+            <div class="project-hero-copy">
+                <p class="eyebrow">Project Shelf</p>
+                <h1>Apps, websites, and experiments built to be useful.</h1>
+                <p class="lede">
+                    This is the maker side of the site: tools, dashboards, references, practice builds, and web
+                    projects shaped by curiosity and real-world use.
+                </p>
+                <p class="supporting-copy">
+                    I care less about showing every experiment equally and more about making it easy to see what each
+                    project is for, who it helps, and what kind of builder I am becoming.
+                </p>
+            </div>
 
-<script src="/assets/js/content-loader.js"></script>
-    
+            <div class="project-hero-notes">
+                <article class="stat-card">
+                    <strong>17</strong>
+                    <span>published projects and experiments</span>
+                </article>
+                <article class="stat-card">
+                    <strong>Web-first</strong>
+                    <span>HTML, CSS, JavaScript, and small practical tools</span>
+                </article>
+                <article class="stat-card">
+                    <strong>Real use</strong>
+                    <span>projects that solve problems, teach, track, or simplify</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel section-block">
+            <div class="section-heading">
+                <p class="eyebrow">What To Expect</p>
+                <h2>Not just portfolio pieces. Mostly useful things made for the web.</h2>
+            </div>
+
+            <div class="lane-grid">
+                <article class="lane-card">
+                    <p class="feature-kicker">Apps</p>
+                    <h3>Purpose-built tools</h3>
+                    <p>Trackers, generators, references, and utility apps made to solve specific problems cleanly.</p>
+                </article>
+                <article class="lane-card">
+                    <p class="feature-kicker">Web</p>
+                    <h3>Sites with clear structure</h3>
+                    <p>Projects where content, navigation, and public presentation matter as much as code.</p>
+                </article>
+                <article class="lane-card">
+                    <p class="feature-kicker">Practice</p>
+                    <h3>Skill-building work</h3>
+                    <p>Smaller builds that helped sharpen logic, design sense, and development habits.</p>
+                </article>
+                <article class="lane-card">
+                    <p class="feature-kicker">Experiments</p>
+                    <h3>Internet-native ideas</h3>
+                    <p>Projects that started as curiosity and turned into something people could actually use.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel project-archive-panel">
+            <div class="section-heading">
+                <p class="eyebrow">Browse Projects</p>
+                <h2>The full shelf, organized by kind of build.</h2>
+            </div>
+            <div id="content-list" data-path="/content/projects/"></div>
+        </section>
+    </main>
+
+    <script src="/assets/js/content-loader.js"></script>
 </body>
 </html>

@@ -281,8 +281,9 @@
 
         const copy = document.createElement("div");
         copy.innerHTML = `
-            <p class="article-kicker">${category}</p>
+            <p class="article-kicker">From the archive</p>
             <h1>${title}</h1>
+            <p class="article-category-label">${category}</p>
             ${dek ? `<p class="article-dek">${dek}</p>` : ""}
             <div class="article-meta-strip">
                 ${dateText ? `<span class="article-meta-pill">${dateText}</span>` : ""}
@@ -312,15 +313,27 @@
         const detailsCard = document.createElement("section");
         detailsCard.className = "article-aside-card";
         detailsCard.innerHTML = `
-            <h2>Article Details</h2>
-            <p>${category}</p>
-            ${dateText ? `<p>${dateText}</p>` : ""}
+            <h2>Article Map</h2>
+            <p>This piece lives in the <strong>${category}</strong> shelf.</p>
+            ${dateText ? `<p>Published ${dateText}.</p>` : ""}
             <div class="article-meta-nav">
                 <a class="article-button primary" href="/thoughts.html">Back to Archive</a>
                 <a class="article-button secondary" href="/index.html">Home</a>
             </div>
         `;
         aside.appendChild(detailsCard);
+
+        const browseCard = document.createElement("section");
+        browseCard.className = "article-aside-card";
+        browseCard.innerHTML = `
+            <h2>Keep Exploring</h2>
+            <p>Browse more writing, visit the project shelf, or return to the main hub.</p>
+            <div class="article-meta-nav">
+                <a class="article-button secondary" href="/projects.html">Projects</a>
+                <a class="article-button secondary" href="/thoughts.html#content-list">Archive</a>
+            </div>
+        `;
+        aside.appendChild(browseCard);
 
         if (tagLinks.length) {
             const tagsCard = document.createElement("section");
