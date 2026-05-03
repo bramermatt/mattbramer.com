@@ -1279,12 +1279,31 @@ color: white;
 }
 
 .second-nav {
-  display: none;
+  display: flex;
 }
 
 body.no-scroll {
   overflow: hidden;
   height: 100dvh;
+}
+
+/* Simplified visual system: crisp square edges across the site UI. */
+.navbar,
+.primary-nav,
+.second-nav,
+.mobile-nav,
+.menu-toggle,
+.close-menu,
+.footer,
+footer,
+.modal-content,
+.filterDiv,
+article,
+section,
+img,
+button,
+a {
+  border-radius: 0 !important;
 }
 
 
