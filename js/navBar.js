@@ -22,9 +22,11 @@ const navbarHTML = `
   <a href="${basePath}/index.html"><img src="${basePath}/mLogo.png" alt="Matt Bramer Logo" class="nav-logo"></a>
   <ul class="navbar-links">
     <li><a href="${basePath}/index.html">Home</a></li>
-    <!-- <li><a href="#">About</a></li> -->
-    <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
-    <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
+    <li><a href="${basePath}pages/writings.html">Writings</a></li>
+    <li><a href="${basePath}pages/reviews.html">Reviews</a></li>
+    <li><a href="${basePath}pages/articles.html">Teaching</a></li>
+    <li><a href="${basePath}pages/projects.html">Projects</a></li>
+    <li><a href="${basePath}pages/aboutMe.html">About</a></li>
     <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
     <li>
       <a href="#" class="openSupportModal" aria-label="Support Me">
@@ -58,55 +60,16 @@ const navbarHTML = `
     <i class="fa-solid fa-xmark" id="closeIcon"></i>
   </button>
 
-
   <ul class="mobile-links">
-    <h2>Links</h2>
+    <h2>Menu</h2>
     <li><a href="${basePath}/index.html">Home</a></li>
-    <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
-    <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
+    <li><a href="${basePath}pages/writings.html">Writings</a></li>
+    <li><a href="${basePath}pages/reviews.html">Reviews</a></li>
+    <li><a href="${basePath}pages/articles.html">Teaching</a></li>
+    <li><a href="${basePath}pages/projects.html">Projects</a></li>
+    <li><a href="${basePath}pages/aboutMe.html">About</a></li>
     <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter</a></li>
-    <!-- <li><a href="/support.html">Support Me</a></li> -->
-</ul>
-
-    <!-- Content Series -->
-<ul class="mobile-links">
-<h2>Content Series</h2>
-    <li><a href="/before-the-throne.html">Before the Throne</a></li>
-    <li><a href="/altared.html">Altared Reality</a></li>
-    <li><a href="/reading-well.html">Reading Well</a></li>
-    <li><a href="/purpose-built.html">Purpose Built</a></li>
-</ul>
-
-    <!-- Media -->
-<ul class="mobile-links">
-    <h2>Media</h2>
-    <li><a href="/blog.html">Blog</a></li>
-    <li><a href="/blog.html">Book Reviews</a></li>
-    <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Substack <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-    <li><a href="/videos.html" target="_blank" rel="noopener">Videos <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-    </ul>
-
-    <!-- Support -->
-<ul class="mobile-links">
-    <h2>Support</h2>
-    <li><a href="https://ko-fi.com/bramermatt" target="_blank" rel="noopener">Ko-fi</a></li>
-    <li><a href="https://www.patreon.com/MatthewBramer" target="_blank" rel="noopener"><i class="fa-brands fa-patreon"></i> Patreon</a></li>
-    </ul>
-
-    <!-- Services -->
-<ul class="mobile-links">
-<h2>Services</h2>
-    <li><a href="${basePath}bmws.html" target="_blank">Web Development</a></li>
-</ul>
-
-    <!-- Social -->
-<ul class="mobile-links">
-<h2>Follow</h2>
     <li><a href="https://www.youtube.com/@mattbramer" target="_blank" rel="noopener">YouTube</a></li>
-    <li><a href="https://twitter.com/bramermatt" target="_blank" rel="noopener">X (Twitter)</a></li>
-    <li><a href="https://www.instagram.com/bramermatt" target="_blank" rel="noopener">Instagram</a></li>
-    <li><a href="https://www.facebook.com/bramermatt/" target="_blank" rel="noopener">Facebook</a></li>
-    <!-- <li><a href="https://www.linkedin.com/in/mattbramer" target="_blank" rel="noopener">LinkedIn</a></li> -->
   </ul>
 
   </div>
@@ -144,6 +107,7 @@ const footerHTML = `
             <li><a href="${basePath}/index.html">Home</a></li>
             <li><a href="${basePath}pages/aboutMe.html">About</a></li>
             <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
+            <li><a href="${basePath}pages/articles.html">Teaching</a></li>
             <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
         </ul>
 
@@ -207,36 +171,6 @@ const footerHTML = `
     </footer>
 `;
 
-const thumbNavHTML = `
-<!-- Bottom Navigation -->
-<nav class="bottom-nav">
-  <a href="${basePath}/index.html" class="nav-item">
-    <i class="fas fa-home nav-icon"></i>
-    <span class="nav-label">Home</span>
-  </a>
-  <a href="${basePath}pages/thoughts.html" class="nav-item">
-    <i class="fas fa-book-open nav-icon"></i>
-    <span class="nav-label">Read</span>
-  </a>
-  <a href="${basePath}pages/projects.html" class="nav-item">
-    <i class="fa-solid fa-code"></i>
-    <span class="nav-label">Portfolio</span>
-  </a>
-  <a href="https://www.youtube.com/@mattbramer" target="_blank" class="nav-item">
-    <i class="fas fa-play-circle nav-icon"></i>
-    <span class="nav-label">Watch</span>
-  </a>
-<a href="#" class="openSupportModal nav-item" aria-label="Support">
-  <i class="fas fa-handshake nav-icon"></i>
-  <span class="nav-label">Support</span>
-</a>
-
-
-
-</nav>
-
-
-`
 
 const supportModalHTML = `
 <div id="supportModal" class="modal-overlay" aria-hidden="true">
@@ -263,7 +197,6 @@ const supportModalHTML = `
 
 
 document.body.insertAdjacentHTML('afterbegin', navbarHTML);
-document.body.insertAdjacentHTML('beforeend', thumbNavHTML);
 document.body.insertAdjacentHTML('beforeend', supportModalHTML);
 document.body.insertAdjacentHTML('beforeend', footerHTML);
 document.body.insertAdjacentHTML('beforeend', imgModalHTML);
