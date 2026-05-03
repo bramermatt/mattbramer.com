@@ -24,7 +24,7 @@ const navbarHTML = `
     <li><a href="${basePath}/index.html">Home</a></li>
     <li><a href="${basePath}pages/writings.html">Writings</a></li>
     <li><a href="${basePath}pages/reviews.html">Reviews</a></li>
-    <li><a href="${basePath}pages/articles.html">Teaching</a></li>
+    <li><a href="${basePath}teaching.html">Teaching</a></li>
     <li><a href="${basePath}pages/projects.html">Projects</a></li>
     <li><a href="${basePath}pages/aboutMe.html">About</a></li>
     <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
@@ -65,7 +65,7 @@ const navbarHTML = `
     <li><a href="${basePath}/index.html">Home</a></li>
     <li><a href="${basePath}pages/writings.html">Writings</a></li>
     <li><a href="${basePath}pages/reviews.html">Reviews</a></li>
-    <li><a href="${basePath}pages/articles.html">Teaching</a></li>
+    <li><a href="${basePath}teaching.html">Teaching</a></li>
     <li><a href="${basePath}pages/projects.html">Projects</a></li>
     <li><a href="${basePath}pages/aboutMe.html">About</a></li>
     <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter</a></li>
@@ -107,7 +107,7 @@ const footerHTML = `
             <li><a href="${basePath}/index.html">Home</a></li>
             <li><a href="${basePath}pages/aboutMe.html">About</a></li>
             <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
-            <li><a href="${basePath}pages/articles.html">Teaching</a></li>
+            <li><a href="${basePath}teaching.html">Teaching</a></li>
             <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
         </ul>
 

@@ -269,37 +269,42 @@ function renderArchiveGroups(articles) {
     }
 
     const grouped = articles.reduce((accumulator, article) => {
-        accumulator[article.year] ||= [];
-        accumulator[article.year].push(article);
+        if (!accumulator.has(article.year)) {
+            accumulator.set(article.year, []);
+        }
+
+        accumulator.get(article.year).push(article);
         return accumulator;
-    }, {});
+    }, new Map());
 
-    Object.entries(grouped).forEach(([year, yearArticles]) => {
-        const group = document.createElement("section");
-        group.className = "year-group";
+    [...grouped.entries()]
+        .sort(([firstYear], [secondYear]) => Number(secondYear) - Number(firstYear))
+        .forEach(([year, yearArticles]) => {
+            const group = document.createElement("section");
+            group.className = "year-group";
 
-        const heading = document.createElement("div");
-        heading.className = "year-heading";
-        heading.innerHTML = `<h3>${year}</h3><p>${yearArticles.length} article${yearArticles.length === 1 ? "" : "s"}</p>`;
+            const heading = document.createElement("div");
+            heading.className = "year-heading";
+            heading.innerHTML = `<h3>${year}</h3><p>${yearArticles.length} article${yearArticles.length === 1 ? "" : "s"}</p>`;
 
-        const grid = document.createElement("div");
-        grid.className = "archive-card-grid";
+            const grid = document.createElement("div");
+            grid.className = "archive-card-grid";
 
-        yearArticles.forEach(article => {
-            const card = document.createElement("article");
-            card.className = "archive-card";
-            card.innerHTML = `
+            yearArticles.forEach(article => {
+                const card = document.createElement("article");
+                card.className = "archive-card";
+                card.innerHTML = `
                 <p class="archive-meta">${article.dateLabel}</p>
                 <p class="archive-category">${article.category}</p>
                 <h4><a href="${article.url}">${article.title}</a></h4>
                 <p>${article.excerpt}</p>
             `;
-            grid.appendChild(card);
-        });
+                grid.appendChild(card);
+            });
 
-        group.append(heading, grid);
-        container.appendChild(group);
-    });
+            group.append(heading, grid);
+            container.appendChild(group);
+        });
 }
 
 function updateArchiveSummary(totalArticles, visibleArticles, activeCategory, query) {

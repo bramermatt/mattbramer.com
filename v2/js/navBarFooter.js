@@ -24,6 +24,7 @@ const navbarHTML = `
     <li><a href="${basePath}/index.html">Home</a></li>
     <!-- <li><a href="#">About</a></li> -->
     <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
+    <li><a href="${basePath}teaching.html">Teaching</a></li>
     <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
     <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
     <li>
@@ -63,6 +64,7 @@ const navbarHTML = `
     <h2>Links</h2>
     <li><a href="${basePath}/index.html">Home</a></li>
     <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
+    <li><a href="${basePath}teaching.html">Teaching</a></li>
     <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
     <li><a href="https://matthewbramer.substack.com/subscribe" target="_blank">Newsletter</a></li>
     <!-- <li><a href="/support.html">Support Me</a></li> -->
@@ -144,6 +146,7 @@ const footerHTML = `
             <li><a href="${basePath}/index.html">Home</a></li>
             <li><a href="${basePath}pages/aboutMe.html">About</a></li>
             <li><a href="${basePath}pages/thoughts.html">Articles</a></li>
+            <li><a href="${basePath}teaching.html">Teaching</a></li>
             <li><a href="${basePath}pages/projects.html">Portfolio</a></li>
         </ul>
 
@@ -217,6 +220,10 @@ const thumbNavHTML = `
   <a href="${basePath}pages/thoughts.html" class="nav-item">
     <i class="fas fa-book-open nav-icon"></i>
     <span class="nav-label">Read</span>
+  </a>
+  <a href="${basePath}teaching.html" class="nav-item">
+    <i class="fa-solid fa-chalkboard-user nav-icon"></i>
+    <span class="nav-label">Teach</span>
   </a>
   <a href="${basePath}pages/projects.html" class="nav-item">
     <i class="fa-solid fa-code"></i>

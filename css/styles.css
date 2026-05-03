@@ -1,3 +1,43 @@
+:root {
+    color-scheme: light dark;
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --bg: #f6f6f3;
+    --surface: #ffffff;
+    --surface-soft: #ecece7;
+    --surface-raised: #fbfbf8;
+    --text: #171717;
+    --muted: #5f625d;
+    --line: #deded7;
+    --line-strong: #c8c8be;
+    --accent: #9a4f1f;
+    --accent-deep: #1f3f34;
+    --support-bg: #1f3f34;
+    --support-text: #f5f2ec;
+    --support-muted: #ddbd92;
+    --floating-nav-bg: rgba(255, 255, 255, 0.94);
+    --shadow: 0 18px 60px rgba(22, 22, 18, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #000000;
+        --surface: #101010;
+        --surface-soft: #1a1a1a;
+        --surface-raised: #0b0b0b;
+        --text: #f4f4f1;
+        --muted: #aaa9a3;
+        --line: #252525;
+        --line-strong: #3a3a3a;
+        --accent: #e2a35e;
+        --accent-deep: #9dd2bc;
+        --support-bg: #101010;
+        --support-text: #f4f4f1;
+        --support-muted: #e2a35e;
+        --floating-nav-bg: rgba(12, 12, 12, 0.94);
+        --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+    }
+}
+
 *, html, body {
     margin: 0;
     padding: 0;
@@ -6,9 +46,11 @@
 
 body {
     cursor: default;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: rgb(14, 14, 14);
-    background: rgb(14, 14, 14);
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    background: var(--bg);
+    color: var(--text);
+    text-rendering: optimizeLegibility;
 }
 
 
@@ -22,26 +64,26 @@ body {
 
 
 .primary-nav, .second-nav {
-  background-color: rgba(0, 0, 0);
+  background-color: var(--surface);
   /* margin: 10px; */
   /* border-radius: 10px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 2rem;
-  color: white;
+  color: var(--text);
   font-weight: 600;
   letter-spacing: 0.05em;
 
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 
-background-color: rgba(0, 0, 0);
-background: rgba(0, 0, 0);
+background-color: var(--surface);
+background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1rem;
-  color: white;
+  color: var(--text);
   /* position: relative; */
 }
 
@@ -56,7 +98,7 @@ background: rgba(0, 0, 0);
 }
 
 .primary-nav .navbar-links a {
-  color: white;
+  color: var(--text);
   text-decoration: none;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -89,7 +131,7 @@ background: rgba(0, 0, 0);
 }
 
 .second-nav .navbar-links a {
-  color: #ccc;
+  color: var(--muted);
   text-decoration: none;
   font-size: 0.85rem;
   text-transform: lowercase;
@@ -104,8 +146,8 @@ background: rgba(0, 0, 0);
 footer {
     padding: 2em;
 
-        background-color: rgba(7, 7, 7, 0.9);
-        color: white;
+        background-color: var(--surface);
+        color: var(--text);
         letter-spacing: 0.05em;
 
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
@@ -132,7 +174,7 @@ footer {
 
     blockquote {
         font-style: italic;
-        color: #ccc;
+        color: var(--muted);
         margin: 1vh auto;
         padding: 0;
         text-align: center;
@@ -184,7 +226,7 @@ footer {
         }
 
         a:link, a:visited {
-            color: #ccc;
+            color: var(--muted);
             text-decoration: none;
         }
 
@@ -478,18 +520,18 @@ article#post {
         /* margin: 0; */
 
         li a {
-            background: #1a2906;
+            background: var(--accent-deep);
             padding: .5em;
             border-radius: 5px;
-            color: white;
+            color: var(--bg);
             opacity: 80%;
             text-decoration: none;
             display: block;
         }
 
         li a:hover {
-            background: #1a2906;
-            color: white;
+            background: var(--accent-deep);
+            color: var(--bg);
             opacity: 100%;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
@@ -501,8 +543,8 @@ article#post {
         margin: 2vh 0;
         padding: 1em;
         border-radius: 10px;
-        background: #1a2906;
-        color: white;
+        background: var(--accent-deep);
+        color: var(--bg);
         opacity: 80%;
         cursor: pointer;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -908,8 +950,8 @@ section#thought {
         }
 
         li a:hover {
-            background: #1a2906;
-            color: white;
+            background: var(--accent-deep);
+            color: var(--bg);
             opacity: 100%;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
@@ -980,10 +1022,10 @@ section#thought {
   border-radius: 1.5rem;
     max-height: 90dvh;
   overflow-y: auto;
-  background: rgba(255, 255, 255, 0.08);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
   backdrop-filter: blur(18px) saturate(185%);
   -webkit-backdrop-filter: blur(18px) saturate(135%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--line);
   box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.45);
   padding: 1em;
   max-width: 90%;
@@ -991,7 +1033,7 @@ section#thought {
   border-radius: 8px;
   text-align: center;
   position: relative;
-  color: #ffffff;
+  color: var(--text);
 
     h2 {
       margin-bottom: 2vh;
@@ -1059,7 +1101,7 @@ section#thought {
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
+    color: var(--support-text);
     font-size: 18px;
 }
 
@@ -1067,7 +1109,7 @@ section#thought {
     position: absolute;
     top: 15px;
     right: 25px;
-    color: white;
+    color: var(--support-text);
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
@@ -1081,7 +1123,7 @@ section#thought {
   background: none;
   border: none;
   cursor: pointer;
-  color: #ffffff;
+  color: var(--text);
 }
 
 .support-links {
@@ -1107,7 +1149,7 @@ section#thought {
 .support-links a {
   text-decoration: none;
   font-size: 1rem;
-  color: #ffffff;
+  color: var(--text);
 
 }
 
@@ -1124,7 +1166,7 @@ section#thought {
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: var(--text);
   font-size: 4vh;
   cursor: pointer;
   z-index: 1001;
@@ -1144,7 +1186,7 @@ section#thought {
   inset: 0;
   width: 100%;
   height: 100vh;
-  background: #141414;
+  background: var(--surface);
   z-index: 9999;
   padding: 2rem;
   overflow-y: auto;
@@ -1152,7 +1194,7 @@ section#thought {
   justify-content: flex-start;
   align-items: flex-start;
   transition: all 0.3s ease-in-out;
-color: white;
+color: var(--text);
 
 }
 
@@ -1168,7 +1210,7 @@ color: white;
   padding-bottom: 15vh;
   
     body {
-       background: #141414;
+       background: var(--bg);
     }
 }
 
@@ -1188,7 +1230,7 @@ color: white;
 }
 
 .mobile-links a {
-  color: white;
+  color: var(--text);
   text-decoration: none;
   /* font-size: 1.25rem; */
   /* font-weight: 500; */
@@ -1228,7 +1270,7 @@ color: white;
 .close-menu {
   background: none;
   border: none;
-  color: white;
+  color: var(--text);
   font-size: 4vh;
   position: fixed;
   /* top: .5rem; */
@@ -1260,20 +1302,21 @@ color: white;
 @media screen and (prefers-color-scheme: light) {
 
   .navbar {
-    background-color: rgb(247, 247, 247);
+    background-color: var(--surface);
   }
 
   .menu-toggle {
-    color: black;
+    color: var(--text);
   }
 
   .primary-nav .navbar-links a, .second-nav .navbar-links a {
-    color: black;
+    color: var(--text);
   }
 
     body {
-        background-color: rgb(247, 247, 247);
-        background: rgb(247, 247, 247);
+        background-color: var(--bg);
+        background: var(--bg);
+        color: var(--text);
     }
 
 }
@@ -1287,24 +1330,7 @@ body.no-scroll {
   height: 100dvh;
 }
 
-/* Simplified visual system: crisp square edges across the site UI. */
-.navbar,
-.primary-nav,
-.second-nav,
-.mobile-nav,
-.menu-toggle,
-.close-menu,
-.footer,
-footer,
-.modal-content,
-.filterDiv,
-article,
-section,
-img,
-button,
-a {
-  border-radius: 0 !important;
-}
+
 
 
     .glow-link  {
@@ -1507,8 +1533,8 @@ iframe, video {
 
 @media screen and (prefers-color-scheme: light) {
   .filterContainer {
-    background-color: rgba(255, 255, 255);
-    color: black;
+    background-color: var(--surface);
+    color: var(--text);
   }
 
   /* body {
@@ -1519,12 +1545,13 @@ iframe, video {
 
 @media screen and (prefers-color-scheme: dark) {
   .filterContainer {
-    background-color: rgba(0, 0, 0);
-    color: white;
+    background-color: var(--surface);
+    color: var(--text);
   }
 
   body {
-     background-color: rgba(0, 0, 0);
+     background-color: var(--bg);
+     color: var(--text);
   }
 }
 
@@ -1544,3 +1571,21 @@ iframe, video {
             color: #fff700;
         }
     }
+/* Simplified visual system: crisp square edges across the site UI. */
+.navbar,
+.primary-nav,
+.second-nav,
+.mobile-nav,
+.menu-toggle,
+.close-menu,
+.footer,
+footer,
+.modal-content,
+.filterDiv,
+article,
+section,
+img,
+button,
+a {
+  border-radius: 0 !important;
+}
