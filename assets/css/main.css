@@ -960,3 +960,66 @@ button,
 a {
   border-radius: 0 !important;
 }
+
+/* Editorial simplification */
+:root {
+    --font-serif: "Source Serif 4", Georgia, serif;
+    --font-ui: "Inter", system-ui, sans-serif;
+}
+
+.editorial-home,
+.archive-page {
+    background: #f8f7f3;
+    color: #1d1d1b;
+    font-family: var(--font-serif);
+    line-height: 1.65;
+}
+
+.topbar {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 1.25rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #dedcd5;
+}
+
+.topbar nav { display: flex; gap: .9rem; flex-wrap: wrap; }
+.topbar a { font-family: var(--font-ui); font-size: .92rem; color: #4e4d48; }
+.nameplate { font-weight: 600; color: #191814; }
+
+.editorial-shell,
+.archive-shell {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 5rem;
+}
+
+.intro h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin: .5rem 0 1rem; }
+.kicker, .meta { font-family: var(--font-ui); text-transform: uppercase; letter-spacing: .08em; font-size: .74rem; color: #6c6a64; }
+.intro-note { max-width: 62ch; color: #484741; }
+
+.block { padding: 2.2rem 0; border-top: 1px solid #dedcd5; }
+.block h2 { font-size: 1.35rem; margin-bottom: .9rem; }
+.block h3 { font-size: 1.55rem; line-height: 1.25; margin: .3rem 0 .55rem; }
+.block p { color: #383733; max-width: 66ch; }
+.block-head { display: flex; justify-content: space-between; align-items: baseline; gap: .8rem; }
+.block-head a { font-family: var(--font-ui); font-size: .9rem; color: #5b4b2f; }
+
+.video-wrap { position: relative; padding-top: 56.25%; border: 1px solid #d7d5ce; }
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.quiet ul { list-style: none; display: flex; gap: 1rem; padding: 0; margin-top: .8rem; }
+.quiet a { font-family: var(--font-ui); font-size: .95rem; color: #4e4d48; }
+
+.archive-shell h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin: .2rem 0 .5rem; }
+.archive-shell ol { margin-top: 1.5rem; padding-left: 1.15rem; }
+.archive-shell li { margin: .45rem 0; color: #35342f; }
+.archive-shell time { font-family: var(--font-ui); font-size: .86rem; color: #6b6962; }
+
+@media (max-width: 720px) {
+    .topbar { flex-direction: column; align-items: flex-start; }
+    .block-head { flex-direction: column; align-items: flex-start; }
+}
