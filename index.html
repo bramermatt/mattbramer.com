@@ -4,275 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matt Bramer</title>
-    <meta name="description" content="The home of Matthew Bramer's writing, reviews, projects, and ways to support his work.">
+    <meta name="description" content="Writing about science, faith, technology, teaching, and the systems that shape how we understand the world.">
     <link rel="shortcut icon" href="mLogo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body class="home-page">
-    <header class="site-top">
-        <a class="brand" href="index.html" aria-label="Matt Bramer home">
-            <span class="brand-mark">MB</span>
-            <span class="brand-text">Matt Bramer</span>
-        </a>
-
+<body class="home-page editorial-home">
+    <header class="topbar">
+        <a href="index.html" class="nameplate">Matt Bramer</a>
         <nav aria-label="Primary">
-            <ul>
-                <li><a href="thoughts.html" data-nav="writing"><span class="nav-label">Writing</span></a></li>
-                <li><a href="teaching.html" data-nav="teaching"><span class="nav-label">Teaching</span></a></li>
-                <li><a href="projects.html" data-nav="projects"><span class="nav-label">Projects</span></a></li>
-                <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank" rel="noopener" data-nav="youtube"><span class="nav-label">YouTube</span></a></li>
-                <li><a href="#support" data-nav="support"><span class="nav-label">Support</span></a></li>
-            </ul>
+            <a href="writing.html">Writing</a>
+            <a href="projects.html">Projects</a>
+            <a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank" rel="noopener">YouTube</a>
+            <a href="#elsewhere">Elsewhere</a>
         </nav>
     </header>
 
-    <main class="home-shell">
-        <section class="hero panel">
-            <div class="hero-copy">
-                <p class="eyebrow">Writer. Builder. Reviewer. Internet Publisher.</p>
-                <h1>A home for the things I make and the ideas worth keeping.</h1>
-                <p class="lede">
-                    I’m Matthew Bramer. I write articles, reviews, notes, and long-form reflections. I also build
-                    apps, websites, and small tools for the web. This site is the hub where those two instincts meet.
-                </p>
-                <p class="supporting-copy">
-                    If you are new here, you should be able to find the best writing and strongest projects quickly.
-                    If you come back later, there should be something new to read, explore, or learn from.
-                </p>
-
-                <div class="hero-actions">
-                    <a class="button primary" href="thoughts.html">Read articles</a>
-                    <a class="button secondary" href="projects.html">Browse projects</a>
-                </div>
-
-                <div class="stats-grid" aria-label="Site highlights">
-                    <article class="stat-card">
-                        <strong>250+</strong>
-                        <span>articles, reviews, and reflections</span>
-                    </article>
-                    <article class="stat-card">
-                        <strong>17</strong>
-                        <span>apps, tools, and web experiments</span>
-                    </article>
-                    <article class="stat-card">
-                        <strong>5</strong>
-                        <span>main shelves: writing, reviews, science, notes, and projects</span>
-                    </article>
-                </div>
-            </div>
-
-            <!-- <aside class="hero-aside">
-                <img src="img/matts/matt-w-bookshelf-2024.jpg" alt="Matthew Bramer standing in front of a bookshelf">
-            </aside> -->
+    <main class="editorial-shell">
+        <section class="intro">
+            <p class="kicker">Writer · Teacher · Engineer</p>
+            <h1>Writing about science, faith, technology, teaching, and the systems that shape how we understand the world.</h1>
+            <p class="intro-note">This is my workshop on the web: essays, reviews, classes, and projects from an ongoing practice of learning in public.</p>
         </section>
 
-        <section class="panel section-block">
-            <div class="section-heading">
-                <p class="eyebrow">How To Use This Site</p>
-                <h2>Start with the lane that matches what you came for.</h2>
+        <section class="block writing-feature">
+            <div class="block-head">
+                <h2>Most Recent Writing</h2>
+                <a href="writing.html">View Archive</a>
             </div>
+            <article>
+                <p class="meta">August 4, 2025 · Movie Review</p>
+                <h3><a href="content/thoughts/2025-08-04-moviereview-deadpoolandwolverine.html">Deadpool &amp; Wolverine Movie Review</a></h3>
+                <p>Messy, funny, and unexpectedly reflective—a quick study in whether spectacle can still carry emotional weight.</p>
+            </article>
+        </section>
 
-            <div class="feature-grid">
-                <article class="feature-card accent-warm">
-                    <p class="feature-kicker">Articles</p>
-                    <h3>Essays, reflections, and blog posts with a point of view.</h3>
-                    <p>
-                        Writing on books, faith, culture, family life, and the things that keep shaping how I think.
-                    </p>
-                    <a href="thoughts.html">Enter the archive</a>
-                </article>
-
-                <article class="feature-card accent-deep">
-                    <p class="feature-kicker">Projects</p>
-                    <h3>Apps, websites, and practical tools built for real use.</h3>
-                    <p>
-                        Side projects shaped by curiosity, usefulness, and the fun of making something clear and usable.
-                    </p>
-                    <a href="projects.html">Visit the project shelf</a>
-                </article>
-
-                <article class="feature-card accent-soft">
-                    <p class="feature-kicker">Teaching</p>
-                    <h3>Videos, notes, and resources built to help people learn.</h3>
-                    <p>
-                        A developing home for explainers, study material, walkthroughs, and future courses.
-                    </p>
-                    <a href="teaching.html">Open the teaching shelf</a>
-                </article>
-
-                <article class="feature-card accent-soft">
-                    <p class="feature-kicker">Reviews</p>
-                    <h3>Book, movie, and media reviews for people who still like substance.</h3>
-                    <p>
-                        A large part of the archive is review-driven, which makes this a good place to discover what
-                        I am reading, watching, and recommending.
-                    </p>
-                    <a href="thoughts.html">Find a review to read</a>
-                </article>
+        <section class="block media-feature">
+            <h2>Most Recent YouTube Video</h2>
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=MatthewBramer" title="Latest video from Matthew Bramer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
-        <section class="panel section-block split-panel">
-            <div class="section-heading">
-                <p class="eyebrow">Why This Hub Exists</p>
-                <h2>Publishing and building belong in the same place.</h2>
-            </div>
-
-            <div class="split-grid">
-                <div class="story-block">
-                    <p>
-                        I do not want this site to feel like a digital business card. I want it to feel like an active
-                        workshop: a place where writing, reviewing, documenting, and building are all visible in one
-                        coherent system.
-                    </p>
-                    <p>
-                        The goal is simple. Good writing should be easy to discover. Good projects should be easy to
-                        understand. And the whole site should make it obvious what kind of work I keep coming back to.
-                    </p>
-                </div>
-
-                <div class="identity-list" aria-label="Matthew Bramer roles">
-                    <div>
-                        <span class="label">Writing</span>
-                        <p>Articles, reviews, blog posts, and long-form thoughts worth returning to later.</p>
-                    </div>
-                    <div>
-                        <span class="label">Building</span>
-                        <p>Apps and websites that solve small problems clearly and usefully.</p>
-                    </div>
-                    <div>
-                        <span class="label">Documenting</span>
-                        <p>Notes, explanations, and public thinking that make the work easier to follow.</p>
-                    </div>
-                </div>
-            </div>
+        <section class="block project-feature">
+            <h2>Most Recent Coding Project</h2>
+            <article>
+                <h3><a href="projects.html">Project Shelf</a></h3>
+                <p>A focused set of practical web builds and experiments designed with the same editorial clarity as the writing.</p>
+                <p><a href="https://github.com/mattbramer" target="_blank" rel="noopener">GitHub</a></p>
+            </article>
         </section>
 
-        <section class="panel section-block">
-            <div class="section-heading">
-                <p class="eyebrow">Latest From The Desk</p>
-                <h2>New writing should be visible the second someone lands here.</h2>
-            </div>
-
-            <div class="recent-grid">
-                <article class="recent-card">
-                    <p class="recent-meta">August 4, 2025 · Movie Review</p>
-                    <h3><a href="content/thoughts/2025-08-04-moviereview-deadpoolandwolverine.html">Deadpool &amp; Wolverine Movie Review</a></h3>
-                    <p>Messy, hilarious, and more emotional than expected.</p>
-                </article>
-
-                <article class="recent-card">
-                    <p class="recent-meta">August 4, 2025 · Movie Review</p>
-                    <h3><a href="content/thoughts/2025-08-04-moviereview-A Minecraft Movie.html">A Minecraft Movie Review</a></h3>
-                    <p>A newer review that helps the homepage feel active and current.</p>
-                </article>
-
-                <article class="recent-card">
-                    <p class="recent-meta">July 29, 2025 · Book Review</p>
-                    <h3><a href="content/thoughts/2025-07-29-bookreview-existentialphysics-sabinehossenfelder.html">Existential Physics by Sabine Hossenfelder</a></h3>
-                    <p>Science, meaning, and a review rooted in real engagement.</p>
-                </article>
-
-                <article class="recent-card">
-                    <p class="recent-meta">July 28, 2025 · Book Review</p>
-                    <h3><a href="content/thoughts/2025-07-28-bookreview-fosteringresilientlearners-kristinsouerspetehall.html">Fostering Resilient Learners</a></h3>
-                    <p>One more recent piece to signal depth, consistency, and momentum.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="panel section-block">
-            <div class="section-heading">
-                <p class="eyebrow">Featured Work</p>
-                <h2>A few good places to start if you want the best of the site.</h2>
-            </div>
-
-            <div class="feature-grid">
-                <article class="feature-card accent-soft">
-                    <p class="feature-kicker">Science</p>
-                    <h3>Existential Physics by Sabine Hossenfelder</h3>
-                    <p>
-                        A review sitting at the intersection of science, meaning, and public-facing explanation.
-                    </p>
-                    <a href="content/thoughts/2025-07-29-bookreview-existentialphysics-sabinehossenfelder.html">Read the review</a>
-                </article>
-
-                <article class="feature-card accent-warm">
-                    <p class="feature-kicker">Books</p>
-                    <h3>Washington by Ron Chernow</h3>
-                    <p>
-                        A strong example of the kind of serious, reader-first review work I want this site to keep publishing.
-                    </p>
-                    <a href="content/thoughts/2024-8-9-bookreview-washington-ronchernow.html">Open the article</a>
-                </article>
-
-                <article class="feature-card accent-deep">
-                    <p class="feature-kicker">Projects</p>
-                    <h3>Useful tools built with the same mindset as the writing.</h3>
-                    <p>
-                        The best projects here come from the same impulse as the articles: make something clear, useful, and worth sharing.
-                    </p>
-                    <a href="projects.html">See featured projects</a>
-                </article>
-            </div>
-        </section>
-
-        <section class="panel section-block">
-            <div class="section-heading">
-                <p class="eyebrow">Publishing Lanes</p>
-                <h2>The hub works best when each kind of content has a clear shelf.</h2>
-            </div>
-
-            <div class="lane-grid">
-                <article class="lane-card">
-                    <p class="feature-kicker">Writing</p>
-                    <h3>Articles and blog posts</h3>
-                    <p>Longer reflections, practical thoughts, life updates, and pieces written to be read slowly.</p>
-                </article>
-                <article class="lane-card">
-                    <p class="feature-kicker">Reviews</p>
-                    <h3>Books, movies, and media</h3>
-                    <p>Opinionated, readable reviews that help people decide what is worth their attention.</p>
-                </article>
-                <article class="lane-card">
-                    <p class="feature-kicker">Ideas</p>
-                    <h3>Science, faith, and public thinking</h3>
-                    <p>Topics that deserve more than a quick take, especially when clarity matters.</p>
-                </article>
-                <article class="lane-card">
-                    <p class="feature-kicker">Teaching</p>
-                    <h3>Videos, docs, and learning resources</h3>
-                    <p>Explainers, guides, and future course material collected in one clear teaching shelf.</p>
-                </article>
-                <article class="lane-card">
-                    <p class="feature-kicker">Projects</p>
-                    <h3>Apps and websites</h3>
-                    <p>Practical builds, experiments, and internet-native tools made with care.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="panel support-panel" id="support">
-            <div class="section-heading">
-                <p class="eyebrow">Support My Work</p>
-                <h2>If the writing or projects have been useful, you can help me keep publishing.</h2>
-            </div>
-
-            <div class="support-grid">
-                <div>
-                    <p>
-                        Support makes room for more articles, better archives, stronger project writeups, and new tools
-                        that deserve to exist. If you want to help this stay active, these are the best places to do it.
-                    </p>
-                </div>
-
-                <div class="support-actions">
-                    <a class="button primary" href="https://www.patreon.com/MatthewBramer" target="_blank" rel="noopener">Support on Patreon</a>
-                    <a class="button secondary" href="https://ko-fi.com/bramermatt" target="_blank" rel="noopener">Buy Me a Coffee</a>
-                    <a class="text-link" href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank" rel="noopener">Watch on YouTube</a>
-                </div>
-            </div>
+        <section class="block quiet" id="elsewhere">
+            <h2>Currently Reading + Elsewhere</h2>
+            <p><strong>Currently Reading:</strong> <em>The Sunlit Man</em> by Brandon Sanderson</p>
+            <ul>
+                <li><a href="mailto:matt@themattbramer.com">Email</a></li>
+                <li><a href="https://github.com/mattbramer" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank" rel="noopener">YouTube</a></li>
+            </ul>
         </section>
     </main>
 </body>
