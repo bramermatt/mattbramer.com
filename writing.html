@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing Archive | Matt Bramer</title>
-    <meta name="description" content="A chronological archive of Matt Bramer's essays, reviews, and reflections.">
+    <meta name="description" content="A complete chronological archive of Matt Bramer's essays, reviews, and reflections.">
     <link rel="shortcut icon" href="mLogo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,17 +15,58 @@
     <main class="archive-shell">
         <p><a href="index.html">← Home</a></p>
         <h1>Writing Archive</h1>
-        <p>Chronological notes from the desk: science, books, teaching, technology, faith, and systems thinking.</p>
+        <p>Every published piece in one chronological list.</p>
+        <p class="meta" id="archive-count">Loading archive…</p>
 
-        <ol>
-            <li><time datetime="2026-02-24">February 24, 2026</time> — <a href="content/thoughts/2026-02-24-bookreview-salems-lot-stephenking.html">'Salem's Lot — Book Review</a></li>
-            <li><time datetime="2025-08-04">August 4, 2025</time> — <a href="content/thoughts/2025-08-04-moviereview-deadpoolandwolverine.html">Deadpool &amp; Wolverine Movie Review</a></li>
-            <li><time datetime="2025-08-04">August 4, 2025</time> — <a href="content/thoughts/2025-08-04-moviereview-A Minecraft Movie.html">A Minecraft Movie Review</a></li>
-            <li><time datetime="2025-07-29">July 29, 2025</time> — <a href="content/thoughts/2025-07-29-bookreview-existentialphysics-sabinehossenfelder.html">Existential Physics — Book Review</a></li>
-            <li><time datetime="2025-07-28">July 28, 2025</time> — <a href="content/thoughts/2025-07-28-bookreview-fosteringresilientlearners-kristinsouerspetehall.html">Fostering Resilient Learners — Book Review</a></li>
-            <li><time datetime="2025-07-15">July 15, 2025</time> — <a href="content/thoughts/2025-07-15-bookreview-thesunlitman-brandonsanderson.html">The Sunlit Man — Book Review</a></li>
-            <li><time datetime="2025-07-01">July 1, 2025</time> — <a href="content/thoughts/2025-07-01-bookreview-jqa-harlowgilesunger.html">John Quincy Adams — Book Review</a></li>
-        </ol>
+        <ol id="archive-list"></ol>
     </main>
+
+    <script>
+        const archiveList = document.getElementById('archive-list');
+        const archiveCount = document.getElementById('archive-count');
+
+        const categoryLabel = (slug) => {
+            if (slug.includes('bookreview')) return 'Book Review';
+            if (slug.includes('moviereview')) return 'Movie Review';
+            if (slug.includes('tvshowreview')) return 'TV Review';
+            if (slug.includes('websiteupdate') || slug.includes('websiteupdates')) return 'Website Update';
+            if (slug.includes('bikecommute')) return 'Bike Commute';
+            if (slug.includes('faith')) return 'Faith';
+            if (slug.includes('familyblog')) return 'Family';
+            if (slug.includes('opinionblog')) return 'Opinion';
+            if (slug.includes('books-')) return 'Books';
+            return 'Writing';
+        };
+
+        const titleFromSlug = (slug) => {
+            return slug
+                .replace(/\.html$/i, '')
+                .replace(/^\d{4}-\d{1,2}-\d{1,2}-/, '')
+                .replace(/-/g, ' ')
+                .replace(/\b\w/g, (m) => m.toUpperCase());
+        };
+
+        const humanDate = (iso) => {
+            const [y, m, d] = iso.split('-').map(Number);
+            const dt = new Date(Date.UTC(y, m - 1, d));
+            return dt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+        };
+
+        fetch('content/thoughts/index.json')
+            .then((response) => response.json())
+            .then((entries) => {
+                archiveCount.textContent = `${entries.length} articles`;
+                archiveList.innerHTML = entries.map((file) => {
+                    const match = file.match(/^(\d{4}-\d{1,2}-\d{1,2})-(.*)$/);
+                    const datePart = match ? match[1] : '2000-01-01';
+                    const slugPart = match ? match[2] : file;
+                    const label = categoryLabel(slugPart.toLowerCase());
+                    return `<li><time datetime="${datePart}">${humanDate(datePart)}</time> — <a href="content/thoughts/${encodeURI(file)}">${titleFromSlug(slugPart)}</a> <span class="archive-type">· ${label}</span></li>`;
+                }).join('');
+            })
+            .catch(() => {
+                archiveCount.textContent = 'Unable to load archive list.';
+            });
+    </script>
 </body>
 </html>
