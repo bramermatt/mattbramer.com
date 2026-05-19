@@ -21,21 +21,17 @@
 
   <section class="archive-section">
     <div class="archive-title">Projects</div>
-    <ul class="archive-list">
-      <li class="archive-item">
-        <a class="archive-link" href="/world-population-clock/">World Population Clock</a>
-        <div class="archive-meta">Data visualization / JavaScript</div>
-      </li>
-      <li class="archive-item">
-        <a class="archive-link" href="/reView/">reView</a>
-        <div class="archive-meta">Review and archive experiment</div>
-      </li>
-      <li class="archive-item">
-        <a class="archive-link" href="https://github.com/bramermatt" target="_blank" rel="noopener">GitHub Projects</a>
-        <div class="archive-meta">Source code and ongoing builds</div>
-      </li>
-    </ul>
+    <p class="archive-meta" id="project-count">Loading projects…</p>
+    <ul class="archive-list" id="project-list"></ul>
   </section>
 </main>
+<script>
+fetch('/content/projects/index.json').then(r=>r.json()).then(groups=>{
+  const list=document.getElementById('project-list');
+  const all=groups.flatMap(group=>group.projects.map(p=>({...p, type: group.type})));
+  document.getElementById('project-count').textContent=`${all.length} projects`;
+  list.innerHTML=all.map(project=>`<li class="archive-item"><a class="archive-link" href="${project.url}" target="_blank" rel="noopener">${project.title}</a><div class="archive-meta">${project.type} · ${project.tech}${project.blurb ? ` · ${project.blurb}` : ''}</div></li>`).join('');
+}).catch(()=>{document.getElementById('project-count').textContent='Unable to load projects.';});
+</script>
 </body>
 </html>

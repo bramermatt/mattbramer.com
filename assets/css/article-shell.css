@@ -61,3 +61,11 @@ body.article-shell-page {
 .article-prose h2,
 .article-prose h3 { margin: 2rem 0 .6rem; color: var(--article-text); }
 .article-hero-figure img { width: 100%; height: auto; }
+
+
+.article-shell-page .legacy-hidden { display: none !important; }
+.article-shell-root { padding-bottom: 2rem; }
+.article-shell { padding: 0 0 2rem; }
+.article-hero, .article-body-grid { display: block; }
+.article-sidebar { margin-top: 2rem; border-top: 1px solid var(--article-border); padding-top: 1rem; }
+.article-meta-nav a { margin-right: .75rem; }
