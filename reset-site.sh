@@ -6,6 +6,8 @@ echo "== Creating archive directories =="
 mkdir -p archive/old-css
 mkdir -p css
 mkdir -p projects
+mkdir -p writings
+mkdir -p teachings
 mkdir -p assets
 
 echo "== Archiving old CSS =="
