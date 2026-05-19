@@ -1,0 +1,119 @@
+:root {
+  --bg: #f7f5f2;
+  --text: #1c1c1c;
+  --muted: #666;
+  --link: #111;
+  --border: #ddd;
+  --max-width: 760px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+
+  font-family:
+    Georgia,
+    Cambria,
+    "Times New Roman",
+    serif;
+
+  line-height: 1.75;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+header {
+  margin-bottom: 4rem;
+}
+
+.site-title {
+  font-size: 2.5rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.site-subtitle {
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+nav {
+  margin-top: 2rem;
+}
+
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: var(--link);
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.archive-section {
+  margin-top: 4rem;
+}
+
+.archive-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.archive-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.archive-item {
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.archive-item:first-child {
+  border-top: none;
+}
+
+.archive-link {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.2rem;
+}
+
+.archive-link:hover {
+  text-decoration: underline;
+}
+
+.archive-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+footer {
+  margin-top: 5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.social-links a {
+  margin-right: 1rem;
+}

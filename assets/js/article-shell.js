@@ -265,11 +265,11 @@
             </a>
             <nav aria-label="Primary">
                 <ul>
-                    <li><a href="/thoughts.html" data-nav="writing"><span class="nav-label">Writing</span></a></li>
-                    <li><a href="/teaching.html" data-nav="teaching"><span class="nav-label">Teaching</span></a></li>
-                    <li><a href="/projects.html" data-nav="projects"><span class="nav-label">Projects</span></a></li>
+                    <li><a href="/writings" data-nav="writing"><span class="nav-label">Writing</span></a></li>
+                    <li><a href="/teachings" data-nav="teaching"><span class="nav-label">Teaching</span></a></li>
+                    <li><a href="/projects" data-nav="projects"><span class="nav-label">Projects</span></a></li>
                     <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank" rel="noopener" data-nav="youtube"><span class="nav-label">YouTube</span></a></li>
-                    <li><a href="/index.html#support" data-nav="support"><span class="nav-label">Support</span></a></li>
+                    <li><a href="/teachings" data-nav="support"><span class="nav-label">Teachings</span></a></li>
                 </ul>
             </nav>
         `;
@@ -318,7 +318,7 @@
             <p>This piece lives in the <strong>${category}</strong> shelf.</p>
             ${dateText ? `<p>Published ${dateText}.</p>` : ""}
             <div class="article-meta-nav">
-                <a class="article-button primary" href="/thoughts.html">Back to Archive</a>
+                <a class="article-button primary" href="/writings">Back to Archive</a>
                 <a class="article-button secondary" href="/index.html">Home</a>
             </div>
         `;
@@ -330,8 +330,8 @@
             <h2>Keep Exploring</h2>
             <p>Browse more writing, visit the project shelf, or return to the main hub.</p>
             <div class="article-meta-nav">
-                <a class="article-button secondary" href="/projects.html">Projects</a>
-                <a class="article-button secondary" href="/thoughts.html#content-list">Archive</a>
+                <a class="article-button secondary" href="/projects">Projects</a>
+                <a class="article-button secondary" href="/writings#content-list">Archive</a>
             </div>
         `;
         aside.appendChild(browseCard);
