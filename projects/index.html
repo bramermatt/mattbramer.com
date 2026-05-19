@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Matthew Bramer</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<main>
+  <header>
+    <h1 class="site-title">Matthew Bramer</h1>
+    <p class="site-subtitle">Project archive.</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/writings">Writings</a>
+      <a href="/projects">Projects</a>
+      <a href="/teachings">Teachings</a>
+    </nav>
+  </header>
+
+  <section class="archive-section">
+    <div class="archive-title">Projects</div>
+    <p class="archive-meta" id="project-count">Loading projects…</p>
+    <ul class="archive-list" id="project-list"></ul>
+  </section>
+</main>
+<script>
+fetch('/content/projects/index.json').then(r=>r.json()).then(groups=>{
+  const list=document.getElementById('project-list');
+  const all=groups.flatMap(group=>group.projects.map(p=>({...p, type: group.type})));
+  document.getElementById('project-count').textContent=`${all.length} projects`;
+  list.innerHTML=all.map(project=>`<li class="archive-item"><a class="archive-link" href="${project.url}" target="_blank" rel="noopener">${project.title}</a><div class="archive-meta">${project.type} · ${project.tech}${project.blurb ? ` · ${project.blurb}` : ''}</div></li>`).join('');
+}).catch(()=>{document.getElementById('project-count').textContent='Unable to load projects.';});
+</script>
+</body>
+</html>

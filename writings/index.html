@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writings — Matthew Bramer</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<main>
+<header>
+  <h1 class="site-title">Matthew Bramer</h1>
+  <p class="site-subtitle">Writings archive.</p>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/projects">Projects</a>
+    <a href="/writings">Writings</a>
+    <a href="/teachings">Teachings</a>
+  </nav>
+</header>
+<section class="archive-section">
+  <div class="archive-title">Writings</div>
+  <p class="archive-meta" id="archive-count">Loading archive…</p>
+  <ul class="archive-list" id="archive-list"></ul>
+</section>
+</main>
+<script>
+const toTitleFromFile = (file) => file.replace('.html','').replace(/^\d{4}-\d{1,2}-\d{1,2}-/, '').replace(/-/g,' ');
+const getTitle = async (file) => {
+  try {
+    const res = await fetch(`/content/thoughts/${encodeURI(file)}`);
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return (doc.querySelector('article h1')?.textContent || doc.querySelector('h1')?.textContent || doc.title || toTitleFromFile(file)).replace(/\s*\|\s*Matt Bramer\s*$/i, '').trim();
+  } catch {
+    return toTitleFromFile(file);
+  }
+};
+
+fetch('/content/thoughts/index.json').then(r=>r.json()).then(async entries=>{
+  const list=document.getElementById('archive-list');
+  document.getElementById('archive-count').textContent=`${entries.length} entries`;
+  const items = await Promise.all(entries.map(async (file) => ({ file, title: await getTitle(file) })));
+  list.innerHTML=items.map(({file, title})=>`<li class="archive-item"><a class="archive-link" href="/content/thoughts/${encodeURI(file)}">${title}</a></li>`).join('');
+}).catch(()=>{document.getElementById('archive-count').textContent='Unable to load archive.'});
+</script>
+</body>
+</html>
