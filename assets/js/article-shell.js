@@ -260,7 +260,6 @@
         header.className = "article-topbar";
         header.innerHTML = `
             <a class="article-brand" href="/index.html" aria-label="Matt Bramer home">
-                <span class="article-brand-mark">MB</span>
                 <span class="article-brand-text">Matt Bramer</span>
             </a>
             <nav aria-label="Primary">
