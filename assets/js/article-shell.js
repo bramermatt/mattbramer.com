@@ -269,7 +269,6 @@
                     <li><a href="/teachings" data-nav="teaching"><span class="nav-label">Teaching</span></a></li>
                     <li><a href="/projects" data-nav="projects"><span class="nav-label">Projects</span></a></li>
                     <li><a href="https://www.youtube.com/channel/UC1OsGesye2hEKRl_dSqwhUw" target="_blank" rel="noopener" data-nav="youtube"><span class="nav-label">YouTube</span></a></li>
-                    <li><a href="/teachings" data-nav="support"><span class="nav-label">Teachings</span></a></li>
                 </ul>
             </nav>
         `;
