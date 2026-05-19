@@ -44,6 +44,7 @@ body.article-shell-page {
   padding: 1.25rem 1.25rem 0;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -52,7 +53,7 @@ body.article-shell-page {
 
 .article-panel {
   padding: 0 1.25rem 3rem;
-  border-top: 1px solid var(--article-border);
+  // border-top: 1px solid var(--article-border);
 }
 
 .article-hero h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); line-height: 1.15; margin: 0 0 .75rem; color: var(--article-text); }
