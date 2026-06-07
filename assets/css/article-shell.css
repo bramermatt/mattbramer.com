@@ -53,12 +53,12 @@ body.article-shell-page {
 
 .article-panel {
   padding: 0 1.25rem 3rem;
-  // border-top: 1px solid var(--article-border);
+  /* // border-top: 1px solid var(--article-border); */
 }
 
 .article-hero h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); line-height: 1.15; margin: 0 0 .75rem; color: var(--article-text); }
 .article-prose { max-width: 65ch; }
-.article-prose p { margin: 0 0 1rem; }
+.article-prose p { margin: 0 0 1rem; line-height: 1.6em;}
 .article-prose h2,
 .article-prose h3 { margin: 2rem 0 .6rem; color: var(--article-text); }
 .article-hero-figure img { width: 100%; height: auto; }

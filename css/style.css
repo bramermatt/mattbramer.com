@@ -43,8 +43,8 @@ nav { margin-top: 1.25rem; }
 nav a { margin-right: 0.85rem; color: var(--link); text-decoration: none; }
 nav a:hover { text-decoration: underline; }
 
-.archive-section { margin-top: 2.2rem; }
-.archive-title {
+.archive-section, .latest-section { margin-top: 2.2rem; }
+.archive-title, .latest-title {
   font-size: 0.86rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -52,13 +52,13 @@ nav a:hover { text-decoration: underline; }
   margin: 0 0 0.85rem;
 }
 
-.archive-list { list-style: none; padding: 0; margin: 0; }
-.archive-item { padding: 0.8rem 0; border-top: 1px solid var(--border); }
-.archive-item:first-child { border-top: none; }
+.archive-list, .latest-list { list-style: none; padding: 0; margin: 0; }
+.archive-item, .latest-item { padding: 0.8rem 0; border-top: 1px solid var(--border); }
+.archive-item:first-child, .latest-item:first-child { border-top: none; }
 
-.archive-link { text-decoration: none; color: var(--text); font-size: 1.08rem; }
-.archive-link:hover { text-decoration: underline; }
-.archive-meta { color: var(--muted); font-size: 0.92rem; margin-top: 0.15rem; }
+.archive-link, .latest-link { text-decoration: none; color: var(--text); font-size: 1.08rem; }
+.archive-link:hover, .latest-link:hover { text-decoration: underline; }
+.archive-meta, .latest-meta { color: var(--muted); font-size: 0.92rem; margin-top: 0.15rem; }
 
 footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.9rem; }
 .social-links a { margin-right: 0.75rem; }
