@@ -14,6 +14,12 @@
         "url": "http://www.mattbramer.com",
         "tech": "HTML, CSS, JS",
         "blurb": "My personal online hub, showcasing work, projects, and teaching resources. Combines professional design with interactive elements for a modern portfolio experience."
+      },
+      {
+        "title": "Bramer Briefing",
+        "url": "https://bramer-rss.vercel.app/",
+        "tech": "HTML, CSS, JS, RSS",
+        "blurb": "I wanted to make my very own RSS News Feed of content I enjoy reading, without getting bogged down by social media algorithms. This was my first attempt at that. If you click on this link, you will see exactly what I am reading and enjoying. It is a mix of tech, news, and random fun content. I update it regularly with new articles and resources that I find interesting."
       }
     ]
   },
