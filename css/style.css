@@ -35,6 +35,18 @@ main {
   padding: 3rem 1.25rem 4rem;
 }
 
+.archive-item {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.archive-date {
+  min-width: 100px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
 header { margin-bottom: 2.4rem; }
 .site-title { font-size: clamp(2rem, 5vw, 2.4rem); font-weight: normal; margin: 0; }
 .site-subtitle { color: var(--muted); margin: 0.45rem 0 0; }
