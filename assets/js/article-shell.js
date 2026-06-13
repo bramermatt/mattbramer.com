@@ -222,7 +222,7 @@
                 return;
             }
 
-            const sameAsDate = dateText && text === dateText;
+            const sameAsDate =    dateText && normalizeDate(text) === normalizeDate(dateText);
             const sameAsCaption = imageInfo?.caption && text === imageInfo.caption;
             const sameAsTitle = text === title;
             const looksLikeIntroNote = /about the links:/i.test(text);
@@ -360,7 +360,10 @@
         const contentRoot = chooseContentRoot();
         const imageInfo = findImageInfo();
         const tagLinks = collectTagLinks();
-        const dek = extractDek(contentRoot, title);
+        const dek =
+    category === "Book Review"
+        ? ""
+        : extractDek(contentRoot, title);
         const cleanedContent = cleanContent(contentRoot, title, dateText, imageInfo);
 
         document.body.classList.add("article-shell-page");
