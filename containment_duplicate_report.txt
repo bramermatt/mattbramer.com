@@ -1,0 +1,395 @@
+how is this -- 
+
+================================================================================
+CONTAINMENT DUPLICATE REPORT
+================================================================================
+
+KEEP: 2025-06-02-bookreview-acalamityofsouls-davidbaldacci.html
+MOVE: 2023-9-25-bookreview-it-stephenking.html
+KEYS: acalamityofsouls <-> it
+
+KEEP: 2025-06-02-bookreview-acalamityofsouls-davidbaldacci.html
+MOVE: 2023-10-05-bookreview-it-stephenking.html
+KEYS: acalamityofsouls <-> it
+
+KEEP: 2023-03-11-bookreview-theadventuresofsherlockholmes-arthurconandoyle.html
+MOVE: 2023-3-13-bookreview-adventures-of-sherlock-holmes-sirarthurconandoyle.html
+KEYS: adventuresofsherlockholmes <-> theadventuresofsherlockholmes
+
+KEEP: 2022-02-02-bookreview-aftermathstarwarsaftermath1-chuckwendig.html
+MOVE: 2016-6-12-moviereview-star-wars-ep3.html
+KEYS: aftermathstarwarsaftermath1 <-> starwars
+
+KEEP: 2022-02-02-bookreview-aftermathstarwarsaftermath1-chuckwendig.html
+MOVE: 2016-6-5-moviereview-star-wars-ep2.html
+KEYS: aftermathstarwarsaftermath1 <-> starwars
+
+KEEP: 2022-02-02-bookreview-aftermathstarwarsaftermath1-chuckwendig.html
+MOVE: 2016-5-29-moviereview-star-wars-ep1.html
+KEYS: aftermathstarwarsaftermath1 <-> starwars
+
+KEEP: 2022-02-02-bookreview-aftermathstarwarsaftermath1-chuckwendig.html
+MOVE: 2022-2-2-bookreview-starwars-aftermath-chuckwendig.html
+KEYS: aftermathstarwarsaftermath1 <-> starwarsaftermath
+
+KEEP: 2023-04-07-bookreview-agameofthronesasongoficeandfire1-georgerrmartin.html
+MOVE: 2023-4-7-bookreview-a-game-of-thrones-georgerrmartin.html
+KEYS: agameofthrones <-> agameofthronesasongoficeandfire1
+
+KEEP: 2024-08-21-bookreview-alexanderhamilton-ronchernow.html
+MOVE: 2024-8-21-bookreview-hamilton-ronchernow.html
+KEYS: alexanderhamilton <-> hamilton
+
+KEEP: 2026-03-27-bookreview-americanlionandrewjacksoninthewhitehouse-jonmeacham.html
+MOVE: 2026-03-27-bookreview-americanlion-jonmeacham.html
+KEYS: americanlion <-> americanlionandrewjacksoninthewhitehouse
+
+KEEP: 2024-03-29-bookreview-americansphinxthecharacterofthomasjefferson-josephjellis.html
+MOVE: 2024-3-29-bookreview-american-sphinx-josephjellis.html
+KEYS: americansphinx <-> americansphinxthecharacterofthomasjefferson
+
+KEEP: 2024-02-06-bookreview-assassinsapprenticefarseertrilogy-robinhobb.html
+MOVE: 2024-2-6-bookreview-assassins-apprentice-robinhobb.html
+KEYS: assassinsapprentice <-> assassinsapprenticefarseertrilogy
+
+KEEP: 2023-01-12-bookreview-attackontitanvol1-hajimeisayama.html
+MOVE: 2023-1-13-bookreview-attack-on-titan-vol-1.html
+KEYS: attackontitanvol <-> attackontitanvol1
+
+KEEP: 2023-10-05-bookreview-it-stephenking.html
+MOVE: 2022-12-8-books-favorite-books-of-2022.html
+KEYS: booksfavoritebooksof <-> it
+
+KEEP: 2025-06-30-bookreview-childrenofdunedune3-frankherbert.html
+MOVE: 2025-06-30-bookreview-childrenofdune-frankherbert.html
+KEYS: childrenofdune <-> dune
+
+KEEP: 2025-06-30-bookreview-childrenofdunedune3-frankherbert.html
+MOVE: 2024-6-4-bookreview-dune-frankherbert.html
+KEYS: childrenofdune <-> dune
+
+KEEP: 2025-06-30-bookreview-childrenofdunedune3-frankherbert.html
+MOVE: 2022-3-8-bookreview-dune-frankherbert.html
+KEYS: childrenofdune <-> dune
+
+KEEP: 2025-06-30-bookreview-childrenofdunedune3-frankherbert.html
+MOVE: 2024-06-04-bookreview-dunedune1-frankherbert.html
+KEYS: childrenofdune <-> dune
+
+KEEP: 2024-05-03-bookreview-corporateworshiphowthechurchgathersasgodspeople9marksbuildinghealthychurches-mattmerker.html
+MOVE: 2024-5-3-bookdiscussion-corporate-worship-mattmerker.html
+KEYS: corporateworship <-> corporateworshiphowthechurchgathersasgodspeople9marksbuildinghealthychurches
+
+KEEP: 2023-07-28-bookreview-crossroadsoftwilightthewheeloftime10-robertjordan.html
+MOVE: 2023-7-22-bookreview-crossroads-of-twilight-robertjordan.html
+KEYS: crossroadsoftwilight <-> twilight
+
+KEEP: 2023-07-28-bookreview-crossroadsoftwilightthewheeloftime10-robertjordan.html
+MOVE: 2022-7-11-bookreview-twilight-stepheniemeyer.html
+KEYS: crossroadsoftwilight <-> twilight
+
+KEEP: 2023-11-10-bookreview-dawnshardthestormlightarchive35-brandonsanderson.html
+MOVE: 2025-02-21-bookreview-dawnshard-brandonsanderson.html
+KEYS: dawnshard <-> dawnshardthe
+
+KEEP: 2023-11-10-bookreview-dawnshardthestormlightarchive35-brandonsanderson.html
+MOVE: 2023-11-9-bookreview-dawnshard-brandonsanderson.html
+KEYS: dawnshard <-> dawnshardthe
+
+KEEP: 2023-11-10-bookreview-dawnshardthestormlightarchive35-brandonsanderson.html
+MOVE: 2025-02-20-bookreview-dawnshardthestormlightarchive35-brandonsanderson.html
+KEYS: dawnshard <-> dawnshardthe
+
+KEEP: 2023-10-13-bookreview-doctorsleeptheshining2-stephenking.html
+MOVE: 2023-10-9-bookreview-doctor-sleep-stephenking.html
+KEYS: doctorsleep <-> doctorsleeptheshining2
+
+KEEP: 2023-10-13-bookreview-doctorsleeptheshining2-stephenking.html
+MOVE: 2023-9-19-bookreview-the-shining-stephenking.html
+KEYS: doctorsleeptheshining2 <-> theshining
+
+KEEP: 2026-03-18-bookreview-doingjusticeaprosecutorsthoughtsoncrimepunishmentandtheruleoflaw-preetbharara.html
+MOVE: 2026-03-18-bookreview-doingjustice-preetbharara.html
+KEYS: doingjustice <-> doingjusticeaprosecutorsthoughtsoncrimepunishmentandtheruleoflaw
+
+KEEP: 2022-11-01-bookreview-edgedancerthestormlightarchive25-brandonsanderson.html
+MOVE: 2022-11-8-bookreview-edgedancer-brandonsanderson.html
+KEYS: edgedancer <-> edgedancerthe
+
+KEEP: 2022-11-01-bookreview-edgedancerthestormlightarchive25-brandonsanderson.html
+MOVE: 2025-02-13-bookreview-edgedancer-brandonsanderson.html
+KEYS: edgedancer <-> edgedancerthe
+
+KEEP: 2022-05-24-bookreview-elantriselantris1-brandonsanderson.html
+MOVE: 2022-5-24-bookreview-elantris-brandonsanderson.html
+KEYS: elantris <-> elantriselantris1
+
+KEEP: 2025-04-30-bookreview-thehopeofelantriselantris15-brandonsanderson.html
+MOVE: 2022-05-24-bookreview-elantriselantris1-brandonsanderson.html
+KEYS: elantriselantris1 <-> thehopeofelantriselantris15
+
+KEEP: 2024-05-14-bookreview-evangelismhowthewholechurchspeaksofjesusbuildinghealthychurches-jmackstiles.html
+MOVE: 2024-5-15-bookreview-evangelism-jmackstiles.html
+KEYS: evangelism <-> evangelismhowthewholechurchspeaksofjesusbuildinghealthychurches
+
+KEEP: 2026-01-09-bookreview-excavatingtheevidenceforjesusthearchaeologyandhistoryofchristandthegospels-tituskennedy.html
+MOVE: 2026-01-09-bookreview-excavatingtheevidenceforjesus.html
+KEYS: excavatingtheevidenceforjesus <-> excavatingtheevidenceforjesusthearchaeologyandhistoryofchristandthegospels
+
+KEEP: 2025-07-29-bookreview-existentialphysicsascientistsguidetolifesbiggestquestions-sabinehossenfelder.html
+MOVE: 2025-07-29-bookreview-existentialphysics-sabinehossenfelder.html
+KEYS: existentialphysics <-> existentialphysicsascientistsguidetolifesbiggestquestions
+
+KEEP: 2024-04-30-bookreview-expositionalpreachinghowwespeakgodswordtodaybuildinghealthychurches-davidrhelm.html
+MOVE: 2024-4-30-bookdiscussion-expositional-preaching-davidhelm.html
+KEYS: expositionalpreaching <-> expositionalpreachinghowwespeakgodswordtodaybuildinghealthychurches
+
+KEEP: 2024-05-16-bookreview-faithalonetheevangelicaldoctrineofjustification-rcsproul.html
+MOVE: 2024-5-16-bookreview-faithalone-rcsproul.html
+KEYS: faithalone <-> faithalonetheevangelicaldoctrineofjustification
+
+KEEP: 2023-10-05-bookreview-it-stephenking.html
+MOVE: 2023-2-27-faithblog-am-I-a-preacher-now.html
+KEYS: faithblogamiapreacher <-> it
+
+KEEP: 2023-10-05-bookreview-it-stephenking.html
+MOVE: 2021-10-4-faithblog-bible-reading.html
+KEYS: faithblogbible <-> it
+
+KEEP: 2023-10-05-bookreview-it-stephenking.html
+MOVE: 2022-11-15-faithblog-have-faith.html
+KEYS: faithbloghave <-> it
+
+KEEP: 2023-10-05-bookreview-it-stephenking.html
+MOVE: 2024-12-16-faith-gods-judgement.html
+KEYS: faithgods <-> it
+
+KEEP: 2024-2-20-familyblog-happy-matt-feb-2024.html
+MOVE: 2022-7-23-familyblog-samuel.html
+KEYS: familyblog <-> familybloghappymattfeb
+
+KEEP: 2023-3-9-bookreview-fellowship-of-the-ring-jrrtolkien.html
+MOVE: 2022-12-9-moviereview-fellowship-of-the-ring.html
+KEYS: fellowshipofthe <-> fellowshipofthering
+
+KEEP: 2023-03-09-bookreview-thefellowshipoftheringthelordoftherings1-jrrtolkien.html
+MOVE: 2023-3-9-bookreview-fellowship-of-the-ring-jrrtolkien.html
+KEYS: fellowshipofthering <-> thefellowshipoftheringthelordoftherings1
+
+KEEP: 2025-07-28-bookreview-fosteringresilientlearnersstrategiesforcreatingatraumasensitiveclassroom-kristinvanmartersouers.html
+MOVE: 2025-07-28-bookreview-fosteringresilientlearners-kristinsouerspetehall.html
+KEYS: fosteringresilientlearners <-> fosteringresilientlearnersstrategiesforcreatingatraumasensitiveclassroom
+
+KEEP: 2024-04-04-bookreview-foundingbrotherstherevolutionarygeneration-josephjellis.html
+MOVE: 2024-4-4-bookreview-founding-brothers-josephjellis.html
+KEYS: foundingbrothers <-> foundingbrotherstherevolutionarygeneration
+
+KEEP: 2024-01-25-bookreview-gardensofthemoonmalazanbookofthefallen1-stevenerikson.html
+MOVE: 2024-3-18-bookreview-the-fall-ryancahill.html
+KEYS: gardensofthemoonmalazanbookofthefallen1 <-> thefall
+
+KEEP: 2025-04-01-bookreview-hillbillyelegyamemoirofafamilyandcultureincrisis-jdvance.html
+MOVE: 2025-04-01-bookreview-hillbillyelegy-jdvance.html
+KEYS: hillbillyelegy <-> hillbillyelegyamemoirofafamilyandcultureincrisis
+
+KEEP: 2023-01-18-bookreview-thehungergamesthehungergames1-suzannecollins.html
+MOVE: 2023-1-18-bookreview-hunger-games-suzanecollins.html
+KEYS: hungergames <-> thehungergamesthehungergames1
+
+KEEP: 2025-05-28-bookreview-jamesmonroealife-timmcgrath.html
+MOVE: 2025-05-28-bookreview-jamesmonroe-timmcgrath.html
+KEYS: jamesmonroe <-> jamesmonroealife
+
+KEEP: 2025-04-28-bookreview-masterandcommanderaubreymaturin1-patrickobrian.html
+MOVE: 2025-04-28-bookreview-masterandcommander-patrickobrian.html
+KEYS: masterandcommander <-> masterandcommanderaubreymaturin1
+
+KEEP: 2024-01-03-bookreview-secrethistorymistborn35-brandonsanderson.html
+MOVE: 2024-1-2-bookreview-mistborn-secret-history-brandonsanderson.html
+KEYS: mistbornsecrethistory <-> secrethistory
+
+KEEP: 2023-12-18-bookreview-mistborn-shadows-of-self-brandonsanderson.html
+MOVE: 2023-12-26-bookreview-shadowsofselfmistborn5-brandonsanderson.html
+KEYS: mistbornshadowsofself <-> shadowsofself
+
+KEEP: 2023-12-26-bookreview-mistborn-the-bands-of-mourning-brandonsanderson.html
+MOVE: 2024-01-02-bookreview-thebandsofmourningmistborn6-brandonsanderson.html
+KEYS: mistbornthebandsofmourning <-> thebandsofmourning
+
+KEEP: 2024-01-08-bookreview-thelostmetalmistborn7-brandonsanderson.html
+MOVE: 2024-1-24-bookreview-mistborn-the-lost-metal-brandonsanderson.html
+KEYS: mistbornthelostmetal <-> thelostmetal
+
+KEEP: 2023-11-23-bookreview-mistborn-the-well-of-ascension-breandonsanderson.html
+MOVE: 2023-12-04-bookreview-thewellofascensionmistborn2-brandonsanderson.html
+KEYS: mistbornthewellofascension <-> thewellofascension
+
+KEEP: 2023-08-29-bookreview-newspringthenovel-robertjordan.html
+MOVE: 2023-8-28-bookreview-new-spring-robertjordan.html
+KEYS: newspring <-> newspringthenovel
+
+KEEP: 2025-01-27-bookreview-nineblackrobesinsidethesupremecourtsdrivetotherightanditshistoricconsequences-joanbiskupic.html
+MOVE: 2025-01-27-bookreview-nineblackrobes-joanbiskupic.html
+KEYS: nineblackrobes <-> nineblackrobesinsidethesupremecourtsdrivetotherightanditshistoricconsequences
+
+KEEP: 2022-11-29-bookreview-oathbringerthestormlightarchive3-brandonsanderson.html
+MOVE: 2022-11-29-bookreview-oathbringer-brandonsanderson.html
+KEYS: oathbringer <-> oathbringerthe
+
+KEEP: 2025-01-28-bookreview-oncriticalracetheorywhyitmatterswhyyoushouldcare-victorray.html
+MOVE: 2025-01-28-bookreview-oncriticalracetheory-victorray.html
+KEYS: oncriticalracetheory <-> oncriticalracetheorywhyitmatterswhyyoushouldcare
+
+KEEP: 2022-12-12-opinionblog-favorite-movies-of-2022.html
+MOVE: 2022-12-5-opinionblog-asmr.html
+KEYS: opinionblog <-> opinionblogfavoritemoviesof
+
+KEEP: 2022-12-12-opinionblog-favorite-movies-of-2022.html
+MOVE: 2022-12-5-opinionblog-matttalks.html
+KEYS: opinionblog <-> opinionblogfavoritemoviesof
+
+KEEP: 2022-12-5-opinionblog-matttalks.html
+MOVE: 2022-12-1-opinionblog-my-hair.html
+KEYS: opinionblog <-> opinionblogmy
+
+KEEP: 2023-1-17-opinionblog-star-wars-ranked.html
+MOVE: 2023-1-17-opinionblog-star-wars-order.html
+KEYS: opinionblog <-> opinionblogstarwars
+
+KEEP: 2022-12-12-opinionblog-favorite-rewatch-tv-show-of-2022.html
+MOVE: 2014-11-11-videogamereview-watch-dogs.html
+KEYS: opinionblogfavoriterewatchtvshowof <-> watch
+
+KEEP: 2023-5-31-opinionblog-i-dont-play-video-games-anymore.html
+MOVE: 2024-6-6-video-babybramershowep4.html
+KEYS: opinionblogidontplayvideogames <-> video
+
+KEEP: 2023-5-31-opinionblog-i-dont-play-video-games-anymore.html
+MOVE: video-template.html
+KEYS: opinionblogidontplayvideogames <-> video
+
+KEEP: 2023-5-31-opinionblog-i-dont-play-video-games-anymore.html
+MOVE: 2024-5-18-video-babybramershowep3.html
+KEYS: opinionblogidontplayvideogames <-> video
+
+KEEP: 2025-01-25-bookreview-readingtheconstitutionwhyichosepragmatismnottextualism-stephenbreyer.html
+MOVE: 2025-01-25-bookreview-readingtheconstitution-stephenbreyer.html
+KEYS: readingtheconstitution <-> readingtheconstitutionwhyichosepragmatismnottextualism
+
+KEEP: 2024-07-25-bookreview-readyplayeronereadyplayerone1-ernestcline.html
+MOVE: 2024-7-25-bookreview-ready-player-one-ernestcline.html
+KEYS: readyplayerone <-> readyplayeronereadyplayerone1
+
+KEEP: 2025-02-05-bookreview-returntoedantheedantrilogy3-philipchase.html
+MOVE: 2025-02-05-bookreview-returntoedan-philipchase.html
+KEYS: returntoedan <-> returntoedantheedantrilogy3
+
+KEEP: 2023-11-27-bookreview-rhythmofwarthestormlightarchive4-brandonsanderson.html
+MOVE: 2023-11-10-bookreview-rhythm-of-war-brandonsanderson.html
+KEYS: rhythmofwar <-> rhythmofwarthe
+
+KEEP: 2024-12-30-bookreview-roberteleealife-allencguelzo.html
+MOVE: 2024-12-30-bookreview-robertelee-allencguelzo.html
+KEYS: robertelee <-> roberteleealife
+
+KEEP: 2025-02-17-bookreview-sixthoftheduskthecosmere-brandonsanderson.html
+MOVE: 2025-02-18-bookreview-sixthofthedusk-brandonsanderson.html
+KEYS: sixthofthedusk <-> sixthoftheduskthecosmere
+
+KEEP: 2024-04-26-bookreview-sounddoctrinehowachurchgrowsintheloveandholinessofgodbuildinghealthychurches-bobbyjamieson.html
+MOVE: 2024-4-26-bookdiscussion-sound-doctrine-bobbyjamieson.html
+KEYS: sounddoctrine <-> sounddoctrinehowachurchgrowsintheloveandholinessofgodbuildinghealthychurches
+
+KEEP: 2025-07-16-bookreview-strangenewworldhowthinkersandactivistsredefinedidentityandsparkedthesexualrevolution-carlrtrueman.html
+MOVE: 2025-07-17-bookreview-strangenewworld-carlrtrueman.html
+KEYS: strangenewworld <-> strangenewworldhowthinkersandactivistsredefinedidentityandsparkedthesexualrevolution
+
+KEEP: 2025-01-22-bookreview-theadventuresoftomsawyer-marktwain.html
+MOVE: 2025-01-22-bookreview-tomsawyer-marktwain.html
+KEYS: theadventuresoftomsawyer <-> tomsawyer
+
+KEEP: 2024-05-20-bookreview-theapostlescreeddiscoveringauthenticchristianityinanageofcounterfeits-ralbertmohlerjr.html
+MOVE: 2024-5-20-bookreview-theapostlescreed-albertmohler.html
+KEYS: theapostlescreed <-> theapostlescreeddiscoveringauthenticchristianityinanageofcounterfeits
+
+KEEP: 2025-02-27-bookreview-thecabinetgeorgewashingtonandthecreationofanamericaninstitution-lindsaymchervinsky.html
+MOVE: 2025-02-27-bookreview-thecabinet-lindsaychervinsky.html
+KEYS: thecabinet <-> thecabinetgeorgewashingtonandthecreationofanamericaninstitution
+
+KEEP: 2025-02-27-bookreview-thecabinetgeorgewashingtonandthecreationofanamericaninstitution-lindsaymchervinsky.html
+MOVE: 2024-8-9-bookreview-washington-ronchernow.html
+KEYS: thecabinetgeorgewashingtonandthecreationofanamericaninstitution <-> washington
+
+KEEP: 2025-06-10-bookreview-thecaseforchristajournalistspersonalinvestigationoftheevidenceforjesuscaseforseries-leestrobel.html
+MOVE: 2025-06-10-bookreview-thecaseforchrist-leestrobel.html
+KEYS: thecaseforchrist <-> thecaseforchristajournalistspersonalinvestigationoftheevidenceforjesuscaseforseries
+
+KEEP: 2023-03-09-bookreview-thefellowshipoftheringthelordoftherings1-jrrtolkien.html
+MOVE: 2024-3-5-bookreview-the-lord-of-the-rings-jrrtolkien.html
+KEYS: thefellowshipoftheringthelordoftherings1 <-> thelordoftherings
+
+KEEP: 2024-05-07-bookreview-theforgottentrinityrecoveringtheheartofchristianbelief-jamesrwhite.html
+MOVE: 2024-5-7-bookreview-the-forgotten-trinity-jameswhite.html
+KEYS: theforgottentrinity <-> theforgottentrinityrecoveringtheheartofchristianbelief
+
+KEEP: 2025-07-14-bookreview-thefrugalwizardshandbookforsurvivingmedievalenglandsecretprojects2-brandonsanderson.html
+MOVE: 2025-07-14-bookreview-thefrugalwizardshandbookforsurvivingmedievalengland-brandonsanderson.html
+KEYS: thefrugalwizardshandbookforsurvivingmedievalengland <-> thefrugalwizardshandbookforsurvivingmedievalenglandsecretprojects2
+
+KEEP: 2024-08-13-bookreview-thegunslingerthedarktower1-stephenking.html
+MOVE: 2024-8-13-bookreview-thegunslinger-stephenking.html
+KEYS: thegunslinger <-> thegunslingerthedarktower1
+
+KEEP: 2025-04-30-bookreview-thehopeofelantriselantris15-brandonsanderson.html
+MOVE: 2025-04-30-bookreview-thehopeofelantris-brandonsanderson.html
+KEYS: thehopeofelantris <-> thehopeofelantriselantris15
+
+KEEP: 2024-08-28-bookreview-thelionthewitchandthewardrobechroniclesofnarnia1-cslewis.html
+MOVE: 2024-8-28-bookreview-thelionthewitchandthewardrobe-cslewis.html
+KEYS: thelionthewitchandthewardrobe <-> thelionthewitchandthewardrobechroniclesofnarnia1
+
+KEEP: 2025-05-05-bookreview-thepathtobeingapastoraguidefortheaspiring-bobbyjamieson.html
+MOVE: 2025-05-05-bookreview-thepathtobeingapastor-bobbyjamieson.html
+KEYS: thepathtobeingapastor <-> thepathtobeingapastoraguidefortheaspiring
+
+KEEP: 2024-10-29-bookreview-thepersonofchristanintroductionshortstudiesinsystematictheology-stephenjwellum.html
+MOVE: 2024-10-29-bookreview-thepersonofchrist-stephenjwellem.html
+KEYS: thepersonofchrist <-> thepersonofchristanintroductionshortstudiesinsystematictheology
+
+KEEP: 2025-01-20-bookreview-theprophetofedantheedantrilogy2-philipchase.html
+MOVE: 2025-01-20-bookreview-theprophetofedan-philipchase.html
+KEYS: theprophetofedan <-> theprophetofedantheedantrilogy2
+
+KEEP: 2024-10-11-bookreview-thesituationroomtheinsidestoryofpresidentsincrisis-georgestephanopoulos.html
+MOVE: 2024-10-11-bookreview-thesituationroom-georgestephanopoulos.html
+KEYS: thesituationroom <-> thesituationroomtheinsidestoryofpresidentsincrisis
+
+KEEP: 2023-10-17-bookreview-thewayofedantheedantrilogy1-philipchase.html
+MOVE: 2024-12-30-bookreview-thewayofedan-philipchase.html
+KEYS: thewayofedan <-> thewayofedantheedantrilogy1
+
+KEEP: 2023-10-17-bookreview-thewayofedantheedantrilogy1-philipchase.html
+MOVE: 2023-10-13-bookreview-the-way-of-edan-phillipchase.html
+KEYS: thewayofedan <-> thewayofedantheedantrilogy1
+
+KEEP: 2022-05-16-bookreview-thewayofkingsthestormlightarchive1-brandonsanderson.html
+MOVE: 2022-5-16-bookreview-the-way-of-kings-brandonsanderson.html
+KEYS: thewayofkings <-> thewayofkingsthe
+
+KEEP: 2022-05-16-bookreview-thewayofkingsthestormlightarchive1-brandonsanderson.html
+MOVE: 2023-11-8-bookreview-thewayofkings-brandonsanderson.html
+KEYS: thewayofkings <-> thewayofkingsthe
+
+KEEP: 2022-05-16-bookreview-thewayofkingsthestormlightarchive1-brandonsanderson.html
+MOVE: 2025-03-25-bookreview-thewayofkingsthestormlightarchive1-brandonsanderson.html
+KEYS: thewayofkings <-> thewayofkingsthe
+
+KEEP: 2022-10-12-bookreview-wordsofradiancethestormlightarchive2-brandonsanderson.html
+MOVE: 2022-10-12-bookreview-words-of-radiance-brandonsanderson.html
+KEYS: wordsofradiance <-> wordsofradiancethe
+
+KEEP: 2025-05-08-bookreview-yumiandthenightmarepainterhoidstravails2-brandonsanderson.html
+MOVE: 2025-05-08-bookreview-yumiandthenightmarepainter-brandonsanderson.html
+KEYS: yumiandthenightmarepainter <-> yumiandthenightmarepainterhoidstravails2
+
+Files moved: 97

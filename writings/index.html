@@ -79,13 +79,49 @@ fetch('/content/thoughts/index.json')
     document.getElementById('archive-count').textContent =
       `${entries.length} entries`;
 
-    const items = await Promise.all(
-      entries.map(async (file) => ({
-        file,
-        title: await getTitle(file),
-        date: getDate(file)
-      }))
-    );
+const items = await Promise.all(
+  entries.map(async (file) => ({
+    file,
+    title: await getTitle(file),
+    date: getDate(file)
+  }))
+);
+
+// Remove duplicate titles, keeping newest
+const seen = new Set();
+
+const uniqueItems = items.filter(item => {
+  const key = item.title
+    .toLowerCase()
+    .replace(/[^\w\s]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (seen.has(key)) {
+    console.log("Duplicate hidden:", item.file);
+    return false;
+  }
+
+  seen.add(key);
+  return true;
+});
+
+document.getElementById('archive-count').textContent =
+  `${uniqueItems.length} entries`;
+
+list.innerHTML = uniqueItems.map(
+  ({ file, title, date }) => `
+    <li class="archive-item">
+      <span class="archive-date">${date}</span>
+      <a
+        class="archive-link"
+        href="/content/thoughts/${encodeURI(file)}"
+      >
+        ${title}
+      </a>
+    </li>
+  `
+).join('');
 
     list.innerHTML = items.map(
       ({ file, title, date }) => `
@@ -101,7 +137,13 @@ fetch('/content/thoughts/index.json')
       `
     ).join('');
 
+    const filteredItems = uniqueItems.filter(
+  item => item.title !== "Site Links"
+);
+
   })
+
+  
   .catch(() => {
     document.getElementById('archive-count').textContent =
       'Unable to load archive.';

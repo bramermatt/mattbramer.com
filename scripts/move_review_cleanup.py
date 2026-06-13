@@ -6,21 +6,29 @@ import re
 THOUGHTS_DIR = Path("content/thoughts")
 HOLDING_DIR = THOUGHTS_DIR / "duplicate_holding"
 
-MOVE_FILES = False
-
 HOLDING_DIR.mkdir(exist_ok=True)
 
+REREAD_WORDS = [
+    "reread",
+    "third-reread",
+    "second-reread",
+    "mythirdtimereading",
+]
 
-def extract_date(filename):
-    match = re.match(
-        r"^(\d{4}-\d{1,2}-\d{1,2})",
-        filename
-    )
+PREFIXES = [
+    "bookreview-",
+    "bookdiscussion-",
+    "moviereview-",
+    "tvshowreview-",
+    "videogamereview-",
+    "foodreview-",
+    "techreview-",
+]
 
-    if match:
-        return match.group(1)
 
-    return None
+def is_reread(filename):
+    filename = filename.lower()
+    return any(word in filename for word in REREAD_WORDS)
 
 
 def normalize_title(filename):
@@ -34,19 +42,46 @@ def normalize_title(filename):
         name,
     )
 
-    prefixes = [
-        "bookreview-",
-        "bookdiscussion-",
-        "moviereview-",
-        "tvshowreview-",
-        "videogamereview-",
-        "foodreview-",
-        "techreview-",
-    ]
-
-    for prefix in prefixes:
+    for prefix in PREFIXES:
         if name.startswith(prefix):
             name = name[len(prefix):]
+
+    parts = name.split("-")
+
+    if len(parts) > 1:
+        parts = parts[:-1]
+
+    name = "-".join(parts)
+
+    name = re.sub(
+        r"(stormlightarchive\d+)",
+        "",
+        name,
+    )
+
+    name = re.sub(
+        r"(mistborn\d+)",
+        "",
+        name,
+    )
+
+    name = re.sub(
+        r"(dune\d+)",
+        "",
+        name,
+    )
+
+    name = re.sub(
+        r"(thewheeloftime\d+)",
+        "",
+        name,
+    )
+
+    name = re.sub(
+        r"(harrypotter\d+)",
+        "",
+        name,
+    )
 
     name = re.sub(
         r"[^a-z0-9]",
@@ -57,90 +92,68 @@ def normalize_title(filename):
     return name
 
 
-def canonical_score(filename):
-    score = 0
+def score(file):
+    score = len(file.name)
 
     if re.match(
         r"^\d{4}-\d{2}-\d{2}-",
-        filename,
+        file.name,
     ):
-        score += 1000
-
-    score += len(filename)
+        score += 500
 
     return score
 
 
-files_by_date = defaultdict(list)
+files = [
+    f
+    for f in THOUGHTS_DIR.glob("*.html")
+    if not is_reread(f.name)
+]
 
-for file in THOUGHTS_DIR.glob("*.html"):
-    date = extract_date(file.name)
+groups = defaultdict(list)
 
-    if date:
-        files_by_date[date].append(file)
+for file in files:
+    groups[normalize_title(file.name)].append(file)
 
+moves = []
 
-duplicates = []
+keys = sorted(groups.keys())
 
-for date, files in sorted(files_by_date.items()):
+for i, key_a in enumerate(keys):
 
-    for i in range(len(files)):
-        for j in range(i + 1, len(files)):
+    for key_b in keys[i + 1:]:
 
-            file_a = files[i]
-            file_b = files[j]
+        if key_a == key_b:
+            continue
 
-            title_a = normalize_title(file_a.name)
-            title_b = normalize_title(file_b.name)
+        if len(key_a) < 8:
+            continue
 
-            is_duplicate = (
-                title_a in title_b
-                or title_b in title_a
-            )
+        if key_a in key_b or key_b in key_a:
 
-            if not is_duplicate:
-                continue
+            files_a = groups[key_a]
+            files_b = groups[key_b]
+
+            combined = files_a + files_b
 
             keep = max(
-                [file_a, file_b],
-                key=lambda f: canonical_score(
-                    f.name
+                combined,
+                key=score,
+            )
+
+            for file in combined:
+
+                if file == keep:
+                    continue
+
+                moves.append(
+                    (
+                        keep,
+                        file,
+                        key_a,
+                        key_b,
+                    )
                 )
-            )
-
-            delete = (
-                file_b
-                if keep == file_a
-                else file_a
-            )
-
-            duplicates.append(
-                (
-                    date,
-                    keep,
-                    delete,
-                )
-            )
-
-
-seen = set()
-final_duplicates = []
-
-for date, keep, delete in duplicates:
-
-    if delete.name in seen:
-        continue
-
-    seen.add(delete.name)
-
-    final_duplicates.append(
-        (
-            date,
-            keep,
-            delete,
-        )
-    )
-
 
 report = []
 
@@ -149,84 +162,61 @@ report.append("CONTAINMENT DUPLICATE REPORT")
 report.append("=" * 80)
 report.append("")
 
-for date, keep, delete in final_duplicates:
+moved = set()
 
-    report.append(
-        f"DATE: {date}"
-    )
+for keep, move, key_a, key_b in moves:
+
+    if move in moved:
+        continue
+
+    moved.add(move)
 
     report.append(
         f"KEEP: {keep.name}"
     )
 
     report.append(
-        f"MOVE: {delete.name}"
+        f"MOVE: {move.name}"
+    )
+
+    report.append(
+        f"KEYS: {key_a} <-> {key_b}"
     )
 
     report.append("")
 
+    destination = HOLDING_DIR / move.name
+
+    if not destination.exists():
+        shutil.move(
+            str(move),
+            str(destination),
+        )
 
 report.append("")
 report.append(
-    f"Candidates found: {len(final_duplicates)}"
+    f"Files moved: {len(moved)}"
 )
 
-report_text = "\n".join(report)
-
 Path(
-    "aggressive_duplicate_report.txt"
+    "containment_duplicate_report.txt"
 ).write_text(
-    report_text,
+    "\n".join(report),
     encoding="utf-8",
 )
 
-moved = 0
-
-if MOVE_FILES:
-
-    for _, _, delete in final_duplicates:
-
-        destination = (
-            HOLDING_DIR
-            / delete.name
-        )
-
-        if delete.exists():
-
-            shutil.move(
-                str(delete),
-                str(destination)
-            )
-
-            moved += 1
-
 print()
 print("=" * 80)
-print("REVIEW CLEANUP")
+print("DONE")
 print("=" * 80)
 print()
-
 print(
-    f"Candidates found: {len(final_duplicates)}"
-)
-
-if MOVE_FILES:
-    print(
-        f"Files moved: {moved}"
-    )
-else:
-    print(
-        "MOVE_FILES=False"
-    )
-    print(
-        "No files were moved."
-    )
-
-print()
-print(
-    "Report: aggressive_duplicate_report.txt"
+    f"Moved: {len(moved)}"
 )
 print(
     f"Holding folder: {HOLDING_DIR}"
+)
+print(
+    "Report: containment_duplicate_report.txt"
 )
 print()

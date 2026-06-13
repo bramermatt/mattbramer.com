@@ -2,17 +2,9 @@
 CONTAINMENT DUPLICATE REPORT
 ================================================================================
 
-DATE: 2025-01-22
-KEEP: 2025-01-22-bookreview-theadventuresoftomsawyer-marktwain.html
-MOVE: 2025-01-22-bookreview-tomsawyer-marktwain.html
-
-DATE: 2026-01-09
-KEEP: 2026-01-09-bookreview-excavatingtheevidenceforjesusthearchaeologyandhistoryofchristandthegospels-tituskennedy.html
-MOVE: 2026-01-09-bookreview-excavatingtheevidenceforjesus.html
-
 DATE: 2026-01-11
 KEEP: 2026-01-11-bookreview-linguisticswhyitmatters-geoffreykpullum.html
 MOVE: 2026-01-11-bookreview-linguisticswhyitmatters.html
 
 
-Candidates found: 3
+Candidates found: 1
